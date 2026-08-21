@@ -1,22 +1,14 @@
 
+
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
+#include "buffer/Buffer.hpp"
+#include "window/Window.hpp"
+
 #include <iostream>
 
-
-static void SetBuffer()
-{
-
-}
-
-
-static void SetShader()
-{
-
-}
-
-
+#include "shader/Shader.hpp"
 
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height)
@@ -34,21 +26,8 @@ void processInput(GLFWwindow *window)
 
 static int RunGL()
 {
-    glfwInit();
-    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
-    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
-    glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
-    //glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
-
-    GLFWwindow* window = glfwCreateWindow(800, 600, "CrowEngine", NULL, NULL);
-    if (window == NULL)
-    {
-        std::cout << "Failed to create GLFW window" << std::endl;
-        glfwTerminate();
-        return -1;
-    }
-    glfwMakeContextCurrent(window);
-
+    Window window;
+    window.SetWindow();
 
     if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
     {
@@ -56,19 +35,34 @@ static int RunGL()
         return -1;
     }
 
+    Shader shader;
+    shader.SetShader("../../source/shader/GLSL/vertexShader.vert.glsl",
+                     "../../source/shader/GLSL/fragmentShader.frag.glsl");
 
-    while(!glfwWindowShouldClose(window))
+    Buffer triangleBuffer;
+    triangleBuffer.SetBuffers();
+
+
+    while(!glfwWindowShouldClose(window.GetWindowID()))
     {
-        processInput(window);
+        processInput(window.GetWindowID());
+
+        glUseProgram(shader.GetShaderProgramID());
+        glBindVertexArray(triangleBuffer.GetVAO());
+
+        glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+
+        glBindVertexArray(0);
 
         glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
 
-        glfwSwapBuffers(window);
+        glfwSwapBuffers(window.GetWindowID());
         glfwPollEvents();
     }
 
     glfwTerminate();
+    return 1;
 
 }
 
