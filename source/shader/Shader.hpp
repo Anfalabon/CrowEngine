@@ -11,6 +11,7 @@ public:
 
     void SetShader(const std::string &vertexShaderFilePath, const std::string &fragmentShaderFilePath);
     inline unsigned int GetShaderProgramID(){return m_shaderProgramID;}
+    inline void UseProgram(){ glUseProgram(m_shaderProgramID); }
 
 private:
 

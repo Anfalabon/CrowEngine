@@ -11,7 +11,9 @@ public:
     ~Window() = default;
 
     int SetWindow();
-    inline GLFWwindow *GetWindowID(){return m_windowID;}
+    inline GLFWwindow *GetID(){ return m_windowID; }
+    inline void Terminate(){ glfwTerminate(); }
+    inline bool IsRunning(){ return !glfwWindowShouldClose(m_windowID); }
 
 private:
 

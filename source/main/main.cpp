@@ -9,6 +9,8 @@
 #include <iostream>
 
 #include "shader/Shader.hpp"
+#include "renderer/Renderer.hpp"
+
 
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height)
@@ -19,8 +21,10 @@ void framebuffer_size_callback(GLFWwindow* window, int width, int height)
 
 void processInput(GLFWwindow *window)
 {
-    if(glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
+    if(glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS) [[likely]]
+    {
         glfwSetWindowShouldClose(window, true);
+    }
 }
 
 
@@ -39,29 +43,30 @@ static int RunGL()
     shader.SetShader("../../source/shader/GLSL/vertexShader.vert.glsl",
                      "../../source/shader/GLSL/fragmentShader.frag.glsl");
 
-    Buffer triangleBuffer;
-    triangleBuffer.SetBuffers();
+    Buffer rectangleBuffer;
+    rectangleBuffer.SetBuffers();
 
 
-    while(!glfwWindowShouldClose(window.GetWindowID()))
+    while(window.IsRunning())
     {
-        processInput(window.GetWindowID());
-
-        glUseProgram(shader.GetShaderProgramID());
-        glBindVertexArray(triangleBuffer.GetVAO());
-
-        glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
-
-        glBindVertexArray(0);
+        processInput(window.GetID());
 
         glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
 
-        glfwSwapBuffers(window.GetWindowID());
+        shader.UseProgram();
+        rectangleBuffer.Bind();
+
+        //glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+        Renderer::GLDraw();
+
+        //glBindVertexArray(0);
+
+        glfwSwapBuffers(window.GetID());
         glfwPollEvents();
     }
 
-    glfwTerminate();
+    window.Terminate();
     return 1;
 
 }

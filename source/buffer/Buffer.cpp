@@ -1,7 +1,17 @@
 
 
 #include "Buffer.hpp"
+#include "ModelLoader.hpp"
 
+#include <utility>
+
+Buffer::Buffer()
+{
+    auto bufferData = ModelLoader::LoadModel("", "");
+
+    auto s1 = bufferData.first;
+    auto s2  = bufferData.second;
+}
 
 
 void Buffer::SetBuffers()
@@ -15,10 +25,11 @@ void Buffer::SetBuffers()
     unsigned int EBO;
     glGenBuffers(1, &EBO);
 
-
+#define DEBUG
+#ifdef DEBUG
     Buffer::CheckBuffer(m_vertices);
     Buffer::CheckBuffer(m_indices);
-
+#endif
 
     //Start recording the current VAO
     glBindVertexArray(m_VAO);
@@ -32,11 +43,11 @@ void Buffer::SetBuffers()
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
     glEnableVertexAttribArray(0);
 
+
+    glBindBuffer(GL_ARRAY_BUFFER, 0);
     //Stop recording the current VAO
     glBindVertexArray(0);
 
     //return VAO;
-
-
 
 }

@@ -26,21 +26,22 @@ inline std::vector<unsigned int> g_indices = {
 class Buffer
 {
 public:
-    Buffer() = default;
+    Buffer();
     ~Buffer() = default;
 
     void SetBuffers();
-    inline unsigned int GetVAO(){return m_VAO;}
+    inline unsigned int GetVAO(){ return m_VAO; }
+    inline void Bind(){ glBindVertexArray(m_VAO); }
 
-    template<typename T> static void CheckBuffer(std::vector<T> buffer);
+    template<typename T> static void CheckBuffer( const std::vector<T> &buffer );
 
 private:
 
     unsigned int m_VAO;
 
     //do a Deep Copy
-    std::vector<float> m_vertices = g_vertices;
-    std::vector<unsigned int> m_indices = g_indices;
+    std::vector<float> m_vertices;
+    std::vector<unsigned int> m_indices;
 
 };
 
@@ -48,7 +49,7 @@ private:
 
 
 
-template<typename T> void Buffer::CheckBuffer(std::vector<T> buffer)
+template<typename T> void Buffer::CheckBuffer( const std::vector<T> &buffer )
 {
     if (buffer.empty())
     {

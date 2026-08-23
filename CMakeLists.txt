@@ -12,6 +12,7 @@ include(cmake/module/FindSpdlog.cmake)
 add_subdirectory(source)
 add_subdirectory(core)
 add_subdirectory(thirdParty)
+add_subdirectory(test)
 
 
 
