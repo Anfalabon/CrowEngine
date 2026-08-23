@@ -23,8 +23,14 @@ static void LoadModel(const std::string &verticesFilePath, const std::string &in
     std::vector<float> vertices{};
     std::vector<unsigned int> indices{};
 
+
+    verticesFileContent.push_back(',');
+    verticesFileContent.push_back('*');
+
+
     std::string temp = "";
     std::size_t i = 0;
+    //while ( verticesFileContent[i] != '*' )
     while ( verticesFileContent[i] != '*' )
     {
 

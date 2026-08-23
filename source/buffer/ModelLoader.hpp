@@ -13,9 +13,9 @@ public:
     ModelLoader() = default;
     ~ModelLoader() = default;
 
-    template<typename T> static std::vector<T> GetBufferFromFile(const std::string &bufferContentString);
-    static std::pair<float, unsigned int> LoadModel(const std::string &verticesFilePath,
-                                                    const std::string &indicesFilePath);
+    template<typename T> static std::vector<T> GetBufferFromFile(std::string &bufferContentString);
+    static std::pair<std::vector<float>, std::vector<unsigned int>> LoadModel(const std::string &verticesFilePath,
+                                                                              const std::string &indicesFilePath);
 
 private:
 
@@ -23,9 +23,17 @@ private:
 
 
 
-template<typename T> std::vector<T> ModelLoader::GetBufferFromFile(const std::string &bufferContentString)
+template<typename T> std::vector<T> ModelLoader::GetBufferFromFile(std::string &bufferContentString)
 {
     std::vector<T> buffer;
+
+    if (bufferContentString[bufferContentString.size() - 1] != '*')
+    {
+        bufferContentString.push_back(',');
+        bufferContentString.push_back('*');
+    }
+
+
 
     std::string temp = "";
     std::size_t i = 0;

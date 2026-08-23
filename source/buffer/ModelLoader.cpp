@@ -7,10 +7,10 @@
 
 
 
-std::pair<std::vector<float>, std::vector<unsigned int>> LoadModel(const std::string &verticesFilePath,
-                                         const std::string &indicesFilePath)
+std::pair<std::vector<float>, std::vector<unsigned int>> ModelLoader::LoadModel(const std::string &verticesFilePath,
+                                                                                const std::string &indicesFilePath)
 {
-    //we need to optimize to here
+    //we need to optimize here
     std::string verticesFileContent = Synapse::Filesystem::ReadFileContent(verticesFilePath);
     std::string indicesFileContent  = Synapse::Filesystem::ReadFileContent(indicesFilePath);
 

@@ -7,10 +7,11 @@
 
 Buffer::Buffer()
 {
-    auto bufferData = ModelLoader::LoadModel("", "");
+    //std::pair<std::vector<float>, std::vector<unsigned int>> bufferData = ModelLoader::LoadModel("", "");
+    auto bufferData = ModelLoader::LoadModel("../../asset/rectangleVertices.txt", "../../asset/rectangleIndices.txt");
 
-    auto s1 = bufferData.first;
-    auto s2  = bufferData.second;
+    m_vertices = bufferData.first;
+    m_indices  = bufferData.second;
 }
 
 
