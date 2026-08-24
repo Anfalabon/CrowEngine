@@ -46,7 +46,7 @@ template<typename T> std::vector<T> ModelLoader::GetBufferFromFile(std::string &
         {
             //should be doing reserve for memory optimization
             //also the size of the buffer vector is indeed smaller or equal than the size of the bufferContentString itself
-
+            //we need to apply optimization here; Maybe use Hash Map
             if constexpr (std::is_same<T, float>::value)
             {
                 buffer.push_back(std::stof(temp));

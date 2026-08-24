@@ -5,12 +5,16 @@
 
 #include "buffer/Buffer.hpp"
 #include "window/Window.hpp"
+#include "shader/Shader.hpp"
+#include "renderer/Renderer.hpp"
+#include "window/Event.hpp"
+#include "graphicsAPI/GraphicsAPI.hpp"
+#include "Engine.hpp"
 
 #include <iostream>
 
-#include "shader/Shader.hpp"
-#include "renderer/Renderer.hpp"
 
+#ifdef __III___
 
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height)
@@ -33,15 +37,13 @@ static int RunGL()
     Window window;
     window.SetWindow();
 
-    if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
-    {
-        std::cout << "Failed to initialize GLAD" << std::endl;
-        return -1;
-    }
+#ifdef __glad_h_
+    GraphicsAPI::LoadGLAD();
+    //GraphicsAPI::LoadOpenGL();
+#endif
 
-    Shader shader;
-    shader.SetShader("../../source/shader/GLSL/vertexShader.vert.glsl",
-                     "../../source/shader/GLSL/fragmentShader.frag.glsl");
+    Renderer renderer;
+    renderer.SetRenderer();
 
     Buffer rectangleBuffer;
     rectangleBuffer.SetBuffers();
@@ -51,10 +53,13 @@ static int RunGL()
     {
         processInput(window.GetID());
 
+        //Event::OnWindowEscape(window);
+
         glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
 
-        shader.UseProgram();
+        //shader.UseProgram();
+        renderer.GetShader().UseProgram();
         rectangleBuffer.Bind();
 
         //glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
@@ -70,8 +75,15 @@ static int RunGL()
     return 1;
 
 }
+#endif
+
+
 
 int main()
 {
-    return static_cast<int>(RunGL());
+    Engine engine;
+    engine.Set();
+    engine.Run();
+
+    return 0;
 }

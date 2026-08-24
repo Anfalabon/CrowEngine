@@ -10,8 +10,9 @@ Buffer::Buffer()
     //std::pair<std::vector<float>, std::vector<unsigned int>> bufferData = ModelLoader::LoadModel("", "");
     auto bufferData = ModelLoader::LoadModel("../../asset/rectangleVertices.txt", "../../asset/rectangleIndices.txt");
 
-    m_vertices = bufferData.first;
-    m_indices  = bufferData.second;
+    //idk if using std::move actaully optimizes the program
+    m_vertices = std::move(bufferData.first);
+    m_indices  = std::move(bufferData.second);
 }
 
 

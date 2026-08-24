@@ -21,7 +21,15 @@ int Window::SetWindow()
     }
     glfwMakeContextCurrent(m_windowID);
 
-    return static_cast<int>(true); //lol
+    return 1;
 
 }
 
+
+void Window::OnKeyPressed()
+{
+    if(glfwGetKey(m_windowID, GLFW_KEY_ESCAPE) == GLFW_PRESS) [[likely]]
+    {
+        glfwSetWindowShouldClose(m_windowID, true);
+    }
+}

@@ -15,6 +15,8 @@ public:
     inline void Terminate(){ glfwTerminate(); }
     inline bool IsRunning(){ return !glfwWindowShouldClose(m_windowID); }
 
+    void OnKeyPressed();
+
 private:
 
     GLFWwindow *m_windowID;
