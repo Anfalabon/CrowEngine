@@ -10,8 +10,8 @@
 
 void Shader::SetShader(const std::string &vertexShaderFilePath, const std::string &fragmentShaderFilePath)
 {
-    auto vertexShaderSource = Synapse::Filesystem::ReadFileContent(vertexShaderFilePath);
-    auto fragmentShaderSource = Synapse::Filesystem::ReadFileContent(fragmentShaderFilePath);
+    auto vertexShaderSource = CrowEngine::Filesystem::ReadFileContent(vertexShaderFilePath);
+    auto fragmentShaderSource = CrowEngine::Filesystem::ReadFileContent(fragmentShaderFilePath);
 
     std::clog << vertexShaderSource << '\n';
     std::clog << fragmentShaderSource << '\n';

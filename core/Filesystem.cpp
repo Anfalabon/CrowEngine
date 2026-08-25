@@ -3,7 +3,9 @@
 #include <iostream>
 
 
-namespace Synapse
+
+//TODO: change the namespace Synapse to CrowEngine/Crow
+namespace CrowEngine
 {
 
 
@@ -39,10 +41,20 @@ std::time_t Filesystem::FileCreationTime(const std::string &filePath){}
 
 std::time_t Filesystem::FileLastModificationTime(const std::string &filePath)
 {
+
+
+#if defined(__linux__) || defined(__unix__)
+    if(struct stat fileInfo; stat(filePath.c_str(), &fileInfo) == 0)
+    {
+        return fileInfo.st_mtime;
+    }
+#elif defined(__WIN32__) || defined (MSVC)  //maybe for MSVC(compiler not the WIN32's MINGW compiler driver)
     if(struct _stat fileInfo; _stat(filePath.c_str(), &fileInfo) == 0)
     {
         return fileInfo.st_mtime;
     }
+#endif
+
     return -1;
 }
 
@@ -59,6 +71,7 @@ std::time_t Filesystem::FileLastModificationTime(const std::string &filePath)
 
 bool Filesystem::WasFileModified(const std::string &filePath)
 {
+    //TODO: we need to also define this for windows and other OS
     if(struct stat fileInfo; stat(filePath.c_str(), &fileInfo) == 0)
     {
         if(fileInfo.st_mtime > lastModificationTime)
@@ -68,7 +81,7 @@ bool Filesystem::WasFileModified(const std::string &filePath)
         }
     }
 
-    return false;
+    return false;    
 }
 
 

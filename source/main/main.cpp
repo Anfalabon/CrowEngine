@@ -14,7 +14,7 @@
 #include <iostream>
 
 
-#ifdef __III___
+#ifdef __III___ //what is this lol
 
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height)
@@ -76,6 +76,7 @@ static int RunGL()
 
 }
 #endif
+
 
 
 

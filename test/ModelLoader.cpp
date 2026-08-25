@@ -17,8 +17,8 @@ static void LoadModel(const std::string &verticesFilePath, const std::string &in
 {
 
     //we need to optimize to here
-    std::string verticesFileContent = Synapse::Filesystem::ReadFileContent(verticesFilePath);
-    std::string indicesFileContent = Synapse::Filesystem::ReadFileContent(indicesFilePath);
+    std::string verticesFileContent = CrowEngine::Filesystem::ReadFileContent(verticesFilePath);
+    std::string indicesFileContent = CrowEngine::Filesystem::ReadFileContent(indicesFilePath);
 
     std::vector<float> vertices{};
     std::vector<unsigned int> indices{};
