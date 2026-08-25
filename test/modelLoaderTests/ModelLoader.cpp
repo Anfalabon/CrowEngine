@@ -7,6 +7,8 @@
 #include <vector>
 #include <utility>
 
+//TODO: will use googletest for this
+
 
 static void GetBufferFromFile()
 {
@@ -16,7 +18,7 @@ static void GetBufferFromFile()
 static void LoadModel(const std::string &verticesFilePath, const std::string &indicesFilePath)
 {
 
-    //we need to optimize to here
+    //TODO: we need to optimize to here
     std::string verticesFileContent = CrowEngine::Filesystem::ReadFileContent(verticesFilePath);
     std::string indicesFileContent = CrowEngine::Filesystem::ReadFileContent(indicesFilePath);
 
@@ -66,7 +68,7 @@ int main()
     //
     // std::cout << strFloat + 0.9f << '\n';
 
-    LoadModel("../../asset/rectangleVertices.txt", "../../asset/rectangleIndices.txt");
+    LoadModel("../../../asset/rectangleVertices.txt", "../../../asset/rectangleIndices.txt");
 
     return 0;
 }

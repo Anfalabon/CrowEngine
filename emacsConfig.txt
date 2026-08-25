@@ -1,0 +1,320 @@
+(message ">>> MY EMACS INIT LOADED <<<")
+
+
+
+
+
+(require 'package)
+
+
+(setq package-archives
+      '(("gnu"   . "https://elpa.gnu.org/packages/")
+        ("melpa" . "https://melpa.org/packages/")))
+
+(package-initialize)
+
+(unless package-archive-contents
+  (package-refresh-contents))
+
+(unless (package-installed-p 'use-package)
+  (package-install 'use-package))
+
+(require 'use-package)
+
+(setq use-package-always-ensure t)
+
+(menu-bar-mode -1)
+(tool-bar-mode 1)
+(global-tab-line-mode 1)
+(scroll-bar-mode -1)
+
+(global-display-line-numbers-mode 1)
+
+(setq inhibit-startup-screen t)
+
+(load-theme 'modus-vivendi t)
+
+
+
+
+
+
+(use-package treesit-auto
+  :config
+  (global-treesit-auto-mode))
+
+
+
+
+
+
+(use-package eglot
+  :hook ((c++-mode . eglot-ensure)
+         (c-mode . eglot-ensure)))
+
+
+(add-hook 'c++-mode-hook
+          (lambda ()
+            (add-hook 'before-save-hook
+                      #'eglot-format-buffer
+                      nil t)))
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+;;Close the current file
+(global-set-key (kbd "C-x k") 'kill-buffer)
+
+;;Map Ctrl+to move to the beginning and Ctrl+j to move to the end of line
+(global-set-key (kbd "C-h") 'move-beginning-of-line)
+(global-set-key (kbd "C-i") 'move-end-of-line)
+
+(global-set-key (kbd "C-j") 'previous-line);;we can also use C-p 
+(global-set-key (kbd "C-k") 'backward-char);;we can also use C-b
+;;(global-set-key (kdb "C-f") 'forward-char) ;;we can also use C-f(same)
+(global-set-key (kbd "C-n") 'next-line)    ;;we can also use C-n(same)
+
+(global-set-key (kbd "C-e") 'forward-word)
+(global-set-key (kbd "C-l") 'backward-word)
+
+;;goto any line you want
+(global-set-key (kbd "C-u") 'goto-line)
+
+;;Set Ctrl+c to copy (kill-ring-save) and Ctrl+y to paste or yank
+;;(global-set-key (kbd "C-r") 'kill-ring-save)
+
+;;Opens a file
+(global-set-key (kbd "C-o") 'find-file)
+
+
+;;stops the cursor from blinking
+(blink-cursor-mode 0)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+;;(set-face-attribute 'default nil :font "Source Code Pro 13")
+;;(set-frame-font "Source Code Pro 13" nil t)
+;; #2B2B2B
+
+(set-face-background 'default "#212121") ;;#232323 ;;#212121
+
+
+
+
+(pixel-scroll-precision-mode 1)
+
+
+
+
+
+
+
+
+
+
+
+(use-package treemacs
+  :ensure t
+  :bind
+  ("C-c t" . treemacs))
+
+
+
+
+
+
+(setq-default cursor-type 'bar)
+
+
+
+
+
+
+(set-face-attribute 'default nil
+                    :font "Source Code Pro 13"
+                    :height 115)
+
+
+;;switch between the buffers
+(global-set-key (kbd "<C-tab>") #'next-buffer)
+(global-set-key (kbd "<C-S-iso-lefttab>") #'previous-buffer)
+;;kill the current buffer
+(global-set-key (kbd "C-w") #'kill-current-buffer) 
+
+
+
+
+
+
+
+
+(add-hook 'c++-ts-mode-hook
+          (lambda ()
+            (setq c-ts-mode-indent-offset 4)
+            (setq tab-width 4)
+            (setq indent-tabs-mode nil)))
+
+
+
+(setq-local c-ts-mode-indent-offset 4)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+(use-package corfu
+  :ensure t
+  :init
+  (global-corfu-mode)
+
+  :custom
+  (corfu-auto t)          ;; Show completion automatically
+  (corfu-auto-delay 0.1)  ;; Delay before popup
+  (corfu-auto-prefix 2)   ;; Start after typing 2 characters
+  (corfu-cycle t))
+
+
+
+
+
+
+
+
+
+(use-package vterm
+  :ensure t)
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   '(auto-complete company corfu dap-mode flycheck helm-lsp helm-xref
+		   neotree projectile treesit-auto vterm yasnippet)))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+
+
+
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(ansi-color-faces-vector
+   [default default default italic underline success warning error])
+ '(ansi-color-names-vector
+   ["black" "red3" "ForestGreen" "yellow3" "blue" "magenta3" "DeepSkyBlue" "gray50"])
+ '(custom-enabled-themes '(deeper-blue))
+ '(ispell-dictionary nil)
+ '(package-selected-packages
+   '(multi-term all-the-icons neotree cmake-mode which-key use-package auto-complete)))
+
+
+
+
+
+
+
+
+
+
+
+;; Customize syntax highlighting colors
+;;(setq font-lock-maximum-decoration t)
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(default ((t (:background "gray9"))))
+ '(font-lock-keyword-face ((t (:foreground "mediumpurple"))))
+ '(font-lock-type-face ((t (:foreground "deep sky blue"))))
+ '(font-lock-variable-name-face ((t (:foreground "sea green")))))
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
