@@ -1,1 +1,1 @@
-#find_package(spdlog REQUIRED)
+#find_package(spdlog REQUIRED)  #it includes the /usr/local lib not the local project's spdlog (storage)
