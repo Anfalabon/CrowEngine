@@ -1,7 +1,7 @@
-cmake_minimum_required(VERSION 4.1)
+cmake_minimum_required(VERSION 3.1...4.1)
 project(CrowEngine)
 
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 
@@ -14,7 +14,8 @@ include(cmake/config/FindConfig.cmake)
 include(cmake/module/FindGLFW.cmake)
 include(cmake/module/FindSpdlog.cmake)
 include(cmake/module/FindGLM.cmake)
-#include(cmake/module/FindGoogleTest.cmake)
+include(cmake/module/FindGoogleTest.cmake)
+
 
 add_subdirectory(source)
 add_subdirectory(core)
