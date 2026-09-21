@@ -3,9 +3,18 @@
 #include "buffer/Buffer.hpp"
 #include "window/Window.hpp"
 #include "shader/Shader.hpp"
-#include "renderer/Renderer.hpp"
+#include "servers/renderer/Renderer.hpp"
 #include "window/Event.hpp"
 #include "graphicsAPI/GraphicsAPI.hpp"
+#include "scene/camera/Camera.hpp"
+#include "scene/Scene.hpp"
+
+
+
+
+namespace CrowEngine
+{
+
 
 
 class Engine
@@ -21,8 +30,16 @@ public:
 
 private:
 
-    Window   m_window;
-    Renderer m_renderer;
-    Buffer   m_rectangleBuffer;
+    Window              m_window;
+    Renderer            m_renderer;
+    Camera              m_camera;
+    Scene               m_scene;
+    //RenderableObject    m_renderableObject;
+
 
 };
+
+
+
+}
+

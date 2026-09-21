@@ -4,9 +4,32 @@
 
 
 
+
+
 //TODO: change the namespace Synapse to CrowEngine/Crow
 namespace CrowEngine
 {
+
+
+bool Filesystem::FoundFile(const std::string &filePath)
+{
+    std::ifstream inputFileStream(filePath);
+
+
+
+    if(inputFileStream.fail())
+    {
+        std::cout << "didn't find file!" << '\n';
+        std::cout << "File name: " << filePath << '\n';
+        //std::cin.get();    //this is definately bad for doing
+        return false;
+    }
+
+
+
+    return true;
+}
+
 
 
 
@@ -30,7 +53,7 @@ std::string Filesystem::ReadFileContent(const std::string &filePath)
 
     inputFileStream.close();
 
-    return fileContent;
+    return fileContent;   
 }
 
 

@@ -21,4 +21,9 @@ private:
 
     GLFWwindow *m_windowID;
 
+    float m_screenWidth  = 1920.0f;
+    float m_screenHeight = 1080.0f;
+
+
+
 };

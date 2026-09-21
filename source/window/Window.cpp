@@ -4,15 +4,16 @@
 
 #include <iostream>
 
+
 int Window::SetWindow()
 {
     glfwInit();
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
-    //glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
+    // glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
 
-    m_windowID = glfwCreateWindow(800, 600, "CrowEngine", NULL, NULL);
+    m_windowID = glfwCreateWindow(m_screenWidth, m_screenHeight, "CrowEngine", NULL, NULL);
     if (m_windowID == NULL)
     {
         std::cout << "Failed to create GLFW window" << '\n';
@@ -22,13 +23,12 @@ int Window::SetWindow()
     glfwMakeContextCurrent(m_windowID);
 
     return 1;
-
 }
 
 
 void Window::OnKeyPressed()
 {
-    if(glfwGetKey(m_windowID, GLFW_KEY_ESCAPE) == GLFW_PRESS) [[likely]]
+    if (glfwGetKey(m_windowID, GLFW_KEY_ESCAPE) == GLFW_PRESS) [[likely]]
     {
         glfwSetWindowShouldClose(m_windowID, true);
     }

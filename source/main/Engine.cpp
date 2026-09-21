@@ -1,14 +1,29 @@
 
 
+#include <glm/glm.hpp>
+
 #include "Engine.hpp"
 
 #include "buffer/Buffer.hpp"
 
+
+
+namespace CrowEngine
+{
+
+
 void Engine::Update()
 {
-    //shader.UseProgram();
-    m_renderer.GetShader().UseProgram();
-    m_rectangleBuffer.Bind();
+    //m_renderer.GetShader().UseProgram();    //should this be the part of 'Update()?'
+
+    unsigned int currentShaderProgramID = m_renderer.GetShader().GetShaderProgramID();
+
+
+    m_scene.Update(currentShaderProgramID);
+    m_camera.Update(m_window.GetID(), currentShaderProgramID);
+
+    //m_renderableObject.Update(currentShaderProgramID);
+
 }
 
 
@@ -29,7 +44,8 @@ void Engine::Run()
         this->Update();
 
         //glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
-        Renderer::GLDraw();
+        //Renderer::GLDraw(m_renderableObject);
+        m_renderer.Render(m_scene);
 
         //glBindVertexArray(0);
 
@@ -42,6 +58,8 @@ void Engine::Run()
 }
 
 
+
+
 void Engine::Set()
 {
     m_window.SetWindow();
@@ -51,8 +69,21 @@ void Engine::Set()
     //GraphicsAPI::LoadOpenGL();
 #endif
 
-    m_renderer.SetRenderer();
 
-    m_rectangleBuffer.SetBuffers();
+    m_renderer.SetRenderer();
+    m_scene.Load();
+    //m_renderableObject.Set();
+
+    //m_rectangleBuffer.SetBuffers();
 
 }
+
+
+
+
+
+
+
+
+}
+

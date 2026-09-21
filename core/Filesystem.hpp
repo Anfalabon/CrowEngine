@@ -1,8 +1,8 @@
 #pragma once
 
-#include <string>
 #include <ctime>
 #include <fstream>
+#include <string>
 
 
 #if defined(__cplusplus)
@@ -12,10 +12,10 @@
 #if defined(__linux__) || defined(__unix__)
 
 #if defined(__cplusplus)
-extern "C"{
+extern "C" {
 #endif
-    #include <sys/types.h>
-    #include <sys/stat.h>
+#include <sys/stat.h>
+#include <sys/types.h>
 #if defined(__cplusplus)
 }
 #endif
@@ -25,43 +25,41 @@ extern "C"{
 #endif
 
 
-
-
-
-
 namespace CrowEngine
 {
 
+    class filewriter;
+    class FileReader;
+    class FileFormatConverter;
 
-class FileWriter;
-class FileReader;
-class FileFormatConverter;
 
-
-class Filesystem
-{
-public:
-
-    enum WRITE_MODE
+    class Filesystem
     {
-        WRITE_AT_END,
-        WRITE_AT_BEGINNING,
-        WRITE_AT_SPECIFIC_POINT
-    };
-
-    Filesystem() = default;
-    ~Filesystem() = default;
-
-    static std::string ReadFileContent(const std::string &filePath);
-    static void WriteContentToFile(const std::string &filePath, const std::string &content, WRITE_MODE placeToWrite = WRITE_AT_END);
-
-    static std::time_t FileCreationTime(const std::string &filePath);
-    static std::time_t FileLastModificationTime(const std::string &filePath);
-    bool WasFileModified(const std::string &filePath);
-
-private:
-    std::time_t lastModificationTime = 0;
-};
+    public:
+        enum WRITE_MODE
+        {
+            WRITE_AT_END,
+            WRITE_AT_BEGINNING,
+            WRITE_AT_SPECIFIC_POINT
+        };
 
 
-}
+        Filesystem() = default;
+        ~Filesystem() = default;
+
+        static bool FoundFile(const std::string& filePath);
+        static std::string ReadFileContent(const std::string& filePath);
+        static void WriteContentToFile(const std::string& filePath, const std::string& content,
+                                       WRITE_MODE placeToWrite = WRITE_AT_END);
+
+        static std::time_t FileCreationTime(const std::string& filePath);
+        static std::time_t FileLastModificationTime(const std::string& filePath);
+        bool WasFileModified(const std::string& filePath);
+
+    private:
+        std::time_t lastModificationTime = 0;
+
+    }; // namespace
+
+
+} // namespace CrowEngine

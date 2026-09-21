@@ -8,38 +8,41 @@
 
 
 
-// inline std::vector<float> g_vertices = {
-//     0.5f,  0.5f, 0.0f,  // top right
-//     0.5f, -0.5f, 0.0f,  // bottom right
-//    -0.5f, -0.5f, 0.0f,  // bottom left
-//    -0.5f,  0.5f, 0.0f   // top left
-// };
-//
-// inline std::vector<unsigned int> g_indices = {
-//     0, 1, 3,   // first triangle
-//     1, 2, 3    // second triangle
-// };
+//in CLion how do we select and then move the cursor to a specific line to select the whole portion?
 
-
+namespace CrowEngine
+{
 
 
 class Buffer
 {
 public:
-    Buffer();
-    ~Buffer() = default;
 
+    Buffer() = default;
+    //Buffer(const std::string &verticesFilePath, const std::string &indicesFilePath);
+
+    ~Buffer()
+    {
+        //glDeleteVertexArrays(1, &m_VAO);
+    }
+
+    void LoadBuffers(const std::string &verticesFilePath, const std::string &indicesFilePath);
+    void LoadBuffers(const std::pair<std::vector<float>, std::vector<unsigned int>> &buffer);
     void SetBuffers();
+
     inline unsigned int GetVAO(){ return m_VAO; }
     inline void Bind(){ glBindVertexArray(m_VAO); }
+    inline void Unbind(){ glBindVertexArray(0); }
+    inline unsigned int GetTotalIndices(){ return static_cast<unsigned int>(m_indices.size()); }
 
     template<typename T> static void CheckBuffer( const std::vector<T> &buffer );
 
 private:
 
     unsigned int m_VAO;
+    unsigned int m_VBO;
+    unsigned int m_EBO;
 
-    //do a Deep Copy
     std::vector<float> m_vertices;
     std::vector<unsigned int> m_indices;
 
@@ -47,7 +50,7 @@ private:
 
 
 
-
+//put it in another File
 
 template<typename T> void Buffer::CheckBuffer( const std::vector<T> &buffer )
 {
@@ -64,3 +67,10 @@ template<typename T> void Buffer::CheckBuffer( const std::vector<T> &buffer )
 
     std::cout << "\n";
 }
+
+
+
+
+}
+
+
