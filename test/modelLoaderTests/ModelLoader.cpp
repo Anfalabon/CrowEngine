@@ -4,6 +4,8 @@
 //#include "spdlog/spdlog.h"
 
 #include "core/Filesystem.hpp"
+#include "assets/assetManager/AssetManager.hpp"
+#include "core/Essentials.hpp"
 
 #include <vector>
 #include <utility>
@@ -134,17 +136,29 @@ inline std::vector<Index> g_testIndices{
 
 TEST(verticesTest, handlesInvalidVertices)
 {
-    EXPECT_EQ(LoadBuffer<VertexPosition>("../../../assets/rectangleVertices.txt"), TestData::g_testVertices);
+    std::string filePath = "/home/anfal/Desktop/myprojects/openGL/Simulation/CrowEngine/assets/resources/rectangleVertices.txt";
+
+
+    //std::string filePath2 = CrowEngine::AssetManager::ResourceAbsolutePath();
+    //CrowEngine::Logging::print("\n\n\n"+filePath2+"\n\n\n");
+
+    //EXPECT_EQ(LoadBuffer<VertexPosition>("../../../assets/rectangleVertices.txt"), TestData::g_testVertices);
+    EXPECT_EQ(LoadBuffer<VertexPosition>(filePath), TestData::g_testVertices);
 }
 
-TEST(indicesTest, handlesInvalidIndicesSize)
+
+
+TEST(indicesTest, handlesInvalidIndices)
 {
-    EXPECT_EQ(LoadBuffer<Index>("../../../assets/rectangleIndices.txt"), TestData::g_testIndices);
+    std::string filePath = "/home/anfal/Desktop/myprojects/openGL/Simulation/CrowEngine/assets/resources/rectangleIndices.txt";
+
+    EXPECT_EQ(LoadBuffer<Index>(filePath), TestData::g_testIndices);
 }
 
 
 int main(int argc, char **argv)
 {
+
     // std::string str = "     -0.5f";
     // float strFloat = std::stof(str);
     //
@@ -154,6 +168,7 @@ int main(int argc, char **argv)
 
 
     //ASSERT_EQ(LoadBuffer<VertexPosition>("../../../assets/rectangleVertices.txt"), g_testVertices);
+
 
     testing::InitGoogleTest(&argc, argv);   //these argc, argc are not necessary here. See the documentation
 
