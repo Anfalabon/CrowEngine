@@ -111,10 +111,22 @@ public:
         ++m_size;
         int *tempStorage = new int[m_size];
 
-        for (unsigned int i=0; i<m_size-1; ++i)
-        {
-            tempStorage[i] = m_data[i];
-        }
+        // #pragma omp simd
+        // for (unsigned int i=0; i<m_size-1; ++i)
+        // {
+        //     tempStorage[i] = m_data[i];
+        // }
+
+        //TODO: Add SIMD or Word-Aligned copies manually from intrinsics
+        // for (unsigned int i=0; i<m_size; i+=sizeof(int))
+        // {
+        //     __m256 bufferVecA = _mm256_loadu_ps();
+        //     __m256 bufferVecB = _mm256_loadu_ps();
+        // }
+
+        //it heavily uses SIMD or word-aligned copies for efficiency
+        //See https://learnmandu.com/blog/memc/blogs/memset-memcpy-memmove-c (small blog)
+        memcpy(tempStorage, m_data, (m_size-1)*sizeof(int));
 
         tempStorage[m_size-1] = value;
 
