@@ -1,6 +1,6 @@
-add_subdirectory(modelLoaderTests)
+add_subdirectory(modelLoader)
 add_subdirectory(experiments)
-add_subdirectory(multithreading)
+add_subdirectory(container)
 
 
 
