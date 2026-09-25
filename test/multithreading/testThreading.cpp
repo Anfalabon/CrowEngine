@@ -95,6 +95,19 @@ public:
 
     void Insert(unsigned int value)
     {
+
+        //At first increase the size by 1 as we are already going increase the size anyway.
+        //Allocate memory for new array.
+        //Copy all the contents of m_data(the previous one) in 'tempStorage'.
+        //But remember copy exactly 'm_size-1' elements not 'm_size' because 'memcpy' has to read from the old data which still has 'm_size-1' elements(it checks the end of the old data using the given size)
+        //Later assign the last element of 'tempStorage' to the new 'value' from parameter
+        //Delete the old content in m_data(as it's already in 'tempStorage')
+        //Make the 'm_data' point to the same starting address of tempStorage
+        //As 'tempStorage' has automatic storage duration it's going to be destroyed from the current stack frame anyway
+        //But the underlying data of 'tempStorage' is not going to be deleted as it's heap allocated.
+        //So at the end we have only 'm_data' pointer to the content(single ownership)
+
+
         ++m_size;
         int *tempStorage = new int[m_size];
 
