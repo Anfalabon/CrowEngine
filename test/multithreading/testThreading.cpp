@@ -94,8 +94,20 @@ public:
         //for (unsigned int i=0; i<m_size; ++i){m_data[i] = 0;}
     }
 
-
     void PreAlloc(unsigned int amountToPreAlloc)
+    {
+        if (m_data)
+        {
+            std::__throw_bad_alloc();
+            return;
+        }
+        m_capacity = amountToPreAlloc;
+        m_data = new int[m_capacity];
+        ++m_allocations;
+    }
+
+
+    void PreAllocV1(unsigned int amountToPreAlloc)
     {
         //if m_data isn't empty then we shouldn't PreAlloc() (Atleast for now)
         if (m_data && m_size == 0 && m_capacity == 0){return;}
@@ -119,11 +131,9 @@ public:
 
 
 
-        alignas(int) unsigned char stackStorage[m_capacity*sizeof(int)];
+        alignas(int) unsigned char stackStorage[m_capacity];
         m_data = new(stackStorage) int(0);
         //m_data = reinterpret_cast<int*>(stackStorage);
-
-
 
     }
 
@@ -185,7 +195,6 @@ public:
         //     break;
         // }
 
-
         if (m_capacity > m_size)
         {
             ++m_size;
@@ -194,6 +203,8 @@ public:
         }
         else if (m_capacity < m_size)   [[unlikely]]
         {
+            //We can indeed put '++m_size' out of each scope.
+            //But if this bad boy is true then the increamenting the 'm_size' means making it worse
             std::__throw_out_of_range("Number of elements greater than Capacity!");
             return;
         }
@@ -206,8 +217,8 @@ public:
             ++m_size;
             m_capacity = 100*m_size; //Remeber this is a guess(rough) amount. We need to optimze it too
             m_data = new int[m_capacity];
-            m_data[m_size-1] = value;
             ++m_allocations;
+            m_data[m_size-1] = value;
             return;
         }
 
@@ -215,7 +226,7 @@ public:
 
         ++m_size;
         //TODO: Apply an optimization here instead of guessing the 'm_capacity'.
-        m_capacity = 20*m_size;  //Remeber this is a guess(rough) amount. We need to optimze it too
+        m_capacity = 5*m_size;  //Remeber this is a guess(rough) amount. We need to optimze it too
         //Utilize 'm_capacity' here instead of calling new each time we need to to insert value
         int *tempStorage = new int[m_capacity];
         //void *tempStorage = new int[m_size];
@@ -256,6 +267,17 @@ public:
     void RemoveLast()
     {
         //Deletion of the last element should also follow the 'm_capacity' optimization
+        if (m_capacity > m_size && m_size != 0)
+        {
+            //We need to apply security here
+            //Cause if the old data is still there then it could cause security issues
+            m_data[m_size-1] = 0;
+            --m_size;
+            return;
+        }
+
+        std::__throw_out_of_range("Attempt to delete the last element of an empty array!");
+        return;
     }
 
 
@@ -266,7 +288,7 @@ public:
     }
 
 
-    const inline int &operator[](unsigned int index) const
+    inline int &operator[](unsigned int index)
     {
         if (index >= m_size){std::__throw_range_error("OUT OF BOUND ACCESS!");}
         return m_data[index];
@@ -274,6 +296,7 @@ public:
 
 
     inline unsigned int Size(){return m_size;}
+    inline unsigned int Capacity(){return m_capacity;}
     inline unsigned int Allocations(){return m_allocations;}
 
     inline int *Data()
@@ -411,18 +434,34 @@ TEST(
     //array.Insert(13);
 
     DynamicArray array;
+    array.PreAlloc(990);
 
     // const char *a = "Hello, World!";
     // const int *b = nullptr;
 
 Benchmark(
 
+    std::cout << "Before: " << '\n';
+
     for (unsigned int i=0; i<testSize; ++i)
     {
         array.Insert(i);
-        //std::cout << array[i] << '\n';
-
+        std::cout << array[i] << '\n';
     }
+
+
+    for (unsigned int i=1; i<=testSize/2; ++i)
+    {
+        array.RemoveLast();
+    }
+
+    std::cout << "After: " << '\n';
+
+    for (unsigned int i=0; i<testSize/2; ++i)
+    {
+        std::cout << array[i] << '\n';
+    }
+
 
 )
 
@@ -435,6 +474,7 @@ Benchmark(
 
 
     std::cout << "The size of the array is: " << array.Size() << '\n';;;"no issue lol";
+    std::cout << "The capacity of the array is: " << array.Capacity() << '\n';
     std::cout << "The number of allocation done is: " << array.Allocations() << '\n';
 
 )
@@ -467,7 +507,8 @@ TEST(
 
 )
 
-
+    //Hear me out sweety 'stackStorage' was deleted due to out of scope.
+    //So even if 'abs' pointed to the stack memory of 'stackStorage' it's no longer
     std::cout << "The first element of abs pointer is: " << abs[0] << '\n';
 
 
