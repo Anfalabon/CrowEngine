@@ -185,7 +185,6 @@ public:
         //     break;
         // }
 
-
         if (m_capacity > m_size)
         {
             ++m_size;
@@ -194,6 +193,8 @@ public:
         }
         else if (m_capacity < m_size)   [[unlikely]]
         {
+            //We can indeed put '++m_size' out of each scope.
+            //But if this bad boy is true then the increamenting the 'm_size' means making it worse
             std::__throw_out_of_range("Number of elements greater than Capacity!");
             return;
         }
@@ -206,8 +207,8 @@ public:
             ++m_size;
             m_capacity = 100*m_size; //Remeber this is a guess(rough) amount. We need to optimze it too
             m_data = new int[m_capacity];
-            m_data[m_size-1] = value;
             ++m_allocations;
+            m_data[m_size-1] = value;
             return;
         }
 
@@ -256,6 +257,17 @@ public:
     void RemoveLast()
     {
         //Deletion of the last element should also follow the 'm_capacity' optimization
+        if (m_capacity > m_size && m_size != 0)
+        {
+            //We need to apply security here
+            //Cause if the old data is still there then it could cause security issues
+            m_data[m_size-1] = 0;
+            --m_size;
+            return;
+        }
+
+        std::__throw_out_of_range("Attempt to delete the last element of an empty array!");
+        return;
     }
 
 
@@ -266,7 +278,7 @@ public:
     }
 
 
-    const inline int &operator[](unsigned int index) const
+    inline int &operator[](unsigned int index)
     {
         if (index >= m_size){std::__throw_range_error("OUT OF BOUND ACCESS!");}
         return m_data[index];
@@ -411,18 +423,33 @@ TEST(
     //array.Insert(13);
 
     DynamicArray array;
+    //array.PreAlloc(whateveramountyouneedsweetheart);
 
     // const char *a = "Hello, World!";
     // const int *b = nullptr;
 
 Benchmark(
 
+    std::cout << "Before: " << '\n';
+
     for (unsigned int i=0; i<testSize; ++i)
     {
         array.Insert(i);
-        //std::cout << array[i] << '\n';
-
+        std::cout << array[i] << '\n';
     }
+
+    for (unsigned int i=1; i<=testSize/2; ++i)
+    {
+        array.RemoveLast();
+    }
+
+    std::cout << "After: " << '\n';
+
+    for (unsigned int i=0; i<testSize/2; ++i)
+    {
+        std::cout << array[i] << '\n';
+    }
+
 
 )
 
@@ -467,7 +494,8 @@ TEST(
 
 )
 
-
+    //Hear me out sweety 'stackStorage' was deleted due to out of scope.
+    //So even if 'abs' pointed to the stack memory of 'stackStorage' it's no longer
     std::cout << "The first element of abs pointer is: " << abs[0] << '\n';
 
 
