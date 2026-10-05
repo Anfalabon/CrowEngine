@@ -1,0 +1,114 @@
+
+CORE_LOGIC_V2("SIMD VECTOR INSTRUCTOR",
+
+
+//     //see https://gist.github.com/MangaD/1fad63756ad8c946ce01dd1d52eff173 for SIMD documentation
+//     std::cout << __builtin_cpu_supports("") << '\n';
+//
+//     std::cout << sizeof(int) << '\n';
+//
+// #ifdef __AVX2__
+//     std::cout << "AVX2 supported!\n";
+// #else
+//     std::cout << "AVX2 not supported.\n";
+// #endif
+//
+
+
+
+)
+
+
+
+
+
+
+    int *abs = nullptr;
+
+
+TEST(
+
+    //The stackStorage will be deleted because it's storage duration is till the current 'TEST' scope.
+    //Even if 'abs' has the pointer after the closing braces are executed the code underlying data of 'stackStorage' itself will be delete.
+    alignas(int) unsigned char stackStorage[1024];
+    abs = new(stackStorage) int(123);
+
+
+
+
+    //void *heapStorage = malloc(1024*sizeof(int));
+
+
+    //ptr = reinterpret_cast<int*>(heapStorage);
+
+
+    //free(ptr);
+    //free(heapStorage);
+
+
+
+)
+
+    //Intentionally getting memory error(test purpose).
+    //std::cout << "The first element of abs pointer is: " << abs[0] << '\n';
+
+
+
+
+
+
+
+
+
+
+
+
+
+CORE_LOGIC(/*#define COMMENT_OUT_LOGIC,*/
+
+    // int newValue = 13;
+    //
+    //
+    // int *p = new int[2];
+    //
+    // p[0] = 0;
+    // p[1] = 1;
+    //
+    //
+    // int *other = new int[3];
+    // other[0] = p[0];
+    // other[1] = p[1];
+    // other[2] = newValue;
+    //
+    // delete[] p;
+    //
+    //
+    // for (auto i=0; i<3; ++i)
+    // {
+    //     std::cout << other[i] << '\n';
+    // }
+    //
+    // //p = new int[4];
+    // //
+    // // p[0] = 0;
+    // // p[1] = 1;
+    // // p[2] = 2;
+    // // p[3] = 3;
+
+)
+
+
+
+
+
+CORE_LOGIC(
+
+    // int *p = static_cast<int*>(std::malloc(3*sizeof(int)));
+    //
+    // p[0] = 0;
+    // p[1] = 1;
+    // p[2] = 2;
+    //
+    // free(p+2);
+
+)

@@ -1,4 +1,5 @@
 
+#include "gtest/gtest.h"
 
 #include "core/Essentials.hpp"
 
@@ -92,9 +93,9 @@ public:
 
     DynamicArray(unsigned int numberOfElements) : m_size(numberOfElements)
     {
-        //we can use malloc() here too
-        //m_data = new int[m_size](numberOfElements);
-        //for (unsigned int i=0; i<m_size; ++i){m_data[i] = 0;}
+        //This kind of initialization(using the m_size) is supported in c++20
+        m_data = new int[m_size](m_size);
+        memset(m_data, 0, m_size*sizeof(int));
     }
 
 
@@ -109,8 +110,12 @@ public:
         m_capacity = other.m_capacity;
         //Other members will be the default
         //Like 'm_allocation' is unique by DynamicArray instance.
+        //But initially the number of allocations would be zero.
 
-        if (!m_data)
+        m_data = new int[m_size];
+        m_allocations = 1;
+
+        if (m_data)
         {
             memcpy(m_data, other.m_data, m_size*sizeof(int));
         }
@@ -135,7 +140,10 @@ public:
         //Other members will be the default
         //Like 'm_allocation' is unique by DynamicArray instance.
 
-        if (!m_data)
+        m_data = new int[m_size];
+        m_allocations = 1;
+
+        if (m_data && other.m_data)
         {
             memcpy(m_data, other.m_data, m_size*sizeof(int));
         }
@@ -470,40 +478,61 @@ private:
 
 
 
+
+
+TEST(DynamicArray_InsertionTest, TestValuesAfterInsertion)
+{
+    unsigned long long testSize = 10;
+
+    DynamicArray array;
+
+    for (unsigned int i=0; i<testSize; ++i)
+    {
+        array.Insert(i);
+    }
+
+    for (unsigned int i=0; i<array.Size(); ++i)
+    {
+        EXPECT_EQ(array[i], i);
+        std::cout << "Value of array[" << i << "] is :" << array[i] << '\n';
+    }
+
+    RecordProperty("SizeOfTheArray", array.Size());
+
+}
+
+
+
+TEST(DynamicArray_EqualityTests, DISABLED_TestValuesAfterAssignment)
+{
+    unsigned long long testSize = 10;
+
+    DynamicArray array;
+
+    for (unsigned int i=0; i<testSize; ++i)
+    {
+        array.Insert(i);
+    }
+
+
+    DynamicArray array2;
+    array2 = array;
+
+    for (unsigned int i=0; i<array2.Size(); ++i)
+    {
+        EXPECT_EQ(array[i], array2[i]);
+    }
+
+}
+
+
 int main()
 {
 
 
 
-CORE_LOGIC_V2("SIMD VECTOR INSTRUCTOR",
 
 
-//     //see https://gist.github.com/MangaD/1fad63756ad8c946ce01dd1d52eff173 for SIMD documentation
-//     std::cout << __builtin_cpu_supports("") << '\n';
-//
-//     std::cout << sizeof(int) << '\n';
-//
-// #ifdef __AVX2__
-//     std::cout << "AVX2 supported!\n";
-// #else
-//     std::cout << "AVX2 not supported.\n";
-// #endif
-//
-
-
-
-)
-
-
-//TEST_STACK_FRAME()
-
-
-
-TEST(
-
-    unsigned long long testSize = 10000;
-
-    DynamicArray array;
 
 
 
@@ -511,56 +540,54 @@ TEST(
     // const int *b = nullptr;
 
 
-    while (!false/*fun*/)
-    {
-            std::cout << "Enter the size to be tested: ";
-            std::cin >> testSize;
-            std::cin.get();
-
-        Benchmark(
-
-            array.PreAlloc(testSize);
-            array.Insert(10);
-
-
-            // for (unsigned int i=0; i<testSize; ++i)
-            // {
-            //     array.Insert(i);
-            //     //std::cout << array[i] << '\n';
-            // }
-
-            // for (unsigned int i=0; i<testSize; ++i)
-            // {
-            //     std::cout << array[i] << '\n';
-            // }
-
-            // for (unsigned int i=1; i<=testSize/2; ++i)
-            // {
-            //     array.RemoveLast();
-            // }
-
-            // for (unsigned int i=0; i<testSize/2; ++i)
-            // {
-            //     std::cout << array[i] << '\n';
-            // }
-
-
-            std::cout << "The size of the array is: " << array.Size() << '\n';;;"no issue lol";
-            std::cout << "The capacity of the array is: " << array.Capacity() << '\n';
-            std::cout << "The size of the array in bytes is: " << array.SizeBytes() << " Bytes" << '\n';
-            std::cout << "The capacity of the array in bytes is: " << array.CapacityBytes() << " Bytes" << '\n';
-            std::cout << "The number of allocation done is: " << array.Allocations() << '\n';
-
-
-            std::cin.get();
-            array.Erase();
-
-
-            //keep it away
-        )
-    }
-
-
+    // while (!false/*fun*/)
+    // {
+    //         std::cout << "Enter the size to be tested: ";
+    //         std::cin >> testSize;
+    //         std::cin.get();
+    //
+    //     Benchmark(
+    //
+    //         array.PreAlloc(testSize);
+    //         array.Insert(10);
+    //
+    //
+    //         // for (unsigned int i=0; i<testSize; ++i)
+    //         // {
+    //         //     array.Insert(i);
+    //         //     //std::cout << array[i] << '\n';
+    //         // }
+    //
+    //         // for (unsigned int i=0; i<testSize; ++i)
+    //         // {
+    //         //     std::cout << array[i] << '\n';
+    //         // }
+    //
+    //         // for (unsigned int i=1; i<=testSize/2; ++i)
+    //         // {
+    //         //     array.RemoveLast();
+    //         // }
+    //
+    //         // for (unsigned int i=0; i<testSize/2; ++i)
+    //         // {
+    //         //     std::cout << array[i] << '\n';
+    //         // }
+    //
+    //
+    //         std::cout << "The size of the array is: " << array.Size() << '\n';;;"no issue lol";
+    //         std::cout << "The capacity of the array is: " << array.Capacity() << '\n';
+    //         std::cout << "The size of the array in bytes is: " << array.SizeBytes() << " Bytes" << '\n';
+    //         std::cout << "The capacity of the array in bytes is: " << array.CapacityBytes() << " Bytes" << '\n';
+    //         std::cout << "The number of allocation done is: " << array.Allocations() << '\n';
+    //
+    //
+    //         std::cin.get();
+    //         array.Erase();
+    //
+    //
+    //         //keep it away
+    //     )
+    // }
 
 
 
@@ -568,114 +595,20 @@ TEST(
 
 
 
-)
+
+
+
 
 
 
 "no issue lol";
-
-    int *abs = nullptr;
-
-
-TEST(
-
-    //The stackStorage will be deleted because it's storage duration is till the current 'TEST' scope.
-    //Even if 'abs' has the pointer after the closing braces are executed the code underlying data of 'stackStorage' itself will be delete.
-    alignas(int) unsigned char stackStorage[1024];
-    abs = new(stackStorage) int(123);
-
-
-
-
-    //void *heapStorage = malloc(1024*sizeof(int));
-
-
-    //ptr = reinterpret_cast<int*>(heapStorage);
-
-
-    //free(ptr);
-    //free(heapStorage);
-
-
-
-)
-
-    //Intentionally getting memory error(test purpose).
-    //std::cout << "The first element of abs pointer is: " << abs[0] << '\n';
-
-
-TEST(
-
-    // using namespace Container;
-    //
-    // LinkedList list;
-    // list.Insert(10);
-    //
-    // std::cout << list.Last() << '\n';
-
-
-)
-
-
-
-
 ;;;;    //giving semicolons here is not a problem
 
 
 
+    testing::InitGoogleTest();
 
-CORE_LOGIC(/*#define COMMENT_OUT_LOGIC,*/
-
-    // int newValue = 13;
-    //
-    //
-    // int *p = new int[2];
-    //
-    // p[0] = 0;
-    // p[1] = 1;
-    //
-    //
-    // int *other = new int[3];
-    // other[0] = p[0];
-    // other[1] = p[1];
-    // other[2] = newValue;
-    //
-    // delete[] p;
-    //
-    //
-    // for (auto i=0; i<3; ++i)
-    // {
-    //     std::cout << other[i] << '\n';
-    // }
-    //
-    // //p = new int[4];
-    // //
-    // // p[0] = 0;
-    // // p[1] = 1;
-    // // p[2] = 2;
-    // // p[3] = 3;
-
-)
-
-
-
-CORE_LOGIC(
-
-    // int *p = static_cast<int*>(std::malloc(3*sizeof(int)));
-    //
-    // p[0] = 0;
-    // p[1] = 1;
-    // p[2] = 2;
-    //
-    // free(p+2);
-
-)
-
-
-
-
-
-    return 0;
+    return RUN_ALL_TESTS();
 }
 
 

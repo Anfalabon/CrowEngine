@@ -17,7 +17,6 @@ namespace CrowEngine
 //     };  //there the 'curly braces are important for the data inside LOGIC to be not visible out the LOGIC segment'
 
 #define CORE_LOGIC(LOGIC) {LOGIC};
-#define TEST(CODE) {CODE};
 #define CORE_LOGIC_V2(ABOUT, LOGIC) {LOGIC};
 #define TEST_STACK_FRAME(CODE) static void Test(){ CODE }; Test();
 

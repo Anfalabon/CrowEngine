@@ -21,7 +21,7 @@ add_subdirectory(source)
 add_subdirectory(core)
 add_subdirectory(assets)
 add_subdirectory(thirdParty)
-add_subdirectory(test)
+add_subdirectory(tests)
 
 
 

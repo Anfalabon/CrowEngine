@@ -84,6 +84,7 @@ unsigned int SetShader(const std::string& vertexShaderFilePath, const std::strin
     {
         glGetShaderInfoLog(vertexShader, 512, NULL, infoLog);
         std::cout << "ERROR::SHADER::VERTEX::COMPILATION_FAILED\n" << infoLog << std::endl;
+        std::cout << "Vertex Shader File Path: " << vertexShaderFilePath << '\n';
     }
     // fragment shader
     unsigned int fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
@@ -95,6 +96,7 @@ unsigned int SetShader(const std::string& vertexShaderFilePath, const std::strin
     {
         glGetShaderInfoLog(fragmentShader, 512, NULL, infoLog);
         std::cout << "ERROR::SHADER::FRAGMENT::COMPILATION_FAILED\n" << infoLog << std::endl;
+        std::cout << "Fragment Shader File Path: " << fragmentShaderFilePath << '\n';
     }
     // link shaders
     unsigned int shaderProgram = glCreateProgram();
@@ -308,7 +310,7 @@ void mouse_callback(GLFWwindow* window, double xpos, double ypos)
 
 void LoadSkybox(unsigned int& cubemapShaderProgram, unsigned int& cubemapTexture, unsigned int& cubemapVAO)
 {
-    cubemapShaderProgram = SetShader("../../assets/shaderPrograms/skybox.vert", "../../assets/shaderPrograms/skybox.frag");
+    cubemapShaderProgram = SetShader("../../../assets/resources/shaderPrograms/skybox.vert", "../../../assets/resources/shaderPrograms/skybox.frag");
 
 
     float cubemapVertices[] = {
@@ -376,12 +378,12 @@ void LoadSkybox(unsigned int& cubemapShaderProgram, unsigned int& cubemapTexture
 
     std::vector<std::string> faces = {
 
-        "../../assets/skybox/right.jpg",
-        "../../assets/skybox/left.jpg",
-        "../../assets/skybox/top.jpg",
-        "../../assets/skybox/bottom.jpg",
-        "../../assets/skybox/front.jpg",
-        "../../assets/skybox/back.jpg"
+        "../../../assets/resources/skybox/right.jpg",
+        "../../../assets/resources/skybox/left.jpg",
+        "../../../assets/resources/skybox/top.jpg",
+        "../../../assets/resources/skybox/bottom.jpg",
+        "../../../assets/resources/skybox/front.jpg",
+        "../../../assets/resources/skybox/back.jpg"
 
     };
 
@@ -397,6 +399,7 @@ int main()
 
     #include <filesystem>
     std::cout << std::filesystem::current_path() << '\n';
+    std::cout << std::filesystem::read_symlink("/proc/self/exe").parent_path() << '\n';
 
     // glfw: initialize and configure
     // ------------------------------
@@ -434,7 +437,7 @@ int main()
     // ------------------------------------
     // vertex shader
 
-    unsigned int shaderProgram = SetShader("../../assets/shaderPrograms/vertexShader.vert", "../../assets/shaderPrograms/fragmentShader.frag");
+    unsigned int shaderProgram = SetShader("../../../assets/resources/shaderPrograms/vertexShader.vert", "../../../assets/resources/shaderPrograms/fragmentShader.frag");
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // set up vertex data (and buffer(s)) and configure vertex attributes
@@ -526,7 +529,7 @@ int main()
 
     //unsigned int VAO = InitializeBufferObjects(vertices, indices);
 
-    unsigned int texture = LoadTexture("../../assets/images/brickTexture2.jpg", GL_TRUE);
+    unsigned int texture = LoadTexture("../../../assets/resources/images/brickTexture2.jpg", GL_TRUE);
 
     ///////////////////////////////////////////////////LOAD CUBEMAP/////////////////////////////////////////////////////////
 
@@ -541,7 +544,7 @@ int main()
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-    unsigned int lightSourceShaderProgram = SetShader("../../assets/shaderPrograms/lightSource.vert", "../../assets/shaderPrograms/lightSource.frag");
+    unsigned int lightSourceShaderProgram = SetShader("../../../assets/resources/shaderPrograms/lightSource.vert", "../../../assets/resources/shaderPrograms/lightSource.frag");
 
     unsigned int lightVAO, lightVBO;
     glGenVertexArrays(1, &lightVAO);
