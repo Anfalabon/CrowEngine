@@ -1,6 +1,6 @@
 add_executable(TestGL testGL.cpp)
 
-target_include_directories(TestGL PRIVATE ../../source)
+target_include_directories(TestGL PRIVATE ../../)
 
 
 target_link_libraries(TestGL PRIVATE

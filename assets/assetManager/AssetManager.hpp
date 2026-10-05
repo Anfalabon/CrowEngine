@@ -8,6 +8,7 @@
 #include <utility>
 #include <vector>
 #include <filesystem>
+#include <memory>
 
 
 namespace CrowEngine
@@ -19,12 +20,12 @@ class AssetManager
 
 public:
 
-
-
     AssetManager() = default;
     ~AssetManager() = default;
 
     void SetAssets();
+
+
     inline std::string GetAsset(const std::string& assetName) { return std::string{}; } // for now it gives nothing
     std::pair<std::vector<float>, std::vector<unsigned int>> GetMeshData(const std::string& assetName)
     {
@@ -39,9 +40,9 @@ public:
     }
 
 
-    static std::filesystem::path ExecutableDir()
+    static std::shared_ptr<std::filesystem::path> ExecutableDir()
     {
-        return std::filesystem::read_symlink("/proc/self/exe").parent_path();
+        return std::make_shared<std::filesystem::path>(std::filesystem::read_symlink("/proc/self/exe").parent_path());
     }
 
 public:
