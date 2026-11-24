@@ -1,0 +1,177 @@
+\doxysection{Arena\+Allocator Class Reference}
+\hypertarget{classArenaAllocator}{}\label{classArenaAllocator}\index{ArenaAllocator@{ArenaAllocator}}
+
+
+Collaboration diagram for Arena\+Allocator\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=188pt]{classArenaAllocator__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classArenaAllocator_a7aa8d83a7c9b75e8672ca23a060bcd3c}{Arena\+Allocator}} ()=delete
+\item 
+\mbox{\hyperlink{classArenaAllocator_a92727e2f2442c9c9e7a1315f8eb55935}{Arena\+Allocator}} (std\+::size\+\_\+t n)
+\item 
+\mbox{\hyperlink{classArenaAllocator_a93b8678c4d33abff35760a5a84df6330}{\texorpdfstring{$\sim$}{\string~}\+Arena\+Allocator}} ()
+\item 
+void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classArenaAllocator_a7508096770e5aa56fbcc870b12a2817a}{Allocate}} (std\+::size\+\_\+t n, std\+::size\+\_\+t align=alignof(std\+::max\+\_\+align\+\_\+t))
+\item 
+void \mbox{\hyperlink{classArenaAllocator_a49eeee27ff4d5f57089185a3bf147aa0}{Deallocate}} ()
+\item 
+std\+::size\+\_\+t \& \mbox{\hyperlink{classArenaAllocator_a359d3ca280d94f87f94688b0fc6ebf05}{Get\+Capacity}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classArenaAllocator_a9a826ed655ce791c1fa08e76cf75baeb}{m\+\_\+storage}}
+\item 
+std\+::unique\+\_\+ptr$<$ unsigned char $>$ \mbox{\hyperlink{classArenaAllocator_ae1e8f61f04e484bc58403ea932d5cf1f}{m\+\_\+u\+Storage}}
+\item 
+std\+::size\+\_\+t \mbox{\hyperlink{classArenaAllocator_a0f7496b492436254e7f581f484777336}{m\+\_\+offset}}
+\item 
+std\+::size\+\_\+t \mbox{\hyperlink{classArenaAllocator_af8271acc1ba4ecdc632c997fa94dccb5}{m\+\_\+capacity}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{CustomAllocator_8cpp_source_l00012}{12}} of file \mbox{\hyperlink{CustomAllocator_8cpp_source}{Custom\+Allocator.\+cpp}}.
+
+
+
+\label{doc-constructors}
+\Hypertarget{classArenaAllocator_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classArenaAllocator_a7aa8d83a7c9b75e8672ca23a060bcd3c}\index{ArenaAllocator@{ArenaAllocator}!ArenaAllocator@{ArenaAllocator}}
+\index{ArenaAllocator@{ArenaAllocator}!ArenaAllocator@{ArenaAllocator}}
+\doxysubsubsection{\texorpdfstring{ArenaAllocator()}{ArenaAllocator()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classArenaAllocator_a7aa8d83a7c9b75e8672ca23a060bcd3c} 
+Arena\+Allocator\+::\+Arena\+Allocator (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\Hypertarget{classArenaAllocator_a92727e2f2442c9c9e7a1315f8eb55935}\index{ArenaAllocator@{ArenaAllocator}!ArenaAllocator@{ArenaAllocator}}
+\index{ArenaAllocator@{ArenaAllocator}!ArenaAllocator@{ArenaAllocator}}
+\doxysubsubsection{\texorpdfstring{ArenaAllocator()}{ArenaAllocator()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classArenaAllocator_a92727e2f2442c9c9e7a1315f8eb55935} 
+Arena\+Allocator\+::\+Arena\+Allocator (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{n}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Definition at line \mbox{\hyperlink{CustomAllocator_8cpp_source_l00019}{19}} of file \mbox{\hyperlink{CustomAllocator_8cpp_source}{Custom\+Allocator.\+cpp}}.
+
+\Hypertarget{classArenaAllocator_a93b8678c4d33abff35760a5a84df6330}\index{ArenaAllocator@{ArenaAllocator}!````~ArenaAllocator@{\texorpdfstring{$\sim$}{\string~}ArenaAllocator}}
+\index{````~ArenaAllocator@{\texorpdfstring{$\sim$}{\string~}ArenaAllocator}!ArenaAllocator@{ArenaAllocator}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}ArenaAllocator()}{\string~ArenaAllocator()}}
+{\footnotesize\ttfamily \label{classArenaAllocator_a93b8678c4d33abff35760a5a84df6330} 
+Arena\+Allocator\+::\texorpdfstring{$\sim$}{\string~}\+Arena\+Allocator (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{CustomAllocator_8cpp_source_l00028}{28}} of file \mbox{\hyperlink{CustomAllocator_8cpp_source}{Custom\+Allocator.\+cpp}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{classArenaAllocator_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classArenaAllocator_a7508096770e5aa56fbcc870b12a2817a}\index{ArenaAllocator@{ArenaAllocator}!Allocate@{Allocate}}
+\index{Allocate@{Allocate}!ArenaAllocator@{ArenaAllocator}}
+\doxysubsubsection{\texorpdfstring{Allocate()}{Allocate()}}
+{\footnotesize\ttfamily \label{classArenaAllocator_a7508096770e5aa56fbcc870b12a2817a} 
+void \texorpdfstring{$\ast$}{*} Arena\+Allocator\+::\+Allocate (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{n}{, }\item[{std\+::size\+\_\+t}]{align}{ = {\ttfamily alignof(std\+:\+:max\+\_\+align\+\_\+t)}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{CustomAllocator_8cpp_source_l00039}{39}} of file \mbox{\hyperlink{CustomAllocator_8cpp_source}{Custom\+Allocator.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classArenaAllocator_a7508096770e5aa56fbcc870b12a2817a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classArenaAllocator_a49eeee27ff4d5f57089185a3bf147aa0}\index{ArenaAllocator@{ArenaAllocator}!Deallocate@{Deallocate}}
+\index{Deallocate@{Deallocate}!ArenaAllocator@{ArenaAllocator}}
+\doxysubsubsection{\texorpdfstring{Deallocate()}{Deallocate()}}
+{\footnotesize\ttfamily \label{classArenaAllocator_a49eeee27ff4d5f57089185a3bf147aa0} 
+void Arena\+Allocator\+::\+Deallocate (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{CustomAllocator_8cpp_source_l00050}{50}} of file \mbox{\hyperlink{CustomAllocator_8cpp_source}{Custom\+Allocator.\+cpp}}.
+
+\Hypertarget{classArenaAllocator_a359d3ca280d94f87f94688b0fc6ebf05}\index{ArenaAllocator@{ArenaAllocator}!GetCapacity@{GetCapacity}}
+\index{GetCapacity@{GetCapacity}!ArenaAllocator@{ArenaAllocator}}
+\doxysubsubsection{\texorpdfstring{GetCapacity()}{GetCapacity()}}
+{\footnotesize\ttfamily \label{classArenaAllocator_a359d3ca280d94f87f94688b0fc6ebf05} 
+std\+::size\+\_\+t \& Arena\+Allocator\+::\+Get\+Capacity (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [nodiscard]}}
+
+
+
+Definition at line \mbox{\hyperlink{CustomAllocator_8cpp_source_l00062}{62}} of file \mbox{\hyperlink{CustomAllocator_8cpp_source}{Custom\+Allocator.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classArenaAllocator_a359d3ca280d94f87f94688b0fc6ebf05_icgraph}
+\end{center}
+\end{figure}
+
+
+\label{doc-variable-members}
+\Hypertarget{classArenaAllocator_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classArenaAllocator_af8271acc1ba4ecdc632c997fa94dccb5}\index{ArenaAllocator@{ArenaAllocator}!m\_capacity@{m\_capacity}}
+\index{m\_capacity@{m\_capacity}!ArenaAllocator@{ArenaAllocator}}
+\doxysubsubsection{\texorpdfstring{m\_capacity}{m\_capacity}}
+{\footnotesize\ttfamily \label{classArenaAllocator_af8271acc1ba4ecdc632c997fa94dccb5} 
+std\+::size\+\_\+t Arena\+Allocator\+::m\+\_\+capacity\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{CustomAllocator_8cpp_source_l00070}{70}} of file \mbox{\hyperlink{CustomAllocator_8cpp_source}{Custom\+Allocator.\+cpp}}.
+
+\Hypertarget{classArenaAllocator_a0f7496b492436254e7f581f484777336}\index{ArenaAllocator@{ArenaAllocator}!m\_offset@{m\_offset}}
+\index{m\_offset@{m\_offset}!ArenaAllocator@{ArenaAllocator}}
+\doxysubsubsection{\texorpdfstring{m\_offset}{m\_offset}}
+{\footnotesize\ttfamily \label{classArenaAllocator_a0f7496b492436254e7f581f484777336} 
+std\+::size\+\_\+t Arena\+Allocator\+::m\+\_\+offset\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{CustomAllocator_8cpp_source_l00069}{69}} of file \mbox{\hyperlink{CustomAllocator_8cpp_source}{Custom\+Allocator.\+cpp}}.
+
+\Hypertarget{classArenaAllocator_a9a826ed655ce791c1fa08e76cf75baeb}\index{ArenaAllocator@{ArenaAllocator}!m\_storage@{m\_storage}}
+\index{m\_storage@{m\_storage}!ArenaAllocator@{ArenaAllocator}}
+\doxysubsubsection{\texorpdfstring{m\_storage}{m\_storage}}
+{\footnotesize\ttfamily \label{classArenaAllocator_a9a826ed655ce791c1fa08e76cf75baeb} 
+unsigned char\texorpdfstring{$\ast$}{*} Arena\+Allocator\+::m\+\_\+storage\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{CustomAllocator_8cpp_source_l00067}{67}} of file \mbox{\hyperlink{CustomAllocator_8cpp_source}{Custom\+Allocator.\+cpp}}.
+
+\Hypertarget{classArenaAllocator_ae1e8f61f04e484bc58403ea932d5cf1f}\index{ArenaAllocator@{ArenaAllocator}!m\_uStorage@{m\_uStorage}}
+\index{m\_uStorage@{m\_uStorage}!ArenaAllocator@{ArenaAllocator}}
+\doxysubsubsection{\texorpdfstring{m\_uStorage}{m\_uStorage}}
+{\footnotesize\ttfamily \label{classArenaAllocator_ae1e8f61f04e484bc58403ea932d5cf1f} 
+std\+::unique\+\_\+ptr$<$unsigned char$>$ Arena\+Allocator\+::m\+\_\+u\+Storage\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{CustomAllocator_8cpp_source_l00068}{68}} of file \mbox{\hyperlink{CustomAllocator_8cpp_source}{Custom\+Allocator.\+cpp}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+tests/allocator/\mbox{\hyperlink{CustomAllocator_8cpp}{Custom\+Allocator.\+cpp}}\end{DoxyCompactItemize}

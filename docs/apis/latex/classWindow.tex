@@ -1,0 +1,162 @@
+\doxysection{Window Class Reference}
+\hypertarget{classWindow}{}\label{classWindow}\index{Window@{Window}}
+
+
+{\ttfamily \#include $<$Window.\+hpp$>$}
+
+
+
+Collaboration diagram for Window\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=180pt]{classWindow__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classWindow_a685a2ed99afee9abe60252d5378c8078}{Window}} ()=default
+\item 
+\mbox{\hyperlink{classWindow_adc361d2d83c3531576b0d7bc1589cdfb}{\texorpdfstring{$\sim$}{\string~}\+Window}} ()=default
+\item 
+int \mbox{\hyperlink{classWindow_aa0a5ced12769af9fd8644473f34bf5cc}{Set\+Window}} ()
+\item 
+GLFWwindow \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classWindow_a50bf9825ac3d7cfcc37a9d0eb90a0e44}{Get\+ID}} ()
+\item 
+void \mbox{\hyperlink{classWindow_ab5c75dcf74998e8912f6aff370ef714f}{Terminate}} ()
+\item 
+bool \mbox{\hyperlink{classWindow_a958465db27c13233d79533efcd51c36f}{Is\+Running}} ()
+\item 
+void \mbox{\hyperlink{classWindow_a6c21837dffc0e003fb03ce94df79ea03}{On\+Key\+Pressed}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+GLFWwindow \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classWindow_a3249678d003e78b4942681b8abd52784}{m\+\_\+window\+ID}}
+\item 
+float \mbox{\hyperlink{classWindow_a049f2b97dafc65f28bff1f471d65ff33}{m\+\_\+screen\+Width}} = 1920.\+0f
+\item 
+float \mbox{\hyperlink{classWindow_a3185e835184bdf3e454f32ba38bea151}{m\+\_\+screen\+Height}} = 1080.\+0f
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{Window_8hpp_source_l00006}{6}} of file \mbox{\hyperlink{Window_8hpp_source}{Window.\+hpp}}.
+
+
+
+\label{doc-constructors}
+\Hypertarget{classWindow_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classWindow_a685a2ed99afee9abe60252d5378c8078}\index{Window@{Window}!Window@{Window}}
+\index{Window@{Window}!Window@{Window}}
+\doxysubsubsection{\texorpdfstring{Window()}{Window()}}
+{\footnotesize\ttfamily \label{classWindow_a685a2ed99afee9abe60252d5378c8078} 
+Window\+::\+Window (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\Hypertarget{classWindow_adc361d2d83c3531576b0d7bc1589cdfb}\index{Window@{Window}!````~Window@{\texorpdfstring{$\sim$}{\string~}Window}}
+\index{````~Window@{\texorpdfstring{$\sim$}{\string~}Window}!Window@{Window}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Window()}{\string~Window()}}
+{\footnotesize\ttfamily \label{classWindow_adc361d2d83c3531576b0d7bc1589cdfb} 
+Window\+::\texorpdfstring{$\sim$}{\string~}\+Window (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{classWindow_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classWindow_a50bf9825ac3d7cfcc37a9d0eb90a0e44}\index{Window@{Window}!GetID@{GetID}}
+\index{GetID@{GetID}!Window@{Window}}
+\doxysubsubsection{\texorpdfstring{GetID()}{GetID()}}
+{\footnotesize\ttfamily \label{classWindow_a50bf9825ac3d7cfcc37a9d0eb90a0e44} 
+GLFWwindow \texorpdfstring{$\ast$}{*} Window\+::\+Get\+ID (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Window_8hpp_source_l00014}{14}} of file \mbox{\hyperlink{Window_8hpp_source}{Window.\+hpp}}.
+
+\Hypertarget{classWindow_a958465db27c13233d79533efcd51c36f}\index{Window@{Window}!IsRunning@{IsRunning}}
+\index{IsRunning@{IsRunning}!Window@{Window}}
+\doxysubsubsection{\texorpdfstring{IsRunning()}{IsRunning()}}
+{\footnotesize\ttfamily \label{classWindow_a958465db27c13233d79533efcd51c36f} 
+bool Window\+::\+Is\+Running (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Window_8hpp_source_l00016}{16}} of file \mbox{\hyperlink{Window_8hpp_source}{Window.\+hpp}}.
+
+\Hypertarget{classWindow_a6c21837dffc0e003fb03ce94df79ea03}\index{Window@{Window}!OnKeyPressed@{OnKeyPressed}}
+\index{OnKeyPressed@{OnKeyPressed}!Window@{Window}}
+\doxysubsubsection{\texorpdfstring{OnKeyPressed()}{OnKeyPressed()}}
+{\footnotesize\ttfamily \label{classWindow_a6c21837dffc0e003fb03ce94df79ea03} 
+void Window\+::\+On\+Key\+Pressed (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Window_8cpp_source_l00029}{29}} of file \mbox{\hyperlink{Window_8cpp_source}{Window.\+cpp}}.
+
+\Hypertarget{classWindow_aa0a5ced12769af9fd8644473f34bf5cc}\index{Window@{Window}!SetWindow@{SetWindow}}
+\index{SetWindow@{SetWindow}!Window@{Window}}
+\doxysubsubsection{\texorpdfstring{SetWindow()}{SetWindow()}}
+{\footnotesize\ttfamily \label{classWindow_aa0a5ced12769af9fd8644473f34bf5cc} 
+int Window\+::\+Set\+Window (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Window_8cpp_source_l00008}{8}} of file \mbox{\hyperlink{Window_8cpp_source}{Window.\+cpp}}.
+
+\Hypertarget{classWindow_ab5c75dcf74998e8912f6aff370ef714f}\index{Window@{Window}!Terminate@{Terminate}}
+\index{Terminate@{Terminate}!Window@{Window}}
+\doxysubsubsection{\texorpdfstring{Terminate()}{Terminate()}}
+{\footnotesize\ttfamily \label{classWindow_ab5c75dcf74998e8912f6aff370ef714f} 
+void Window\+::\+Terminate (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Window_8hpp_source_l00015}{15}} of file \mbox{\hyperlink{Window_8hpp_source}{Window.\+hpp}}.
+
+
+
+\label{doc-variable-members}
+\Hypertarget{classWindow_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classWindow_a3185e835184bdf3e454f32ba38bea151}\index{Window@{Window}!m\_screenHeight@{m\_screenHeight}}
+\index{m\_screenHeight@{m\_screenHeight}!Window@{Window}}
+\doxysubsubsection{\texorpdfstring{m\_screenHeight}{m\_screenHeight}}
+{\footnotesize\ttfamily \label{classWindow_a3185e835184bdf3e454f32ba38bea151} 
+float Window\+::m\+\_\+screen\+Height = 1080.\+0f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{Window_8hpp_source_l00025}{25}} of file \mbox{\hyperlink{Window_8hpp_source}{Window.\+hpp}}.
+
+\Hypertarget{classWindow_a049f2b97dafc65f28bff1f471d65ff33}\index{Window@{Window}!m\_screenWidth@{m\_screenWidth}}
+\index{m\_screenWidth@{m\_screenWidth}!Window@{Window}}
+\doxysubsubsection{\texorpdfstring{m\_screenWidth}{m\_screenWidth}}
+{\footnotesize\ttfamily \label{classWindow_a049f2b97dafc65f28bff1f471d65ff33} 
+float Window\+::m\+\_\+screen\+Width = 1920.\+0f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{Window_8hpp_source_l00024}{24}} of file \mbox{\hyperlink{Window_8hpp_source}{Window.\+hpp}}.
+
+\Hypertarget{classWindow_a3249678d003e78b4942681b8abd52784}\index{Window@{Window}!m\_windowID@{m\_windowID}}
+\index{m\_windowID@{m\_windowID}!Window@{Window}}
+\doxysubsubsection{\texorpdfstring{m\_windowID}{m\_windowID}}
+{\footnotesize\ttfamily \label{classWindow_a3249678d003e78b4942681b8abd52784} 
+GLFWwindow\texorpdfstring{$\ast$}{*} Window\+::m\+\_\+window\+ID\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{Window_8hpp_source_l00022}{22}} of file \mbox{\hyperlink{Window_8hpp_source}{Window.\+hpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+source/window/\mbox{\hyperlink{Window_8hpp}{Window.\+hpp}}\item 
+source/window/\mbox{\hyperlink{Window_8cpp}{Window.\+cpp}}\end{DoxyCompactItemize}

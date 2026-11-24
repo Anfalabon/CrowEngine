@@ -1,0 +1,117 @@
+\doxysection{Buffer.\+cpp}
+\hypertarget{Buffer_8cpp_source}{}\label{Buffer_8cpp_source}\index{source/buffer/Buffer.cpp@{source/buffer/Buffer.cpp}}
+\mbox{\hyperlink{Buffer_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Buffer_8hpp}{Buffer.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}assets/assetManager/ModelLoader.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}assets/assetManager/AssetManager.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <utility>}}
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00011}00011\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceCrowEngine}{CrowEngine}}}
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00012}00012\ \{}
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00016}00016\ \textcolor{comment}{//\ Buffer::Buffer(const\ std::string\ \&verticesFilePath,\ const\ std::string\ \&indicesFilePath)}}
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00017}00017\ \textcolor{comment}{//\ \{}}
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00018}00018\ \textcolor{comment}{//\ \ \ \ \ //std::pair<std::vector<float>,\ std::vector<unsigned\ int>>\ bufferData\ =\ ModelLoader::LoadModel("{}"{},\ "{}"{});}}
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00019}00019\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00020}00020\ \textcolor{comment}{//\ \ \ \ \ //\ verticesFilePath\ =\ "{}../../assets/rectangleVertices.txt"{};}}
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00021}00021\ \textcolor{comment}{//\ \ \ \ \ //\ indicesFilePath\ \ =\ "{}../../assets/rectangleIndices.txt"{};}}
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00022}00022\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00023}00023\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00024}00024\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00025}00025\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00026}00026\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00027}00027\ \textcolor{comment}{//\ \ \ \ \ //\ //auto\ bufferData\ =\ ModelLoader::LoadModel("{}../../assets/rectangleVertices.txt"{},\ "{}../../assets/rectangleIndices.txt"{});}}
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00028}00028\ \textcolor{comment}{//\ \ \ \ \ //\ auto\ bufferData\ =\ ModelLoader::LoadModel(verticesFilePath,\ indicesFilePath);}}
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00029}00029\ \textcolor{comment}{//\ \ \ \ \ //}}
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00030}00030\ \textcolor{comment}{//\ \ \ \ \ //\ //idk\ if\ using\ std::move\ actaully\ optimizes\ the\ program\ here}}
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00031}00031\ \textcolor{comment}{//\ \ \ \ \ //\ m\_vertices\ =\ std::move(bufferData.first);}}
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00032}00032\ \textcolor{comment}{//\ \ \ \ \ //\ m\_indices\ \ =\ std::move(bufferData.second);}}
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00033}00033\ \textcolor{comment}{//\ \}}}
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00037}\mbox{\hyperlink{classCrowEngine_1_1Buffer_a11f565d3d50802f0def0acb5a6728062}{00037}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCrowEngine_1_1Buffer_a11f565d3d50802f0def0acb5a6728062}{Buffer::LoadBuffers}}(\textcolor{keyword}{const}\ std::string\ \&verticesFilePath,\ \textcolor{keyword}{const}\ std::string\ \&indicesFilePath)}
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00038}00038\ \{}
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00039}00039\ \ \ \ \ \textcolor{keyword}{auto}\ bufferData\ =\ ModelLoader::LoadModel(verticesFilePath,\ indicesFilePath);}
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00042}00042\ \ \ \ \ \textcolor{comment}{//It\ doesn't\ move\ and\ 'const\ reference'.}}
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00043}00043\ \ \ \ \ \textcolor{comment}{//See\ https://stackoverflow.com/questions/28595117/why-\/can-\/we-\/use-\/stdmove-\/on-\/a-\/const-\/object}}
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00044}00044\ \ \ \ \ \mbox{\hyperlink{classCrowEngine_1_1Buffer_a594dac043fc24daab1eba0aafbc4065b}{m\_vertices}}\ =\ std::move(bufferData.first);}
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00045}00045\ \ \ \ \ \mbox{\hyperlink{classCrowEngine_1_1Buffer_a44be33f958f0f2fb2ee46045433c510d}{m\_indices}}\ \ =\ std::move(bufferData.second);}
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00046}00046\ \}}
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00049}\mbox{\hyperlink{classCrowEngine_1_1Buffer_a6294174bd80196edef4202bfea5bd7a0}{00049}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCrowEngine_1_1Buffer_a11f565d3d50802f0def0acb5a6728062}{Buffer::LoadBuffers}}(\textcolor{keyword}{const}\ std::pair<std::vector<float>,\ std::vector<unsigned\ int>>\&\ buffer)}
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00050}00050\ \{}
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00051}00051\ \ \ \ \ \textcolor{comment}{//auto\ bufferData\ =\ g\_assetManager.GetMeshData("{}classicCube"{});}}
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00053}00053\ \ \ \ \ \mbox{\hyperlink{classCrowEngine_1_1Buffer_a594dac043fc24daab1eba0aafbc4065b}{m\_vertices}}\ =\ std::move(buffer.first);}
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00054}00054\ \ \ \ \ \mbox{\hyperlink{classCrowEngine_1_1Buffer_a44be33f958f0f2fb2ee46045433c510d}{m\_indices}}\ \ =\ std::move(buffer.second);}
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00055}00055\ \}}
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00058}\mbox{\hyperlink{classCrowEngine_1_1Buffer_ab69a1a888a4abf1ed503485772881aa7}{00058}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCrowEngine_1_1Buffer_ab69a1a888a4abf1ed503485772881aa7}{Buffer::SetBuffers}}()}
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00059}00059\ \{}
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00060}00060\ \ \ \ \ \textcolor{comment}{//unsigned\ int\ VAO;}}
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00061}00061\ \ \ \ \ glGenVertexArrays(1,\ \&\mbox{\hyperlink{classCrowEngine_1_1Buffer_a0fc1112703f9bee35731f19da222dbe1}{m\_VAO}});}
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00063}00063\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Is\ Running!"{}}\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00065}00065\ \ \ \ \ \textcolor{comment}{//unsigned\ int\ m\_VBO;}}
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00066}00066\ \ \ \ \ glGenBuffers(1,\ \&\mbox{\hyperlink{classCrowEngine_1_1Buffer_a5b8c8789ec95c12d156168582d378e77}{m\_VBO}});}
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00068}00068\ \ \ \ \ \textcolor{comment}{//unsigned\ int\ m\_EBO;}}
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00069}00069\ \ \ \ \ glGenBuffers(1,\ \&\mbox{\hyperlink{classCrowEngine_1_1Buffer_a4b2c2c1b4d618cdb67d3bc223d1be825}{m\_EBO}});}
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00071}00071\ \textcolor{comment}{//\#define\ DEBUG}}
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00072}00072\ \textcolor{preprocessor}{\#ifdef\ DEBUG}}
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00073}00073\ \ \ \ \ \mbox{\hyperlink{classCrowEngine_1_1Buffer_a64dc017f09ba3b87f2187f5658aa922b}{Buffer::CheckBuffer}}(\mbox{\hyperlink{classCrowEngine_1_1Buffer_a594dac043fc24daab1eba0aafbc4065b}{m\_vertices}});}
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00074}00074\ \ \ \ \ \mbox{\hyperlink{classCrowEngine_1_1Buffer_a64dc017f09ba3b87f2187f5658aa922b}{Buffer::CheckBuffer}}(\mbox{\hyperlink{classCrowEngine_1_1Buffer_a44be33f958f0f2fb2ee46045433c510d}{m\_indices}});}
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00075}00075\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00077}00077\ \ \ \ \ \textcolor{comment}{//Start\ recording\ the\ current\ VAO}}
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00078}00078\ \ \ \ \ glBindVertexArray(\mbox{\hyperlink{classCrowEngine_1_1Buffer_a0fc1112703f9bee35731f19da222dbe1}{m\_VAO}});}
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00080}00080\ \ \ \ \ glBindBuffer(GL\_ARRAY\_BUFFER,\ \mbox{\hyperlink{classCrowEngine_1_1Buffer_a5b8c8789ec95c12d156168582d378e77}{m\_VBO}});}
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00081}00081\ \ \ \ \ glBufferData(GL\_ARRAY\_BUFFER,\ \mbox{\hyperlink{classCrowEngine_1_1Buffer_a594dac043fc24daab1eba0aafbc4065b}{m\_vertices}}.size()*\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{float}),\ \mbox{\hyperlink{classCrowEngine_1_1Buffer_a594dac043fc24daab1eba0aafbc4065b}{m\_vertices}}.data(),\ GL\_STATIC\_DRAW);}
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00083}00083\ \ \ \ \ glBindBuffer(GL\_ELEMENT\_ARRAY\_BUFFER,\ \mbox{\hyperlink{classCrowEngine_1_1Buffer_a4b2c2c1b4d618cdb67d3bc223d1be825}{m\_EBO}});}
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00084}00084\ \ \ \ \ glBufferData(GL\_ELEMENT\_ARRAY\_BUFFER,\ \mbox{\hyperlink{classCrowEngine_1_1Buffer_a44be33f958f0f2fb2ee46045433c510d}{m\_indices}}.size()*\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}),\ \mbox{\hyperlink{classCrowEngine_1_1Buffer_a44be33f958f0f2fb2ee46045433c510d}{m\_indices}}.data(),\ GL\_STATIC\_DRAW);}
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00086}00086\ \ \ \ \ \textcolor{comment}{//\ glVertexAttribPointer(0,\ 3,\ GL\_FLOAT,\ GL\_FALSE,\ 3\ *\ sizeof(float),\ (void*)0);}}
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00087}00087\ \ \ \ \ \textcolor{comment}{//\ glEnableVertexAttribArray(0);}}
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00089}00089\ \ \ \ \ glVertexAttribPointer(0,\ 3,\ GL\_FLOAT,\ GL\_FALSE,\ 5\ *\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{float}),\ (\textcolor{keywordtype}{void}*)0);}
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00090}00090\ \ \ \ \ glEnableVertexAttribArray(0);}
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00092}00092\ \ \ \ \ glVertexAttribPointer(1,\ 2,\ GL\_FLOAT,\ GL\_FALSE,\ 5\ *\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{float}),\ (\textcolor{keywordtype}{void}*)(3\ *\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{float})));}
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00093}00093\ \ \ \ \ glEnableVertexAttribArray(1);}
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00094}00094\ }
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00095}00095\ }
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00096}00096\ }
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00098}00098\ \ \ \ \ glBindBuffer(GL\_ARRAY\_BUFFER,\ 0);}
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00099}00099\ \ \ \ \ \textcolor{comment}{//Stop\ recording\ the\ current\ VAO}}
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00100}00100\ \ \ \ \ glBindVertexArray(0);}
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00101}00101\ }
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00102}00102\ \ \ \ \ \textcolor{comment}{//return\ VAO;}}
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00103}00103\ }
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00104}00104\ \}}
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00105}00105\ }
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00106}00106\ }
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00107}00107\ }
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00108}00108\ }
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00109}00109\ \}}
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00110}00110\ }
+\DoxyCodeLine{\Hypertarget{Buffer_8cpp_source_l00111}00111\ }
+
+\end{DoxyCode}

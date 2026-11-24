@@ -1,0 +1,100 @@
+\doxysection{Engine.\+cpp}
+\hypertarget{Engine_8cpp_source}{}\label{Engine_8cpp_source}\index{source/main/Engine.cpp@{source/main/Engine.cpp}}
+\mbox{\hyperlink{Engine_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <glm/glm.hpp>}}
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Engine_8hpp}{Engine.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00007}00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Buffer_8hpp}{buffer/Buffer.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00011}00011\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceCrowEngine}{CrowEngine}}}
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00012}00012\ \{}
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00019}00019\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00020}\mbox{\hyperlink{classCrowEngine_1_1Engine_a4dca1fed65ae96d9deff20d80a9dfa36}{00020}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCrowEngine_1_1Engine_a4dca1fed65ae96d9deff20d80a9dfa36}{Engine::Update}}()}
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00021}00021\ \{}
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00022}00022\ \ \ \ \ \textcolor{comment}{//m\_renderer.GetShader().UseProgram();\ \ \ \ //should\ this\ be\ the\ part\ of\ 'Update()?'}}
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00024}00024\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ currentShaderProgramID\ =\ \mbox{\hyperlink{classCrowEngine_1_1Engine_a23e0b601695970f5419a919e412f245b}{m\_renderer}}.GetShader().GetShaderProgramID();}
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00027}00027\ \ \ \ \ \mbox{\hyperlink{classCrowEngine_1_1Engine_aaf7b54ba53a59b56ba1a128224daf7fa}{m\_scene}}.Update(currentShaderProgramID);}
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00028}00028\ \ \ \ \ \mbox{\hyperlink{classCrowEngine_1_1Engine_a855ffc60ae729180b3fa9b5e50e6f78c}{m\_camera}}.Update(\mbox{\hyperlink{classCrowEngine_1_1Engine_af80c8413677c54e9627541f3aed5bd0e}{m\_window}}.GetID(),\ currentShaderProgramID);}
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00030}00030\ \ \ \ \ \textcolor{comment}{//m\_renderableObject.Update(currentShaderProgramID);}}
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00032}00032\ \}}
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00035}\mbox{\hyperlink{classCrowEngine_1_1Engine_a5ef7f113c7bff0cabbfa4479b6791d8a}{00035}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCrowEngine_1_1Engine_a5ef7f113c7bff0cabbfa4479b6791d8a}{Engine::Run}}()}
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00036}00036\ \{}
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00038}00038\ \ \ \ \ \textcolor{keywordflow}{while}(\mbox{\hyperlink{classCrowEngine_1_1Engine_af80c8413677c54e9627541f3aed5bd0e}{m\_window}}.IsRunning())}
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00039}00039\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00040}00040\ \ \ \ \ \ \ \ \ \textcolor{comment}{//processInput(m\_window.GetID());}}
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00042}00042\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classCrowEngine_1_1Engine_af80c8413677c54e9627541f3aed5bd0e}{m\_window}}.OnKeyPressed();}
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00044}00044\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Event::OnWindowEscape(window);}}
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ glClearColor(0.2f,\ 0.3f,\ 0.3f,\ 1.0f);}
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00047}00047\ \ \ \ \ \ \ \ \ glClear(GL\_COLOR\_BUFFER\_BIT);}
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00049}00049\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classCrowEngine_1_1Engine_a4dca1fed65ae96d9deff20d80a9dfa36}{Update}}();}
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ \textcolor{comment}{//glDrawElements(GL\_TRIANGLES,\ 6,\ GL\_UNSIGNED\_INT,\ 0);}}
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00052}00052\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Renderer::GLDraw(m\_renderableObject);}}
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classCrowEngine_1_1Engine_a23e0b601695970f5419a919e412f245b}{m\_renderer}}.Render(\mbox{\hyperlink{classCrowEngine_1_1Engine_aaf7b54ba53a59b56ba1a128224daf7fa}{m\_scene}});}
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00055}00055\ \ \ \ \ \ \ \ \ \textcolor{comment}{//glBindVertexArray(0);}}
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00057}00057\ \ \ \ \ \ \ \ \ glfwSwapBuffers(\mbox{\hyperlink{classCrowEngine_1_1Engine_af80c8413677c54e9627541f3aed5bd0e}{m\_window}}.GetID());}
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ glfwPollEvents();}
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00059}00059\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00061}00061\ \ \ \ \ \mbox{\hyperlink{classCrowEngine_1_1Engine_af80c8413677c54e9627541f3aed5bd0e}{m\_window}}.Terminate();}
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00063}00063\ \}}
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00068}\mbox{\hyperlink{classCrowEngine_1_1Engine_a46ae0a58434955cf05df0b6951d53ffe}{00068}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCrowEngine_1_1Engine_a46ae0a58434955cf05df0b6951d53ffe}{Engine::Set}}()}
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00069}00069\ \{}
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00070}00070\ \ \ \ \ \mbox{\hyperlink{classCrowEngine_1_1Engine_af80c8413677c54e9627541f3aed5bd0e}{m\_window}}.SetWindow();}
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00072}00072\ \textcolor{preprocessor}{\#ifdef\ \_\_glad\_h\_}}
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00073}00073\ \ \ \ \ \mbox{\hyperlink{classGraphicsAPI_a4030a4d011511e3cac94c893ddc7bcf8}{GraphicsAPI::LoadGLAD}}();}
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00074}00074\ \ \ \ \ \textcolor{comment}{//GraphicsAPI::LoadOpenGL();}}
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00075}00075\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00078}00078\ \ \ \ \ \mbox{\hyperlink{classCrowEngine_1_1Engine_a23e0b601695970f5419a919e412f245b}{m\_renderer}}.SetRenderer();}
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00079}00079\ \ \ \ \ \mbox{\hyperlink{classCrowEngine_1_1Engine_aaf7b54ba53a59b56ba1a128224daf7fa}{m\_scene}}.Load();}
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00080}00080\ \ \ \ \ \textcolor{comment}{//m\_renderableObject.Set();}}
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00082}00082\ \ \ \ \ \textcolor{comment}{//m\_rectangleBuffer.SetBuffers();}}
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00084}00084\ \}}
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00086}00086\ }
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00087}00087\ }
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00090}00090\ }
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00092}00092\ }
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00093}00093\ \}}
+\DoxyCodeLine{\Hypertarget{Engine_8cpp_source_l00094}00094\ }
+
+\end{DoxyCode}

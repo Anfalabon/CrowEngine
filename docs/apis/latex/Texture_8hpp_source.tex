@@ -1,0 +1,89 @@
+\doxysection{Texture.\+hpp}
+\hypertarget{Texture_8hpp_source}{}\label{Texture_8hpp_source}\index{source/buffer/Texture.hpp@{source/buffer/Texture.hpp}}
+\mbox{\hyperlink{Texture_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <stb\_image.h>}}
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Filesystem_8hpp}{core/Filesystem.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00009}00009\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00013}00013\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceCrowEngine}{CrowEngine}}}
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00014}00014\ \{}
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00017}00017\ \textcolor{comment}{//\ //will\ not\ be\ using\ this\ right\ now}}
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00018}00018\ \textcolor{comment}{//\ typedef\ struct\ TextureAttributes}}
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00019}00019\ \textcolor{comment}{//\ \{}}
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00020}00020\ \textcolor{comment}{//\ \ \ \ \ int\ m\_width;}}
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00021}00021\ \textcolor{comment}{//\ \ \ \ \ int\ m\_height;}}
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00022}00022\ \textcolor{comment}{//\ \ \ \ \ int\ m\_nrChannels;}}
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00023}00023\ \textcolor{comment}{//\ \ \ \ \ std::string\ m\_filePath;}}
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00024}00024\ \textcolor{comment}{//\ \ \ \ \ unsigned\ char\ *m\_data;}}
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00025}00025\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00026}00026\ \textcolor{comment}{//\ \}TextureAttributes;}}
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00031}\mbox{\hyperlink{classCrowEngine_1_1Texture}{00031}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classCrowEngine_1_1Texture_abdc251913f96dcc4785dd681377e2bed}{Texture}}}
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00032}00032\ \{}
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00034}00034\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00036}\mbox{\hyperlink{classCrowEngine_1_1Texture_abdc251913f96dcc4785dd681377e2bed}{00036}}\ \ \ \ \ \mbox{\hyperlink{classCrowEngine_1_1Texture_abdc251913f96dcc4785dd681377e2bed}{Texture}}()\ \ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00038}00038\ \ \ \ \ \textcolor{comment}{//\ Texture(const\ std::string\ \&filePath)\ :\ m\_filePathStr(filePath)}}
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00039}00039\ \ \ \ \ \textcolor{comment}{//\ \{}}
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00040}00040\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ bool\ catchValue\ =\ Filesystem::FoundFile(filePath);}}
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00041}00041\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ m\_filePath\ =\ filePath.c\_str();}}
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00042}00042\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00043}00043\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00044}00044\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ std::cout\ <<\ m\_filePath\ <<\ '\(\backslash\)n';}}
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00045}00045\ \ \ \ \ \textcolor{comment}{//\ \}}}
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00047}\mbox{\hyperlink{classCrowEngine_1_1Texture_a96ea402fdcdf2c76220049e9bc0ec9a6}{00047}}\ \ \ \ \ \mbox{\hyperlink{classCrowEngine_1_1Texture_a96ea402fdcdf2c76220049e9bc0ec9a6}{\string~Texture}}()}
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00048}00048\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00049}00049\ \ \ \ \ \ \ \ \ \textcolor{comment}{//free\ the\ image\ data\ we\ longer\ need\ it(cause\ the\ data\ was\ sent\ to\ the\ GPU\ storage(OpenGL\ server\ buffer\ storage))}}
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00050}00050\ \ \ \ \ \ \ \ \ \textcolor{comment}{//stbi\_image\_free(m\_data);}}
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00051}00051\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00054}00054\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCrowEngine_1_1Texture_a8c06e1be6a746408bb3bfbe280dc3b12}{Load}}(\textcolor{keyword}{const}\ std::string\ \&filePathStr);}
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00055}00055\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCrowEngine_1_1Texture_ac95d7fdc3fd2f53b3b9ff057935c1efb}{Set}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ enableOptions\ =\ \textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00056}00056\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCrowEngine_1_1Texture_a4f7afaeab5413aa09dac2c111ea006b9}{DeleteTexture}}();}
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00058}\mbox{\hyperlink{classCrowEngine_1_1Texture_acb63cdcb25123ecda98eb9d1f7d36860}{00058}}\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCrowEngine_1_1Texture_acb63cdcb25123ecda98eb9d1f7d36860}{Bind}}()\{\ glBindTexture(GL\_TEXTURE\_2D,\ \mbox{\hyperlink{classCrowEngine_1_1Texture_aaf2dd386f2fd263cb449ec963a9a213e}{m\_texture}});\}}
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00059}\mbox{\hyperlink{classCrowEngine_1_1Texture_a43043ca86f701e95a8ca88859c1226a0}{00059}}\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classCrowEngine_1_1Texture_a43043ca86f701e95a8ca88859c1226a0}{GetTextureID}}()\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classCrowEngine_1_1Texture_aaf2dd386f2fd263cb449ec963a9a213e}{m\_texture}};\ \}}
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00062}00062\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00064}\mbox{\hyperlink{classCrowEngine_1_1Texture_aaf2dd386f2fd263cb449ec963a9a213e}{00064}}\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classCrowEngine_1_1Texture_aaf2dd386f2fd263cb449ec963a9a213e}{m\_texture}};}
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00065}\mbox{\hyperlink{classCrowEngine_1_1Texture_afb4bcbdfc04b02a77441d3fb968343c7}{00065}}\ \ \ \ \ std::string\ \mbox{\hyperlink{classCrowEngine_1_1Texture_afb4bcbdfc04b02a77441d3fb968343c7}{m\_filePathStr}};\ \ \textcolor{comment}{//may\ use\ std::string\_view\ in\ the\ future}}
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00066}\mbox{\hyperlink{classCrowEngine_1_1Texture_a3bfe8e22518f310aa15cb7e95fd90ab6}{00066}}\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{classCrowEngine_1_1Texture_a3bfe8e22518f310aa15cb7e95fd90ab6}{m\_filePath}};}
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00068}\mbox{\hyperlink{classCrowEngine_1_1Texture_a43098a6feadb1b488223aa8fb99df4b6}{00068}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classCrowEngine_1_1Texture_a43098a6feadb1b488223aa8fb99df4b6}{m\_width}};}
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00069}\mbox{\hyperlink{classCrowEngine_1_1Texture_acf0d40183c93502d532bd617ba6c793b}{00069}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classCrowEngine_1_1Texture_acf0d40183c93502d532bd617ba6c793b}{m\_height}};}
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00070}\mbox{\hyperlink{classCrowEngine_1_1Texture_a7455b566e8c894c0732150b2d60857cd}{00070}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classCrowEngine_1_1Texture_a7455b566e8c894c0732150b2d60857cd}{m\_nrChannels}};}
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00071}\mbox{\hyperlink{classCrowEngine_1_1Texture_ae2ffaf403f4d95457ae23604b05eec7c}{00071}}\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{classCrowEngine_1_1Texture_ae2ffaf403f4d95457ae23604b05eec7c}{m\_data}};}
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00072}\mbox{\hyperlink{classCrowEngine_1_1Texture_a8e3ced9b557372de49152fbf42d9998f}{00072}}\ \ \ \ \ std::byte\ *\mbox{\hyperlink{classCrowEngine_1_1Texture_a8e3ced9b557372de49152fbf42d9998f}{m\_dataByte}};}
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00074}00074\ \ \ \ \ \textcolor{comment}{//TextureAttributes\ m\_textureInfo;}}
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00075}00075\ \};}
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00078}00078\ }
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00080}00080\ \}}
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00083}00083\ }
+
+\end{DoxyCode}

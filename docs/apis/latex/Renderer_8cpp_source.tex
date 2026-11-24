@@ -1,0 +1,62 @@
+\doxysection{Renderer.\+cpp}
+\hypertarget{Renderer_8cpp_source}{}\label{Renderer_8cpp_source}\index{source/servers/renderer/Renderer.cpp@{source/servers/renderer/Renderer.cpp}}
+\mbox{\hyperlink{Renderer_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Renderer_8cpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{Renderer_8cpp_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{Renderer_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Renderer_8hpp}{Renderer.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{Renderer_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Filesystem_8hpp}{core/Filesystem.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{Renderer_8cpp_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{Renderer_8cpp_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{Renderer_8cpp_source_l00007}00007\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceCrowEngine}{CrowEngine}}}
+\DoxyCodeLine{\Hypertarget{Renderer_8cpp_source_l00008}00008\ \{}
+\DoxyCodeLine{\Hypertarget{Renderer_8cpp_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{Renderer_8cpp_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{Renderer_8cpp_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{Renderer_8cpp_source_l00012}\mbox{\hyperlink{classCrowEngine_1_1Renderer_a8a45f80f8c02d1440d4ba424eed08458}{00012}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCrowEngine_1_1Renderer_a8a45f80f8c02d1440d4ba424eed08458}{Renderer::SetRenderer}}()}
+\DoxyCodeLine{\Hypertarget{Renderer_8cpp_source_l00013}00013\ \{}
+\DoxyCodeLine{\Hypertarget{Renderer_8cpp_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{Renderer_8cpp_source_l00015}00015\ \ \ \ \ std::string\ vertexShaderFilePath\ =\ \textcolor{stringliteral}{"{}../../source/shader/GLSL/vertexShader.vert.glsl"{}};}
+\DoxyCodeLine{\Hypertarget{Renderer_8cpp_source_l00016}00016\ \ \ \ \ std::string\ fragmentShaderFilePath\ =\ \textcolor{stringliteral}{"{}../../source/shader/GLSL/fragmentShader.frag.glsl"{}};}
+\DoxyCodeLine{\Hypertarget{Renderer_8cpp_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{Renderer_8cpp_source_l00018}00018\ \textcolor{preprocessor}{\#define\ \_\_LOGGING\_\_\ }\textcolor{comment}{//define\ loggin\ locally}}
+\DoxyCodeLine{\Hypertarget{Renderer_8cpp_source_l00019}00019\ \textcolor{preprocessor}{\#ifdef\ \_\_LOGGING\_\_}}
+\DoxyCodeLine{\Hypertarget{Renderer_8cpp_source_l00020}00020\ \ \ \ \ \mbox{\hyperlink{classCrowEngine_1_1Filesystem_a448ced8d09de71da4768ebb45bffec72}{Filesystem::FoundFile}}(vertexShaderFilePath);}
+\DoxyCodeLine{\Hypertarget{Renderer_8cpp_source_l00021}00021\ \ \ \ \ \mbox{\hyperlink{classCrowEngine_1_1Filesystem_a448ced8d09de71da4768ebb45bffec72}{Filesystem::FoundFile}}(fragmentShaderFilePath);}
+\DoxyCodeLine{\Hypertarget{Renderer_8cpp_source_l00022}00022\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{Renderer_8cpp_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{Renderer_8cpp_source_l00024}00024\ \ \ \ \ \mbox{\hyperlink{classCrowEngine_1_1Renderer_af13e22cdad22a7b75df68c1415549b14}{m\_shader}}.SetShader(vertexShaderFilePath,\ fragmentShaderFilePath);}
+\DoxyCodeLine{\Hypertarget{Renderer_8cpp_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{Renderer_8cpp_source_l00026}00026\ \}}
+\DoxyCodeLine{\Hypertarget{Renderer_8cpp_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{Renderer_8cpp_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{Renderer_8cpp_source_l00029}\mbox{\hyperlink{classCrowEngine_1_1Renderer_aac5d5d3c18af652685447c62f7a3472d}{00029}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCrowEngine_1_1Renderer_aac5d5d3c18af652685447c62f7a3472d}{Renderer::Render}}(\mbox{\hyperlink{classCrowEngine_1_1Scene}{Scene}}\ \&scene)}
+\DoxyCodeLine{\Hypertarget{Renderer_8cpp_source_l00030}00030\ \{}
+\DoxyCodeLine{\Hypertarget{Renderer_8cpp_source_l00031}00031\ \ \ \ \ \textcolor{comment}{//if(m\_shaderNotSet)\{\ m\_shader.SetShader();\ \}}}
+\DoxyCodeLine{\Hypertarget{Renderer_8cpp_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{Renderer_8cpp_source_l00033}00033\ \ \ \ \ \mbox{\hyperlink{classCrowEngine_1_1Renderer_af13e22cdad22a7b75df68c1415549b14}{m\_shader}}.UseProgram();}
+\DoxyCodeLine{\Hypertarget{Renderer_8cpp_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{Renderer_8cpp_source_l00035}00035\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ scene.\mbox{\hyperlink{classCrowEngine_1_1Scene_af8b340e9d777f2dc2f461cfb75444303}{GetTotalRenderables}}();\ ++i)}
+\DoxyCodeLine{\Hypertarget{Renderer_8cpp_source_l00036}00036\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Renderer_8cpp_source_l00037}00037\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Renderer::GLDraw();}}
+\DoxyCodeLine{\Hypertarget{Renderer_8cpp_source_l00038}00038\ \ \ \ \ \ \ \ \ \textcolor{comment}{//scene.GetEntity(i)-\/>}}
+\DoxyCodeLine{\Hypertarget{Renderer_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ if\ (scene.GetEntity(i)-\/>IsRenderable())}}
+\DoxyCodeLine{\Hypertarget{Renderer_8cpp_source_l00040}00040\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \{}}
+\DoxyCodeLine{\Hypertarget{Renderer_8cpp_source_l00041}00041\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ //scene.GetEntity(i)-\/>GetMesh()}}
+\DoxyCodeLine{\Hypertarget{Renderer_8cpp_source_l00042}00042\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \}}}
+\DoxyCodeLine{\Hypertarget{Renderer_8cpp_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{Renderer_8cpp_source_l00044}00044\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classCrowEngine_1_1Renderer_acdf62f2bc8f414c97160156cae7fe94a}{Renderer::GLDraw}}(scene.\mbox{\hyperlink{classCrowEngine_1_1Scene_ade1ad5707fdb1841cfd834ab0dec6e27}{GetRenderableObject}}(i).\mbox{\hyperlink{classCrowEngine_1_1RenderableObject_a3dd3590655e1e3c18bc6b60ba0a5c598}{GetMesh}}(),\ GL\_TRIANGLES);}
+\DoxyCodeLine{\Hypertarget{Renderer_8cpp_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{Renderer_8cpp_source_l00046}00046\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Renderer_8cpp_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{Renderer_8cpp_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{Renderer_8cpp_source_l00049}00049\ \}}
+\DoxyCodeLine{\Hypertarget{Renderer_8cpp_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{Renderer_8cpp_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{Renderer_8cpp_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{Renderer_8cpp_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{Renderer_8cpp_source_l00054}00054\ \}}
+\DoxyCodeLine{\Hypertarget{Renderer_8cpp_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{Renderer_8cpp_source_l00056}00056\ }
+
+\end{DoxyCode}

@@ -1,0 +1,142 @@
+\doxysection{Crow\+Engine\+::Scene Class Reference}
+\hypertarget{classCrowEngine_1_1Scene}{}\label{classCrowEngine_1_1Scene}\index{CrowEngine::Scene@{CrowEngine::Scene}}
+
+
+{\ttfamily \#include $<$Scene.\+hpp$>$}
+
+
+
+Collaboration diagram for Crow\+Engine\+::Scene\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=212pt]{classCrowEngine_1_1Scene__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCrowEngine_1_1Scene_a2d508b21cda7c5dfca937cebd186c5c1}{Scene}} ()=default
+\item 
+\mbox{\hyperlink{classCrowEngine_1_1Scene_aaf09620f13f5dc8c90863a4e83e2fe48}{\texorpdfstring{$\sim$}{\string~}\+Scene}} ()=default
+\item 
+void \mbox{\hyperlink{classCrowEngine_1_1Scene_aa2d9d5cf46b9df3f0d4be585d2ed5fbb}{Load}} ()
+\item 
+void \mbox{\hyperlink{classCrowEngine_1_1Scene_a4df7051d578706e52f166f7ae74d14bf}{Update}} (const unsigned int shader\+Program\+ID)
+\item 
+\mbox{\hyperlink{classCrowEngine_1_1RenderableObject}{Renderable\+Object}} \& \mbox{\hyperlink{classCrowEngine_1_1Scene_ade1ad5707fdb1841cfd834ab0dec6e27}{Get\+Renderable\+Object}} (const unsigned int index)
+\item 
+unsigned int \mbox{\hyperlink{classCrowEngine_1_1Scene_af8b340e9d777f2dc2f461cfb75444303}{Get\+Total\+Renderables}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classCrowEngine_1_1RenderableObject}{Renderable\+Object}} $>$ \mbox{\hyperlink{classCrowEngine_1_1Scene_a359a4def7f4e506b4c3c19fe09fcf431}{m\+\_\+renderable\+Objects}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{Scene_8hpp_source_l00018}{18}} of file \mbox{\hyperlink{Scene_8hpp_source}{Scene.\+hpp}}.
+
+
+
+\label{doc-constructors}
+\Hypertarget{classCrowEngine_1_1Scene_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classCrowEngine_1_1Scene_a2d508b21cda7c5dfca937cebd186c5c1}\index{CrowEngine::Scene@{CrowEngine::Scene}!Scene@{Scene}}
+\index{Scene@{Scene}!CrowEngine::Scene@{CrowEngine::Scene}}
+\doxysubsubsection{\texorpdfstring{Scene()}{Scene()}}
+{\footnotesize\ttfamily \label{classCrowEngine_1_1Scene_a2d508b21cda7c5dfca937cebd186c5c1} 
+Crow\+Engine\+::\+Scene\+::\+Scene (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\Hypertarget{classCrowEngine_1_1Scene_aaf09620f13f5dc8c90863a4e83e2fe48}\index{CrowEngine::Scene@{CrowEngine::Scene}!````~Scene@{\texorpdfstring{$\sim$}{\string~}Scene}}
+\index{````~Scene@{\texorpdfstring{$\sim$}{\string~}Scene}!CrowEngine::Scene@{CrowEngine::Scene}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Scene()}{\string~Scene()}}
+{\footnotesize\ttfamily \label{classCrowEngine_1_1Scene_aaf09620f13f5dc8c90863a4e83e2fe48} 
+Crow\+Engine\+::\+Scene\+::\texorpdfstring{$\sim$}{\string~}\+Scene (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{classCrowEngine_1_1Scene_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classCrowEngine_1_1Scene_ade1ad5707fdb1841cfd834ab0dec6e27}\index{CrowEngine::Scene@{CrowEngine::Scene}!GetRenderableObject@{GetRenderableObject}}
+\index{GetRenderableObject@{GetRenderableObject}!CrowEngine::Scene@{CrowEngine::Scene}}
+\doxysubsubsection{\texorpdfstring{GetRenderableObject()}{GetRenderableObject()}}
+{\footnotesize\ttfamily \label{classCrowEngine_1_1Scene_ade1ad5707fdb1841cfd834ab0dec6e27} 
+\mbox{\hyperlink{classCrowEngine_1_1RenderableObject}{Renderable\+Object}} \& Crow\+Engine\+::\+Scene\+::\+Get\+Renderable\+Object (\begin{DoxyParamCaption}\item[{const unsigned int}]{index}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Scene_8hpp_source_l00029}{29}} of file \mbox{\hyperlink{Scene_8hpp_source}{Scene.\+hpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classCrowEngine_1_1Scene_ade1ad5707fdb1841cfd834ab0dec6e27_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classCrowEngine_1_1Scene_af8b340e9d777f2dc2f461cfb75444303}\index{CrowEngine::Scene@{CrowEngine::Scene}!GetTotalRenderables@{GetTotalRenderables}}
+\index{GetTotalRenderables@{GetTotalRenderables}!CrowEngine::Scene@{CrowEngine::Scene}}
+\doxysubsubsection{\texorpdfstring{GetTotalRenderables()}{GetTotalRenderables()}}
+{\footnotesize\ttfamily \label{classCrowEngine_1_1Scene_af8b340e9d777f2dc2f461cfb75444303} 
+unsigned int Crow\+Engine\+::\+Scene\+::\+Get\+Total\+Renderables (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Scene_8hpp_source_l00039}{39}} of file \mbox{\hyperlink{Scene_8hpp_source}{Scene.\+hpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classCrowEngine_1_1Scene_af8b340e9d777f2dc2f461cfb75444303_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classCrowEngine_1_1Scene_aa2d9d5cf46b9df3f0d4be585d2ed5fbb}\index{CrowEngine::Scene@{CrowEngine::Scene}!Load@{Load}}
+\index{Load@{Load}!CrowEngine::Scene@{CrowEngine::Scene}}
+\doxysubsubsection{\texorpdfstring{Load()}{Load()}}
+{\footnotesize\ttfamily \label{classCrowEngine_1_1Scene_aa2d9d5cf46b9df3f0d4be585d2ed5fbb} 
+void Crow\+Engine\+::\+Scene\+::\+Load (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Scene_8cpp_source_l00010}{10}} of file \mbox{\hyperlink{Scene_8cpp_source}{Scene.\+cpp}}.
+
+\Hypertarget{classCrowEngine_1_1Scene_a4df7051d578706e52f166f7ae74d14bf}\index{CrowEngine::Scene@{CrowEngine::Scene}!Update@{Update}}
+\index{Update@{Update}!CrowEngine::Scene@{CrowEngine::Scene}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily \label{classCrowEngine_1_1Scene_a4df7051d578706e52f166f7ae74d14bf} 
+void Crow\+Engine\+::\+Scene\+::\+Update (\begin{DoxyParamCaption}\item[{const unsigned int}]{shader\+Program\+ID}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Scene_8cpp_source_l00031}{31}} of file \mbox{\hyperlink{Scene_8cpp_source}{Scene.\+cpp}}.
+
+
+
+\label{doc-variable-members}
+\Hypertarget{classCrowEngine_1_1Scene_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classCrowEngine_1_1Scene_a359a4def7f4e506b4c3c19fe09fcf431}\index{CrowEngine::Scene@{CrowEngine::Scene}!m\_renderableObjects@{m\_renderableObjects}}
+\index{m\_renderableObjects@{m\_renderableObjects}!CrowEngine::Scene@{CrowEngine::Scene}}
+\doxysubsubsection{\texorpdfstring{m\_renderableObjects}{m\_renderableObjects}}
+{\footnotesize\ttfamily \label{classCrowEngine_1_1Scene_a359a4def7f4e506b4c3c19fe09fcf431} 
+std\+::vector$<$\mbox{\hyperlink{classCrowEngine_1_1RenderableObject}{Renderable\+Object}}$>$ Crow\+Engine\+::\+Scene\+::m\+\_\+renderable\+Objects\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{Scene_8hpp_source_l00059}{59}} of file \mbox{\hyperlink{Scene_8hpp_source}{Scene.\+hpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+source/scene/\mbox{\hyperlink{Scene_8hpp}{Scene.\+hpp}}\item 
+source/scene/\mbox{\hyperlink{Scene_8cpp}{Scene.\+cpp}}\end{DoxyCompactItemize}

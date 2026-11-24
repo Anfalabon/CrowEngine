@@ -1,0 +1,32 @@
+\doxysection{Event.\+hpp}
+\hypertarget{Event_8hpp_source}{}\label{Event_8hpp_source}\index{source/window/Event.hpp@{source/window/Event.hpp}}
+\mbox{\hyperlink{Event_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Event_8hpp_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{Event_8hpp_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{Event_8hpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <glad/glad.h>}}
+\DoxyCodeLine{\Hypertarget{Event_8hpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <GLFW/glfw3.h>}}
+\DoxyCodeLine{\Hypertarget{Event_8hpp_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{Event_8hpp_source_l00006}\mbox{\hyperlink{classEvent}{00006}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classEvent_aee6a4269152dcdb7a11de3e24d90c229}{Event}}}
+\DoxyCodeLine{\Hypertarget{Event_8hpp_source_l00007}00007\ \{}
+\DoxyCodeLine{\Hypertarget{Event_8hpp_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{Event_8hpp_source_l00009}00009\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{Event_8hpp_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{Event_8hpp_source_l00011}\mbox{\hyperlink{classEvent_aee6a4269152dcdb7a11de3e24d90c229}{00011}}\ \ \ \ \ \mbox{\hyperlink{classEvent_aee6a4269152dcdb7a11de3e24d90c229}{Event}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{Event_8hpp_source_l00012}\mbox{\hyperlink{classEvent_a18e23f5205467eedd3f3f4aa82e019d7}{00012}}\ \ \ \ \ \mbox{\hyperlink{classEvent_a18e23f5205467eedd3f3f4aa82e019d7}{\string~Event}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{Event_8hpp_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{Event_8hpp_source_l00014}\mbox{\hyperlink{classEvent_aa6756ceb9b116e3f1d49b5f30bf2c73b}{00014}}\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classEvent_aa6756ceb9b116e3f1d49b5f30bf2c73b}{OnWindowEscape}}(GLFWwindow\ *window)}
+\DoxyCodeLine{\Hypertarget{Event_8hpp_source_l00015}00015\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Event_8hpp_source_l00016}00016\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(glfwGetKey(window,\ GLFW\_KEY\_ESCAPE)\ ==\ GLFW\_PRESS)\ [[unlikely]]}
+\DoxyCodeLine{\Hypertarget{Event_8hpp_source_l00017}00017\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Event_8hpp_source_l00018}00018\ \ \ \ \ \ \ \ \ \ \ \ \ glfwSetWindowShouldClose(window,\ \textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{Event_8hpp_source_l00019}00019\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Event_8hpp_source_l00020}00020\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Event_8hpp_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{Event_8hpp_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{Event_8hpp_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{Event_8hpp_source_l00024}00024\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{Event_8hpp_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{Event_8hpp_source_l00026}00026\ \};}
+
+\end{DoxyCode}

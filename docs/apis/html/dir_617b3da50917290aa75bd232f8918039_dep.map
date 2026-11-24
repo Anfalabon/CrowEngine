@@ -1,0 +1,19 @@
+<map id="source/scene" name="source/scene">
+<area shape="rect" id="node1" href="dir_03dccc10170a172d872e1c090cced3eb.html" title="buffer" alt="" coords="38,216,98,244"/>
+<area shape="rect" id="node2" href="dir_0c367954b6180d268cddc5c2f2e21434.html" title="shader" alt="" coords="122,216,187,244"/>
+<area shape="rect" id="node5" href="dir_18616405bee00cd6c1cf7899f551f35e.html" title="entity" alt="" coords="86,141,146,168"/>
+<area shape="poly" id="edge1" href="dir_000015_000007.html" alt="" coords="77,91,101,126,97,129,73,94"/>
+<area shape="rect" id="edge1-headlabel" href="dir_000015_000007.html" title="2" alt="" coords="100,112,108,129"/>
+<area shape="rect" id="node4" href="dir_50e1a586e1872985997dba259d253c48.html" title="camera" alt="" coords="121,65,191,93"/>
+<area shape="rect" id="node6" href="dir_4270bfced15e0e73154b13468c7c9ad9.html" title="core" alt="" coords="223,216,273,244"/>
+<area shape="poly" id="edge2" href="dir_000002_000004.html" alt="" coords="166,91,234,202,230,204,162,94"/>
+<area shape="rect" id="edge2-headlabel" href="dir_000002_000004.html" title="1" alt="" coords="234,187,242,204"/>
+<area shape="poly" id="edge3" href="dir_000007_000001.html" alt="" coords="110,170,87,205,83,202,105,167"/>
+<area shape="rect" id="edge3-headlabel" href="dir_000007_000001.html" title="6" alt="" coords="90,197,98,214"/>
+<area shape="poly" id="edge4" href="dir_000007_000017.html" alt="" coords="125,168,143,201,138,204,121,170"/>
+<area shape="rect" id="edge4-headlabel" href="dir_000007_000017.html" title="1" alt="" coords="143,187,151,204"/>
+<area shape="poly" id="edge5" href="dir_000007_000004.html" alt="" coords="141,167,213,206,210,211,138,171"/>
+<area shape="rect" id="edge5-headlabel" href="dir_000007_000004.html" title="1" alt="" coords="209,191,217,208"/>
+<area shape="rect" id="clust2" href="dir_617b3da50917290aa75bd232f8918039.html" alt="" coords="27,54,201,179"/>
+<area shape="rect" id="clust1" href="dir_b2f33c71d4aa5e7af42a1ca61ff5af1b.html" title="source" alt="" coords="16,16,212,255"/>
+</map>

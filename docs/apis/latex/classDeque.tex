@@ -1,0 +1,499 @@
+\doxysection{Deque\texorpdfstring{$<$}{<} T, template\+Pointers, template\+Block\+Size \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classDeque}{}\label{classDeque}\index{Deque$<$ T, templatePointers, templateBlockSize $>$@{Deque$<$ T, templatePointers, templateBlockSize $>$}}
+
+
+Collaboration diagram for Deque\texorpdfstring{$<$}{<} T, template\+Pointers, template\+Block\+Size \texorpdfstring{$>$}{>}\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=230pt]{classDeque__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDeque_aa192fa15238e4be91c8a5ff52f615da7}{Deque}} ()
+\item 
+\mbox{\hyperlink{classDeque_a199c51bd40a92222ce8c65d9c18235a3}{\texorpdfstring{$\sim$}{\string~}\+Deque}} ()
+\item 
+\mbox{\hyperlink{classDeque_a623de82cdff923168a2686477af21447}{Deque}} (\mbox{\hyperlink{classDeque}{Deque}} \&\&other)
+\item 
+\mbox{\hyperlink{classDeque}{Deque}} \& \mbox{\hyperlink{classDeque_ae9ed922a07b72c03d755d39d2472cdcf}{operator=}} (\mbox{\hyperlink{classDeque}{Deque}} \&\&other)
+\item 
+auto \mbox{\hyperlink{classDeque_a0935cb18914e6e921d545e5ce911b259}{Get\+Value}} ()
+\item 
+Multiple\+Value \mbox{\hyperlink{classDeque_a5cbcf5725e9ab001c6ea91fb1e853666}{Get\+Value2}} ()
+\item 
+T \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classDeque_a9edc95928d873e11494a7998bad41445}{Alloc\+Map}} (unsigned int pointers)
+\item 
+void \mbox{\hyperlink{classDeque_a595f8ad1990d8091fb831afef124e96a}{Dealloc\+Map}} (const std\+::size\+\_\+t pointers)
+\item 
+unsigned int \mbox{\hyperlink{classDeque_ab43a80c4fa3d16817af16f1521dc93da}{Pointers}} ()
+\item 
+unsigned int \mbox{\hyperlink{classDeque_a167d263aec7ec50669f39b1735c503f1}{Block\+Size}} ()
+\item 
+unsigned int \mbox{\hyperlink{classDeque_a13372c214864b01191bdef529c045d0d}{Size}} ()
+\item 
+unsigned int \mbox{\hyperlink{classDeque_acbfe283262a929216bfaeea5a73ec997}{Capacity}} ()
+\item 
+T \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classDeque_ad9187740e0428c9a298bc0b8a4c715b7}{Allocate\+Initialized\+Block}} ()
+\item 
+void \mbox{\hyperlink{classDeque_ad2e30775beb07433a64bff5483368ddf}{Insert\+V1}} ()
+\item 
+void \mbox{\hyperlink{classDeque_a7995c61fe27da57c1c9879700b6e4f75}{Insert}} (const T \&value)
+\item 
+unsigned int \mbox{\hyperlink{classDeque_a75479b8576b5a82161c1b2fd0d7cbe00}{Remove}} () \&
+\item 
+T \& \mbox{\hyperlink{classDeque_a6f8d64776ba5e44ea0c367a0f23b3ec5}{operator\mbox{[}$\,$\mbox{]}}} (const std\+::size\+\_\+t index)
+\item 
+T \& \mbox{\hyperlink{classDeque_a4c55d62b0bb81a6036b125dd6acb8f22}{Value\+At}} (const std\+::size\+\_\+t index)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+T \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classDeque_a03e94681e7c6cc9e1668eeeb0666bbcd}{m\+\_\+map}}
+\item 
+std\+::vector$<$ std\+::vector$<$ T $>$ $>$ \mbox{\hyperlink{classDeque_a5bded3d6553244d83212a37d0c091c41}{m\+\_\+vec\+Map}}
+\item 
+std\+::unique\+\_\+ptr$<$ std\+::unique\+\_\+ptr$<$ T $>$ $>$ \mbox{\hyperlink{classDeque_a8266f229c3fe19cd9b03266282c39de2}{m\+\_\+unique\+Map}}
+\item 
+std\+::shared\+\_\+ptr$<$ T $>$ \mbox{\hyperlink{classDeque_ac43f67637a5a4047e6bf6e68bb4daae5}{m\+\_\+shared\+Pointer}}
+\item 
+unsigned int \mbox{\hyperlink{classDeque_a4124ac89ac08303b4f6b681e70c0a43b}{m\+\_\+size}}
+\item 
+unsigned int \mbox{\hyperlink{classDeque_a85f7f34a4b1727d3d40f14cc00134434}{m\+\_\+capacity}}
+\item 
+unsigned int \mbox{\hyperlink{classDeque_af05e59746dc773bd15c8985ca0d46ccb}{m\+\_\+pointers}}
+\item 
+const unsigned int \mbox{\hyperlink{classDeque_aed919b0fc2c01af44adb1f1477bfa84a}{m\+\_\+block\+Size}} = 4
+\item 
+unsigned int \mbox{\hyperlink{classDeque_ad5eb54343934e2fad3d62db962076b88}{m\+\_\+pointers\+Size}}
+\item 
+unsigned int \mbox{\hyperlink{classDeque_a49f8d9d1d02c2d69b2ea2f58020f322f}{m\+\_\+pointers\+Capacity}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T, unsigned int template\+Pointers = 7, unsigned int template\+Block\+Size = 4$>$\newline
+class Deque$<$ T, template\+Pointers, template\+Block\+Size $>$}
+
+
+Definition at line \mbox{\hyperlink{TestDeque_8cpp_source_l00018}{18}} of file \mbox{\hyperlink{TestDeque_8cpp_source}{Test\+Deque.\+cpp}}.
+
+
+
+\label{doc-constructors}
+\Hypertarget{classDeque_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classDeque_aa192fa15238e4be91c8a5ff52f615da7}\index{Deque$<$ T, templatePointers, templateBlockSize $>$@{Deque$<$ T, templatePointers, templateBlockSize $>$}!Deque@{Deque}}
+\index{Deque@{Deque}!Deque$<$ T, templatePointers, templateBlockSize $>$@{Deque$<$ T, templatePointers, templateBlockSize $>$}}
+\doxysubsubsection{\texorpdfstring{Deque()}{Deque()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classDeque_aa192fa15238e4be91c8a5ff52f615da7} 
+template$<$typename T, unsigned int template\+Pointers = 7, unsigned int template\+Block\+Size = 4$>$ \\
+\mbox{\hyperlink{classDeque}{Deque}}$<$ T, template\+Pointers, template\+Block\+Size $>$\mbox{\hyperlink{classDeque}{\+::\+Deque}} (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{TestDeque_8cpp_source_l00024}{24}} of file \mbox{\hyperlink{TestDeque_8cpp_source}{Test\+Deque.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=305pt]{classDeque_aa192fa15238e4be91c8a5ff52f615da7_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classDeque_a199c51bd40a92222ce8c65d9c18235a3}\index{Deque$<$ T, templatePointers, templateBlockSize $>$@{Deque$<$ T, templatePointers, templateBlockSize $>$}!````~Deque@{\texorpdfstring{$\sim$}{\string~}Deque}}
+\index{````~Deque@{\texorpdfstring{$\sim$}{\string~}Deque}!Deque$<$ T, templatePointers, templateBlockSize $>$@{Deque$<$ T, templatePointers, templateBlockSize $>$}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Deque()}{\string~Deque()}}
+{\footnotesize\ttfamily \label{classDeque_a199c51bd40a92222ce8c65d9c18235a3} 
+template$<$typename T, unsigned int template\+Pointers = 7, unsigned int template\+Block\+Size = 4$>$ \\
+\mbox{\hyperlink{classDeque}{Deque}}$<$ T, template\+Pointers, template\+Block\+Size $>$\+::\texorpdfstring{$\sim$}{\string~}\mbox{\hyperlink{classDeque}{Deque}} (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{TestDeque_8cpp_source_l00044}{44}} of file \mbox{\hyperlink{TestDeque_8cpp_source}{Test\+Deque.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=321pt]{classDeque_a199c51bd40a92222ce8c65d9c18235a3_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classDeque_a623de82cdff923168a2686477af21447}\index{Deque$<$ T, templatePointers, templateBlockSize $>$@{Deque$<$ T, templatePointers, templateBlockSize $>$}!Deque@{Deque}}
+\index{Deque@{Deque}!Deque$<$ T, templatePointers, templateBlockSize $>$@{Deque$<$ T, templatePointers, templateBlockSize $>$}}
+\doxysubsubsection{\texorpdfstring{Deque()}{Deque()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classDeque_a623de82cdff923168a2686477af21447} 
+template$<$typename T, unsigned int template\+Pointers = 7, unsigned int template\+Block\+Size = 4$>$ \\
+\mbox{\hyperlink{classDeque}{Deque}}$<$ T, template\+Pointers, template\+Block\+Size $>$\mbox{\hyperlink{classDeque}{\+::\+Deque}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classDeque}{Deque}}$<$ T, template\+Pointers, template\+Block\+Size $>$ \&\&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{TestDeque_8cpp_source_l00050}{50}} of file \mbox{\hyperlink{TestDeque_8cpp_source}{Test\+Deque.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=319pt]{classDeque_a623de82cdff923168a2686477af21447_cgraph}
+\end{center}
+\end{figure}
+
+
+\label{doc-func-members}
+\Hypertarget{classDeque_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classDeque_ad9187740e0428c9a298bc0b8a4c715b7}\index{Deque$<$ T, templatePointers, templateBlockSize $>$@{Deque$<$ T, templatePointers, templateBlockSize $>$}!AllocateInitializedBlock@{AllocateInitializedBlock}}
+\index{AllocateInitializedBlock@{AllocateInitializedBlock}!Deque$<$ T, templatePointers, templateBlockSize $>$@{Deque$<$ T, templatePointers, templateBlockSize $>$}}
+\doxysubsubsection{\texorpdfstring{AllocateInitializedBlock()}{AllocateInitializedBlock()}}
+{\footnotesize\ttfamily \label{classDeque_ad9187740e0428c9a298bc0b8a4c715b7} 
+template$<$typename T, unsigned int template\+Pointers = 7, unsigned int template\+Block\+Size = 4$>$ \\
+T \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classDeque}{Deque}}$<$ T, template\+Pointers, template\+Block\+Size $>$\+::\+Allocate\+Initialized\+Block (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{TestDeque_8cpp_source_l00146}{146}} of file \mbox{\hyperlink{TestDeque_8cpp_source}{Test\+Deque.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDeque_ad9187740e0428c9a298bc0b8a4c715b7_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDeque_ad9187740e0428c9a298bc0b8a4c715b7_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classDeque_a9edc95928d873e11494a7998bad41445}\index{Deque$<$ T, templatePointers, templateBlockSize $>$@{Deque$<$ T, templatePointers, templateBlockSize $>$}!AllocMap@{AllocMap}}
+\index{AllocMap@{AllocMap}!Deque$<$ T, templatePointers, templateBlockSize $>$@{Deque$<$ T, templatePointers, templateBlockSize $>$}}
+\doxysubsubsection{\texorpdfstring{AllocMap()}{AllocMap()}}
+{\footnotesize\ttfamily \label{classDeque_a9edc95928d873e11494a7998bad41445} 
+template$<$typename T, unsigned int template\+Pointers = 7, unsigned int template\+Block\+Size = 4$>$ \\
+T \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classDeque}{Deque}}$<$ T, template\+Pointers, template\+Block\+Size $>$\+::\+Alloc\+Map (\begin{DoxyParamCaption}\item[{unsigned int}]{pointers}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{TestDeque_8cpp_source_l00093}{93}} of file \mbox{\hyperlink{TestDeque_8cpp_source}{Test\+Deque.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDeque_a9edc95928d873e11494a7998bad41445_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classDeque_a167d263aec7ec50669f39b1735c503f1}\index{Deque$<$ T, templatePointers, templateBlockSize $>$@{Deque$<$ T, templatePointers, templateBlockSize $>$}!BlockSize@{BlockSize}}
+\index{BlockSize@{BlockSize}!Deque$<$ T, templatePointers, templateBlockSize $>$@{Deque$<$ T, templatePointers, templateBlockSize $>$}}
+\doxysubsubsection{\texorpdfstring{BlockSize()}{BlockSize()}}
+{\footnotesize\ttfamily \label{classDeque_a167d263aec7ec50669f39b1735c503f1} 
+template$<$typename T, unsigned int template\+Pointers = 7, unsigned int template\+Block\+Size = 4$>$ \\
+unsigned int \mbox{\hyperlink{classDeque}{Deque}}$<$ T, template\+Pointers, template\+Block\+Size $>$\+::\+Block\+Size (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [nodiscard]}}
+
+
+
+Definition at line \mbox{\hyperlink{TestDeque_8cpp_source_l00126}{126}} of file \mbox{\hyperlink{TestDeque_8cpp_source}{Test\+Deque.\+cpp}}.
+
+\Hypertarget{classDeque_acbfe283262a929216bfaeea5a73ec997}\index{Deque$<$ T, templatePointers, templateBlockSize $>$@{Deque$<$ T, templatePointers, templateBlockSize $>$}!Capacity@{Capacity}}
+\index{Capacity@{Capacity}!Deque$<$ T, templatePointers, templateBlockSize $>$@{Deque$<$ T, templatePointers, templateBlockSize $>$}}
+\doxysubsubsection{\texorpdfstring{Capacity()}{Capacity()}}
+{\footnotesize\ttfamily \label{classDeque_acbfe283262a929216bfaeea5a73ec997} 
+template$<$typename T, unsigned int template\+Pointers = 7, unsigned int template\+Block\+Size = 4$>$ \\
+unsigned int \mbox{\hyperlink{classDeque}{Deque}}$<$ T, template\+Pointers, template\+Block\+Size $>$\+::\+Capacity (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [nodiscard]}}
+
+
+
+Definition at line \mbox{\hyperlink{TestDeque_8cpp_source_l00136}{136}} of file \mbox{\hyperlink{TestDeque_8cpp_source}{Test\+Deque.\+cpp}}.
+
+\Hypertarget{classDeque_a595f8ad1990d8091fb831afef124e96a}\index{Deque$<$ T, templatePointers, templateBlockSize $>$@{Deque$<$ T, templatePointers, templateBlockSize $>$}!DeallocMap@{DeallocMap}}
+\index{DeallocMap@{DeallocMap}!Deque$<$ T, templatePointers, templateBlockSize $>$@{Deque$<$ T, templatePointers, templateBlockSize $>$}}
+\doxysubsubsection{\texorpdfstring{DeallocMap()}{DeallocMap()}}
+{\footnotesize\ttfamily \label{classDeque_a595f8ad1990d8091fb831afef124e96a} 
+template$<$typename T, unsigned int template\+Pointers = 7, unsigned int template\+Block\+Size = 4$>$ \\
+void \mbox{\hyperlink{classDeque}{Deque}}$<$ T, template\+Pointers, template\+Block\+Size $>$\+::\+Dealloc\+Map (\begin{DoxyParamCaption}\item[{const std\+::size\+\_\+t}]{pointers}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{TestDeque_8cpp_source_l00107}{107}} of file \mbox{\hyperlink{TestDeque_8cpp_source}{Test\+Deque.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDeque_a595f8ad1990d8091fb831afef124e96a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classDeque_a0935cb18914e6e921d545e5ce911b259}\index{Deque$<$ T, templatePointers, templateBlockSize $>$@{Deque$<$ T, templatePointers, templateBlockSize $>$}!GetValue@{GetValue}}
+\index{GetValue@{GetValue}!Deque$<$ T, templatePointers, templateBlockSize $>$@{Deque$<$ T, templatePointers, templateBlockSize $>$}}
+\doxysubsubsection{\texorpdfstring{GetValue()}{GetValue()}}
+{\footnotesize\ttfamily \label{classDeque_a0935cb18914e6e921d545e5ce911b259} 
+template$<$typename T, unsigned int template\+Pointers = 7, unsigned int template\+Block\+Size = 4$>$ \\
+auto \mbox{\hyperlink{classDeque}{Deque}}$<$ T, template\+Pointers, template\+Block\+Size $>$\+::\+Get\+Value (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{TestDeque_8cpp_source_l00063}{63}} of file \mbox{\hyperlink{TestDeque_8cpp_source}{Test\+Deque.\+cpp}}.
+
+\Hypertarget{classDeque_a5cbcf5725e9ab001c6ea91fb1e853666}\index{Deque$<$ T, templatePointers, templateBlockSize $>$@{Deque$<$ T, templatePointers, templateBlockSize $>$}!GetValue2@{GetValue2}}
+\index{GetValue2@{GetValue2}!Deque$<$ T, templatePointers, templateBlockSize $>$@{Deque$<$ T, templatePointers, templateBlockSize $>$}}
+\doxysubsubsection{\texorpdfstring{GetValue2()}{GetValue2()}}
+{\footnotesize\ttfamily \label{classDeque_a5cbcf5725e9ab001c6ea91fb1e853666} 
+template$<$typename T, unsigned int template\+Pointers = 7, unsigned int template\+Block\+Size = 4$>$ \\
+Multiple\+Value \mbox{\hyperlink{classDeque}{Deque}}$<$ T, template\+Pointers, template\+Block\+Size $>$\+::\+Get\+Value2 (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{TestDeque_8cpp_source_l00077}{77}} of file \mbox{\hyperlink{TestDeque_8cpp_source}{Test\+Deque.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=305pt]{classDeque_a5cbcf5725e9ab001c6ea91fb1e853666_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classDeque_a7995c61fe27da57c1c9879700b6e4f75}\index{Deque$<$ T, templatePointers, templateBlockSize $>$@{Deque$<$ T, templatePointers, templateBlockSize $>$}!Insert@{Insert}}
+\index{Insert@{Insert}!Deque$<$ T, templatePointers, templateBlockSize $>$@{Deque$<$ T, templatePointers, templateBlockSize $>$}}
+\doxysubsubsection{\texorpdfstring{Insert()}{Insert()}}
+{\footnotesize\ttfamily \label{classDeque_a7995c61fe27da57c1c9879700b6e4f75} 
+template$<$typename T, unsigned int template\+Pointers = 7, unsigned int template\+Block\+Size = 4$>$ \\
+void \mbox{\hyperlink{classDeque}{Deque}}$<$ T, template\+Pointers, template\+Block\+Size $>$\+::\+Insert (\begin{DoxyParamCaption}\item[{const T \&}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{TestDeque_8cpp_source_l00210}{210}} of file \mbox{\hyperlink{TestDeque_8cpp_source}{Test\+Deque.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDeque_a7995c61fe27da57c1c9879700b6e4f75_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=237pt]{classDeque_a7995c61fe27da57c1c9879700b6e4f75_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classDeque_ad2e30775beb07433a64bff5483368ddf}\index{Deque$<$ T, templatePointers, templateBlockSize $>$@{Deque$<$ T, templatePointers, templateBlockSize $>$}!InsertV1@{InsertV1}}
+\index{InsertV1@{InsertV1}!Deque$<$ T, templatePointers, templateBlockSize $>$@{Deque$<$ T, templatePointers, templateBlockSize $>$}}
+\doxysubsubsection{\texorpdfstring{InsertV1()}{InsertV1()}}
+{\footnotesize\ttfamily \label{classDeque_ad2e30775beb07433a64bff5483368ddf} 
+template$<$typename T, unsigned int template\+Pointers = 7, unsigned int template\+Block\+Size = 4$>$ \\
+void \mbox{\hyperlink{classDeque}{Deque}}$<$ T, template\+Pointers, template\+Block\+Size $>$\+::\+Insert\+V1 (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{TestDeque_8cpp_source_l00171}{171}} of file \mbox{\hyperlink{TestDeque_8cpp_source}{Test\+Deque.\+cpp}}.
+
+\Hypertarget{classDeque_ae9ed922a07b72c03d755d39d2472cdcf}\index{Deque$<$ T, templatePointers, templateBlockSize $>$@{Deque$<$ T, templatePointers, templateBlockSize $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!Deque$<$ T, templatePointers, templateBlockSize $>$@{Deque$<$ T, templatePointers, templateBlockSize $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \label{classDeque_ae9ed922a07b72c03d755d39d2472cdcf} 
+template$<$typename T, unsigned int template\+Pointers = 7, unsigned int template\+Block\+Size = 4$>$ \\
+\mbox{\hyperlink{classDeque}{Deque}} \& \mbox{\hyperlink{classDeque}{Deque}}$<$ T, template\+Pointers, template\+Block\+Size $>$\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classDeque}{Deque}}$<$ T, template\+Pointers, template\+Block\+Size $>$ \&\&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{TestDeque_8cpp_source_l00055}{55}} of file \mbox{\hyperlink{TestDeque_8cpp_source}{Test\+Deque.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=337pt]{classDeque_ae9ed922a07b72c03d755d39d2472cdcf_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classDeque_a6f8d64776ba5e44ea0c367a0f23b3ec5}\index{Deque$<$ T, templatePointers, templateBlockSize $>$@{Deque$<$ T, templatePointers, templateBlockSize $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!Deque$<$ T, templatePointers, templateBlockSize $>$@{Deque$<$ T, templatePointers, templateBlockSize $>$}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}}
+{\footnotesize\ttfamily \label{classDeque_a6f8d64776ba5e44ea0c367a0f23b3ec5} 
+template$<$typename T, unsigned int template\+Pointers = 7, unsigned int template\+Block\+Size = 4$>$ \\
+T \& \mbox{\hyperlink{classDeque}{Deque}}$<$ T, template\+Pointers, template\+Block\+Size $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{const std\+::size\+\_\+t}]{index}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{TestDeque_8cpp_source_l00252}{252}} of file \mbox{\hyperlink{TestDeque_8cpp_source}{Test\+Deque.\+cpp}}.
+
+\Hypertarget{classDeque_ab43a80c4fa3d16817af16f1521dc93da}\index{Deque$<$ T, templatePointers, templateBlockSize $>$@{Deque$<$ T, templatePointers, templateBlockSize $>$}!Pointers@{Pointers}}
+\index{Pointers@{Pointers}!Deque$<$ T, templatePointers, templateBlockSize $>$@{Deque$<$ T, templatePointers, templateBlockSize $>$}}
+\doxysubsubsection{\texorpdfstring{Pointers()}{Pointers()}}
+{\footnotesize\ttfamily \label{classDeque_ab43a80c4fa3d16817af16f1521dc93da} 
+template$<$typename T, unsigned int template\+Pointers = 7, unsigned int template\+Block\+Size = 4$>$ \\
+unsigned int \mbox{\hyperlink{classDeque}{Deque}}$<$ T, template\+Pointers, template\+Block\+Size $>$\+::\+Pointers (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [nodiscard]}}
+
+
+
+Definition at line \mbox{\hyperlink{TestDeque_8cpp_source_l00121}{121}} of file \mbox{\hyperlink{TestDeque_8cpp_source}{Test\+Deque.\+cpp}}.
+
+\Hypertarget{classDeque_a75479b8576b5a82161c1b2fd0d7cbe00}\index{Deque$<$ T, templatePointers, templateBlockSize $>$@{Deque$<$ T, templatePointers, templateBlockSize $>$}!Remove@{Remove}}
+\index{Remove@{Remove}!Deque$<$ T, templatePointers, templateBlockSize $>$@{Deque$<$ T, templatePointers, templateBlockSize $>$}}
+\doxysubsubsection{\texorpdfstring{Remove()}{Remove()}}
+{\footnotesize\ttfamily \label{classDeque_a75479b8576b5a82161c1b2fd0d7cbe00} 
+template$<$typename T, unsigned int template\+Pointers = 7, unsigned int template\+Block\+Size = 4$>$ \\
+unsigned int \mbox{\hyperlink{classDeque}{Deque}}$<$ T, template\+Pointers, template\+Block\+Size $>$\+::\+Remove (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) \&\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{TestDeque_8cpp_source_l00240}{240}} of file \mbox{\hyperlink{TestDeque_8cpp_source}{Test\+Deque.\+cpp}}.
+
+\Hypertarget{classDeque_a13372c214864b01191bdef529c045d0d}\index{Deque$<$ T, templatePointers, templateBlockSize $>$@{Deque$<$ T, templatePointers, templateBlockSize $>$}!Size@{Size}}
+\index{Size@{Size}!Deque$<$ T, templatePointers, templateBlockSize $>$@{Deque$<$ T, templatePointers, templateBlockSize $>$}}
+\doxysubsubsection{\texorpdfstring{Size()}{Size()}}
+{\footnotesize\ttfamily \label{classDeque_a13372c214864b01191bdef529c045d0d} 
+template$<$typename T, unsigned int template\+Pointers = 7, unsigned int template\+Block\+Size = 4$>$ \\
+unsigned int \mbox{\hyperlink{classDeque}{Deque}}$<$ T, template\+Pointers, template\+Block\+Size $>$\+::\+Size (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [nodiscard]}}
+
+
+
+Definition at line \mbox{\hyperlink{TestDeque_8cpp_source_l00131}{131}} of file \mbox{\hyperlink{TestDeque_8cpp_source}{Test\+Deque.\+cpp}}.
+
+\Hypertarget{classDeque_a4c55d62b0bb81a6036b125dd6acb8f22}\index{Deque$<$ T, templatePointers, templateBlockSize $>$@{Deque$<$ T, templatePointers, templateBlockSize $>$}!ValueAt@{ValueAt}}
+\index{ValueAt@{ValueAt}!Deque$<$ T, templatePointers, templateBlockSize $>$@{Deque$<$ T, templatePointers, templateBlockSize $>$}}
+\doxysubsubsection{\texorpdfstring{ValueAt()}{ValueAt()}}
+{\footnotesize\ttfamily \label{classDeque_a4c55d62b0bb81a6036b125dd6acb8f22} 
+template$<$typename T, unsigned int template\+Pointers = 7, unsigned int template\+Block\+Size = 4$>$ \\
+T \& \mbox{\hyperlink{classDeque}{Deque}}$<$ T, template\+Pointers, template\+Block\+Size $>$\+::\+Value\+At (\begin{DoxyParamCaption}\item[{const std\+::size\+\_\+t}]{index}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{TestDeque_8cpp_source_l00265}{265}} of file \mbox{\hyperlink{TestDeque_8cpp_source}{Test\+Deque.\+cpp}}.
+
+
+
+\label{doc-variable-members}
+\Hypertarget{classDeque_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classDeque_aed919b0fc2c01af44adb1f1477bfa84a}\index{Deque$<$ T, templatePointers, templateBlockSize $>$@{Deque$<$ T, templatePointers, templateBlockSize $>$}!m\_blockSize@{m\_blockSize}}
+\index{m\_blockSize@{m\_blockSize}!Deque$<$ T, templatePointers, templateBlockSize $>$@{Deque$<$ T, templatePointers, templateBlockSize $>$}}
+\doxysubsubsection{\texorpdfstring{m\_blockSize}{m\_blockSize}}
+{\footnotesize\ttfamily \label{classDeque_aed919b0fc2c01af44adb1f1477bfa84a} 
+template$<$typename T, unsigned int template\+Pointers = 7, unsigned int template\+Block\+Size = 4$>$ \\
+const unsigned int \mbox{\hyperlink{classDeque}{Deque}}$<$ T, template\+Pointers, template\+Block\+Size $>$\+::m\+\_\+block\+Size = 4\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{TestDeque_8cpp_source_l00298}{298}} of file \mbox{\hyperlink{TestDeque_8cpp_source}{Test\+Deque.\+cpp}}.
+
+\Hypertarget{classDeque_a85f7f34a4b1727d3d40f14cc00134434}\index{Deque$<$ T, templatePointers, templateBlockSize $>$@{Deque$<$ T, templatePointers, templateBlockSize $>$}!m\_capacity@{m\_capacity}}
+\index{m\_capacity@{m\_capacity}!Deque$<$ T, templatePointers, templateBlockSize $>$@{Deque$<$ T, templatePointers, templateBlockSize $>$}}
+\doxysubsubsection{\texorpdfstring{m\_capacity}{m\_capacity}}
+{\footnotesize\ttfamily \label{classDeque_a85f7f34a4b1727d3d40f14cc00134434} 
+template$<$typename T, unsigned int template\+Pointers = 7, unsigned int template\+Block\+Size = 4$>$ \\
+unsigned int \mbox{\hyperlink{classDeque}{Deque}}$<$ T, template\+Pointers, template\+Block\+Size $>$\+::m\+\_\+capacity\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{TestDeque_8cpp_source_l00293}{293}} of file \mbox{\hyperlink{TestDeque_8cpp_source}{Test\+Deque.\+cpp}}.
+
+\Hypertarget{classDeque_a03e94681e7c6cc9e1668eeeb0666bbcd}\index{Deque$<$ T, templatePointers, templateBlockSize $>$@{Deque$<$ T, templatePointers, templateBlockSize $>$}!m\_map@{m\_map}}
+\index{m\_map@{m\_map}!Deque$<$ T, templatePointers, templateBlockSize $>$@{Deque$<$ T, templatePointers, templateBlockSize $>$}}
+\doxysubsubsection{\texorpdfstring{m\_map}{m\_map}}
+{\footnotesize\ttfamily \label{classDeque_a03e94681e7c6cc9e1668eeeb0666bbcd} 
+template$<$typename T, unsigned int template\+Pointers = 7, unsigned int template\+Block\+Size = 4$>$ \\
+T\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classDeque}{Deque}}$<$ T, template\+Pointers, template\+Block\+Size $>$\+::m\+\_\+map\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{TestDeque_8cpp_source_l00283}{283}} of file \mbox{\hyperlink{TestDeque_8cpp_source}{Test\+Deque.\+cpp}}.
+
+\Hypertarget{classDeque_af05e59746dc773bd15c8985ca0d46ccb}\index{Deque$<$ T, templatePointers, templateBlockSize $>$@{Deque$<$ T, templatePointers, templateBlockSize $>$}!m\_pointers@{m\_pointers}}
+\index{m\_pointers@{m\_pointers}!Deque$<$ T, templatePointers, templateBlockSize $>$@{Deque$<$ T, templatePointers, templateBlockSize $>$}}
+\doxysubsubsection{\texorpdfstring{m\_pointers}{m\_pointers}}
+{\footnotesize\ttfamily \label{classDeque_af05e59746dc773bd15c8985ca0d46ccb} 
+template$<$typename T, unsigned int template\+Pointers = 7, unsigned int template\+Block\+Size = 4$>$ \\
+unsigned int \mbox{\hyperlink{classDeque}{Deque}}$<$ T, template\+Pointers, template\+Block\+Size $>$\+::m\+\_\+pointers\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{TestDeque_8cpp_source_l00297}{297}} of file \mbox{\hyperlink{TestDeque_8cpp_source}{Test\+Deque.\+cpp}}.
+
+\Hypertarget{classDeque_a49f8d9d1d02c2d69b2ea2f58020f322f}\index{Deque$<$ T, templatePointers, templateBlockSize $>$@{Deque$<$ T, templatePointers, templateBlockSize $>$}!m\_pointersCapacity@{m\_pointersCapacity}}
+\index{m\_pointersCapacity@{m\_pointersCapacity}!Deque$<$ T, templatePointers, templateBlockSize $>$@{Deque$<$ T, templatePointers, templateBlockSize $>$}}
+\doxysubsubsection{\texorpdfstring{m\_pointersCapacity}{m\_pointersCapacity}}
+{\footnotesize\ttfamily \label{classDeque_a49f8d9d1d02c2d69b2ea2f58020f322f} 
+template$<$typename T, unsigned int template\+Pointers = 7, unsigned int template\+Block\+Size = 4$>$ \\
+unsigned int \mbox{\hyperlink{classDeque}{Deque}}$<$ T, template\+Pointers, template\+Block\+Size $>$\+::m\+\_\+pointers\+Capacity\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{TestDeque_8cpp_source_l00301}{301}} of file \mbox{\hyperlink{TestDeque_8cpp_source}{Test\+Deque.\+cpp}}.
+
+\Hypertarget{classDeque_ad5eb54343934e2fad3d62db962076b88}\index{Deque$<$ T, templatePointers, templateBlockSize $>$@{Deque$<$ T, templatePointers, templateBlockSize $>$}!m\_pointersSize@{m\_pointersSize}}
+\index{m\_pointersSize@{m\_pointersSize}!Deque$<$ T, templatePointers, templateBlockSize $>$@{Deque$<$ T, templatePointers, templateBlockSize $>$}}
+\doxysubsubsection{\texorpdfstring{m\_pointersSize}{m\_pointersSize}}
+{\footnotesize\ttfamily \label{classDeque_ad5eb54343934e2fad3d62db962076b88} 
+template$<$typename T, unsigned int template\+Pointers = 7, unsigned int template\+Block\+Size = 4$>$ \\
+unsigned int \mbox{\hyperlink{classDeque}{Deque}}$<$ T, template\+Pointers, template\+Block\+Size $>$\+::m\+\_\+pointers\+Size\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{TestDeque_8cpp_source_l00300}{300}} of file \mbox{\hyperlink{TestDeque_8cpp_source}{Test\+Deque.\+cpp}}.
+
+\Hypertarget{classDeque_ac43f67637a5a4047e6bf6e68bb4daae5}\index{Deque$<$ T, templatePointers, templateBlockSize $>$@{Deque$<$ T, templatePointers, templateBlockSize $>$}!m\_sharedPointer@{m\_sharedPointer}}
+\index{m\_sharedPointer@{m\_sharedPointer}!Deque$<$ T, templatePointers, templateBlockSize $>$@{Deque$<$ T, templatePointers, templateBlockSize $>$}}
+\doxysubsubsection{\texorpdfstring{m\_sharedPointer}{m\_sharedPointer}}
+{\footnotesize\ttfamily \label{classDeque_ac43f67637a5a4047e6bf6e68bb4daae5} 
+template$<$typename T, unsigned int template\+Pointers = 7, unsigned int template\+Block\+Size = 4$>$ \\
+std\+::shared\+\_\+ptr$<$T$>$ \mbox{\hyperlink{classDeque}{Deque}}$<$ T, template\+Pointers, template\+Block\+Size $>$\+::m\+\_\+shared\+Pointer\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{TestDeque_8cpp_source_l00289}{289}} of file \mbox{\hyperlink{TestDeque_8cpp_source}{Test\+Deque.\+cpp}}.
+
+\Hypertarget{classDeque_a4124ac89ac08303b4f6b681e70c0a43b}\index{Deque$<$ T, templatePointers, templateBlockSize $>$@{Deque$<$ T, templatePointers, templateBlockSize $>$}!m\_size@{m\_size}}
+\index{m\_size@{m\_size}!Deque$<$ T, templatePointers, templateBlockSize $>$@{Deque$<$ T, templatePointers, templateBlockSize $>$}}
+\doxysubsubsection{\texorpdfstring{m\_size}{m\_size}}
+{\footnotesize\ttfamily \label{classDeque_a4124ac89ac08303b4f6b681e70c0a43b} 
+template$<$typename T, unsigned int template\+Pointers = 7, unsigned int template\+Block\+Size = 4$>$ \\
+unsigned int \mbox{\hyperlink{classDeque}{Deque}}$<$ T, template\+Pointers, template\+Block\+Size $>$\+::m\+\_\+size\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{TestDeque_8cpp_source_l00292}{292}} of file \mbox{\hyperlink{TestDeque_8cpp_source}{Test\+Deque.\+cpp}}.
+
+\Hypertarget{classDeque_a8266f229c3fe19cd9b03266282c39de2}\index{Deque$<$ T, templatePointers, templateBlockSize $>$@{Deque$<$ T, templatePointers, templateBlockSize $>$}!m\_uniqueMap@{m\_uniqueMap}}
+\index{m\_uniqueMap@{m\_uniqueMap}!Deque$<$ T, templatePointers, templateBlockSize $>$@{Deque$<$ T, templatePointers, templateBlockSize $>$}}
+\doxysubsubsection{\texorpdfstring{m\_uniqueMap}{m\_uniqueMap}}
+{\footnotesize\ttfamily \label{classDeque_a8266f229c3fe19cd9b03266282c39de2} 
+template$<$typename T, unsigned int template\+Pointers = 7, unsigned int template\+Block\+Size = 4$>$ \\
+std\+::unique\+\_\+ptr$<$std\+::unique\+\_\+ptr$<$T$>$ $>$ \mbox{\hyperlink{classDeque}{Deque}}$<$ T, template\+Pointers, template\+Block\+Size $>$\+::m\+\_\+unique\+Map\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{TestDeque_8cpp_source_l00288}{288}} of file \mbox{\hyperlink{TestDeque_8cpp_source}{Test\+Deque.\+cpp}}.
+
+\Hypertarget{classDeque_a5bded3d6553244d83212a37d0c091c41}\index{Deque$<$ T, templatePointers, templateBlockSize $>$@{Deque$<$ T, templatePointers, templateBlockSize $>$}!m\_vecMap@{m\_vecMap}}
+\index{m\_vecMap@{m\_vecMap}!Deque$<$ T, templatePointers, templateBlockSize $>$@{Deque$<$ T, templatePointers, templateBlockSize $>$}}
+\doxysubsubsection{\texorpdfstring{m\_vecMap}{m\_vecMap}}
+{\footnotesize\ttfamily \label{classDeque_a5bded3d6553244d83212a37d0c091c41} 
+template$<$typename T, unsigned int template\+Pointers = 7, unsigned int template\+Block\+Size = 4$>$ \\
+std\+::vector$<$std\+::vector$<$T$>$ $>$ \mbox{\hyperlink{classDeque}{Deque}}$<$ T, template\+Pointers, template\+Block\+Size $>$\+::m\+\_\+vec\+Map\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{TestDeque_8cpp_source_l00287}{287}} of file \mbox{\hyperlink{TestDeque_8cpp_source}{Test\+Deque.\+cpp}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+tests/container/deque/\mbox{\hyperlink{TestDeque_8cpp}{Test\+Deque.\+cpp}}\end{DoxyCompactItemize}

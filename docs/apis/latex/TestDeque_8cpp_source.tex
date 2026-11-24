@@ -1,0 +1,504 @@
+\doxysection{Test\+Deque.\+cpp}
+\hypertarget{TestDeque_8cpp_source}{}\label{TestDeque_8cpp_source}\index{tests/container/deque/TestDeque.cpp@{tests/container/deque/TestDeque.cpp}}
+\mbox{\hyperlink{TestDeque_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}gtest/gtest.h"{}}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Essentials_8hpp}{core/Essentials.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <deque>}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00017}00017\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ templatePo\textcolor{keywordtype}{int}ers\ =\ 7,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ templateBlockSize\ =\ 4>}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00018}\mbox{\hyperlink{classDeque}{00018}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classDeque_aa192fa15238e4be91c8a5ff52f615da7}{Deque}}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00019}00019\ \{}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00020}00020\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00022}00022\ \ \ \ \ \textcolor{comment}{//typedef\ typename\ T\ value\_type;}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00024}\mbox{\hyperlink{classDeque_aa192fa15238e4be91c8a5ff52f615da7}{00024}}\ \ \ \ \ \mbox{\hyperlink{classDeque_aa192fa15238e4be91c8a5ff52f615da7}{Deque}}()\ :\ \mbox{\hyperlink{classDeque_af05e59746dc773bd15c8985ca0d46ccb}{m\_pointers}}(templatePointers),\ \mbox{\hyperlink{classDeque_aed919b0fc2c01af44adb1f1477bfa84a}{m\_blockSize}}(templateBlockSize)}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00025}00025\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00026}00026\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Hey\ can\ we\ run\ other\ member\ functions\ even\ before\ constructor\ does\ it's\ job?}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00027}00027\ \ \ \ \ \ \ \ \ \textcolor{comment}{//OH\ the\ constructor\ is\ already\ running.}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00028}00028\ \ \ \ \ \ \ \ \ \textcolor{comment}{//m\_map\ =\ this-\/>AllocMap();}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00030}00030\ \ \ \ \ \ \ \ \ \textcolor{comment}{//PreAllocate\ some\ pointers\ and\ blocks}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00031}00031\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classDeque_a03e94681e7c6cc9e1668eeeb0666bbcd}{m\_map}}\ =\ \textcolor{keyword}{new}\ T*[\mbox{\hyperlink{classDeque_af05e59746dc773bd15c8985ca0d46ccb}{m\_pointers}}];}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classDeque_a4124ac89ac08303b4f6b681e70c0a43b}{m\_size}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00034}00034\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classDeque_a85f7f34a4b1727d3d40f14cc00134434}{m\_capacity}}\ =\ \mbox{\hyperlink{classDeque_af05e59746dc773bd15c8985ca0d46ccb}{m\_pointers}}\ *\ \mbox{\hyperlink{classDeque_aed919b0fc2c01af44adb1f1477bfa84a}{m\_blockSize}};}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00036}00036\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (std::size\_t\ i\ =\ 0;\ i<\mbox{\hyperlink{classDeque_af05e59746dc773bd15c8985ca0d46ccb}{m\_pointers}};\ ++i)}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00037}00037\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classDeque_a03e94681e7c6cc9e1668eeeb0666bbcd}{m\_map}}[i]\ =\ \textcolor{keyword}{new}\ T[\mbox{\hyperlink{classDeque_aed919b0fc2c01af44adb1f1477bfa84a}{m\_blockSize}}];}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00042}00042\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00044}\mbox{\hyperlink{classDeque_a199c51bd40a92222ce8c65d9c18235a3}{00044}}\ \ \ \ \ \mbox{\hyperlink{classDeque_a199c51bd40a92222ce8c65d9c18235a3}{\string~Deque}}()}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00045}00045\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classDeque_a595f8ad1990d8091fb831afef124e96a}{DeallocMap}}(\mbox{\hyperlink{classDeque_af05e59746dc773bd15c8985ca0d46ccb}{m\_pointers}});}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00047}00047\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00050}\mbox{\hyperlink{classDeque_a623de82cdff923168a2686477af21447}{00050}}\ \ \ \ \ \mbox{\hyperlink{classDeque_a623de82cdff923168a2686477af21447}{Deque}}(\mbox{\hyperlink{classDeque_aa192fa15238e4be91c8a5ff52f615da7}{Deque}}\ \&\&other)}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00051}00051\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00052}00052\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classCrowEngine_1_1Logging_ae1650723ed0937b4737423e466d52022}{CrowEngine::Logging::print}}(\textcolor{stringliteral}{"{}Move\ Constructor\ Called!\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00053}00053\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00055}\mbox{\hyperlink{classDeque_ae9ed922a07b72c03d755d39d2472cdcf}{00055}}\ \ \ \ \ \mbox{\hyperlink{classDeque_aa192fa15238e4be91c8a5ff52f615da7}{Deque}}\ \&\mbox{\hyperlink{classDeque_ae9ed922a07b72c03d755d39d2472cdcf}{operator=}}(\mbox{\hyperlink{classDeque_aa192fa15238e4be91c8a5ff52f615da7}{Deque}}\ \&\&other)}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00056}00056\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00057}00057\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classCrowEngine_1_1Logging_ae1650723ed0937b4737423e466d52022}{CrowEngine::Logging::print}}(\textcolor{stringliteral}{"{}Move\ Assignment\ Called!"{}});}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00059}00059\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00062}00062\ \ \ \ \ \textcolor{comment}{//This\ is\ allowed\ in\ C++=20}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00063}\mbox{\hyperlink{classDeque_a0935cb18914e6e921d545e5ce911b259}{00063}}\ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classDeque_a0935cb18914e6e921d545e5ce911b259}{GetValue}}()}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00064}00064\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }MultipleValue}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ m\_value;}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ m\_string;}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00069}00069\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00071}00071\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ MultipleValue\{12,\ \textcolor{stringliteral}{"{}Hey!"{}}\};}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00072}00072\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00075}00075\ \ \ \ \ \textcolor{keyword}{struct\ }MultipleValue;}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00076}00076\ \ \ \ \ \textcolor{comment}{//using\ type\ =\ MultipleValue;}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00077}\mbox{\hyperlink{classDeque_a5cbcf5725e9ab001c6ea91fb1e853666}{00077}}\ \ \ \ \ MultipleValue\ \mbox{\hyperlink{classDeque_a5cbcf5725e9ab001c6ea91fb1e853666}{GetValue2}}()}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00078}00078\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00079}00079\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }MultipleValue}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00080}00080\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ m\_value;}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ m\_string;}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classDeque_aa192fa15238e4be91c8a5ff52f615da7}{Deque}}\ *ptr;}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00085}00085\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00086}00086\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00087}00087\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ MultipleValue\{12,\ \textcolor{stringliteral}{"{}Hey!"{}}\};}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00088}00088\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00090}00090\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00092}00092\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00093}\mbox{\hyperlink{classDeque_a9edc95928d873e11494a7998bad41445}{00093}}\ \ \ \ \ T\ **\mbox{\hyperlink{classDeque_a9edc95928d873e11494a7998bad41445}{AllocMap}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ pointers)}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00094}00094\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00095}00095\ \ \ \ \ \ \ \ \ T\ **tempMap\ =\ \textcolor{keyword}{new}\ T*[pointers];}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00096}00096\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (std::size\_t\ i\ =\ 0;\ i<pointers;\ ++i)}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00097}00097\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ tempMap[i]\ =\ \textcolor{keyword}{new}\ T[\mbox{\hyperlink{classDeque_aed919b0fc2c01af44adb1f1477bfa84a}{m\_blockSize}}];}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00099}00099\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00100}00100\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ for\ (T\ *p\ :\ tempMap)}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00101}00101\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \{}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00102}00102\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ p\ =\ new\ T[m\_blockSize];}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00103}00103\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \}}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00104}00104\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ tempMap;}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00105}00105\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00106}00106\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00107}\mbox{\hyperlink{classDeque_a595f8ad1990d8091fb831afef124e96a}{00107}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classDeque_a595f8ad1990d8091fb831afef124e96a}{DeallocMap}}(\textcolor{keyword}{const}\ std::size\_t\ pointers)}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00108}00108\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00109}00109\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\#pragma\ omp\ parallel\ for}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00110}00110\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (std::size\_t\ i=0;\ i<pointers;\ ++i)}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00111}00111\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}[]\ \mbox{\hyperlink{classDeque_a03e94681e7c6cc9e1668eeeb0666bbcd}{m\_map}}[i];}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00113}00113\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00114}00114\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}[]\ \mbox{\hyperlink{classDeque_a03e94681e7c6cc9e1668eeeb0666bbcd}{m\_map}};}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00115}00115\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classDeque_a03e94681e7c6cc9e1668eeeb0666bbcd}{m\_map}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00116}00116\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00117}00117\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00118}00118\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00119}00119\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00120}00120\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00121}\mbox{\hyperlink{classDeque_ab43a80c4fa3d16817af16f1521dc93da}{00121}}\ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classDeque_ab43a80c4fa3d16817af16f1521dc93da}{Pointers}}()}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00122}00122\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00123}00123\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classDeque_af05e59746dc773bd15c8985ca0d46ccb}{m\_pointers}};}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00124}00124\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00125}00125\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00126}\mbox{\hyperlink{classDeque_a167d263aec7ec50669f39b1735c503f1}{00126}}\ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classDeque_a167d263aec7ec50669f39b1735c503f1}{BlockSize}}()}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00127}00127\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00128}00128\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classDeque_aed919b0fc2c01af44adb1f1477bfa84a}{m\_blockSize}};}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00129}00129\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00130}00130\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00131}\mbox{\hyperlink{classDeque_a13372c214864b01191bdef529c045d0d}{00131}}\ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classDeque_a13372c214864b01191bdef529c045d0d}{Size}}()}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00132}00132\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00133}00133\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classDeque_aed919b0fc2c01af44adb1f1477bfa84a}{m\_blockSize}};}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00134}00134\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00135}00135\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00136}\mbox{\hyperlink{classDeque_acbfe283262a929216bfaeea5a73ec997}{00136}}\ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classDeque_acbfe283262a929216bfaeea5a73ec997}{Capacity}}()}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00137}00137\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00138}00138\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classDeque_af05e59746dc773bd15c8985ca0d46ccb}{m\_pointers}}\ *\ \mbox{\hyperlink{classDeque_aed919b0fc2c01af44adb1f1477bfa84a}{m\_blockSize}};}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00139}00139\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00140}00140\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00141}00141\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00142}00142\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00143}00143\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00144}00144\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00145}00145\ \ \ \ \ \textcolor{comment}{//TODO:\ Bad\ name.\ Fix\ it!}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00146}\mbox{\hyperlink{classDeque_ad9187740e0428c9a298bc0b8a4c715b7}{00146}}\ \ \ \ \ T\ **\mbox{\hyperlink{classDeque_ad9187740e0428c9a298bc0b8a4c715b7}{AllocateInitializedBlock}}()}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00147}00147\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00148}00148\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ oldPointers\ =\ \mbox{\hyperlink{classDeque_af05e59746dc773bd15c8985ca0d46ccb}{m\_pointers}};}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00149}00149\ \ \ \ \ \ \ \ \ ++\mbox{\hyperlink{classDeque_af05e59746dc773bd15c8985ca0d46ccb}{m\_pointers}};}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00150}00150\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classDeque_a85f7f34a4b1727d3d40f14cc00134434}{m\_capacity}}\ =\ \mbox{\hyperlink{classDeque_af05e59746dc773bd15c8985ca0d46ccb}{m\_pointers}}\ *\ \mbox{\hyperlink{classDeque_aed919b0fc2c01af44adb1f1477bfa84a}{m\_blockSize}};\ \ \textcolor{comment}{//We\ can\ also\ say\ it\ as\ 'm\_capacity\ +=\ m\_blockSize'\ maybe.}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00151}00151\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00152}00152\ \ \ \ \ \ \ \ \ T\ **tempMap\ =\ this-\/>\mbox{\hyperlink{classDeque_a9edc95928d873e11494a7998bad41445}{AllocMap}}(\mbox{\hyperlink{classDeque_af05e59746dc773bd15c8985ca0d46ccb}{m\_pointers}});}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00153}00153\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00154}00154\ \ \ \ \ \ \ \ \ \textcolor{comment}{//TODO:\ Use\ 'memcpy()'\ here\ for\ better\ performence.}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00155}00155\ \ \ \ \ \ \ \ \ \textcolor{comment}{//memcpy(tempMap,\ m\_map,\ m\_);}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00156}00156\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00157}00157\ \ \ \ \ \ \ \ \ \textcolor{comment}{//memcpy(tempMap,\ m\_map,\ m\_size*sizeof(T));}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00158}00158\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (std::size\_t\ i=0;\ i<\mbox{\hyperlink{classDeque_a4124ac89ac08303b4f6b681e70c0a43b}{m\_size}};\ ++i)}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00159}00159\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00160}00160\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//It\ migth\ do\ copy\ depending\ on\ what\ the\ type\ 'T'\ is.}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00161}00161\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//tempMap[i/m\_blockSize][i\%m\_blockSize]\ =\ std::move(m\_map[i/m\_blockSize][i\%m\_blockSize]);}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00162}00162\ \ \ \ \ \ \ \ \ \ \ \ \ tempMap[i/\mbox{\hyperlink{classDeque_aed919b0fc2c01af44adb1f1477bfa84a}{m\_blockSize}}][i\%\mbox{\hyperlink{classDeque_aed919b0fc2c01af44adb1f1477bfa84a}{m\_blockSize}}]\ =\ \mbox{\hyperlink{classDeque_a03e94681e7c6cc9e1668eeeb0666bbcd}{m\_map}}[i/\mbox{\hyperlink{classDeque_aed919b0fc2c01af44adb1f1477bfa84a}{m\_blockSize}}][i\%\mbox{\hyperlink{classDeque_aed919b0fc2c01af44adb1f1477bfa84a}{m\_blockSize}}];}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00163}00163\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00164}00164\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00165}00165\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ tempMap;}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00166}00166\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00167}00167\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00168}00168\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00169}00169\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00170}00170\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00171}\mbox{\hyperlink{classDeque_ad2e30775beb07433a64bff5483368ddf}{00171}}\ \ \ \ \ [[deprecated(\textcolor{stringliteral}{"{}This\ is\ the\ old\ deprecated\ of\ Insert()\ function!"{}})]]\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classDeque_ad2e30775beb07433a64bff5483368ddf}{InsertV1}}()}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00172}00172\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00173}00173\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ unsigned\ int\ oldPointers\ =\ m\_pointers;}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00174}00174\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ ++m\_pointers;}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00175}00175\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ m\_capacity\ =\ m\_pointers\ *\ m\_blockSize;\ \ //We\ can\ also\ say\ it\ as\ 'm\_capacity\ +=\ m\_blockSize'\ maybe.}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00176}00176\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ T\ **tempMap\ =\ new\ T*[m\_pointers];}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00177}00177\ \ \ \ \ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00178}00178\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ //TODO:\ Use\ 'memcpy()'\ here\ for\ better\ performence.}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00179}00179\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ //memcpy(tempMap,\ m\_map,\ m\_);}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00180}00180\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ for\ (std::size\_t\ i\ =\ 0;\ i<m\_pointers;\ ++i)}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00181}00181\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \{}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00182}00182\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ tempMap[i]\ =\ new\ T[m\_blockSize];}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00183}00183\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \}}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00184}00184\ \ \ \ \ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00185}00185\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ for\ (std::size\_t\ i=0;\ i<m\_size;\ ++i)}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00186}00186\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \{}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00187}00187\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ //It\ migth\ do\ copy\ depending\ on\ what\ the\ type\ 'T'\ is.}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00188}00188\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ tempMap[i/m\_blockSize][i\%m\_blockSize]\ =\ m\_map[i/m\_blockSize][i\%m\_blockSize];}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00189}00189\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \}}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00190}00190\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00191}00191\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ ++m\_size;}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00192}00192\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ unsigned\ int\ index\ =\ m\_size\ -\/\ 1;}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00193}00193\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ tempMap[index/m\_blockSize][index\%m\_blockSize]\ =\ value;}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00194}00194\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00195}00195\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ if\ (!m\_map)\{return;\}}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00196}00196\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ //Previously\ we\ increased\ the\ number\ of\ pointers\ by\ '++m\_pointers'.}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00197}00197\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ //So\ we\ need\ to\ do\ 'm\_pointers-\/1'\ here.}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00198}00198\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ for\ (std::size\_t\ i=0;\ i<oldPointers;\ ++i)}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00199}00199\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \{}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00200}00200\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ delete[]\ m\_map[i];}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00201}00201\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \}}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00202}00202\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ delete[]\ m\_map;}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00203}00203\ \ \ \ \ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00204}00204\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ m\_map\ =\ tempMap;}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00205}00205\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00206}00206\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00207}00207\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00208}00208\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00209}00209\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00210}\mbox{\hyperlink{classDeque_a7995c61fe27da57c1c9879700b6e4f75}{00210}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classDeque_a7995c61fe27da57c1c9879700b6e4f75}{Insert}}(\textcolor{keyword}{const}\ T\ \&value)}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00211}00211\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00212}00212\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classDeque_a4124ac89ac08303b4f6b681e70c0a43b}{m\_size}}\ <\ \mbox{\hyperlink{classDeque_a85f7f34a4b1727d3d40f14cc00134434}{m\_capacity}})}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00213}00213\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00214}00214\ \ \ \ \ \ \ \ \ \ \ \ \ ++\mbox{\hyperlink{classDeque_a4124ac89ac08303b4f6b681e70c0a43b}{m\_size}};}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00215}00215\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ index\ =\ \mbox{\hyperlink{classDeque_a4124ac89ac08303b4f6b681e70c0a43b}{m\_size}}\ -\/\ 1;}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00216}00216\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classDeque_a03e94681e7c6cc9e1668eeeb0666bbcd}{m\_map}}[index/\mbox{\hyperlink{classDeque_aed919b0fc2c01af44adb1f1477bfa84a}{m\_blockSize}}][index\%\mbox{\hyperlink{classDeque_aed919b0fc2c01af44adb1f1477bfa84a}{m\_blockSize}}]\ =\ value;}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00217}00217\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00218}00218\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00219}00219\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00220}00220\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classCrowEngine_1_1Logging_ae1650723ed0937b4737423e466d52022}{CrowEngine::Logging::print}}(\textcolor{stringliteral}{"{}Allocating\ and\ Initializing\ block...\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00221}00221\ \ \ \ \ \ \ \ \ \textcolor{comment}{//the\ 'F'\ suffix\ here\ stands\ for\ 'returned\ from\ 'F'ucntion.}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00222}00222\ \ \ \ \ \ \ \ \ T\ **tempMapF\ =\ this-\/>\mbox{\hyperlink{classDeque_ad9187740e0428c9a298bc0b8a4c715b7}{AllocateInitializedBlock}}();}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00223}00223\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00224}00224\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00225}00225\ \ \ \ \ \ \ \ \ ++\mbox{\hyperlink{classDeque_a4124ac89ac08303b4f6b681e70c0a43b}{m\_size}};}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00226}00226\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ index\ =\ \mbox{\hyperlink{classDeque_a4124ac89ac08303b4f6b681e70c0a43b}{m\_size}}\ -\/\ 1;}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00227}00227\ \ \ \ \ \ \ \ \ tempMapF[index/\mbox{\hyperlink{classDeque_aed919b0fc2c01af44adb1f1477bfa84a}{m\_blockSize}}][index\%\mbox{\hyperlink{classDeque_aed919b0fc2c01af44adb1f1477bfa84a}{m\_blockSize}}]\ =\ value;}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00228}00228\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00229}00229\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{classDeque_a03e94681e7c6cc9e1668eeeb0666bbcd}{m\_map}})\{\textcolor{keywordflow}{return};\}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00230}00230\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Previously\ we\ increased\ the\ number\ of\ pointers\ by\ '++m\_pointers'.}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00231}00231\ \ \ \ \ \ \ \ \ \textcolor{comment}{//So\ we\ need\ to\ do\ 'm\_pointers-\/1'\ or\ 'oldPointers'\ here.}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00232}00232\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ oldPointers\ =\ \mbox{\hyperlink{classDeque_af05e59746dc773bd15c8985ca0d46ccb}{m\_pointers}}\ -\/\ 1;}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00233}00233\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classDeque_a595f8ad1990d8091fb831afef124e96a}{DeallocMap}}(oldPointers);}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00234}00234\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00235}00235\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classDeque_a03e94681e7c6cc9e1668eeeb0666bbcd}{m\_map}}\ =\ tempMapF;}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00236}00236\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classCrowEngine_1_1Logging_ae1650723ed0937b4737423e466d52022}{CrowEngine::Logging::print}}(\textcolor{stringliteral}{"{}Allocated\ and\ initialized\ a\ Block!\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00237}00237\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00238}00238\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00239}00239\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00240}\mbox{\hyperlink{classDeque_a75479b8576b5a82161c1b2fd0d7cbe00}{00240}}\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classDeque_a75479b8576b5a82161c1b2fd0d7cbe00}{Remove}}()\ \&\ \textcolor{comment}{//Or\ \&\&}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00241}00241\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00242}00242\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ var\ =\ 10;\ var\ ==\ 10)}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00243}00243\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00244}00244\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}The\ value\ of\ var\ is\ :"{}}\ <<\ var\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00245}00245\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ var;}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00246}00246\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00247}00247\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00248}00248\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00249}00249\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00250}00250\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00251}00251\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00252}\mbox{\hyperlink{classDeque_a6f8d64776ba5e44ea0c367a0f23b3ec5}{00252}}\ \ \ \ \ T\ \&\mbox{\hyperlink{classDeque_a6f8d64776ba5e44ea0c367a0f23b3ec5}{operator[]}}(\textcolor{keyword}{const}\ std::size\_t\ index)}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00253}00253\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00254}00254\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (index\ <\ 0\ \&\&\ index\ >=\ \mbox{\hyperlink{classDeque_a4124ac89ac08303b4f6b681e70c0a43b}{m\_size}})\ [[unlikely]]}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00255}00255\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00256}00256\ \ \ \ \ \ \ \ \ \ \ \ \ std::\_\_throw\_out\_of\_range(\textcolor{stringliteral}{"{}OUT\ OF\ BOUND\ ACCESS!"{}});}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00257}00257\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//return\ T();}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00258}00258\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Here\ it's\ an\ rvalue\ then\ how\ it's\ binding\ to\ lvalue\ reference(T\ \&operator)?}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00259}00259\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Is\ it\ taking\ some\ sort\ of\ assumption\ that\ 'T'\ is\ going\ to\ be\ 'const\ T'?}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00260}00260\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00261}00261\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classDeque_a03e94681e7c6cc9e1668eeeb0666bbcd}{m\_map}}[index/\mbox{\hyperlink{classDeque_aed919b0fc2c01af44adb1f1477bfa84a}{m\_blockSize}}][index\%\mbox{\hyperlink{classDeque_aed919b0fc2c01af44adb1f1477bfa84a}{m\_blockSize}}];}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00262}00262\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00263}00263\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00264}00264\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00265}\mbox{\hyperlink{classDeque_a4c55d62b0bb81a6036b125dd6acb8f22}{00265}}\ \ \ \ \ \textcolor{keyword}{inline}\ T\ \&\mbox{\hyperlink{classDeque_a4c55d62b0bb81a6036b125dd6acb8f22}{ValueAt}}(\textcolor{keyword}{const}\ std::size\_t\ index)}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00266}00266\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00267}00267\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ To\ think\ that\ [[unlikely]]\ helps\ the\ branch\ predictor\ is\ a\ Fool\ wise\ man\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00268}00268\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (index\ <\ 0\ \&\&\ index\ >\ \mbox{\hyperlink{classDeque_af05e59746dc773bd15c8985ca0d46ccb}{m\_pointers}}*\mbox{\hyperlink{classDeque_aed919b0fc2c01af44adb1f1477bfa84a}{m\_blockSize}})\ [[unlikely]]}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00269}00269\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00270}00270\ \ \ \ \ \ \ \ \ \ \ \ \ std::\_\_throw\_out\_of\_range(\textcolor{stringliteral}{"{}OUT\ OF\ BOUND\ ACCESS!"{}});}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00271}00271\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ T\{\};\ \textcolor{comment}{//No\ worries\ RVO\ is\ with\ you!}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00272}00272\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00273}00273\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classDeque_a03e94681e7c6cc9e1668eeeb0666bbcd}{m\_map}}[index/\mbox{\hyperlink{classDeque_aed919b0fc2c01af44adb1f1477bfa84a}{m\_blockSize}}][index\%\mbox{\hyperlink{classDeque_aed919b0fc2c01af44adb1f1477bfa84a}{m\_blockSize}}];}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00274}00274\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00275}00275\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00276}00276\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00277}00277\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00278}00278\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00279}00279\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00280}00280\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00281}00281\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00282}00282\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00283}\mbox{\hyperlink{classDeque_a03e94681e7c6cc9e1668eeeb0666bbcd}{00283}}\ \ \ \ \ T\ **\mbox{\hyperlink{classDeque_a03e94681e7c6cc9e1668eeeb0666bbcd}{m\_map}};}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00284}00284\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00285}00285\ \ \ \ \ \textcolor{comment}{//We\ will\ be\ using\ these\ in\ the\ future\ but\ for\ now\ "{}T\ **m\_map"{}\ just\ works.}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00286}00286\ \ \ \ \ \textcolor{comment}{//DynamicArray<>}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00287}\mbox{\hyperlink{classDeque_a5bded3d6553244d83212a37d0c091c41}{00287}}\ \ \ \ \ std::vector<std::vector<T>>\ \mbox{\hyperlink{classDeque_a5bded3d6553244d83212a37d0c091c41}{m\_vecMap}};}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00288}\mbox{\hyperlink{classDeque_a8266f229c3fe19cd9b03266282c39de2}{00288}}\ \ \ \ \ std::unique\_ptr<std::unique\_ptr<T>>\ \mbox{\hyperlink{classDeque_a8266f229c3fe19cd9b03266282c39de2}{m\_uniqueMap}};}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00289}\mbox{\hyperlink{classDeque_ac43f67637a5a4047e6bf6e68bb4daae5}{00289}}\ \ \ \ \ std::shared\_ptr<T>\ \mbox{\hyperlink{classDeque_ac43f67637a5a4047e6bf6e68bb4daae5}{m\_sharedPointer}};}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00290}00290\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00291}00291\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00292}\mbox{\hyperlink{classDeque_a4124ac89ac08303b4f6b681e70c0a43b}{00292}}\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classDeque_a4124ac89ac08303b4f6b681e70c0a43b}{m\_size}};}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00293}\mbox{\hyperlink{classDeque_a85f7f34a4b1727d3d40f14cc00134434}{00293}}\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classDeque_a85f7f34a4b1727d3d40f14cc00134434}{m\_capacity}};}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00294}00294\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00295}00295\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00296}00296\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00297}\mbox{\hyperlink{classDeque_af05e59746dc773bd15c8985ca0d46ccb}{00297}}\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classDeque_af05e59746dc773bd15c8985ca0d46ccb}{m\_pointers}};}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00298}\mbox{\hyperlink{classDeque_aed919b0fc2c01af44adb1f1477bfa84a}{00298}}\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classDeque_aed919b0fc2c01af44adb1f1477bfa84a}{m\_blockSize}}\ =\ 4;}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00299}00299\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00300}\mbox{\hyperlink{classDeque_ad5eb54343934e2fad3d62db962076b88}{00300}}\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classDeque_ad5eb54343934e2fad3d62db962076b88}{m\_pointersSize}};}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00301}\mbox{\hyperlink{classDeque_a49f8d9d1d02c2d69b2ea2f58020f322f}{00301}}\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classDeque_a49f8d9d1d02c2d69b2ea2f58020f322f}{m\_pointersCapacity}};}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00302}00302\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00303}00303\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00304}00304\ \};}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00305}00305\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00306}00306\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00307}00307\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00308}00308\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00309}00309\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00310}00310\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceCrowEngine}{CrowEngine}}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00311}00311\ \{}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00312}00312\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00313}00313\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00314}00314\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00315}\mbox{\hyperlink{structCrowEngine_1_1RemoveReference}{00315}}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structCrowEngine_1_1RemoveReference}{RemoveReference}}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00316}00316\ \{}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00317}\mbox{\hyperlink{structCrowEngine_1_1RemoveReference_a190792ac633bc8575120b2449f0650ef}{00317}}\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{structCrowEngine_1_1RemoveReference_a190792ac633bc8575120b2449f0650ef}{type}}\ =\ T;}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00318}00318\ \};}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00319}00319\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00320}00320\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00321}\mbox{\hyperlink{structCrowEngine_1_1RemoveReference_3_01T_01_6_01_4}{00321}}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structCrowEngine_1_1RemoveReference}{RemoveReference}}<T\&>\ \ \ \textcolor{comment}{//If\ we\ do\ <T\&>\ here\ then\ it's\ a\ partial\ specialization.}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00322}00322\ \{}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00323}\mbox{\hyperlink{structCrowEngine_1_1RemoveReference_3_01T_01_6_01_4_aeeaa3040ce70a450d694ceafb4715e0b}{00323}}\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{structCrowEngine_1_1RemoveReference_3_01T_01_6_01_4_aeeaa3040ce70a450d694ceafb4715e0b}{type}}\ =\ T;}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00324}00324\ \};}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00325}00325\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00326}00326\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00327}\mbox{\hyperlink{structCrowEngine_1_1RemoveReference_3_01T_01_6_6_01_4}{00327}}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structCrowEngine_1_1RemoveReference}{RemoveReference}}<T\&\&>\ \ \ \textcolor{comment}{//If\ we\ do\ <T\&>\ here\ then\ it's\ a\ partial\ specialization.}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00328}00328\ \{}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00329}\mbox{\hyperlink{structCrowEngine_1_1RemoveReference_3_01T_01_6_6_01_4_a543feb6c754fc892791c61ebf40396a1}{00329}}\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{structCrowEngine_1_1RemoveReference_3_01T_01_6_6_01_4_a543feb6c754fc892791c61ebf40396a1}{type}}\ =\ T;}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00330}00330\ \};}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00331}00331\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00332}00332\ \textcolor{comment}{//Why\ should\ we\ Add\ 'constexpr'?}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00333}00333\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00334}\mbox{\hyperlink{namespaceCrowEngine_a2481c928367e3107ccdcc996fc96b122}{00334}}\ \mbox{\hyperlink{namespaceCrowEngine_a2481c928367e3107ccdcc996fc96b122}{\_\_attribute\_\_}}((always\_inline))\ \textcolor{keyword}{inline}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00335}00335\ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{typename}\ \mbox{\hyperlink{structCrowEngine_1_1RemoveReference_a190792ac633bc8575120b2449f0650ef}{RemoveReference<T>::type}}\&\&\ RvalueCast(T\ \&\&value)\ \textcolor{keyword}{noexcept}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00336}00336\ \{}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00337}00337\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}typename\ \mbox{\hyperlink{structCrowEngine_1_1RemoveReference_a190792ac633bc8575120b2449f0650ef}{RemoveReference<T>::type}}\&\&\textcolor{keyword}{>}(value);}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00338}00338\ \}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00339}00339\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00340}00340\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00341}00341\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00342}00342\ \textcolor{comment}{//Just\ here\ checking\ for\ the\ 'extern'\ keyword.}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00343}00343\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{namespaceCrowEngine_a1097e3a3f60e01ee091b4d768e7d42f6}{GetUnsignedInt}}()\{\textcolor{keywordflow}{return}\ 10;\}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00344}\mbox{\hyperlink{namespaceCrowEngine_a2f47b7f6578b226000723fb2fa9bfbb9}{00344}}\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{namespaceCrowEngine_a2f47b7f6578b226000723fb2fa9bfbb9}{GetStr}}()\{\textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Hello,\ World!"{}};\}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00345}\mbox{\hyperlink{namespaceCrowEngine_ad735e3b52b068098c229e91fa8e72f56}{00345}}\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ *\mbox{\hyperlink{namespaceCrowEngine_ad735e3b52b068098c229e91fa8e72f56}{GetMalloc}}()\{\textcolor{keywordflow}{return}\ malloc(10);\}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00346}00346\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00347}00347\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00348}00348\ \}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00349}00349\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00350}00350\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00351}00351\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00352}00352\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00353}\mbox{\hyperlink{TestDeque_8cpp_ab0eb50083d97d995cf69d20cd8b1fcb8}{00353}}\ \mbox{\hyperlink{TestDeque_8cpp_ab0eb50083d97d995cf69d20cd8b1fcb8}{TEST}}(CustomDequeTest,\ TestInsertion)}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00354}00354\ \{}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00355}00355\ \ \ \ \ std::deque<int>\ deqSTL;}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00356}00356\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00357}00357\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00358}00358\ \ \ \ \ \mbox{\hyperlink{classDeque}{Deque<int,\ 7,\ 512>}}\ deq;}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00359}00359\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00360}00360\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ testSize\ =\ 2\ *\ 7*512;}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00361}00361\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00362}00362\ \ \ \ \ \textcolor{keywordflow}{for}\ (std::size\_t\ i=0;\ i<testSize;\ ++i)}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00363}00363\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00364}00364\ \ \ \ \ \ \ \ \ deq.\mbox{\hyperlink{classDeque_a7995c61fe27da57c1c9879700b6e4f75}{Insert}}(\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(i));}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00365}00365\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00366}00366\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00367}00367\ \ \ \ \ \textcolor{comment}{//Deque<int,\ 7,\ 512>\ deq2\ =\ static\_cast<typename\ RemoveReference<int,\ 7,\ 512>::type\&\&>(deq);}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00368}00368\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00369}00369\ \ \ \ \ \mbox{\hyperlink{classDeque}{Deque<int,\ 7,\ 512>}}\ deq2;\textcolor{comment}{//\ =\ CrowEngine::RvalueCast(deq);}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00370}00370\ \ \ \ \ deq2\ =\ CrowEngine::RvalueCast(deq);}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00371}00371\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00372}00372\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00373}00373\ \ \ \ \ \textcolor{keywordflow}{for}\ (std::size\_t\ i=0;\ i<testSize;\ ++i)}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00374}00374\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00375}00375\ \ \ \ \ \ \ \ \ std::cout\ <<\ deq[i]\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00376}00376\ \ \ \ \ \ \ \ \ EXPECT\_EQ(deq[i],\ i);}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00377}00377\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00378}00378\ \}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00379}00379\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00380}00380\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00381}00381\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00382}00382\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00383}\mbox{\hyperlink{TestDeque_8cpp_a76aeb6ab636c550f6d739606edab37f1}{00383}}\ \mbox{\hyperlink{TestDeque_8cpp_ab0eb50083d97d995cf69d20cd8b1fcb8}{TEST}}(TestMemcpy,\ DISABLED\_TestingMemcpyBugs)}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00384}00384\ \{}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00385}00385\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00386}00386\ \ \ \ \ \textcolor{keywordtype}{int}\ *p;}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00387}00387\ \ \ \ \ \textcolor{keywordtype}{int}\ *arr\ =\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{int}[10];}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00388}00388\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00389}00389\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i=0;\ i<10;\ ++i)\{arr[i]\ =\ i;\}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00390}00390\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00391}00391\ \ \ \ \ memcpy(p,\ arr,\ 10*\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}));}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00392}00392\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00393}00393\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i=0;\ i<10;\ ++i)}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00394}00394\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00395}00395\ \ \ \ \ \ \ \ \ std::cout\ <<\ p[i]\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00396}00396\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00397}00397\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00398}00398\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i=0;\ i<10;\ ++i)}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00399}00399\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00400}00400\ \ \ \ \ \ \ \ \ std::cout\ <<\ arr[i]\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00401}00401\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00402}00402\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00403}00403\ \ \ \ \ \textcolor{comment}{//We\ can't\ delete\ a\ pointer\ that\ wasn't\ allocated\ by\ new.}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00404}00404\ \ \ \ \ \textcolor{comment}{//delete[]\ p;}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00405}00405\ \ \ \ \ \textcolor{keyword}{delete}[]\ arr;}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00406}00406\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00407}00407\ \}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00408}00408\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00409}00409\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00410}00410\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00411}\mbox{\hyperlink{TestDeque_8cpp_a625371edf38d71edf0d8a6420ce90c6a}{00411}}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{double}\ \textcolor{keyword}{operator}\textcolor{stringliteral}{"{}"{}}\_km(\textcolor{keywordtype}{long}\ \textcolor{keywordtype}{double}\ km)}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00412}00412\ \{}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00413}00413\ \ \ \ \ \textcolor{keywordflow}{return}\ 1000.0\ *\ km;}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00414}00414\ \}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00415}00415\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00416}00416\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00417}\mbox{\hyperlink{structA}{00417}}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structA_a72bff67d8c18772260be65da0764dc4f}{A}}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00418}00418\ \{}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00419}00419\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00420}00420\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00421}00421\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00422}\mbox{\hyperlink{structA_a72bff67d8c18772260be65da0764dc4f}{00422}}\ \ \ \ \ \mbox{\hyperlink{structA_a72bff67d8c18772260be65da0764dc4f}{A}}(\textcolor{keywordtype}{int}\ value)}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00423}00423\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00424}00424\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structA_a639a533b90746b5579cb273c7749f4c4}{m\_number}}\ =\ value;}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00425}00425\ \ \ \ \ \ \ \ \ std::cout\ <<\ \mbox{\hyperlink{structA_a639a533b90746b5579cb273c7749f4c4}{m\_number}}\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00426}00426\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00427}00427\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00428}\mbox{\hyperlink{structA_adf27845d60aaa89ac1adf184c8e3e15e}{00428}}\ \ \ \ \ \mbox{\hyperlink{structA_adf27845d60aaa89ac1adf184c8e3e15e}{A}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \&value)}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00429}00429\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00430}00430\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structA_a639a533b90746b5579cb273c7749f4c4}{m\_number}}\ =\ value;}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00431}00431\ \ \ \ \ \ \ \ \ std::cout\ <<\ \mbox{\hyperlink{structA_a639a533b90746b5579cb273c7749f4c4}{m\_number}}\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00432}00432\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00433}00433\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00434}00434\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00435}00435\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00436}00436\ \ \ \ \ \textcolor{comment}{//B\ m\_obj;}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00437}00437\ \ \ \ \ \textcolor{comment}{//Here\ if\ m\_obj\ is\ constructed\ here\ directly\ not\ in\ the\ member\ initializer\ list\ then\ the\ constructor\ run\ here.}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00438}00438\ \ \ \ \ \textcolor{comment}{//If\ the\ m\_obj\ is\ initialized\ in\ the\ member\ initialzer\ list\ then\ the\ constructor\ here\ isn't\ run\ rather\ it's\ run\ in\ the\ member\ initializer\ list\ site.}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00439}00439\ \ \ \ \ \textcolor{comment}{//So\ i\ guess\ the\ compiler\ actually\ checks\ if\ it\ was\ initialized\ here\ directly.\ If\ not\ then\ in\ member\ initializer\ list?\ If\ no\ then\ just\ run\ the\ constructor\ at\ declaration\ site}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00440}00440\ \ \ \ \ \textcolor{comment}{//If\ yes\ then\ construct\ it\ in\ the\ member\ initializer\ list.}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00441}00441\ \ \ \ \ \textcolor{comment}{//If\ not\ in\ the\ member\ initializer\ list\ but\ in\ the\ constructor\ body\ then\ it\ constructs\ it\ two\ times.\ First\ directly\ in\ the\ declaration\ site\ next\ in\ the\ constructor\ body.}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00442}00442\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00443}\mbox{\hyperlink{structA_a639a533b90746b5579cb273c7749f4c4}{00443}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structA_a639a533b90746b5579cb273c7749f4c4}{m\_number}};}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00444}00444\ \};}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00445}00445\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00446}00446\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00447}00447\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00448}\mbox{\hyperlink{TestDeque_8cpp_a99bf1157c7a9f7fb7164490679dab327}{00448}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{TestDeque_8cpp_a99bf1157c7a9f7fb7164490679dab327}{func}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*)\{\ std::cout\ <<\ \textcolor{stringliteral}{"{}Ran\ the\ const\ char*\ one!"{}}\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};\}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00449}\mbox{\hyperlink{TestDeque_8cpp_a1c583bfa32d51f113732b69e4a31e91c}{00449}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{TestDeque_8cpp_a99bf1157c7a9f7fb7164490679dab327}{func}}(\textcolor{keywordtype}{short})\{\ std::cout\ <<\ \textcolor{stringliteral}{"{}Ran\ the\ short\ one!"{}}\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};\}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00450}00450\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00451}00451\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00452}\mbox{\hyperlink{TestDeque_8cpp_a9ee1d627b05c167468e0ada815bfb94b}{00452}}\ \mbox{\hyperlink{TestDeque_8cpp_ab0eb50083d97d995cf69d20cd8b1fcb8}{TEST}}(TestOutOfTheBox,\ OutOfTheBoxTesting)}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00453}00453\ \{}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00454}00454\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ value\ =\ \mbox{\hyperlink{namespaceCrowEngine_a2ff66d3a230af8786a645fe30340ba84}{CrowEngine::function}}();}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00455}00455\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}The\ value\ of\ value\ is:\ "{}}\ <<\ value\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00456}00456\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00457}00457\ \ \ \ \ \textcolor{comment}{//std::allocator<int>\ value;}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00458}00458\ \ \ \ \ \textcolor{comment}{//\ int\ *p\ =\ value.allocate(10);}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00459}00459\ \ \ \ \ \textcolor{comment}{//\ value.deallocate(p,\ 10);}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00460}00460\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00461}00461\ \ \ \ \ \textcolor{keywordtype}{int}\ a\ =\ 10;}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00462}00462\ \ \ \ \ \textcolor{keywordtype}{int}\ *ptr\ =\ \_\_builtin\_addressof(a);}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00463}00463\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00464}00464\ \ \ \ \ \textcolor{comment}{//CrowEngine::function();}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00465}00465\ \ \ \ \ std::cout\ <<\ \mbox{\hyperlink{namespaceCrowEngine_a1097e3a3f60e01ee091b4d768e7d42f6}{CrowEngine::GetUnsignedInt}}()\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00466}00466\ \ \ \ \ std::cout\ <<\ 10.0\_km\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00467}00467\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00468}00468\ \ \ \ \ \textcolor{comment}{//A\ obj(10);}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00469}00469\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00470}00470\ \ \ \ \ \textcolor{comment}{//func(0);}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00471}00471\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00472}00472\ \ \ \ \ \textcolor{comment}{//(void*)0;}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00473}00473\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00474}00474\ \ \ \ \ \textcolor{comment}{//wchar\_t}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00475}00475\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00476}00476\ \ \ \ \ \_\_asm\_\_\ \textcolor{keyword}{volatile}(\textcolor{stringliteral}{"{}mov\ \$64,\ \%\%rax;"{}}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00477}00477\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}mov\ \$0,\ \%\%rdi;"{}}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00478}00478\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}syscall"{}}\ :\ :\ :\ \textcolor{stringliteral}{"{}rax"{}},\ \textcolor{stringliteral}{"{}rdi"{}});}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00479}00479\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00480}00480\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00481}00481\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00482}00482\ \}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00483}00483\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00484}00484\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00485}00485\ \textcolor{comment}{//\ \_\_asm\_\_\ volatile\ ("{}mov\ \$60,\ \%\%rax;\ mov\ \$0,\ \%\%rdi;\ syscall"{}\ :\ :\ :\ "{}rax"{},\ "{}rdi"{});}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00486}00486\ \textcolor{comment}{//\ extern\ "{}C"{}\ void\ \_start()\{}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00487}00487\ \textcolor{comment}{//\ \ \ \ \ \_\_asm\_\_\ volatile("{}mov\ \$64,\ \%\%rax;"{}}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00488}00488\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}mov\ \$0,\ \%\%rdi;"{}}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00489}00489\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}syscall"{}\ :\ :\ :\ "{}rax"{},\ "{}rdi"{});}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00490}00490\ \textcolor{comment}{//\ \}}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00491}00491\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00492}00492\ }
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00493}\mbox{\hyperlink{TestDeque_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{00493}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{TestDeque_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00494}00494\ \{}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00495}00495\ \ \ \ \ testing::InitGoogleTest();}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00496}00496\ \ \ \ \ \textcolor{keywordflow}{return}\ RUN\_ALL\_TESTS();}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00497}00497\ \}}
+\DoxyCodeLine{\Hypertarget{TestDeque_8cpp_source_l00498}00498\ }
+
+\end{DoxyCode}

@@ -1,0 +1,51 @@
+\doxysection{Mesh.\+hpp}
+\hypertarget{Mesh_8hpp_source}{}\label{Mesh_8hpp_source}\index{source/scene/entity/Mesh.hpp@{source/scene/entity/Mesh.hpp}}
+\mbox{\hyperlink{Mesh_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Mesh_8hpp_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{Mesh_8hpp_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{Mesh_8hpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Buffer_8hpp}{buffer/Buffer.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{Mesh_8hpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Texture_8hpp}{buffer/Texture.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{Mesh_8hpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{meshData_8hpp}{meshData.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{Mesh_8hpp_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{Mesh_8hpp_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{Mesh_8hpp_source_l00008}00008\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceCrowEngine}{CrowEngine}}}
+\DoxyCodeLine{\Hypertarget{Mesh_8hpp_source_l00009}00009\ \{}
+\DoxyCodeLine{\Hypertarget{Mesh_8hpp_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{Mesh_8hpp_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{Mesh_8hpp_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{Mesh_8hpp_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{Mesh_8hpp_source_l00014}\mbox{\hyperlink{classCrowEngine_1_1Mesh}{00014}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classCrowEngine_1_1Mesh_a0b69b4a0bc6e6844673e2e786dfbf009}{Mesh}}}
+\DoxyCodeLine{\Hypertarget{Mesh_8hpp_source_l00015}00015\ \{}
+\DoxyCodeLine{\Hypertarget{Mesh_8hpp_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{Mesh_8hpp_source_l00017}00017\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{Mesh_8hpp_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{Mesh_8hpp_source_l00019}\mbox{\hyperlink{classCrowEngine_1_1Mesh_a0b69b4a0bc6e6844673e2e786dfbf009}{00019}}\ \ \ \ \ \mbox{\hyperlink{classCrowEngine_1_1Mesh_a0b69b4a0bc6e6844673e2e786dfbf009}{Mesh}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{Mesh_8hpp_source_l00020}\mbox{\hyperlink{classCrowEngine_1_1Mesh_a8efb3bc4bcaa22a3cddfcdacd8d988da}{00020}}\ \ \ \ \ \mbox{\hyperlink{classCrowEngine_1_1Mesh_a8efb3bc4bcaa22a3cddfcdacd8d988da}{\string~Mesh}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{Mesh_8hpp_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{Mesh_8hpp_source_l00022}\mbox{\hyperlink{classCrowEngine_1_1Mesh_a7931e4cacacd4fc957ea42249dfc2edf}{00022}}\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCrowEngine_1_1Mesh_a7931e4cacacd4fc957ea42249dfc2edf}{BindCurrentBuffer}}()\ \{\ \mbox{\hyperlink{classCrowEngine_1_1Mesh_a5360ef9dc886791d8d816a2c24cc680b}{m\_meshData}}.m\_buffer.Bind();\ \}}
+\DoxyCodeLine{\Hypertarget{Mesh_8hpp_source_l00023}\mbox{\hyperlink{classCrowEngine_1_1Mesh_a1c6709101b824bf06015aa382604caef}{00023}}\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCrowEngine_1_1Mesh_a1c6709101b824bf06015aa382604caef}{UnbindCurrentBuffer}}()\ \{\ \mbox{\hyperlink{classCrowEngine_1_1Mesh_a5360ef9dc886791d8d816a2c24cc680b}{m\_meshData}}.m\_buffer.Unbind();\ \}}
+\DoxyCodeLine{\Hypertarget{Mesh_8hpp_source_l00024}\mbox{\hyperlink{classCrowEngine_1_1Mesh_a8eb1e4809c98293c4676af0200530315}{00024}}\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCrowEngine_1_1Mesh_a8eb1e4809c98293c4676af0200530315}{BindCurrentTexture}}()\{\ \mbox{\hyperlink{classCrowEngine_1_1Mesh_a5360ef9dc886791d8d816a2c24cc680b}{m\_meshData}}.m\_texture.Bind();\ \}}
+\DoxyCodeLine{\Hypertarget{Mesh_8hpp_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{Mesh_8hpp_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{Mesh_8hpp_source_l00027}\mbox{\hyperlink{classCrowEngine_1_1Mesh_a62280b0f7b807a8d77c659b727b9e2f2}{00027}}\ \ \ \ \ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classCrowEngine_1_1Buffer}{Buffer}}\ \&\mbox{\hyperlink{classCrowEngine_1_1Mesh_a62280b0f7b807a8d77c659b727b9e2f2}{GetCurrentBuffer}}()\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classCrowEngine_1_1Mesh_a5360ef9dc886791d8d816a2c24cc680b}{m\_meshData}}.m\_buffer;\ \}}
+\DoxyCodeLine{\Hypertarget{Mesh_8hpp_source_l00028}\mbox{\hyperlink{classCrowEngine_1_1Mesh_a7b9468814a891aef245a1cb78f32ad07}{00028}}\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classCrowEngine_1_1Mesh_a7b9468814a891aef245a1cb78f32ad07}{GetTotalIndices}}()\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classCrowEngine_1_1Mesh_a5360ef9dc886791d8d816a2c24cc680b}{m\_meshData}}.m\_buffer.GetTotalIndices();\ \}}
+\DoxyCodeLine{\Hypertarget{Mesh_8hpp_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{Mesh_8hpp_source_l00030}00030\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCrowEngine_1_1Mesh_a8708efd0390848ef96bcc7d75550c2cf}{Set}}();}
+\DoxyCodeLine{\Hypertarget{Mesh_8hpp_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{Mesh_8hpp_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{Mesh_8hpp_source_l00033}00033\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{Mesh_8hpp_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{Mesh_8hpp_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{Mesh_8hpp_source_l00036}\mbox{\hyperlink{classCrowEngine_1_1Mesh_a5360ef9dc886791d8d816a2c24cc680b}{00036}}\ \ \ \ \ \mbox{\hyperlink{structCrowEngine_1_1MeshData}{MeshData}}\ \mbox{\hyperlink{classCrowEngine_1_1Mesh_a5360ef9dc886791d8d816a2c24cc680b}{m\_meshData}};}
+\DoxyCodeLine{\Hypertarget{Mesh_8hpp_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{Mesh_8hpp_source_l00038}00038\ \ \ \ \ \textcolor{comment}{//Buffer\ m\_buffer;}}
+\DoxyCodeLine{\Hypertarget{Mesh_8hpp_source_l00039}00039\ \ \ \ \ \textcolor{comment}{//Texture\ m\_texture;}}
+\DoxyCodeLine{\Hypertarget{Mesh_8hpp_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{Mesh_8hpp_source_l00041}00041\ \};}
+\DoxyCodeLine{\Hypertarget{Mesh_8hpp_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{Mesh_8hpp_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{Mesh_8hpp_source_l00044}00044\ \}}
+\DoxyCodeLine{\Hypertarget{Mesh_8hpp_source_l00045}00045\ }
+
+\end{DoxyCode}

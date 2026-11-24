@@ -1,0 +1,149 @@
+\doxysection{tests/model\+Loader/\+Model\+Loader.cpp File Reference}
+\hypertarget{ModelLoader_8cpp}{}\label{ModelLoader_8cpp}\index{tests/modelLoader/ModelLoader.cpp@{tests/modelLoader/ModelLoader.cpp}}
+{\ttfamily \#include "{}gtest/gtest.\+h"{}}\newline
+{\ttfamily \#include "{}core/\+Filesystem.\+hpp"{}}\newline
+{\ttfamily \#include "{}assets/asset\+Manager/\+Asset\+Manager.\+hpp"{}}\newline
+{\ttfamily \#include "{}core/\+Essentials.\+hpp"{}}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$utility$>$}\newline
+Include dependency graph for Model\+Loader.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ModelLoader_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceTestData}{Test\+Data}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{ModelLoader_8cpp_a7a492859c5eda2619752d64659b88f46}{Vertex\+Position}} = float
+\item 
+using \mbox{\hyperlink{ModelLoader_8cpp_ad14e71f33f433ffbac893270cddde704}{Index}} = unsigned int
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T$>$ }\\static std\+::vector$<$ T $>$ \mbox{\hyperlink{ModelLoader_8cpp_aea5d70183be3763017c38bdf3fe6a461}{Load\+Buffer}} (const std\+::string \&buffer\+File\+Path)
+\item 
+\mbox{\hyperlink{ModelLoader_8cpp_a4cc2639b694d5e2c67373149e0cd7487}{TEST}} (vertices\+Test, handles\+Invalid\+Vertices)
+\item 
+\mbox{\hyperlink{ModelLoader_8cpp_a9a52d0a586f71f6fd0ad1c1a193b38d9}{TEST}} (indices\+Test, handles\+Invalid\+Indices)
+\item 
+int \mbox{\hyperlink{ModelLoader_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main}} (int argc, char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}argv)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{ModelLoader_8cpp_a7a492859c5eda2619752d64659b88f46}{Vertex\+Position}} $>$ \mbox{\hyperlink{namespaceTestData_ac040cabb348ffb6ee18f3c682ce6b25b}{Test\+Data\+::g\+\_\+test\+Vertices}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{ModelLoader_8cpp_ad14e71f33f433ffbac893270cddde704}{Index}} $>$ \mbox{\hyperlink{namespaceTestData_ab553acc2624fdb5a6b1a40c314002760}{Test\+Data\+::g\+\_\+test\+Indices}}
+\end{DoxyCompactItemize}
+
+
+\label{doc-typedef-members}
+\Hypertarget{ModelLoader_8cpp_doc-typedef-members}
+\doxysubsection{Typedef Documentation}
+\Hypertarget{ModelLoader_8cpp_ad14e71f33f433ffbac893270cddde704}\index{ModelLoader.cpp@{ModelLoader.cpp}!Index@{Index}}
+\index{Index@{Index}!ModelLoader.cpp@{ModelLoader.cpp}}
+\doxysubsubsection{\texorpdfstring{Index}{Index}}
+{\footnotesize\ttfamily \label{ModelLoader_8cpp_ad14e71f33f433ffbac893270cddde704} 
+using \mbox{\hyperlink{ModelLoader_8cpp_ad14e71f33f433ffbac893270cddde704}{Index}} = unsigned int}
+
+
+
+Definition at line \mbox{\hyperlink{ModelLoader_8cpp_source_l00018}{18}} of file \mbox{\hyperlink{ModelLoader_8cpp_source}{Model\+Loader.\+cpp}}.
+
+\Hypertarget{ModelLoader_8cpp_a7a492859c5eda2619752d64659b88f46}\index{ModelLoader.cpp@{ModelLoader.cpp}!VertexPosition@{VertexPosition}}
+\index{VertexPosition@{VertexPosition}!ModelLoader.cpp@{ModelLoader.cpp}}
+\doxysubsubsection{\texorpdfstring{VertexPosition}{VertexPosition}}
+{\footnotesize\ttfamily \label{ModelLoader_8cpp_a7a492859c5eda2619752d64659b88f46} 
+using \mbox{\hyperlink{ModelLoader_8cpp_a7a492859c5eda2619752d64659b88f46}{Vertex\+Position}} = float}
+
+
+
+Definition at line \mbox{\hyperlink{ModelLoader_8cpp_source_l00017}{17}} of file \mbox{\hyperlink{ModelLoader_8cpp_source}{Model\+Loader.\+cpp}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{ModelLoader_8cpp_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{ModelLoader_8cpp_aea5d70183be3763017c38bdf3fe6a461}\index{ModelLoader.cpp@{ModelLoader.cpp}!LoadBuffer@{LoadBuffer}}
+\index{LoadBuffer@{LoadBuffer}!ModelLoader.cpp@{ModelLoader.cpp}}
+\doxysubsubsection{\texorpdfstring{LoadBuffer()}{LoadBuffer()}}
+{\footnotesize\ttfamily \label{ModelLoader_8cpp_aea5d70183be3763017c38bdf3fe6a461} 
+template$<$typename T$>$ \\
+std\+::vector$<$ T $>$ Load\+Buffer (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{buffer\+File\+Path}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{ModelLoader_8cpp_source_l00020}{20}} of file \mbox{\hyperlink{ModelLoader_8cpp_source}{Model\+Loader.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{ModelLoader_8cpp_aea5d70183be3763017c38bdf3fe6a461_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=225pt]{ModelLoader_8cpp_aea5d70183be3763017c38bdf3fe6a461_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{ModelLoader_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}\index{ModelLoader.cpp@{ModelLoader.cpp}!main@{main}}
+\index{main@{main}!ModelLoader.cpp@{ModelLoader.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily \label{ModelLoader_8cpp_a3c04138a5bfe5d72780bb7e82a18e627} 
+int main (\begin{DoxyParamCaption}\item[{int}]{argc}{, }\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{argv}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{ModelLoader_8cpp_source_l00159}{159}} of file \mbox{\hyperlink{ModelLoader_8cpp_source}{Model\+Loader.\+cpp}}.
+
+\Hypertarget{ModelLoader_8cpp_a9a52d0a586f71f6fd0ad1c1a193b38d9}\index{ModelLoader.cpp@{ModelLoader.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!ModelLoader.cpp@{ModelLoader.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{ModelLoader_8cpp_a9a52d0a586f71f6fd0ad1c1a193b38d9} 
+TEST (\begin{DoxyParamCaption}\item[{indices\+Test}]{}{, }\item[{handles\+Invalid\+Indices}]{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{ModelLoader_8cpp_source_l00151}{151}} of file \mbox{\hyperlink{ModelLoader_8cpp_source}{Model\+Loader.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ModelLoader_8cpp_a9a52d0a586f71f6fd0ad1c1a193b38d9_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{ModelLoader_8cpp_a4cc2639b694d5e2c67373149e0cd7487}\index{ModelLoader.cpp@{ModelLoader.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!ModelLoader.cpp@{ModelLoader.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{ModelLoader_8cpp_a4cc2639b694d5e2c67373149e0cd7487} 
+TEST (\begin{DoxyParamCaption}\item[{vertices\+Test}]{}{, }\item[{handles\+Invalid\+Vertices}]{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{ModelLoader_8cpp_source_l00137}{137}} of file \mbox{\hyperlink{ModelLoader_8cpp_source}{Model\+Loader.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ModelLoader_8cpp_a4cc2639b694d5e2c67373149e0cd7487_cgraph}
+\end{center}
+\end{figure}

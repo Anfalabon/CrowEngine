@@ -1,0 +1,7 @@
+<map id="Player::Player" name="Player::Player">
+<area shape="rect" id="Node000001" title=" " alt="" coords="190,32,301,60"/>
+<area shape="rect" id="Node000002" href="$classPlayer.html#aea427047474cd99c0ce3399d7884ec44" title=" " alt="" coords="5,5,142,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="174,37,141,32,142,27,175,32"/>
+<area shape="rect" id="Node000003" href="$classPlayer.html#a025c2a72e2d999959cfd9ac5fac49db1" title=" " alt="" coords="18,57,129,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="174,59,130,66,129,60,174,54"/>
+</map>

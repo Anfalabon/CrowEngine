@@ -1,0 +1,225 @@
+\doxysection{Crow\+Engine\+::Shader Class Reference}
+\hypertarget{classCrowEngine_1_1Shader}{}\label{classCrowEngine_1_1Shader}\index{CrowEngine::Shader@{CrowEngine::Shader}}
+
+
+{\ttfamily \#include $<$Shader.\+hpp$>$}
+
+
+
+Collaboration diagram for Crow\+Engine\+::Shader\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{classCrowEngine_1_1Shader__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCrowEngine_1_1Shader_ab9296bb1492505cdd359ddd3149f04cf}{Shader}} ()=default
+\item 
+\mbox{\hyperlink{classCrowEngine_1_1Shader_ac2f9828af296bf54c424bc9f88fb180a}{\texorpdfstring{$\sim$}{\string~}\+Shader}} ()=default
+\item 
+void \mbox{\hyperlink{classCrowEngine_1_1Shader_ae530dc9c96a779f105d411a001b3d50d}{Set\+Shader}} (const std\+::string \&vertex\+Shader\+File\+Path, const std\+::string \&fragment\+Shader\+File\+Path)
+\item 
+unsigned int \mbox{\hyperlink{classCrowEngine_1_1Shader_a5a2974fed131ae27bed97b4068a4432a}{Get\+Shader\+Program\+ID}} ()
+\item 
+void \mbox{\hyperlink{classCrowEngine_1_1Shader_a5e9d504b7c14ab86f3f068f2e66df007}{Use\+Program}} ()
+\item 
+void \mbox{\hyperlink{classCrowEngine_1_1Shader_a7518b6ed708f32b89ef39695fe6c4063}{Send\+Matrix4\+To\+Gpu}} (const char \texorpdfstring{$\ast$}{*}uniform\+Matrix4\+Name, const glm\+::mat4 \&matrix)
+\item 
+void \mbox{\hyperlink{classCrowEngine_1_1Shader_a99d0d363f21a4c42258bd767773652d6}{Send\+Vec3\+To\+Gpu}} (const char \texorpdfstring{$\ast$}{*}uniform\+Vec3\+Name, const glm\+::vec3 \&vec)
+\item 
+void \mbox{\hyperlink{classCrowEngine_1_1Shader_a1eb324a812315d522c6deccad206eb77}{Send\+Vec2\+To\+Gpu}} (const char \texorpdfstring{$\ast$}{*}uniform\+Vec2\+Name, const glm\+::vec2 \&vec)
+\item 
+void \mbox{\hyperlink{classCrowEngine_1_1Shader_a0160a9a17f680bb21080681ea3884e2a}{Send\+Float1\+To\+Gpu}} (const char \texorpdfstring{$\ast$}{*}uniform\+Vec2\+Name, const float floating\+Point\+Number)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \mbox{\hyperlink{classCrowEngine_1_1Shader_a1c056cfd044b8a93fc39afacdfcf30c6}{Get\+Uniform\+Location}} (const char \texorpdfstring{$\ast$}{*}uniform\+Name)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \mbox{\hyperlink{classCrowEngine_1_1Shader_aa80157c476ab11f8a307d98ed2003a93}{m\+\_\+shader\+Program\+ID}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{Shader_8hpp_source_l00012}{12}} of file \mbox{\hyperlink{Shader_8hpp_source}{Shader.\+hpp}}.
+
+
+
+\label{doc-constructors}
+\Hypertarget{classCrowEngine_1_1Shader_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classCrowEngine_1_1Shader_ab9296bb1492505cdd359ddd3149f04cf}\index{CrowEngine::Shader@{CrowEngine::Shader}!Shader@{Shader}}
+\index{Shader@{Shader}!CrowEngine::Shader@{CrowEngine::Shader}}
+\doxysubsubsection{\texorpdfstring{Shader()}{Shader()}}
+{\footnotesize\ttfamily \label{classCrowEngine_1_1Shader_ab9296bb1492505cdd359ddd3149f04cf} 
+Crow\+Engine\+::\+Shader\+::\+Shader (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\Hypertarget{classCrowEngine_1_1Shader_ac2f9828af296bf54c424bc9f88fb180a}\index{CrowEngine::Shader@{CrowEngine::Shader}!````~Shader@{\texorpdfstring{$\sim$}{\string~}Shader}}
+\index{````~Shader@{\texorpdfstring{$\sim$}{\string~}Shader}!CrowEngine::Shader@{CrowEngine::Shader}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Shader()}{\string~Shader()}}
+{\footnotesize\ttfamily \label{classCrowEngine_1_1Shader_ac2f9828af296bf54c424bc9f88fb180a} 
+Crow\+Engine\+::\+Shader\+::\texorpdfstring{$\sim$}{\string~}\+Shader (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{classCrowEngine_1_1Shader_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classCrowEngine_1_1Shader_a5a2974fed131ae27bed97b4068a4432a}\index{CrowEngine::Shader@{CrowEngine::Shader}!GetShaderProgramID@{GetShaderProgramID}}
+\index{GetShaderProgramID@{GetShaderProgramID}!CrowEngine::Shader@{CrowEngine::Shader}}
+\doxysubsubsection{\texorpdfstring{GetShaderProgramID()}{GetShaderProgramID()}}
+{\footnotesize\ttfamily \label{classCrowEngine_1_1Shader_a5a2974fed131ae27bed97b4068a4432a} 
+unsigned int Crow\+Engine\+::\+Shader\+::\+Get\+Shader\+Program\+ID (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Shader_8hpp_source_l00021}{21}} of file \mbox{\hyperlink{Shader_8hpp_source}{Shader.\+hpp}}.
+
+\Hypertarget{classCrowEngine_1_1Shader_a1c056cfd044b8a93fc39afacdfcf30c6}\index{CrowEngine::Shader@{CrowEngine::Shader}!GetUniformLocation@{GetUniformLocation}}
+\index{GetUniformLocation@{GetUniformLocation}!CrowEngine::Shader@{CrowEngine::Shader}}
+\doxysubsubsection{\texorpdfstring{GetUniformLocation()}{GetUniformLocation()}}
+{\footnotesize\ttfamily \label{classCrowEngine_1_1Shader_a1c056cfd044b8a93fc39afacdfcf30c6} 
+unsigned int Crow\+Engine\+::\+Shader\+::\+Get\+Uniform\+Location (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{uniform\+Name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{Shader_8hpp_source_l00034}{34}} of file \mbox{\hyperlink{Shader_8hpp_source}{Shader.\+hpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classCrowEngine_1_1Shader_a1c056cfd044b8a93fc39afacdfcf30c6_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classCrowEngine_1_1Shader_a0160a9a17f680bb21080681ea3884e2a}\index{CrowEngine::Shader@{CrowEngine::Shader}!SendFloat1ToGpu@{SendFloat1ToGpu}}
+\index{SendFloat1ToGpu@{SendFloat1ToGpu}!CrowEngine::Shader@{CrowEngine::Shader}}
+\doxysubsubsection{\texorpdfstring{SendFloat1ToGpu()}{SendFloat1ToGpu()}}
+{\footnotesize\ttfamily \label{classCrowEngine_1_1Shader_a0160a9a17f680bb21080681ea3884e2a} 
+void Crow\+Engine\+::\+Shader\+::\+Send\+Float1\+To\+Gpu (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{uniform\+Vec2\+Name}{, }\item[{const float}]{floating\+Point\+Number}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Shader_8cpp_source_l00105}{105}} of file \mbox{\hyperlink{Shader_8cpp_source}{Shader.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classCrowEngine_1_1Shader_a0160a9a17f680bb21080681ea3884e2a_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classCrowEngine_1_1Shader_a7518b6ed708f32b89ef39695fe6c4063}\index{CrowEngine::Shader@{CrowEngine::Shader}!SendMatrix4ToGpu@{SendMatrix4ToGpu}}
+\index{SendMatrix4ToGpu@{SendMatrix4ToGpu}!CrowEngine::Shader@{CrowEngine::Shader}}
+\doxysubsubsection{\texorpdfstring{SendMatrix4ToGpu()}{SendMatrix4ToGpu()}}
+{\footnotesize\ttfamily \label{classCrowEngine_1_1Shader_a7518b6ed708f32b89ef39695fe6c4063} 
+void Crow\+Engine\+::\+Shader\+::\+Send\+Matrix4\+To\+Gpu (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{uniform\+Matrix4\+Name}{, }\item[{const glm\+::mat4 \&}]{matrix}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Shader_8cpp_source_l00087}{87}} of file \mbox{\hyperlink{Shader_8cpp_source}{Shader.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classCrowEngine_1_1Shader_a7518b6ed708f32b89ef39695fe6c4063_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classCrowEngine_1_1Shader_a1eb324a812315d522c6deccad206eb77}\index{CrowEngine::Shader@{CrowEngine::Shader}!SendVec2ToGpu@{SendVec2ToGpu}}
+\index{SendVec2ToGpu@{SendVec2ToGpu}!CrowEngine::Shader@{CrowEngine::Shader}}
+\doxysubsubsection{\texorpdfstring{SendVec2ToGpu()}{SendVec2ToGpu()}}
+{\footnotesize\ttfamily \label{classCrowEngine_1_1Shader_a1eb324a812315d522c6deccad206eb77} 
+void Crow\+Engine\+::\+Shader\+::\+Send\+Vec2\+To\+Gpu (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{uniform\+Vec2\+Name}{, }\item[{const glm\+::vec2 \&}]{vec}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Shader_8cpp_source_l00099}{99}} of file \mbox{\hyperlink{Shader_8cpp_source}{Shader.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classCrowEngine_1_1Shader_a1eb324a812315d522c6deccad206eb77_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classCrowEngine_1_1Shader_a99d0d363f21a4c42258bd767773652d6}\index{CrowEngine::Shader@{CrowEngine::Shader}!SendVec3ToGpu@{SendVec3ToGpu}}
+\index{SendVec3ToGpu@{SendVec3ToGpu}!CrowEngine::Shader@{CrowEngine::Shader}}
+\doxysubsubsection{\texorpdfstring{SendVec3ToGpu()}{SendVec3ToGpu()}}
+{\footnotesize\ttfamily \label{classCrowEngine_1_1Shader_a99d0d363f21a4c42258bd767773652d6} 
+void Crow\+Engine\+::\+Shader\+::\+Send\+Vec3\+To\+Gpu (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{uniform\+Vec3\+Name}{, }\item[{const glm\+::vec3 \&}]{vec}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Shader_8cpp_source_l00093}{93}} of file \mbox{\hyperlink{Shader_8cpp_source}{Shader.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classCrowEngine_1_1Shader_a99d0d363f21a4c42258bd767773652d6_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classCrowEngine_1_1Shader_ae530dc9c96a779f105d411a001b3d50d}\index{CrowEngine::Shader@{CrowEngine::Shader}!SetShader@{SetShader}}
+\index{SetShader@{SetShader}!CrowEngine::Shader@{CrowEngine::Shader}}
+\doxysubsubsection{\texorpdfstring{SetShader()}{SetShader()}}
+{\footnotesize\ttfamily \label{classCrowEngine_1_1Shader_ae530dc9c96a779f105d411a001b3d50d} 
+void Crow\+Engine\+::\+Shader\+::\+Set\+Shader (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{vertex\+Shader\+File\+Path}{, }\item[{const std\+::string \&}]{fragment\+Shader\+File\+Path}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Shader_8cpp_source_l00018}{18}} of file \mbox{\hyperlink{Shader_8cpp_source}{Shader.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classCrowEngine_1_1Shader_ae530dc9c96a779f105d411a001b3d50d_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classCrowEngine_1_1Shader_a5e9d504b7c14ab86f3f068f2e66df007}\index{CrowEngine::Shader@{CrowEngine::Shader}!UseProgram@{UseProgram}}
+\index{UseProgram@{UseProgram}!CrowEngine::Shader@{CrowEngine::Shader}}
+\doxysubsubsection{\texorpdfstring{UseProgram()}{UseProgram()}}
+{\footnotesize\ttfamily \label{classCrowEngine_1_1Shader_a5e9d504b7c14ab86f3f068f2e66df007} 
+void Crow\+Engine\+::\+Shader\+::\+Use\+Program (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Shader_8hpp_source_l00022}{22}} of file \mbox{\hyperlink{Shader_8hpp_source}{Shader.\+hpp}}.
+
+
+
+\label{doc-variable-members}
+\Hypertarget{classCrowEngine_1_1Shader_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classCrowEngine_1_1Shader_aa80157c476ab11f8a307d98ed2003a93}\index{CrowEngine::Shader@{CrowEngine::Shader}!m\_shaderProgramID@{m\_shaderProgramID}}
+\index{m\_shaderProgramID@{m\_shaderProgramID}!CrowEngine::Shader@{CrowEngine::Shader}}
+\doxysubsubsection{\texorpdfstring{m\_shaderProgramID}{m\_shaderProgramID}}
+{\footnotesize\ttfamily \label{classCrowEngine_1_1Shader_aa80157c476ab11f8a307d98ed2003a93} 
+unsigned int Crow\+Engine\+::\+Shader\+::m\+\_\+shader\+Program\+ID\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{Shader_8hpp_source_l00039}{39}} of file \mbox{\hyperlink{Shader_8hpp_source}{Shader.\+hpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+source/shader/\mbox{\hyperlink{Shader_8hpp}{Shader.\+hpp}}\item 
+source/shader/\mbox{\hyperlink{Shader_8cpp}{Shader.\+cpp}}\end{DoxyCompactItemize}

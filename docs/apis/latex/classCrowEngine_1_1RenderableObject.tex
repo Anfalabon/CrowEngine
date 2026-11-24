@@ -1,0 +1,182 @@
+\doxysection{Crow\+Engine\+::Renderable\+Object Class Reference}
+\hypertarget{classCrowEngine_1_1RenderableObject}{}\label{classCrowEngine_1_1RenderableObject}\index{CrowEngine::RenderableObject@{CrowEngine::RenderableObject}}
+
+
+{\ttfamily \#include $<$Renderable\+Object.\+hpp$>$}
+
+
+
+Collaboration diagram for Crow\+Engine\+::Renderable\+Object\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classCrowEngine_1_1RenderableObject__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCrowEngine_1_1RenderableObject_a4a763f85eafc33dbb62884d20ad8b032}{Renderable\+Object}} ()=default
+\item 
+\mbox{\hyperlink{classCrowEngine_1_1RenderableObject_a3762f9253cb607ca72b93cf2c39bea08}{\texorpdfstring{$\sim$}{\string~}\+Renderable\+Object}} ()=default
+\item 
+void \mbox{\hyperlink{classCrowEngine_1_1RenderableObject_a84268ec9b0e0f72c32b5e7d932debf2f}{Set}} ()
+\item 
+void \mbox{\hyperlink{classCrowEngine_1_1RenderableObject_a84395a5005ce2ecfd5f6d0178d912001}{Update}} (const unsigned int shader\+Program\+ID)
+\item 
+\mbox{\hyperlink{classCrowEngine_1_1Mesh}{Mesh}} \& \mbox{\hyperlink{classCrowEngine_1_1RenderableObject_a3dd3590655e1e3c18bc6b60ba0a5c598}{Get\+Mesh}} ()
+\item 
+bool \mbox{\hyperlink{classCrowEngine_1_1RenderableObject_a04e498c4899dea56e746ec7e2d09b987}{Is\+Renderable}} ()
+\item 
+bool \mbox{\hyperlink{classCrowEngine_1_1RenderableObject_adbb81f3a059b3846ca9e96b5e175a1ac}{Has\+Mesh}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const bool \mbox{\hyperlink{classCrowEngine_1_1RenderableObject_a8680b691453bb9c38ddd591a99012818}{m\+\_\+is\+Renderable}} = true
+\item 
+const bool \mbox{\hyperlink{classCrowEngine_1_1RenderableObject_acdbb7145acdc1a7babf5c503a7f723f4}{m\+\_\+has\+Mesh}} = true
+\item 
+glm\+::mat4 \mbox{\hyperlink{classCrowEngine_1_1RenderableObject_a11d32c8f8b58929027afb0d90e6d5984}{m\+\_\+model}} = glm\+::mat4(1.\+0f)
+\item 
+\mbox{\hyperlink{classCrowEngine_1_1Mesh}{Mesh}} \mbox{\hyperlink{classCrowEngine_1_1RenderableObject_af915e8cc9aa956e1b218382251745907}{m\+\_\+mesh}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{RenderableObject_8hpp_source_l00022}{22}} of file \mbox{\hyperlink{RenderableObject_8hpp_source}{Renderable\+Object.\+hpp}}.
+
+
+
+\label{doc-constructors}
+\Hypertarget{classCrowEngine_1_1RenderableObject_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classCrowEngine_1_1RenderableObject_a4a763f85eafc33dbb62884d20ad8b032}\index{CrowEngine::RenderableObject@{CrowEngine::RenderableObject}!RenderableObject@{RenderableObject}}
+\index{RenderableObject@{RenderableObject}!CrowEngine::RenderableObject@{CrowEngine::RenderableObject}}
+\doxysubsubsection{\texorpdfstring{RenderableObject()}{RenderableObject()}}
+{\footnotesize\ttfamily \label{classCrowEngine_1_1RenderableObject_a4a763f85eafc33dbb62884d20ad8b032} 
+Crow\+Engine\+::\+Renderable\+Object\+::\+Renderable\+Object (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\Hypertarget{classCrowEngine_1_1RenderableObject_a3762f9253cb607ca72b93cf2c39bea08}\index{CrowEngine::RenderableObject@{CrowEngine::RenderableObject}!````~RenderableObject@{\texorpdfstring{$\sim$}{\string~}RenderableObject}}
+\index{````~RenderableObject@{\texorpdfstring{$\sim$}{\string~}RenderableObject}!CrowEngine::RenderableObject@{CrowEngine::RenderableObject}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}RenderableObject()}{\string~RenderableObject()}}
+{\footnotesize\ttfamily \label{classCrowEngine_1_1RenderableObject_a3762f9253cb607ca72b93cf2c39bea08} 
+Crow\+Engine\+::\+Renderable\+Object\+::\texorpdfstring{$\sim$}{\string~}\+Renderable\+Object (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{classCrowEngine_1_1RenderableObject_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classCrowEngine_1_1RenderableObject_a3dd3590655e1e3c18bc6b60ba0a5c598}\index{CrowEngine::RenderableObject@{CrowEngine::RenderableObject}!GetMesh@{GetMesh}}
+\index{GetMesh@{GetMesh}!CrowEngine::RenderableObject@{CrowEngine::RenderableObject}}
+\doxysubsubsection{\texorpdfstring{GetMesh()}{GetMesh()}}
+{\footnotesize\ttfamily \label{classCrowEngine_1_1RenderableObject_a3dd3590655e1e3c18bc6b60ba0a5c598} 
+\mbox{\hyperlink{classCrowEngine_1_1Mesh}{Mesh}} \& Crow\+Engine\+::\+Renderable\+Object\+::\+Get\+Mesh (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{RenderableObject_8hpp_source_l00034}{34}} of file \mbox{\hyperlink{RenderableObject_8hpp_source}{Renderable\+Object.\+hpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classCrowEngine_1_1RenderableObject_a3dd3590655e1e3c18bc6b60ba0a5c598_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classCrowEngine_1_1RenderableObject_adbb81f3a059b3846ca9e96b5e175a1ac}\index{CrowEngine::RenderableObject@{CrowEngine::RenderableObject}!HasMesh@{HasMesh}}
+\index{HasMesh@{HasMesh}!CrowEngine::RenderableObject@{CrowEngine::RenderableObject}}
+\doxysubsubsection{\texorpdfstring{HasMesh()}{HasMesh()}}
+{\footnotesize\ttfamily \label{classCrowEngine_1_1RenderableObject_adbb81f3a059b3846ca9e96b5e175a1ac} 
+bool Crow\+Engine\+::\+Renderable\+Object\+::\+Has\+Mesh (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{RenderableObject_8hpp_source_l00038}{38}} of file \mbox{\hyperlink{RenderableObject_8hpp_source}{Renderable\+Object.\+hpp}}.
+
+\Hypertarget{classCrowEngine_1_1RenderableObject_a04e498c4899dea56e746ec7e2d09b987}\index{CrowEngine::RenderableObject@{CrowEngine::RenderableObject}!IsRenderable@{IsRenderable}}
+\index{IsRenderable@{IsRenderable}!CrowEngine::RenderableObject@{CrowEngine::RenderableObject}}
+\doxysubsubsection{\texorpdfstring{IsRenderable()}{IsRenderable()}}
+{\footnotesize\ttfamily \label{classCrowEngine_1_1RenderableObject_a04e498c4899dea56e746ec7e2d09b987} 
+bool Crow\+Engine\+::\+Renderable\+Object\+::\+Is\+Renderable (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{RenderableObject_8hpp_source_l00037}{37}} of file \mbox{\hyperlink{RenderableObject_8hpp_source}{Renderable\+Object.\+hpp}}.
+
+\Hypertarget{classCrowEngine_1_1RenderableObject_a84268ec9b0e0f72c32b5e7d932debf2f}\index{CrowEngine::RenderableObject@{CrowEngine::RenderableObject}!Set@{Set}}
+\index{Set@{Set}!CrowEngine::RenderableObject@{CrowEngine::RenderableObject}}
+\doxysubsubsection{\texorpdfstring{Set()}{Set()}}
+{\footnotesize\ttfamily \label{classCrowEngine_1_1RenderableObject_a84268ec9b0e0f72c32b5e7d932debf2f} 
+void Crow\+Engine\+::\+Renderable\+Object\+::\+Set (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{RenderableObject_8cpp_source_l00017}{17}} of file \mbox{\hyperlink{RenderableObject_8cpp_source}{Renderable\+Object.\+cpp}}.
+
+\Hypertarget{classCrowEngine_1_1RenderableObject_a84395a5005ce2ecfd5f6d0178d912001}\index{CrowEngine::RenderableObject@{CrowEngine::RenderableObject}!Update@{Update}}
+\index{Update@{Update}!CrowEngine::RenderableObject@{CrowEngine::RenderableObject}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily \label{classCrowEngine_1_1RenderableObject_a84395a5005ce2ecfd5f6d0178d912001} 
+void Crow\+Engine\+::\+Renderable\+Object\+::\+Update (\begin{DoxyParamCaption}\item[{const unsigned int}]{shader\+Program\+ID}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{RenderableObject_8cpp_source_l00023}{23}} of file \mbox{\hyperlink{RenderableObject_8cpp_source}{Renderable\+Object.\+cpp}}.
+
+
+
+\label{doc-variable-members}
+\Hypertarget{classCrowEngine_1_1RenderableObject_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classCrowEngine_1_1RenderableObject_acdbb7145acdc1a7babf5c503a7f723f4}\index{CrowEngine::RenderableObject@{CrowEngine::RenderableObject}!m\_hasMesh@{m\_hasMesh}}
+\index{m\_hasMesh@{m\_hasMesh}!CrowEngine::RenderableObject@{CrowEngine::RenderableObject}}
+\doxysubsubsection{\texorpdfstring{m\_hasMesh}{m\_hasMesh}}
+{\footnotesize\ttfamily \label{classCrowEngine_1_1RenderableObject_acdbb7145acdc1a7babf5c503a7f723f4} 
+const bool Crow\+Engine\+::\+Renderable\+Object\+::m\+\_\+has\+Mesh = true\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{RenderableObject_8hpp_source_l00043}{43}} of file \mbox{\hyperlink{RenderableObject_8hpp_source}{Renderable\+Object.\+hpp}}.
+
+\Hypertarget{classCrowEngine_1_1RenderableObject_a8680b691453bb9c38ddd591a99012818}\index{CrowEngine::RenderableObject@{CrowEngine::RenderableObject}!m\_isRenderable@{m\_isRenderable}}
+\index{m\_isRenderable@{m\_isRenderable}!CrowEngine::RenderableObject@{CrowEngine::RenderableObject}}
+\doxysubsubsection{\texorpdfstring{m\_isRenderable}{m\_isRenderable}}
+{\footnotesize\ttfamily \label{classCrowEngine_1_1RenderableObject_a8680b691453bb9c38ddd591a99012818} 
+const bool Crow\+Engine\+::\+Renderable\+Object\+::m\+\_\+is\+Renderable = true\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{RenderableObject_8hpp_source_l00042}{42}} of file \mbox{\hyperlink{RenderableObject_8hpp_source}{Renderable\+Object.\+hpp}}.
+
+\Hypertarget{classCrowEngine_1_1RenderableObject_af915e8cc9aa956e1b218382251745907}\index{CrowEngine::RenderableObject@{CrowEngine::RenderableObject}!m\_mesh@{m\_mesh}}
+\index{m\_mesh@{m\_mesh}!CrowEngine::RenderableObject@{CrowEngine::RenderableObject}}
+\doxysubsubsection{\texorpdfstring{m\_mesh}{m\_mesh}}
+{\footnotesize\ttfamily \label{classCrowEngine_1_1RenderableObject_af915e8cc9aa956e1b218382251745907} 
+\mbox{\hyperlink{classCrowEngine_1_1Mesh}{Mesh}} Crow\+Engine\+::\+Renderable\+Object\+::m\+\_\+mesh\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{RenderableObject_8hpp_source_l00048}{48}} of file \mbox{\hyperlink{RenderableObject_8hpp_source}{Renderable\+Object.\+hpp}}.
+
+\Hypertarget{classCrowEngine_1_1RenderableObject_a11d32c8f8b58929027afb0d90e6d5984}\index{CrowEngine::RenderableObject@{CrowEngine::RenderableObject}!m\_model@{m\_model}}
+\index{m\_model@{m\_model}!CrowEngine::RenderableObject@{CrowEngine::RenderableObject}}
+\doxysubsubsection{\texorpdfstring{m\_model}{m\_model}}
+{\footnotesize\ttfamily \label{classCrowEngine_1_1RenderableObject_a11d32c8f8b58929027afb0d90e6d5984} 
+glm\+::mat4 Crow\+Engine\+::\+Renderable\+Object\+::m\+\_\+model = glm\+::mat4(1.\+0f)\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{RenderableObject_8hpp_source_l00045}{45}} of file \mbox{\hyperlink{RenderableObject_8hpp_source}{Renderable\+Object.\+hpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+source/scene/entity/\mbox{\hyperlink{RenderableObject_8hpp}{Renderable\+Object.\+hpp}}\item 
+source/scene/entity/\mbox{\hyperlink{RenderableObject_8cpp}{Renderable\+Object.\+cpp}}\end{DoxyCompactItemize}

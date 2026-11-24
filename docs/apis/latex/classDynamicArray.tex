@@ -1,0 +1,600 @@
+\doxysection{Dynamic\+Array Class Reference}
+\hypertarget{classDynamicArray}{}\label{classDynamicArray}\index{DynamicArray@{DynamicArray}}
+
+
+{\ttfamily \#include $<$Dynamic\+Array.\+hpp$>$}
+
+
+
+Collaboration diagram for Dynamic\+Array\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=203pt]{classDynamicArray__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDynamicArray_a376f4514cf2dd6ca2eca8d423f23b587}{Dynamic\+Array}} ()
+\item 
+\mbox{\hyperlink{classDynamicArray_aebf8ac62282dc5c9e2800c1f13ab68ec}{\texorpdfstring{$\sim$}{\string~}\+Dynamic\+Array}} ()
+\item 
+\mbox{\hyperlink{classDynamicArray_a844e81711e8aec443a96664c26c79036}{Dynamic\+Array}} (unsigned int number\+Of\+Elements)
+\item 
+\mbox{\hyperlink{classDynamicArray_ace0d20844e230eedff0e8cca6266fca7}{Dynamic\+Array}} (const \mbox{\hyperlink{classDynamicArray}{Dynamic\+Array}} \&other)
+\item 
+\mbox{\hyperlink{classDynamicArray}{Dynamic\+Array}} \& \mbox{\hyperlink{classDynamicArray_a110fbea8aaf984d4e2ee0e14fe67d4f1}{operator=}} (const \mbox{\hyperlink{classDynamicArray}{Dynamic\+Array}} \&other)
+\item 
+\mbox{\hyperlink{classDynamicArray_adfeb350d0a781bd2b965461f43e35332}{Dynamic\+Array}} (\mbox{\hyperlink{classDynamicArray}{Dynamic\+Array}} \&\&other)
+\item 
+\mbox{\hyperlink{classDynamicArray}{Dynamic\+Array}} \& \mbox{\hyperlink{classDynamicArray_a8571c757e7a06071015b4189725777e7}{operator=}} (\mbox{\hyperlink{classDynamicArray}{Dynamic\+Array}} \&\&)=default
+\item 
+void \mbox{\hyperlink{classDynamicArray_a33425e7212a0d96e322f8a4aa61dbd95}{Pre\+Alloc\+V1}} (unsigned int amount\+To\+Pre\+Alloc)
+\item 
+void \mbox{\hyperlink{classDynamicArray_a96cb822c4320f310484b48c1bf579659}{Pre\+Alloc}} (unsigned int amount\+To\+Pre\+Alloc)
+\item 
+void \mbox{\hyperlink{classDynamicArray_a7de1d985320ff7a8499592a6deeeadab}{Insert\+V1}} (unsigned int value)
+\item 
+void \mbox{\hyperlink{classDynamicArray_aba519e23f74ed9cd5f3470c4368a4c5b}{Insert}} (unsigned int value)
+\item 
+void \mbox{\hyperlink{classDynamicArray_ad2864e9d12400c348f3364b9ccb06f20}{Test\+SIMD}} ()
+\item 
+void \mbox{\hyperlink{classDynamicArray_a346127714633180532996c331c22ec0d}{Remove\+Last}} ()
+\item 
+int \& \mbox{\hyperlink{classDynamicArray_a46f500ef2cda0c68b067ab869ee6f1bd}{Get\+Value}} (unsigned int index) const
+\item 
+int \& \mbox{\hyperlink{classDynamicArray_a78633f62d419ae398fc2a1a82fe99fa8}{operator\mbox{[}$\,$\mbox{]}}} (unsigned int index) const
+\item 
+unsigned int \mbox{\hyperlink{classDynamicArray_a9b1c8b989c03c1c4463408e74958ebc5}{Size}} ()
+\item 
+unsigned int \mbox{\hyperlink{classDynamicArray_aa432cb37c0237f69daddb0f67dcb6429}{Capacity}} ()
+\item 
+unsigned int \mbox{\hyperlink{classDynamicArray_aa9c0ef85f0941e98ed2c5f992c10b349}{Allocations}} ()
+\item 
+unsigned int \mbox{\hyperlink{classDynamicArray_a3d544e59def5c87b3d2857ccd9aac637}{Size\+Bytes}} ()
+\item 
+unsigned int \mbox{\hyperlink{classDynamicArray_af9f777adce401d233c26811fd628e848}{Capacity\+Bytes}} ()
+\item 
+bool \mbox{\hyperlink{classDynamicArray_a8c6a382e3e5201dc34203e7a4b3feacc}{Is\+Empty}} ()
+\item 
+int \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classDynamicArray_adf1c2b3d9a63efbd901d1c0d1ee99ee6}{Data}} ()
+\item 
+void \mbox{\hyperlink{classDynamicArray_a181e65eca65b2eb8a9f69d0bcf1db7e4}{Erase}} ()
+\item 
+\mbox{\hyperlink{classDynamicArray_a376f4514cf2dd6ca2eca8d423f23b587}{Dynamic\+Array}} ()
+\item 
+\mbox{\hyperlink{classDynamicArray_aebf8ac62282dc5c9e2800c1f13ab68ec}{\texorpdfstring{$\sim$}{\string~}\+Dynamic\+Array}} ()
+\item 
+\mbox{\hyperlink{classDynamicArray_a844e81711e8aec443a96664c26c79036}{Dynamic\+Array}} (unsigned int number\+Of\+Elements)
+\item 
+void \mbox{\hyperlink{classDynamicArray_aba519e23f74ed9cd5f3470c4368a4c5b}{Insert}} (unsigned int value)
+\item 
+void \mbox{\hyperlink{classDynamicArray_a346127714633180532996c331c22ec0d}{Remove\+Last}} ()
+\item 
+int \& \mbox{\hyperlink{classDynamicArray_a0c1a050ff7df9dc3fa9e68a1d7620cb4}{operator\mbox{[}$\,$\mbox{]}}} (unsigned int index)
+\item 
+unsigned int \mbox{\hyperlink{classDynamicArray_a9b1c8b989c03c1c4463408e74958ebc5}{Size}} ()
+\item 
+int \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classDynamicArray_adf1c2b3d9a63efbd901d1c0d1ee99ee6}{Data}} ()
+\item 
+void \mbox{\hyperlink{classDynamicArray_a181e65eca65b2eb8a9f69d0bcf1db7e4}{Erase}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classDynamicArray_ab9145a0ba0025184d25564a44ae96f46}{operator new}} (std\+::size\+\_\+t size)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classDynamicArray_a9a689373a8b89607ba1b31e1eda18164}{m\+\_\+data}}
+\item 
+unsigned int \mbox{\hyperlink{classDynamicArray_a8ca16c3df08df32d18cd42a5c75974fa}{m\+\_\+size}}
+\item 
+unsigned int \mbox{\hyperlink{classDynamicArray_a391aca2d998d1272ad3b4d165b387af4}{m\+\_\+capacity}}
+\item 
+unsigned int \mbox{\hyperlink{classDynamicArray_a59930150976d454ee5a307b493310262}{m\+\_\+allocations}}
+\item 
+bool \mbox{\hyperlink{classDynamicArray_aeca0a3ec54d8be21e40a4d2f6e01467b}{m\+\_\+pre\+Allocated}}
+\item 
+bool \mbox{\hyperlink{classDynamicArray_a9ca742dc21ae274bb0776f9ea3071411}{m\+\_\+is\+Capacity\+Greater}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr unsigned long \mbox{\hyperlink{classDynamicArray_af87028d3cdac06df1bd0755057ed6b0b}{m\+\_\+max\+Stack\+Size}} = 1 \texorpdfstring{$\ast$}{*} 1024 \texorpdfstring{$\ast$}{*} 1024
+\item 
+static constexpr unsigned long \mbox{\hyperlink{classDynamicArray_ad62178ecce90146f913510bb1fed071c}{m\+\_\+max\+Capacity}} = 1 \texorpdfstring{$\ast$}{*} 1024 \texorpdfstring{$\ast$}{*} 1024 \texorpdfstring{$\ast$}{*} 1024
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{DynamicArray_8hpp_source_l00014}{14}} of file \mbox{\hyperlink{DynamicArray_8hpp_source}{Dynamic\+Array.\+hpp}}.
+
+
+
+\label{doc-constructors}
+\Hypertarget{classDynamicArray_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classDynamicArray_a376f4514cf2dd6ca2eca8d423f23b587}\index{DynamicArray@{DynamicArray}!DynamicArray@{DynamicArray}}
+\index{DynamicArray@{DynamicArray}!DynamicArray@{DynamicArray}}
+\doxysubsubsection{\texorpdfstring{DynamicArray()}{DynamicArray()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily \label{classDynamicArray_a376f4514cf2dd6ca2eca8d423f23b587} 
+Dynamic\+Array\+::\+Dynamic\+Array (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{DynamicArray_8hpp_source_l00019}{19}} of file \mbox{\hyperlink{DynamicArray_8hpp_source}{Dynamic\+Array.\+hpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDynamicArray_a376f4514cf2dd6ca2eca8d423f23b587_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classDynamicArray_aebf8ac62282dc5c9e2800c1f13ab68ec}\index{DynamicArray@{DynamicArray}!````~DynamicArray@{\texorpdfstring{$\sim$}{\string~}DynamicArray}}
+\index{````~DynamicArray@{\texorpdfstring{$\sim$}{\string~}DynamicArray}!DynamicArray@{DynamicArray}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}DynamicArray()}{\string~DynamicArray()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classDynamicArray_aebf8ac62282dc5c9e2800c1f13ab68ec} 
+Dynamic\+Array\+::\texorpdfstring{$\sim$}{\string~}\+Dynamic\+Array (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{DynamicArray_8hpp_source_l00021}{21}} of file \mbox{\hyperlink{DynamicArray_8hpp_source}{Dynamic\+Array.\+hpp}}.
+
+\Hypertarget{classDynamicArray_a844e81711e8aec443a96664c26c79036}\index{DynamicArray@{DynamicArray}!DynamicArray@{DynamicArray}}
+\index{DynamicArray@{DynamicArray}!DynamicArray@{DynamicArray}}
+\doxysubsubsection{\texorpdfstring{DynamicArray()}{DynamicArray()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily \label{classDynamicArray_a844e81711e8aec443a96664c26c79036} 
+Dynamic\+Array\+::\+Dynamic\+Array (\begin{DoxyParamCaption}\item[{unsigned int}]{number\+Of\+Elements}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{DynamicArray_8hpp_source_l00031}{31}} of file \mbox{\hyperlink{DynamicArray_8hpp_source}{Dynamic\+Array.\+hpp}}.
+
+\Hypertarget{classDynamicArray_ace0d20844e230eedff0e8cca6266fca7}\index{DynamicArray@{DynamicArray}!DynamicArray@{DynamicArray}}
+\index{DynamicArray@{DynamicArray}!DynamicArray@{DynamicArray}}
+\doxysubsubsection{\texorpdfstring{DynamicArray()}{DynamicArray()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily \label{classDynamicArray_ace0d20844e230eedff0e8cca6266fca7} 
+Dynamic\+Array\+::\+Dynamic\+Array (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classDynamicArray}{Dynamic\+Array}} \&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{DynamicArray_8hpp_source_l00039}{39}} of file \mbox{\hyperlink{DynamicArray_8hpp_source}{Dynamic\+Array.\+hpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDynamicArray_ace0d20844e230eedff0e8cca6266fca7_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classDynamicArray_adfeb350d0a781bd2b965461f43e35332}\index{DynamicArray@{DynamicArray}!DynamicArray@{DynamicArray}}
+\index{DynamicArray@{DynamicArray}!DynamicArray@{DynamicArray}}
+\doxysubsubsection{\texorpdfstring{DynamicArray()}{DynamicArray()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily \label{classDynamicArray_adfeb350d0a781bd2b965461f43e35332} 
+Dynamic\+Array\+::\+Dynamic\+Array (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classDynamicArray}{Dynamic\+Array}} \&\&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{DynamicArray_8hpp_source_l00090}{90}} of file \mbox{\hyperlink{DynamicArray_8hpp_source}{Dynamic\+Array.\+hpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDynamicArray_adfeb350d0a781bd2b965461f43e35332_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classDynamicArray_a376f4514cf2dd6ca2eca8d423f23b587}\index{DynamicArray@{DynamicArray}!DynamicArray@{DynamicArray}}
+\index{DynamicArray@{DynamicArray}!DynamicArray@{DynamicArray}}
+\doxysubsubsection{\texorpdfstring{DynamicArray()}{DynamicArray()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily \label{classDynamicArray_a376f4514cf2dd6ca2eca8d423f23b587} 
+Dynamic\+Array\+::\+Dynamic\+Array (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{testThreading_8cpp_source_l00079}{79}} of file \mbox{\hyperlink{testThreading_8cpp_source}{test\+Threading.\+cpp}}.
+
+\Hypertarget{classDynamicArray_aebf8ac62282dc5c9e2800c1f13ab68ec}\index{DynamicArray@{DynamicArray}!````~DynamicArray@{\texorpdfstring{$\sim$}{\string~}DynamicArray}}
+\index{````~DynamicArray@{\texorpdfstring{$\sim$}{\string~}DynamicArray}!DynamicArray@{DynamicArray}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}DynamicArray()}{\string~DynamicArray()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classDynamicArray_aebf8ac62282dc5c9e2800c1f13ab68ec} 
+Dynamic\+Array\+::\texorpdfstring{$\sim$}{\string~}\+Dynamic\+Array (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{testThreading_8cpp_source_l00081}{81}} of file \mbox{\hyperlink{testThreading_8cpp_source}{test\+Threading.\+cpp}}.
+
+\Hypertarget{classDynamicArray_a844e81711e8aec443a96664c26c79036}\index{DynamicArray@{DynamicArray}!DynamicArray@{DynamicArray}}
+\index{DynamicArray@{DynamicArray}!DynamicArray@{DynamicArray}}
+\doxysubsubsection{\texorpdfstring{DynamicArray()}{DynamicArray()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily \label{classDynamicArray_a844e81711e8aec443a96664c26c79036} 
+Dynamic\+Array\+::\+Dynamic\+Array (\begin{DoxyParamCaption}\item[{unsigned int}]{number\+Of\+Elements}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{testThreading_8cpp_source_l00088}{88}} of file \mbox{\hyperlink{testThreading_8cpp_source}{test\+Threading.\+cpp}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{classDynamicArray_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classDynamicArray_aa9c0ef85f0941e98ed2c5f992c10b349}\index{DynamicArray@{DynamicArray}!Allocations@{Allocations}}
+\index{Allocations@{Allocations}!DynamicArray@{DynamicArray}}
+\doxysubsubsection{\texorpdfstring{Allocations()}{Allocations()}}
+{\footnotesize\ttfamily \label{classDynamicArray_aa9c0ef85f0941e98ed2c5f992c10b349} 
+unsigned int Dynamic\+Array\+::\+Allocations (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [nodiscard]}}
+
+
+
+Definition at line \mbox{\hyperlink{DynamicArray_8hpp_source_l00327}{327}} of file \mbox{\hyperlink{DynamicArray_8hpp_source}{Dynamic\+Array.\+hpp}}.
+
+\Hypertarget{classDynamicArray_aa432cb37c0237f69daddb0f67dcb6429}\index{DynamicArray@{DynamicArray}!Capacity@{Capacity}}
+\index{Capacity@{Capacity}!DynamicArray@{DynamicArray}}
+\doxysubsubsection{\texorpdfstring{Capacity()}{Capacity()}}
+{\footnotesize\ttfamily \label{classDynamicArray_aa432cb37c0237f69daddb0f67dcb6429} 
+unsigned int Dynamic\+Array\+::\+Capacity (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [nodiscard]}}
+
+
+
+Definition at line \mbox{\hyperlink{DynamicArray_8hpp_source_l00326}{326}} of file \mbox{\hyperlink{DynamicArray_8hpp_source}{Dynamic\+Array.\+hpp}}.
+
+\Hypertarget{classDynamicArray_af9f777adce401d233c26811fd628e848}\index{DynamicArray@{DynamicArray}!CapacityBytes@{CapacityBytes}}
+\index{CapacityBytes@{CapacityBytes}!DynamicArray@{DynamicArray}}
+\doxysubsubsection{\texorpdfstring{CapacityBytes()}{CapacityBytes()}}
+{\footnotesize\ttfamily \label{classDynamicArray_af9f777adce401d233c26811fd628e848} 
+unsigned int Dynamic\+Array\+::\+Capacity\+Bytes (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [nodiscard]}}
+
+
+
+Definition at line \mbox{\hyperlink{DynamicArray_8hpp_source_l00329}{329}} of file \mbox{\hyperlink{DynamicArray_8hpp_source}{Dynamic\+Array.\+hpp}}.
+
+\Hypertarget{classDynamicArray_adf1c2b3d9a63efbd901d1c0d1ee99ee6}\index{DynamicArray@{DynamicArray}!Data@{Data}}
+\index{Data@{Data}!DynamicArray@{DynamicArray}}
+\doxysubsubsection{\texorpdfstring{Data()}{Data()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classDynamicArray_adf1c2b3d9a63efbd901d1c0d1ee99ee6} 
+int \texorpdfstring{$\ast$}{*} Dynamic\+Array\+::\+Data (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [nodiscard]}}
+
+
+
+Definition at line \mbox{\hyperlink{DynamicArray_8hpp_source_l00332}{332}} of file \mbox{\hyperlink{DynamicArray_8hpp_source}{Dynamic\+Array.\+hpp}}.
+
+\Hypertarget{classDynamicArray_adf1c2b3d9a63efbd901d1c0d1ee99ee6}\index{DynamicArray@{DynamicArray}!Data@{Data}}
+\index{Data@{Data}!DynamicArray@{DynamicArray}}
+\doxysubsubsection{\texorpdfstring{Data()}{Data()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classDynamicArray_adf1c2b3d9a63efbd901d1c0d1ee99ee6} 
+int \texorpdfstring{$\ast$}{*} Dynamic\+Array\+::\+Data (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{testThreading_8cpp_source_l00159}{159}} of file \mbox{\hyperlink{testThreading_8cpp_source}{test\+Threading.\+cpp}}.
+
+\Hypertarget{classDynamicArray_a181e65eca65b2eb8a9f69d0bcf1db7e4}\index{DynamicArray@{DynamicArray}!Erase@{Erase}}
+\index{Erase@{Erase}!DynamicArray@{DynamicArray}}
+\doxysubsubsection{\texorpdfstring{Erase()}{Erase()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classDynamicArray_a181e65eca65b2eb8a9f69d0bcf1db7e4} 
+void Dynamic\+Array\+::\+Erase (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{DynamicArray_8hpp_source_l00338}{338}} of file \mbox{\hyperlink{DynamicArray_8hpp_source}{Dynamic\+Array.\+hpp}}.
+
+\Hypertarget{classDynamicArray_a181e65eca65b2eb8a9f69d0bcf1db7e4}\index{DynamicArray@{DynamicArray}!Erase@{Erase}}
+\index{Erase@{Erase}!DynamicArray@{DynamicArray}}
+\doxysubsubsection{\texorpdfstring{Erase()}{Erase()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classDynamicArray_a181e65eca65b2eb8a9f69d0bcf1db7e4} 
+void Dynamic\+Array\+::\+Erase (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{testThreading_8cpp_source_l00168}{168}} of file \mbox{\hyperlink{testThreading_8cpp_source}{test\+Threading.\+cpp}}.
+
+\Hypertarget{classDynamicArray_a46f500ef2cda0c68b067ab869ee6f1bd}\index{DynamicArray@{DynamicArray}!GetValue@{GetValue}}
+\index{GetValue@{GetValue}!DynamicArray@{DynamicArray}}
+\doxysubsubsection{\texorpdfstring{GetValue()}{GetValue()}}
+{\footnotesize\ttfamily \label{classDynamicArray_a46f500ef2cda0c68b067ab869ee6f1bd} 
+int \& Dynamic\+Array\+::\+Get\+Value (\begin{DoxyParamCaption}\item[{unsigned int}]{index}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{DynamicArray_8hpp_source_l00311}{311}} of file \mbox{\hyperlink{DynamicArray_8hpp_source}{Dynamic\+Array.\+hpp}}.
+
+\Hypertarget{classDynamicArray_aba519e23f74ed9cd5f3470c4368a4c5b}\index{DynamicArray@{DynamicArray}!Insert@{Insert}}
+\index{Insert@{Insert}!DynamicArray@{DynamicArray}}
+\doxysubsubsection{\texorpdfstring{Insert()}{Insert()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classDynamicArray_aba519e23f74ed9cd5f3470c4368a4c5b} 
+void Dynamic\+Array\+::\+Insert (\begin{DoxyParamCaption}\item[{unsigned int}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{DynamicArray_8hpp_source_l00193}{193}} of file \mbox{\hyperlink{DynamicArray_8hpp_source}{Dynamic\+Array.\+hpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDynamicArray_aba519e23f74ed9cd5f3470c4368a4c5b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classDynamicArray_aba519e23f74ed9cd5f3470c4368a4c5b}\index{DynamicArray@{DynamicArray}!Insert@{Insert}}
+\index{Insert@{Insert}!DynamicArray@{DynamicArray}}
+\doxysubsubsection{\texorpdfstring{Insert()}{Insert()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classDynamicArray_aba519e23f74ed9cd5f3470c4368a4c5b} 
+void Dynamic\+Array\+::\+Insert (\begin{DoxyParamCaption}\item[{unsigned int}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{testThreading_8cpp_source_l00096}{96}} of file \mbox{\hyperlink{testThreading_8cpp_source}{test\+Threading.\+cpp}}.
+
+\Hypertarget{classDynamicArray_a7de1d985320ff7a8499592a6deeeadab}\index{DynamicArray@{DynamicArray}!InsertV1@{InsertV1}}
+\index{InsertV1@{InsertV1}!DynamicArray@{DynamicArray}}
+\doxysubsubsection{\texorpdfstring{InsertV1()}{InsertV1()}}
+{\footnotesize\ttfamily \label{classDynamicArray_a7de1d985320ff7a8499592a6deeeadab} 
+void Dynamic\+Array\+::\+Insert\+V1 (\begin{DoxyParamCaption}\item[{unsigned int}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{DynamicArray_8hpp_source_l00165}{165}} of file \mbox{\hyperlink{DynamicArray_8hpp_source}{Dynamic\+Array.\+hpp}}.
+
+\Hypertarget{classDynamicArray_a8c6a382e3e5201dc34203e7a4b3feacc}\index{DynamicArray@{DynamicArray}!IsEmpty@{IsEmpty}}
+\index{IsEmpty@{IsEmpty}!DynamicArray@{DynamicArray}}
+\doxysubsubsection{\texorpdfstring{IsEmpty()}{IsEmpty()}}
+{\footnotesize\ttfamily \label{classDynamicArray_a8c6a382e3e5201dc34203e7a4b3feacc} 
+bool Dynamic\+Array\+::\+Is\+Empty (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [nodiscard]}}
+
+
+
+Definition at line \mbox{\hyperlink{DynamicArray_8hpp_source_l00330}{330}} of file \mbox{\hyperlink{DynamicArray_8hpp_source}{Dynamic\+Array.\+hpp}}.
+
+\Hypertarget{classDynamicArray_ab9145a0ba0025184d25564a44ae96f46}\index{DynamicArray@{DynamicArray}!operator new@{operator new}}
+\index{operator new@{operator new}!DynamicArray@{DynamicArray}}
+\doxysubsubsection{\texorpdfstring{operator new()}{operator new()}}
+{\footnotesize\ttfamily \label{classDynamicArray_ab9145a0ba0025184d25564a44ae96f46} 
+void \texorpdfstring{$\ast$}{*} Dynamic\+Array\+::operator new (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{size}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{DynamicArray_8hpp_source_l00112}{112}} of file \mbox{\hyperlink{DynamicArray_8hpp_source}{Dynamic\+Array.\+hpp}}.
+
+\Hypertarget{classDynamicArray_a110fbea8aaf984d4e2ee0e14fe67d4f1}\index{DynamicArray@{DynamicArray}!operator=@{operator=}}
+\index{operator=@{operator=}!DynamicArray@{DynamicArray}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classDynamicArray_a110fbea8aaf984d4e2ee0e14fe67d4f1} 
+\mbox{\hyperlink{classDynamicArray}{Dynamic\+Array}} \& Dynamic\+Array\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classDynamicArray}{Dynamic\+Array}} \&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{DynamicArray_8hpp_source_l00067}{67}} of file \mbox{\hyperlink{DynamicArray_8hpp_source}{Dynamic\+Array.\+hpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDynamicArray_a110fbea8aaf984d4e2ee0e14fe67d4f1_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classDynamicArray_a8571c757e7a06071015b4189725777e7}\index{DynamicArray@{DynamicArray}!operator=@{operator=}}
+\index{operator=@{operator=}!DynamicArray@{DynamicArray}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classDynamicArray_a8571c757e7a06071015b4189725777e7} 
+\mbox{\hyperlink{classDynamicArray}{Dynamic\+Array}} \& Dynamic\+Array\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classDynamicArray}{Dynamic\+Array}} \&\&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDynamicArray_a8571c757e7a06071015b4189725777e7_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classDynamicArray_a0c1a050ff7df9dc3fa9e68a1d7620cb4}\index{DynamicArray@{DynamicArray}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!DynamicArray@{DynamicArray}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classDynamicArray_a0c1a050ff7df9dc3fa9e68a1d7620cb4} 
+int \& Dynamic\+Array\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{unsigned int}]{index}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{testThreading_8cpp_source_l00148}{148}} of file \mbox{\hyperlink{testThreading_8cpp_source}{test\+Threading.\+cpp}}.
+
+\Hypertarget{classDynamicArray_a78633f62d419ae398fc2a1a82fe99fa8}\index{DynamicArray@{DynamicArray}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!DynamicArray@{DynamicArray}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classDynamicArray_a78633f62d419ae398fc2a1a82fe99fa8} 
+int \& Dynamic\+Array\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{unsigned int}]{index}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{DynamicArray_8hpp_source_l00318}{318}} of file \mbox{\hyperlink{DynamicArray_8hpp_source}{Dynamic\+Array.\+hpp}}.
+
+\Hypertarget{classDynamicArray_a96cb822c4320f310484b48c1bf579659}\index{DynamicArray@{DynamicArray}!PreAlloc@{PreAlloc}}
+\index{PreAlloc@{PreAlloc}!DynamicArray@{DynamicArray}}
+\doxysubsubsection{\texorpdfstring{PreAlloc()}{PreAlloc()}}
+{\footnotesize\ttfamily \label{classDynamicArray_a96cb822c4320f310484b48c1bf579659} 
+void Dynamic\+Array\+::\+Pre\+Alloc (\begin{DoxyParamCaption}\item[{unsigned int}]{amount\+To\+Pre\+Alloc}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{DynamicArray_8hpp_source_l00151}{151}} of file \mbox{\hyperlink{DynamicArray_8hpp_source}{Dynamic\+Array.\+hpp}}.
+
+\Hypertarget{classDynamicArray_a33425e7212a0d96e322f8a4aa61dbd95}\index{DynamicArray@{DynamicArray}!PreAllocV1@{PreAllocV1}}
+\index{PreAllocV1@{PreAllocV1}!DynamicArray@{DynamicArray}}
+\doxysubsubsection{\texorpdfstring{PreAllocV1()}{PreAllocV1()}}
+{\footnotesize\ttfamily \label{classDynamicArray_a33425e7212a0d96e322f8a4aa61dbd95} 
+void Dynamic\+Array\+::\+Pre\+Alloc\+V1 (\begin{DoxyParamCaption}\item[{unsigned int}]{amount\+To\+Pre\+Alloc}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{DynamicArray_8hpp_source_l00120}{120}} of file \mbox{\hyperlink{DynamicArray_8hpp_source}{Dynamic\+Array.\+hpp}}.
+
+\Hypertarget{classDynamicArray_a346127714633180532996c331c22ec0d}\index{DynamicArray@{DynamicArray}!RemoveLast@{RemoveLast}}
+\index{RemoveLast@{RemoveLast}!DynamicArray@{DynamicArray}}
+\doxysubsubsection{\texorpdfstring{RemoveLast()}{RemoveLast()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classDynamicArray_a346127714633180532996c331c22ec0d} 
+void Dynamic\+Array\+::\+Remove\+Last (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{DynamicArray_8hpp_source_l00285}{285}} of file \mbox{\hyperlink{DynamicArray_8hpp_source}{Dynamic\+Array.\+hpp}}.
+
+\Hypertarget{classDynamicArray_a346127714633180532996c331c22ec0d}\index{DynamicArray@{DynamicArray}!RemoveLast@{RemoveLast}}
+\index{RemoveLast@{RemoveLast}!DynamicArray@{DynamicArray}}
+\doxysubsubsection{\texorpdfstring{RemoveLast()}{RemoveLast()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classDynamicArray_a346127714633180532996c331c22ec0d} 
+void Dynamic\+Array\+::\+Remove\+Last (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{testThreading_8cpp_source_l00141}{141}} of file \mbox{\hyperlink{testThreading_8cpp_source}{test\+Threading.\+cpp}}.
+
+\Hypertarget{classDynamicArray_a9b1c8b989c03c1c4463408e74958ebc5}\index{DynamicArray@{DynamicArray}!Size@{Size}}
+\index{Size@{Size}!DynamicArray@{DynamicArray}}
+\doxysubsubsection{\texorpdfstring{Size()}{Size()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classDynamicArray_a9b1c8b989c03c1c4463408e74958ebc5} 
+unsigned int Dynamic\+Array\+::\+Size (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [nodiscard]}}
+
+
+
+Definition at line \mbox{\hyperlink{DynamicArray_8hpp_source_l00325}{325}} of file \mbox{\hyperlink{DynamicArray_8hpp_source}{Dynamic\+Array.\+hpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDynamicArray_a9b1c8b989c03c1c4463408e74958ebc5_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classDynamicArray_a9b1c8b989c03c1c4463408e74958ebc5}\index{DynamicArray@{DynamicArray}!Size@{Size}}
+\index{Size@{Size}!DynamicArray@{DynamicArray}}
+\doxysubsubsection{\texorpdfstring{Size()}{Size()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classDynamicArray_a9b1c8b989c03c1c4463408e74958ebc5} 
+unsigned int Dynamic\+Array\+::\+Size (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{testThreading_8cpp_source_l00158}{158}} of file \mbox{\hyperlink{testThreading_8cpp_source}{test\+Threading.\+cpp}}.
+
+\Hypertarget{classDynamicArray_a3d544e59def5c87b3d2857ccd9aac637}\index{DynamicArray@{DynamicArray}!SizeBytes@{SizeBytes}}
+\index{SizeBytes@{SizeBytes}!DynamicArray@{DynamicArray}}
+\doxysubsubsection{\texorpdfstring{SizeBytes()}{SizeBytes()}}
+{\footnotesize\ttfamily \label{classDynamicArray_a3d544e59def5c87b3d2857ccd9aac637} 
+unsigned int Dynamic\+Array\+::\+Size\+Bytes (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [nodiscard]}}
+
+
+
+Definition at line \mbox{\hyperlink{DynamicArray_8hpp_source_l00328}{328}} of file \mbox{\hyperlink{DynamicArray_8hpp_source}{Dynamic\+Array.\+hpp}}.
+
+\Hypertarget{classDynamicArray_ad2864e9d12400c348f3364b9ccb06f20}\index{DynamicArray@{DynamicArray}!TestSIMD@{TestSIMD}}
+\index{TestSIMD@{TestSIMD}!DynamicArray@{DynamicArray}}
+\doxysubsubsection{\texorpdfstring{TestSIMD()}{TestSIMD()}}
+{\footnotesize\ttfamily \label{classDynamicArray_ad2864e9d12400c348f3364b9ccb06f20} 
+void Dynamic\+Array\+::\+Test\+SIMD (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{DynamicArray_8hpp_source_l00267}{267}} of file \mbox{\hyperlink{DynamicArray_8hpp_source}{Dynamic\+Array.\+hpp}}.
+
+
+
+\label{doc-variable-members}
+\Hypertarget{classDynamicArray_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classDynamicArray_a59930150976d454ee5a307b493310262}\index{DynamicArray@{DynamicArray}!m\_allocations@{m\_allocations}}
+\index{m\_allocations@{m\_allocations}!DynamicArray@{DynamicArray}}
+\doxysubsubsection{\texorpdfstring{m\_allocations}{m\_allocations}}
+{\footnotesize\ttfamily \label{classDynamicArray_a59930150976d454ee5a307b493310262} 
+unsigned int Dynamic\+Array\+::m\+\_\+allocations\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{DynamicArray_8hpp_source_l00357}{357}} of file \mbox{\hyperlink{DynamicArray_8hpp_source}{Dynamic\+Array.\+hpp}}.
+
+\Hypertarget{classDynamicArray_a391aca2d998d1272ad3b4d165b387af4}\index{DynamicArray@{DynamicArray}!m\_capacity@{m\_capacity}}
+\index{m\_capacity@{m\_capacity}!DynamicArray@{DynamicArray}}
+\doxysubsubsection{\texorpdfstring{m\_capacity}{m\_capacity}}
+{\footnotesize\ttfamily \label{classDynamicArray_a391aca2d998d1272ad3b4d165b387af4} 
+unsigned int Dynamic\+Array\+::m\+\_\+capacity\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{DynamicArray_8hpp_source_l00356}{356}} of file \mbox{\hyperlink{DynamicArray_8hpp_source}{Dynamic\+Array.\+hpp}}.
+
+\Hypertarget{classDynamicArray_a9a689373a8b89607ba1b31e1eda18164}\index{DynamicArray@{DynamicArray}!m\_data@{m\_data}}
+\index{m\_data@{m\_data}!DynamicArray@{DynamicArray}}
+\doxysubsubsection{\texorpdfstring{m\_data}{m\_data}}
+{\footnotesize\ttfamily \label{classDynamicArray_a9a689373a8b89607ba1b31e1eda18164} 
+int \texorpdfstring{$\ast$}{*} Dynamic\+Array\+::m\+\_\+data\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{DynamicArray_8hpp_source_l00354}{354}} of file \mbox{\hyperlink{DynamicArray_8hpp_source}{Dynamic\+Array.\+hpp}}.
+
+\Hypertarget{classDynamicArray_a9ca742dc21ae274bb0776f9ea3071411}\index{DynamicArray@{DynamicArray}!m\_isCapacityGreater@{m\_isCapacityGreater}}
+\index{m\_isCapacityGreater@{m\_isCapacityGreater}!DynamicArray@{DynamicArray}}
+\doxysubsubsection{\texorpdfstring{m\_isCapacityGreater}{m\_isCapacityGreater}}
+{\footnotesize\ttfamily \label{classDynamicArray_a9ca742dc21ae274bb0776f9ea3071411} 
+bool Dynamic\+Array\+::m\+\_\+is\+Capacity\+Greater\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{DynamicArray_8hpp_source_l00365}{365}} of file \mbox{\hyperlink{DynamicArray_8hpp_source}{Dynamic\+Array.\+hpp}}.
+
+\Hypertarget{classDynamicArray_ad62178ecce90146f913510bb1fed071c}\index{DynamicArray@{DynamicArray}!m\_maxCapacity@{m\_maxCapacity}}
+\index{m\_maxCapacity@{m\_maxCapacity}!DynamicArray@{DynamicArray}}
+\doxysubsubsection{\texorpdfstring{m\_maxCapacity}{m\_maxCapacity}}
+{\footnotesize\ttfamily \label{classDynamicArray_ad62178ecce90146f913510bb1fed071c} 
+unsigned long Dynamic\+Array\+::m\+\_\+max\+Capacity = 1 \texorpdfstring{$\ast$}{*} 1024 \texorpdfstring{$\ast$}{*} 1024 \texorpdfstring{$\ast$}{*} 1024\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}, {\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{DynamicArray_8hpp_source_l00370}{370}} of file \mbox{\hyperlink{DynamicArray_8hpp_source}{Dynamic\+Array.\+hpp}}.
+
+\Hypertarget{classDynamicArray_af87028d3cdac06df1bd0755057ed6b0b}\index{DynamicArray@{DynamicArray}!m\_maxStackSize@{m\_maxStackSize}}
+\index{m\_maxStackSize@{m\_maxStackSize}!DynamicArray@{DynamicArray}}
+\doxysubsubsection{\texorpdfstring{m\_maxStackSize}{m\_maxStackSize}}
+{\footnotesize\ttfamily \label{classDynamicArray_af87028d3cdac06df1bd0755057ed6b0b} 
+unsigned long Dynamic\+Array\+::m\+\_\+max\+Stack\+Size = 1 \texorpdfstring{$\ast$}{*} 1024 \texorpdfstring{$\ast$}{*} 1024\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}, {\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{DynamicArray_8hpp_source_l00369}{369}} of file \mbox{\hyperlink{DynamicArray_8hpp_source}{Dynamic\+Array.\+hpp}}.
+
+\Hypertarget{classDynamicArray_aeca0a3ec54d8be21e40a4d2f6e01467b}\index{DynamicArray@{DynamicArray}!m\_preAllocated@{m\_preAllocated}}
+\index{m\_preAllocated@{m\_preAllocated}!DynamicArray@{DynamicArray}}
+\doxysubsubsection{\texorpdfstring{m\_preAllocated}{m\_preAllocated}}
+{\footnotesize\ttfamily \label{classDynamicArray_aeca0a3ec54d8be21e40a4d2f6e01467b} 
+bool Dynamic\+Array\+::m\+\_\+pre\+Allocated\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{DynamicArray_8hpp_source_l00364}{364}} of file \mbox{\hyperlink{DynamicArray_8hpp_source}{Dynamic\+Array.\+hpp}}.
+
+\Hypertarget{classDynamicArray_a8ca16c3df08df32d18cd42a5c75974fa}\index{DynamicArray@{DynamicArray}!m\_size@{m\_size}}
+\index{m\_size@{m\_size}!DynamicArray@{DynamicArray}}
+\doxysubsubsection{\texorpdfstring{m\_size}{m\_size}}
+{\footnotesize\ttfamily \label{classDynamicArray_a8ca16c3df08df32d18cd42a5c75974fa} 
+unsigned int Dynamic\+Array\+::m\+\_\+size\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{DynamicArray_8hpp_source_l00355}{355}} of file \mbox{\hyperlink{DynamicArray_8hpp_source}{Dynamic\+Array.\+hpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+tests/container/dynamic\+Array/\mbox{\hyperlink{DynamicArray_8hpp}{Dynamic\+Array.\+hpp}}\item 
+tests/multithreading/\mbox{\hyperlink{testThreading_8cpp}{test\+Threading.\+cpp}}\end{DoxyCompactItemize}

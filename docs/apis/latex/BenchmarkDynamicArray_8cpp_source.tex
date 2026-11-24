@@ -1,0 +1,44 @@
+\doxysection{Benchmark\+Dynamic\+Array.\+cpp}
+\hypertarget{BenchmarkDynamicArray_8cpp_source}{}\label{BenchmarkDynamicArray_8cpp_source}\index{tests/container/dynamicArray/BenchmarkDynamicArray.cpp@{tests/container/dynamicArray/BenchmarkDynamicArray.cpp}}
+\mbox{\hyperlink{BenchmarkDynamicArray_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{BenchmarkDynamicArray_8cpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{BenchmarkDynamicArray_8cpp_source_l00002}00002\ \textcolor{comment}{//\#include\ "{}gtest/gtest.h"{}}}
+\DoxyCodeLine{\Hypertarget{BenchmarkDynamicArray_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}benchmark/benchmark.h"{}}}
+\DoxyCodeLine{\Hypertarget{BenchmarkDynamicArray_8cpp_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{BenchmarkDynamicArray_8cpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{DynamicArray_8hpp}{DynamicArray.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{BenchmarkDynamicArray_8cpp_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{BenchmarkDynamicArray_8cpp_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{BenchmarkDynamicArray_8cpp_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{BenchmarkDynamicArray_8cpp_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{BenchmarkDynamicArray_8cpp_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{BenchmarkDynamicArray_8cpp_source_l00011}\mbox{\hyperlink{BenchmarkDynamicArray_8cpp_a9fd236454453464ead52de60bdb16abc}{00011}}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{BenchmarkDynamicArray_8cpp_a9fd236454453464ead52de60bdb16abc}{BM\_DynamicArrayMoveConstructor}}(benchmark::State\ \&state)}
+\DoxyCodeLine{\Hypertarget{BenchmarkDynamicArray_8cpp_source_l00012}00012\ \{}
+\DoxyCodeLine{\Hypertarget{BenchmarkDynamicArray_8cpp_source_l00013}00013\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \_\ :\ state)}
+\DoxyCodeLine{\Hypertarget{BenchmarkDynamicArray_8cpp_source_l00014}00014\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{BenchmarkDynamicArray_8cpp_source_l00015}00015\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ testSize\ =\ 100000;}
+\DoxyCodeLine{\Hypertarget{BenchmarkDynamicArray_8cpp_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{BenchmarkDynamicArray_8cpp_source_l00017}00017\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classDynamicArray}{DynamicArray}}\ array;}
+\DoxyCodeLine{\Hypertarget{BenchmarkDynamicArray_8cpp_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{BenchmarkDynamicArray_8cpp_source_l00019}00019\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i=0;\ i<testSize;\ ++i)}
+\DoxyCodeLine{\Hypertarget{BenchmarkDynamicArray_8cpp_source_l00020}00020\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{BenchmarkDynamicArray_8cpp_source_l00021}00021\ \ \ \ \ \ \ \ \ \ \ \ \ array.\mbox{\hyperlink{classDynamicArray_aba519e23f74ed9cd5f3470c4368a4c5b}{Insert}}(i);}
+\DoxyCodeLine{\Hypertarget{BenchmarkDynamicArray_8cpp_source_l00022}00022\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{BenchmarkDynamicArray_8cpp_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{BenchmarkDynamicArray_8cpp_source_l00024}00024\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classDynamicArray}{DynamicArray}}\ array2\ =\ std::move(array);}
+\DoxyCodeLine{\Hypertarget{BenchmarkDynamicArray_8cpp_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{BenchmarkDynamicArray_8cpp_source_l00026}00026\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i=0;\ i<array2.\mbox{\hyperlink{classDynamicArray_a9b1c8b989c03c1c4463408e74958ebc5}{Size}}();\ ++i)}
+\DoxyCodeLine{\Hypertarget{BenchmarkDynamicArray_8cpp_source_l00027}00027\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{BenchmarkDynamicArray_8cpp_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//EXPECT\_EQ(array2[i],\ i);}}
+\DoxyCodeLine{\Hypertarget{BenchmarkDynamicArray_8cpp_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::cout\ <<\ "{}Value\ of\ array2["{}\ <<\ i\ <<\ "{}]\ is\ :"{}\ <<\ array2[i]\ <<\ '\(\backslash\)n';}}
+\DoxyCodeLine{\Hypertarget{BenchmarkDynamicArray_8cpp_source_l00030}00030\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{BenchmarkDynamicArray_8cpp_source_l00031}00031\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{BenchmarkDynamicArray_8cpp_source_l00032}00032\ \}}
+\DoxyCodeLine{\Hypertarget{BenchmarkDynamicArray_8cpp_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{BenchmarkDynamicArray_8cpp_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{BenchmarkDynamicArray_8cpp_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{BenchmarkDynamicArray_8cpp_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{BenchmarkDynamicArray_8cpp_source_l00037}\mbox{\hyperlink{BenchmarkDynamicArray_8cpp_a662d8891deb4e0cd231e2157b23457b1}{00037}}\ \mbox{\hyperlink{BenchmarkDynamicArray_8cpp_a662d8891deb4e0cd231e2157b23457b1}{BENCHMARK}}(\mbox{\hyperlink{BenchmarkDynamicArray_8cpp_a9fd236454453464ead52de60bdb16abc}{BM\_DynamicArrayMoveConstructor}});}
+\DoxyCodeLine{\Hypertarget{BenchmarkDynamicArray_8cpp_source_l00038}\mbox{\hyperlink{BenchmarkDynamicArray_8cpp_a5851750faa9cfec10f7cad1f3b89697e}{00038}}\ \mbox{\hyperlink{BenchmarkDynamicArray_8cpp_a5851750faa9cfec10f7cad1f3b89697e}{BENCHMARK\_MAIN}}();}
+
+\end{DoxyCode}

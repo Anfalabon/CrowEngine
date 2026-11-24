@@ -1,0 +1,9 @@
+<map id="core/Essentials.hpp" name="core/Essentials.hpp">
+<area shape="rect" id="Node000001" title=" " alt="" coords="170,5,317,33"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,81,180,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="217,36,134,76,132,71,215,31"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="204,81,283,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="246,34,246,65,240,65,240,34"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="306,81,372,109"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="262,31,312,69,308,73,259,36"/>
+</map>

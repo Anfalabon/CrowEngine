@@ -1,0 +1,151 @@
+\doxysection{core/\+Essentials.hpp File Reference}
+\hypertarget{Essentials_8hpp}{}\label{Essentials_8hpp}\index{core/Essentials.hpp@{core/Essentials.hpp}}
+{\ttfamily \#include $<$glm/gtx/string\+\_\+cast.\+hpp$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$chrono$>$}\newline
+Include dependency graph for Essentials.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Essentials_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Essentials_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classCrowEngine_1_1Logging}{Crow\+Engine\+::\+Logging}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceCrowEngine}{Crow\+Engine}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{Essentials_8hpp_abd75661fe7969e19439052a5f69ba5d1}{GLM\+\_\+\+ENABLE\+\_\+\+EXPERIMENTAL}}
+\item 
+\#define \mbox{\hyperlink{Essentials_8hpp_a23e7e01113d3aa872bdcaaf31eb003a1}{CORE\+\_\+\+LOGIC}}(LOGIC)
+\item 
+\#define \mbox{\hyperlink{Essentials_8hpp_ac1de5b8538f322b48229faf9be8b3db9}{CORE\+\_\+\+LOGIC\+\_\+\+V2}}(ABOUT,  LOGIC)
+\item 
+\#define \mbox{\hyperlink{Essentials_8hpp_acbd5e3ee446c3c3ad1ebe9cd14d315d0}{TEST\+\_\+\+STACK\+\_\+\+FRAME}}(CODE)
+\item 
+\#define \mbox{\hyperlink{Essentials_8hpp_afae1742af425842a9a75000aa534b002}{LOG\+\_\+\+MATRIX}}(matrix\+Name,  matrix)
+\item 
+\#define \mbox{\hyperlink{Essentials_8hpp_a6d999bfb3bcb85a46b24f582cd1a6f29}{Benchmark}}(CODE)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static unsigned int \mbox{\hyperlink{namespaceCrowEngine_a2ff66d3a230af8786a645fe30340ba84}{Crow\+Engine\+::function}} ()
+\item 
+unsigned int \mbox{\hyperlink{namespaceCrowEngine_a1097e3a3f60e01ee091b4d768e7d42f6}{Crow\+Engine\+::\+Get\+Unsigned\+Int}} ()
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespaceCrowEngine_a2f47b7f6578b226000723fb2fa9bfbb9}{Crow\+Engine\+::\+Get\+Str}} ()
+\item 
+void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespaceCrowEngine_ad735e3b52b068098c229e91fa8e72f56}{Crow\+Engine\+::\+Get\+Malloc}} ()
+\end{DoxyCompactItemize}
+
+
+\label{doc-define-members}
+\Hypertarget{Essentials_8hpp_doc-define-members}
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{Essentials_8hpp_a6d999bfb3bcb85a46b24f582cd1a6f29}\index{Essentials.hpp@{Essentials.hpp}!Benchmark@{Benchmark}}
+\index{Benchmark@{Benchmark}!Essentials.hpp@{Essentials.hpp}}
+\doxysubsubsection{\texorpdfstring{Benchmark}{Benchmark}}
+{\footnotesize\ttfamily \label{Essentials_8hpp_a6d999bfb3bcb85a46b24f582cd1a6f29} 
+\#define Benchmark(\begin{DoxyParamCaption}\item[{}]{CODE}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{auto}\ start\ =\ std::chrono::high\_resolution\_clock::now();\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ CODE\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ auto\ end\ =\ std::chrono::high\_resolution\_clock::now();\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{auto}\ duration\ =\ duration\_cast<std::chrono::seconds>(end-\/start);\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Execution\ time:\ "{}}\ <<\ duration.count()\ <<\ \textcolor{stringliteral}{"{}\ seconds\(\backslash\)n"{}};}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{Essentials_8hpp_source_l00052}{52}} of file \mbox{\hyperlink{Essentials_8hpp_source}{Essentials.\+hpp}}.
+
+\Hypertarget{Essentials_8hpp_a23e7e01113d3aa872bdcaaf31eb003a1}\index{Essentials.hpp@{Essentials.hpp}!CORE\_LOGIC@{CORE\_LOGIC}}
+\index{CORE\_LOGIC@{CORE\_LOGIC}!Essentials.hpp@{Essentials.hpp}}
+\doxysubsubsection{\texorpdfstring{CORE\_LOGIC}{CORE\_LOGIC}}
+{\footnotesize\ttfamily \label{Essentials_8hpp_a23e7e01113d3aa872bdcaaf31eb003a1} 
+\#define CORE\+\_\+\+LOGIC(\begin{DoxyParamCaption}\item[{}]{LOGIC}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{LOGIC\};}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{Essentials_8hpp_source_l00022}{22}} of file \mbox{\hyperlink{Essentials_8hpp_source}{Essentials.\+hpp}}.
+
+\Hypertarget{Essentials_8hpp_ac1de5b8538f322b48229faf9be8b3db9}\index{Essentials.hpp@{Essentials.hpp}!CORE\_LOGIC\_V2@{CORE\_LOGIC\_V2}}
+\index{CORE\_LOGIC\_V2@{CORE\_LOGIC\_V2}!Essentials.hpp@{Essentials.hpp}}
+\doxysubsubsection{\texorpdfstring{CORE\_LOGIC\_V2}{CORE\_LOGIC\_V2}}
+{\footnotesize\ttfamily \label{Essentials_8hpp_ac1de5b8538f322b48229faf9be8b3db9} 
+\#define CORE\+\_\+\+LOGIC\+\_\+\+V2(\begin{DoxyParamCaption}\item[{}]{ABOUT}{, }\item[{}]{LOGIC}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{LOGIC\};}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{Essentials_8hpp_source_l00023}{23}} of file \mbox{\hyperlink{Essentials_8hpp_source}{Essentials.\+hpp}}.
+
+\Hypertarget{Essentials_8hpp_abd75661fe7969e19439052a5f69ba5d1}\index{Essentials.hpp@{Essentials.hpp}!GLM\_ENABLE\_EXPERIMENTAL@{GLM\_ENABLE\_EXPERIMENTAL}}
+\index{GLM\_ENABLE\_EXPERIMENTAL@{GLM\_ENABLE\_EXPERIMENTAL}!Essentials.hpp@{Essentials.hpp}}
+\doxysubsubsection{\texorpdfstring{GLM\_ENABLE\_EXPERIMENTAL}{GLM\_ENABLE\_EXPERIMENTAL}}
+{\footnotesize\ttfamily \label{Essentials_8hpp_abd75661fe7969e19439052a5f69ba5d1} 
+\#define GLM\+\_\+\+ENABLE\+\_\+\+EXPERIMENTAL}
+
+
+
+Definition at line \mbox{\hyperlink{Essentials_8hpp_source_l00003}{3}} of file \mbox{\hyperlink{Essentials_8hpp_source}{Essentials.\+hpp}}.
+
+\Hypertarget{Essentials_8hpp_afae1742af425842a9a75000aa534b002}\index{Essentials.hpp@{Essentials.hpp}!LOG\_MATRIX@{LOG\_MATRIX}}
+\index{LOG\_MATRIX@{LOG\_MATRIX}!Essentials.hpp@{Essentials.hpp}}
+\doxysubsubsection{\texorpdfstring{LOG\_MATRIX}{LOG\_MATRIX}}
+{\footnotesize\ttfamily \label{Essentials_8hpp_afae1742af425842a9a75000aa534b002} 
+\#define LOG\+\_\+\+MATRIX(\begin{DoxyParamCaption}\item[{}]{matrix\+Name}{, }\item[{}]{matrix}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{std::clog\ <<\ matrixName\ <<\ \textcolor{stringliteral}{"{}:\ "{}}\ <<\ glm::to\_string(matrix)\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{Essentials_8hpp_source_l00035}{35}} of file \mbox{\hyperlink{Essentials_8hpp_source}{Essentials.\+hpp}}.
+
+\Hypertarget{Essentials_8hpp_acbd5e3ee446c3c3ad1ebe9cd14d315d0}\index{Essentials.hpp@{Essentials.hpp}!TEST\_STACK\_FRAME@{TEST\_STACK\_FRAME}}
+\index{TEST\_STACK\_FRAME@{TEST\_STACK\_FRAME}!Essentials.hpp@{Essentials.hpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_STACK\_FRAME}{TEST\_STACK\_FRAME}}
+{\footnotesize\ttfamily \label{Essentials_8hpp_acbd5e3ee446c3c3ad1ebe9cd14d315d0} 
+\#define TEST\+\_\+\+STACK\+\_\+\+FRAME(\begin{DoxyParamCaption}\item[{}]{CODE}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ Test()\{\ CODE\ \};\ Test();}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{Essentials_8hpp_source_l00024}{24}} of file \mbox{\hyperlink{Essentials_8hpp_source}{Essentials.\+hpp}}.
+

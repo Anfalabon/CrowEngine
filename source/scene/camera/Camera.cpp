@@ -3,10 +3,15 @@
 #include <glm/ext.hpp>
 #include <glm/gtc/type_ptr.hpp>
 
+#define GLM_ENABLE_EXPERIMENTAL
+#include <glm/gtx/string_cast.hpp>
+
+
 #include "Camera.hpp"
 #include "Cursor.hpp"
 
-
+#include <iostream>
+#include <core/Essentials.hpp>
 
 
 namespace CrowEngine
@@ -49,9 +54,14 @@ void Camera::Update(GLFWwindow* windowID, const unsigned int shaderProgramID)
     m_view = glm::lookAt(m_position, target, m_up);
 
 
+    LOG_MATRIX("View Matrix", m_view)
+    LOG_MATRIX("Projection Matrix", m_projection)
+
+
     // these should be in Shader
-    glUniformMatrix4fv(glGetUniformLocation(shaderProgramID, "model"), 1, GL_FALSE,
-                       glm::value_ptr(glm::mat4(1.0f)));
+
+    // glUniformMatrix4fv(glGetUniformLocation(shaderProgramID, "model"), 1, GL_FALSE,
+    //                    glm::value_ptr(glm::mat4(1.0f)));
     glUniformMatrix4fv(glGetUniformLocation(shaderProgramID, "view"), 1, GL_FALSE, glm::value_ptr(m_view));
     glUniformMatrix4fv(glGetUniformLocation(shaderProgramID, "projection"), 1, GL_FALSE,
                        glm::value_ptr(m_projection));

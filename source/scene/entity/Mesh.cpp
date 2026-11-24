@@ -20,7 +20,7 @@ void Mesh::Set()
 
 
     //the bug is here
-    m_meshData.m_texture.Load("../../assets/images/grassTexture.jpg");
+    m_meshData.m_texture.Load("../../assets/resources/images/grassTexture.jpg");
     m_meshData.m_texture.Set(true);
 }
 

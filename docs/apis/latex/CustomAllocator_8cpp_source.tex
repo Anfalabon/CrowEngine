@@ -1,0 +1,248 @@
+\doxysection{Custom\+Allocator.\+cpp}
+\hypertarget{CustomAllocator_8cpp_source}{}\label{CustomAllocator_8cpp_source}\index{tests/allocator/CustomAllocator.cpp@{tests/allocator/CustomAllocator.cpp}}
+\mbox{\hyperlink{CustomAllocator_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <gtest/gtest.h>}}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}assets/assetManager/AssetManager.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <list>}}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <queue>}}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00009}00009\ \textcolor{preprocessor}{\#include\ <forward\_list>}}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00012}\mbox{\hyperlink{classArenaAllocator}{00012}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classArenaAllocator_a7aa8d83a7c9b75e8672ca23a060bcd3c}{ArenaAllocator}}}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00013}00013\ \{}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00015}00015\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00017}\mbox{\hyperlink{classArenaAllocator_a7aa8d83a7c9b75e8672ca23a060bcd3c}{00017}}\ \ \ \ \ \mbox{\hyperlink{classArenaAllocator_a7aa8d83a7c9b75e8672ca23a060bcd3c}{ArenaAllocator}}()\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00019}\mbox{\hyperlink{classArenaAllocator_a92727e2f2442c9c9e7a1315f8eb55935}{00019}}\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classArenaAllocator_a92727e2f2442c9c9e7a1315f8eb55935}{ArenaAllocator}}(std::size\_t\ n)\ :}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00020}00020\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classArenaAllocator_a9a826ed655ce791c1fa08e76cf75baeb}{m\_storage}}\{(unsigned\ char*)::operator\ new(n)\},}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00021}00021\ \ \ \ \ \ \ \ \ \textcolor{comment}{//m\_uStorage\{(unsigned\ char*)::operator\ new(n)\},}}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00022}00022\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classArenaAllocator_a0f7496b492436254e7f581f484777336}{m\_offset}}\{0\},}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00023}00023\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classArenaAllocator_af8271acc1ba4ecdc632c997fa94dccb5}{m\_capacity}}\{n\}}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00024}00024\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00026}00026\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00028}\mbox{\hyperlink{classArenaAllocator_a93b8678c4d33abff35760a5a84df6330}{00028}}\ \ \ \ \ \mbox{\hyperlink{classArenaAllocator_a93b8678c4d33abff35760a5a84df6330}{\string~ArenaAllocator}}()}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00029}00029\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00030}00030\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classArenaAllocator_a9a826ed655ce791c1fa08e76cf75baeb}{m\_storage}})}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00031}00031\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ ::operator\ \textcolor{keyword}{delete}(\mbox{\hyperlink{classArenaAllocator_a9a826ed655ce791c1fa08e76cf75baeb}{m\_storage}});}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00035}00035\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classArenaAllocator_a0f7496b492436254e7f581f484777336}{m\_offset}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00036}00036\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classArenaAllocator_af8271acc1ba4ecdc632c997fa94dccb5}{m\_capacity}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00037}00037\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00039}\mbox{\hyperlink{classArenaAllocator_a7508096770e5aa56fbcc870b12a2817a}{00039}}\ \ \ \ \ \textcolor{keywordtype}{void}\ *\mbox{\hyperlink{classArenaAllocator_a7508096770e5aa56fbcc870b12a2817a}{Allocate}}(std::size\_t\ n,\ std::size\_t\ align\ =\ \textcolor{keyword}{alignof}(std::max\_align\_t))}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00040}00040\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00041}00041\ \ \ \ \ \ \ \ \ std::size\_t\ p\ =\ (\mbox{\hyperlink{classArenaAllocator_a0f7496b492436254e7f581f484777336}{m\_offset}}\ +\ align\ -\/\ 1)\ \&\ \string~(align\ -\/\ 1);}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00042}00042\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (p\ +\ n\ >\ \mbox{\hyperlink{classArenaAllocator_af8271acc1ba4ecdc632c997fa94dccb5}{m\_capacity}})\{std::\_\_throw\_bad\_alloc();\}}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00044}00044\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classArenaAllocator_a0f7496b492436254e7f581f484777336}{m\_offset}}\ =\ p\ +\ n;}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ \textcolor{comment}{//return\ m\_uStorage\ +\ p;}}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00047}00047\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classArenaAllocator_a9a826ed655ce791c1fa08e76cf75baeb}{m\_storage}}\ +\ p;}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00048}00048\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00050}\mbox{\hyperlink{classArenaAllocator_a49eeee27ff4d5f57089185a3bf147aa0}{00050}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classArenaAllocator_a49eeee27ff4d5f57089185a3bf147aa0}{Deallocate}}()}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00051}00051\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00052}00052\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classArenaAllocator_a9a826ed655ce791c1fa08e76cf75baeb}{m\_storage}})}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ ::operator\ \textcolor{keyword}{delete}(\mbox{\hyperlink{classArenaAllocator_a9a826ed655ce791c1fa08e76cf75baeb}{m\_storage}});}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00055}00055\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00057}00057\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classArenaAllocator_a0f7496b492436254e7f581f484777336}{m\_offset}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classArenaAllocator_af8271acc1ba4ecdc632c997fa94dccb5}{m\_capacity}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00059}00059\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00062}\mbox{\hyperlink{classArenaAllocator_a359d3ca280d94f87f94688b0fc6ebf05}{00062}}\ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{inline}\ std::size\_t\ \&\mbox{\hyperlink{classArenaAllocator_a359d3ca280d94f87f94688b0fc6ebf05}{GetCapacity}}()\{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classArenaAllocator_af8271acc1ba4ecdc632c997fa94dccb5}{m\_capacity}};\}}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00065}00065\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00067}\mbox{\hyperlink{classArenaAllocator_a9a826ed655ce791c1fa08e76cf75baeb}{00067}}\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{classArenaAllocator_a9a826ed655ce791c1fa08e76cf75baeb}{m\_storage}};}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00068}\mbox{\hyperlink{classArenaAllocator_ae1e8f61f04e484bc58403ea932d5cf1f}{00068}}\ \ \ \ \ std::unique\_ptr<unsigned\ char>\ \mbox{\hyperlink{classArenaAllocator_ae1e8f61f04e484bc58403ea932d5cf1f}{m\_uStorage}};}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00069}\mbox{\hyperlink{classArenaAllocator_a0f7496b492436254e7f581f484777336}{00069}}\ \ \ \ \ std::size\_t\ \mbox{\hyperlink{classArenaAllocator_a0f7496b492436254e7f581f484777336}{m\_offset}};}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00070}\mbox{\hyperlink{classArenaAllocator_af8271acc1ba4ecdc632c997fa94dccb5}{00070}}\ \ \ \ \ std::size\_t\ \mbox{\hyperlink{classArenaAllocator_af8271acc1ba4ecdc632c997fa94dccb5}{m\_capacity}};}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00072}00072\ \};}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00076}\mbox{\hyperlink{CustomAllocator_8cpp_af83a0056251c14d1634f7dbb385c4e5b}{00076}}\ \mbox{\hyperlink{CustomAllocator_8cpp_af83a0056251c14d1634f7dbb385c4e5b}{TEST}}(TestAllocator,\ ArenaAllocatorInvalidation)}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00077}00077\ \{}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00078}00078\ \ \ \ \ \mbox{\hyperlink{classArenaAllocator}{ArenaAllocator}}\ arena(1000*\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}));}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00080}00080\ }
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00083}00083\ \ \ \ \ \textcolor{keywordtype}{int}\ *p\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}*\textcolor{keyword}{>}(arena.\mbox{\hyperlink{classArenaAllocator_a7508096770e5aa56fbcc870b12a2817a}{Allocate}}(100*\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int})));}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00085}00085\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i<10;\ ++i)}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00086}00086\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00087}00087\ \ \ \ \ \ \ \ \ p[i]\ =\ i;}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00088}00088\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00090}00090\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i<10;\ ++i)}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00091}00091\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00092}00092\ \ \ \ \ \ \ \ \ std::cout\ <<\ p[i]\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00093}00093\ \ \ \ \ \ \ \ \ EXPECT\_EQ(p[i],\ i);}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00094}00094\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00095}00095\ }
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00096}00096\ }
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00097}00097\ \ \ \ \ arena.\mbox{\hyperlink{classArenaAllocator_a359d3ca280d94f87f94688b0fc6ebf05}{GetCapacity}}()\ =\ 1000;}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00098}00098\ }
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00099}00099\ }
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00101}00101\ }
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00102}00102\ \ \ \ \ \textcolor{comment}{//arena.Deallocate();}}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00103}00103\ }
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00104}00104\ }
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00105}00105\ \ \ \ \ std::size\_t\ testSize\ =\ 100;}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00106}00106\ \ \ \ \ \textcolor{keywordtype}{float}\ *p2\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}*\textcolor{keyword}{>}(arena.\mbox{\hyperlink{classArenaAllocator_a7508096770e5aa56fbcc870b12a2817a}{Allocate}}(testSize*\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{float})));}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00107}00107\ }
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00108}00108\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i<testSize;\ ++i)}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00109}00109\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00110}00110\ \ \ \ \ \ \ \ \ p2[i]\ =\ 10.0424f/(i+1);}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00111}00111\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00112}00112\ }
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00113}00113\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i<testSize;\ ++i)}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00114}00114\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00115}00115\ \ \ \ \ \ \ \ \ std::cout\ <<\ p2[i]\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00116}00116\ \ \ \ \ \ \ \ \ EXPECT\_EQ(p2[i],\ 10.0424f/(i+1));}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00117}00117\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00118}00118\ }
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00119}00119\ }
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00120}00120\ }
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00121}00121\ \}}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00122}00122\ }
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00123}00123\ }
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00124}00124\ }
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00125}00125\ }
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00126}\mbox{\hyperlink{CustomAllocator_8cpp_ae1db7b9e88ab9f67c8eb94ad29ad25ca}{00126}}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{CustomAllocator_8cpp_ae1db7b9e88ab9f67c8eb94ad29ad25ca}{Q\_rSqrt}}(\textcolor{keywordtype}{float}\ x)}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00127}00127\ \{}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00128}00128\ \ \ \ \ \textcolor{keywordtype}{float}\ xhalf\ =\ 0.5f\ *\ x;}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00129}00129\ \ \ \ \ \textcolor{comment}{//int\ i\ =\ *(int*)\&x;\ \ \ \ \ \ \ \ \ \ \ \ //\ store\ floating-\/point\ bits\ in\ integer}}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00130}00130\ \ \ \ \ \textcolor{keywordtype}{int}\ i\ =\ std::bit\_cast<int>(x);}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00131}00131\ \ \ \ \ i\ =\ 0x5f3759df\ -\/\ (i\ >>\ 1);\ \ \ \ \textcolor{comment}{//\ initial\ guess\ for\ Newton's\ method}}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00132}00132\ \ \ \ \ x\ =\ *(\textcolor{keywordtype}{float}*)\&i;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ convert\ new\ bits\ into\ float}}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00133}00133\ \ \ \ \ x\ =\ x*(1.5f\ -\/\ xhalf*x*x);\ \ \ \ \ \textcolor{comment}{//\ One\ round\ of\ Newton's\ method}}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00134}00134\ \ \ \ \ \textcolor{keywordflow}{return}\ x;}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00135}00135\ \}}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00136}00136\ }
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00137}00137\ }
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00138}00138\ }
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00139}\mbox{\hyperlink{CustomAllocator_8cpp_a5cfc2e7a58bbcffecced5dba2aa09668}{00139}}\ \mbox{\hyperlink{CustomAllocator_8cpp_af83a0056251c14d1634f7dbb385c4e5b}{TEST}}(TestSTL,\ TestingSTL)}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00140}00140\ \{}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00141}00141\ }
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00142}00142\ \ \ \ \ std::list<int>\ l;}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00143}00143\ \ \ \ \ std::string\_view\ s\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00144}00144\ }
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00145}00145\ }
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00146}00146\ \ \ \ \ std::string\ x\ =\ \textcolor{stringliteral}{"{}asfdkja;sldfkj"{}};}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00147}00147\ \ \ \ \ std::hash<std::string>\ hashIT;}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00148}00148\ }
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00149}00149\ \ \ \ \ std::cout\ <<\ hashIT(x)\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00150}00150\ }
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00151}00151\ }
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00152}00152\ \ \ \ \ \textcolor{comment}{//queue}}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00153}00153\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00154}00154\ \ \ \ \ \ \ \ \ std::queue<int>\ q;}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00155}00155\ }
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00156}00156\ \ \ \ \ \ \ \ \ q.push(10);}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00157}00157\ \ \ \ \ \ \ \ \ q.push(11);}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00158}00158\ \ \ \ \ \ \ \ \ q.push(12);}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00159}00159\ \ \ \ \ \ \ \ \ q.push(13);}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00160}00160\ \ \ \ \ \ \ \ \ q.push(14);}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00161}00161\ \ \ \ \ \ \ \ \ q.push(15);}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00162}00162\ \ \ \ \ \ \ \ \ q.push(16);}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00163}00163\ \ \ \ \ \ \ \ \ q.push(17);}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00164}00164\ }
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00165}00165\ \ \ \ \ \ \ \ \ std::cout\ <<\ q.front()\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00166}00166\ \ \ \ \ \ \ \ \ std::cout\ <<\ q.size()\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00167}00167\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00168}00168\ }
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00169}00169\ }
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00170}00170\ \ \ \ \ \textcolor{comment}{//deq}}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00171}00171\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00172}00172\ \ \ \ \ \ \ \ \ std::deque<int>\ q;}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00173}00173\ \ \ \ \ \ \ \ \ q.push\_back(10);}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00174}00174\ \ \ \ \ \ \ \ \ q.push\_back(11);}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00175}00175\ }
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00176}00176\ \ \ \ \ \ \ \ \ q.push\_front(88);}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00177}00177\ }
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00178}00178\ \ \ \ \ \ \ \ \ std::cout\ <<\ q.front()\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00179}00179\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00180}00180\ }
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00181}00181\ \ \ \ \ \textcolor{comment}{//linked\ list}}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00182}00182\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00183}00183\ \ \ \ \ \ \ \ \ std::forward\_list<int>\ linkedList;}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00184}00184\ }
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00185}00185\ \ \ \ \ \ \ \ \ linkedList.push\_front(10);}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00186}00186\ \ \ \ \ \ \ \ \ linkedList.push\_front(2122);}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00187}00187\ \ \ \ \ \ \ \ \ linkedList.push\_front(10);}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00188}00188\ \ \ \ \ \ \ \ \ linkedList.push\_front(23);}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00189}00189\ }
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00190}00190\ \ \ \ \ \ \ \ \ std::cout\ <<\ linkedList.remove(10)\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00191}00191\ }
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00192}00192\ }
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00193}00193\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ for\ (auto\ it\ =\ linkedList.cbegin();\ it\ !=\ linkedList.cend();\ ++it)}}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00194}00194\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \{}}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00195}00195\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ std::cout\ <<\ *it\ <<\ '\(\backslash\)n';}}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00196}00196\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \}}}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00197}00197\ }
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00198}00198\ }
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00199}00199\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&element\ :\ linkedList)}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00200}00200\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00201}00201\ \ \ \ \ \ \ \ \ \ \ \ \ ++element;}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00202}00202\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00203}00203\ }
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00204}00204\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&element\ :\ linkedList)}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00205}00205\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00206}00206\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ element\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00207}00207\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00208}00208\ }
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00209}00209\ }
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00210}00210\ }
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00211}00211\ }
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00212}00212\ }
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00213}00213\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00214}00214\ }
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00215}00215\ }
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00216}00216\ }
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00217}00217\ }
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00218}00218\ }
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00219}00219\ \}}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00220}00220\ }
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00221}00221\ }
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00222}00222\ }
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00223}\mbox{\hyperlink{CustomAllocator_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{00223}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{CustomAllocator_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00224}00224\ \{}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00225}00225\ }
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00226}00226\ \ \ \ \ \textcolor{keywordtype}{int}\ a\ =\ 10;}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00227}00227\ \ \ \ \ \textcolor{keywordtype}{int}\ b\ =\ 12;}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00228}00228\ }
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00229}00229\ \ \ \ \ std::cout\ <<\ \&a\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00230}00230\ \ \ \ \ std::cout\ <<\ \&b\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00231}00231\ }
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00232}00232\ }
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00233}00233\ \ \ \ \ \textcolor{keywordtype}{float}\ x\ =\ 9.0f;}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00234}00234\ \ \ \ \ \textcolor{keywordtype}{float}\ xhalf\ =\ 0.5f\ *\ x;}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00235}00235\ \ \ \ \ \textcolor{keywordtype}{int}\ i\ =\ std::bit\_cast<int>(x);}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00236}00236\ }
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00237}00237\ \ \ \ \ EXPECT\_EQ(i,\ *(\textcolor{keywordtype}{int}*)\&x);}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00238}00238\ }
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00239}00239\ }
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00240}00240\ \ \ \ \ testing::InitGoogleTest();}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00241}00241\ \ \ \ \ \textcolor{keywordflow}{return}\ RUN\_ALL\_TESTS();}
+\DoxyCodeLine{\Hypertarget{CustomAllocator_8cpp_source_l00242}00242\ \}}
+
+\end{DoxyCode}

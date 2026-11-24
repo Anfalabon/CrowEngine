@@ -8,14 +8,14 @@
 namespace CrowEngine
 {
 
-    typedef struct MeshData
-    {
+typedef struct MeshData
+{
 
-        std::vector<float> m_vertices;
-        std::vector<unsigned int> m_indices;
+    std::vector<float> m_vertices;
+    std::vector<unsigned int> m_indices;
 
-        Texture m_texture;
+    Texture m_texture;
 
-    } MeshData;
+} MeshData;
 
 } // namespace CrowEngine

@@ -1,0 +1,22 @@
+
+
+docs/Doxyfile
+OUTPUT_DIRECTORY       = docs/apis
+INPUT                  = core source tests
+RECURSIVE              = YES
+EXTRACT_ALL            = YES
+EXTRACT_PRIVATE        = YES
+EXTRACT_STATIC         = YES
+SOURCE_BROWSER         = YES
+HAVE_DOT               = YES
+DOT_NUM_THREADS        = 0
+DOT_GRAPH_MAX_NODES    = 50
+MAX_DOT_GRAPH_DEPTH    = 3
+CALL_GRAPH             = YES
+CALLER_GRAPH           = YES
+INCLUDE_GRAPH          = YES
+INCLUDED_BY_GRAPH      = YES
+DIRECTORY_GRAPH        = YES
+UML_LOOK               = YES
+INTERACTIVE_SVG        = YES
+GENERATE_LATEX         = NO

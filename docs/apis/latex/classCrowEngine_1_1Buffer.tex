@@ -1,0 +1,246 @@
+\doxysection{Crow\+Engine\+::Buffer Class Reference}
+\hypertarget{classCrowEngine_1_1Buffer}{}\label{classCrowEngine_1_1Buffer}\index{CrowEngine::Buffer@{CrowEngine::Buffer}}
+
+
+{\ttfamily \#include $<$Buffer.\+hpp$>$}
+
+
+
+Collaboration diagram for Crow\+Engine\+::Buffer\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=183pt]{classCrowEngine_1_1Buffer__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCrowEngine_1_1Buffer_ac660607de09602f89420d86c235bfa5f}{Buffer}} ()=default
+\item 
+\mbox{\hyperlink{classCrowEngine_1_1Buffer_a7f3e10e99bf3f692ec69bd1dc56822e6}{\texorpdfstring{$\sim$}{\string~}\+Buffer}} ()
+\item 
+void \mbox{\hyperlink{classCrowEngine_1_1Buffer_a11f565d3d50802f0def0acb5a6728062}{Load\+Buffers}} (const std\+::string \&vertices\+File\+Path, const std\+::string \&indices\+File\+Path)
+\item 
+void \mbox{\hyperlink{classCrowEngine_1_1Buffer_a6294174bd80196edef4202bfea5bd7a0}{Load\+Buffers}} (const std\+::pair$<$ std\+::vector$<$ float $>$, std\+::vector$<$ unsigned int $>$ $>$ \&buffer)
+\item 
+void \mbox{\hyperlink{classCrowEngine_1_1Buffer_ab69a1a888a4abf1ed503485772881aa7}{Set\+Buffers}} ()
+\item 
+unsigned int \mbox{\hyperlink{classCrowEngine_1_1Buffer_a529a17741d806cbfa15e7ff53bbb9353}{Get\+VAO}} ()
+\item 
+void \mbox{\hyperlink{classCrowEngine_1_1Buffer_a0b36ed1ecc1ed3018c220e60e35ecc74}{Bind}} ()
+\item 
+void \mbox{\hyperlink{classCrowEngine_1_1Buffer_a5b911521b5d5119e5f8fd5cf089c7fca}{Unbind}} ()
+\item 
+unsigned int \mbox{\hyperlink{classCrowEngine_1_1Buffer_ad4534b6439292962fa3627d90d1c8f21}{Get\+Total\+Indices}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T$>$ }\\static void \mbox{\hyperlink{classCrowEngine_1_1Buffer_a64dc017f09ba3b87f2187f5658aa922b}{Check\+Buffer}} (const std\+::vector$<$ T $>$ \&buffer)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \mbox{\hyperlink{classCrowEngine_1_1Buffer_a0fc1112703f9bee35731f19da222dbe1}{m\+\_\+\+VAO}}
+\item 
+unsigned int \mbox{\hyperlink{classCrowEngine_1_1Buffer_a5b8c8789ec95c12d156168582d378e77}{m\+\_\+\+VBO}}
+\item 
+unsigned int \mbox{\hyperlink{classCrowEngine_1_1Buffer_a4b2c2c1b4d618cdb67d3bc223d1be825}{m\+\_\+\+EBO}}
+\item 
+std\+::vector$<$ float $>$ \mbox{\hyperlink{classCrowEngine_1_1Buffer_a594dac043fc24daab1eba0aafbc4065b}{m\+\_\+vertices}}
+\item 
+std\+::vector$<$ unsigned int $>$ \mbox{\hyperlink{classCrowEngine_1_1Buffer_a44be33f958f0f2fb2ee46045433c510d}{m\+\_\+indices}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{Buffer_8hpp_source_l00017}{17}} of file \mbox{\hyperlink{Buffer_8hpp_source}{Buffer.\+hpp}}.
+
+
+
+\label{doc-constructors}
+\Hypertarget{classCrowEngine_1_1Buffer_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classCrowEngine_1_1Buffer_ac660607de09602f89420d86c235bfa5f}\index{CrowEngine::Buffer@{CrowEngine::Buffer}!Buffer@{Buffer}}
+\index{Buffer@{Buffer}!CrowEngine::Buffer@{CrowEngine::Buffer}}
+\doxysubsubsection{\texorpdfstring{Buffer()}{Buffer()}}
+{\footnotesize\ttfamily \label{classCrowEngine_1_1Buffer_ac660607de09602f89420d86c235bfa5f} 
+Crow\+Engine\+::\+Buffer\+::\+Buffer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\Hypertarget{classCrowEngine_1_1Buffer_a7f3e10e99bf3f692ec69bd1dc56822e6}\index{CrowEngine::Buffer@{CrowEngine::Buffer}!````~Buffer@{\texorpdfstring{$\sim$}{\string~}Buffer}}
+\index{````~Buffer@{\texorpdfstring{$\sim$}{\string~}Buffer}!CrowEngine::Buffer@{CrowEngine::Buffer}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Buffer()}{\string~Buffer()}}
+{\footnotesize\ttfamily \label{classCrowEngine_1_1Buffer_a7f3e10e99bf3f692ec69bd1dc56822e6} 
+Crow\+Engine\+::\+Buffer\+::\texorpdfstring{$\sim$}{\string~}\+Buffer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Buffer_8hpp_source_l00024}{24}} of file \mbox{\hyperlink{Buffer_8hpp_source}{Buffer.\+hpp}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{classCrowEngine_1_1Buffer_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classCrowEngine_1_1Buffer_a0b36ed1ecc1ed3018c220e60e35ecc74}\index{CrowEngine::Buffer@{CrowEngine::Buffer}!Bind@{Bind}}
+\index{Bind@{Bind}!CrowEngine::Buffer@{CrowEngine::Buffer}}
+\doxysubsubsection{\texorpdfstring{Bind()}{Bind()}}
+{\footnotesize\ttfamily \label{classCrowEngine_1_1Buffer_a0b36ed1ecc1ed3018c220e60e35ecc74} 
+void Crow\+Engine\+::\+Buffer\+::\+Bind (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Buffer_8hpp_source_l00034}{34}} of file \mbox{\hyperlink{Buffer_8hpp_source}{Buffer.\+hpp}}.
+
+\Hypertarget{classCrowEngine_1_1Buffer_a64dc017f09ba3b87f2187f5658aa922b}\index{CrowEngine::Buffer@{CrowEngine::Buffer}!CheckBuffer@{CheckBuffer}}
+\index{CheckBuffer@{CheckBuffer}!CrowEngine::Buffer@{CrowEngine::Buffer}}
+\doxysubsubsection{\texorpdfstring{CheckBuffer()}{CheckBuffer()}}
+{\footnotesize\ttfamily \label{classCrowEngine_1_1Buffer_a64dc017f09ba3b87f2187f5658aa922b} 
+template$<$typename T$>$ \\
+void Crow\+Engine\+::\+Buffer\+::\+Check\+Buffer (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ T $>$ \&}]{buffer}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{Buffer_8hpp_source_l00055}{55}} of file \mbox{\hyperlink{Buffer_8hpp_source}{Buffer.\+hpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=334pt]{classCrowEngine_1_1Buffer_a64dc017f09ba3b87f2187f5658aa922b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classCrowEngine_1_1Buffer_ad4534b6439292962fa3627d90d1c8f21}\index{CrowEngine::Buffer@{CrowEngine::Buffer}!GetTotalIndices@{GetTotalIndices}}
+\index{GetTotalIndices@{GetTotalIndices}!CrowEngine::Buffer@{CrowEngine::Buffer}}
+\doxysubsubsection{\texorpdfstring{GetTotalIndices()}{GetTotalIndices()}}
+{\footnotesize\ttfamily \label{classCrowEngine_1_1Buffer_ad4534b6439292962fa3627d90d1c8f21} 
+unsigned int Crow\+Engine\+::\+Buffer\+::\+Get\+Total\+Indices (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Buffer_8hpp_source_l00036}{36}} of file \mbox{\hyperlink{Buffer_8hpp_source}{Buffer.\+hpp}}.
+
+\Hypertarget{classCrowEngine_1_1Buffer_a529a17741d806cbfa15e7ff53bbb9353}\index{CrowEngine::Buffer@{CrowEngine::Buffer}!GetVAO@{GetVAO}}
+\index{GetVAO@{GetVAO}!CrowEngine::Buffer@{CrowEngine::Buffer}}
+\doxysubsubsection{\texorpdfstring{GetVAO()}{GetVAO()}}
+{\footnotesize\ttfamily \label{classCrowEngine_1_1Buffer_a529a17741d806cbfa15e7ff53bbb9353} 
+unsigned int Crow\+Engine\+::\+Buffer\+::\+Get\+VAO (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Buffer_8hpp_source_l00033}{33}} of file \mbox{\hyperlink{Buffer_8hpp_source}{Buffer.\+hpp}}.
+
+\Hypertarget{classCrowEngine_1_1Buffer_a6294174bd80196edef4202bfea5bd7a0}\index{CrowEngine::Buffer@{CrowEngine::Buffer}!LoadBuffers@{LoadBuffers}}
+\index{LoadBuffers@{LoadBuffers}!CrowEngine::Buffer@{CrowEngine::Buffer}}
+\doxysubsubsection{\texorpdfstring{LoadBuffers()}{LoadBuffers()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classCrowEngine_1_1Buffer_a6294174bd80196edef4202bfea5bd7a0} 
+void Crow\+Engine\+::\+Buffer\+::\+Load\+Buffers (\begin{DoxyParamCaption}\item[{const std\+::pair$<$ std\+::vector$<$ float $>$, std\+::vector$<$ unsigned int $>$ $>$ \&}]{buffer}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Buffer_8cpp_source_l00049}{49}} of file \mbox{\hyperlink{Buffer_8cpp_source}{Buffer.\+cpp}}.
+
+\Hypertarget{classCrowEngine_1_1Buffer_a11f565d3d50802f0def0acb5a6728062}\index{CrowEngine::Buffer@{CrowEngine::Buffer}!LoadBuffers@{LoadBuffers}}
+\index{LoadBuffers@{LoadBuffers}!CrowEngine::Buffer@{CrowEngine::Buffer}}
+\doxysubsubsection{\texorpdfstring{LoadBuffers()}{LoadBuffers()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classCrowEngine_1_1Buffer_a11f565d3d50802f0def0acb5a6728062} 
+void Crow\+Engine\+::\+Buffer\+::\+Load\+Buffers (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{vertices\+File\+Path}{, }\item[{const std\+::string \&}]{indices\+File\+Path}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Buffer_8cpp_source_l00037}{37}} of file \mbox{\hyperlink{Buffer_8cpp_source}{Buffer.\+cpp}}.
+
+\Hypertarget{classCrowEngine_1_1Buffer_ab69a1a888a4abf1ed503485772881aa7}\index{CrowEngine::Buffer@{CrowEngine::Buffer}!SetBuffers@{SetBuffers}}
+\index{SetBuffers@{SetBuffers}!CrowEngine::Buffer@{CrowEngine::Buffer}}
+\doxysubsubsection{\texorpdfstring{SetBuffers()}{SetBuffers()}}
+{\footnotesize\ttfamily \label{classCrowEngine_1_1Buffer_ab69a1a888a4abf1ed503485772881aa7} 
+void Crow\+Engine\+::\+Buffer\+::\+Set\+Buffers (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Buffer_8cpp_source_l00058}{58}} of file \mbox{\hyperlink{Buffer_8cpp_source}{Buffer.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=334pt]{classCrowEngine_1_1Buffer_ab69a1a888a4abf1ed503485772881aa7_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classCrowEngine_1_1Buffer_a5b911521b5d5119e5f8fd5cf089c7fca}\index{CrowEngine::Buffer@{CrowEngine::Buffer}!Unbind@{Unbind}}
+\index{Unbind@{Unbind}!CrowEngine::Buffer@{CrowEngine::Buffer}}
+\doxysubsubsection{\texorpdfstring{Unbind()}{Unbind()}}
+{\footnotesize\ttfamily \label{classCrowEngine_1_1Buffer_a5b911521b5d5119e5f8fd5cf089c7fca} 
+void Crow\+Engine\+::\+Buffer\+::\+Unbind (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Buffer_8hpp_source_l00035}{35}} of file \mbox{\hyperlink{Buffer_8hpp_source}{Buffer.\+hpp}}.
+
+
+
+\label{doc-variable-members}
+\Hypertarget{classCrowEngine_1_1Buffer_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classCrowEngine_1_1Buffer_a4b2c2c1b4d618cdb67d3bc223d1be825}\index{CrowEngine::Buffer@{CrowEngine::Buffer}!m\_EBO@{m\_EBO}}
+\index{m\_EBO@{m\_EBO}!CrowEngine::Buffer@{CrowEngine::Buffer}}
+\doxysubsubsection{\texorpdfstring{m\_EBO}{m\_EBO}}
+{\footnotesize\ttfamily \label{classCrowEngine_1_1Buffer_a4b2c2c1b4d618cdb67d3bc223d1be825} 
+unsigned int Crow\+Engine\+::\+Buffer\+::m\+\_\+\+EBO\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{Buffer_8hpp_source_l00044}{44}} of file \mbox{\hyperlink{Buffer_8hpp_source}{Buffer.\+hpp}}.
+
+\Hypertarget{classCrowEngine_1_1Buffer_a44be33f958f0f2fb2ee46045433c510d}\index{CrowEngine::Buffer@{CrowEngine::Buffer}!m\_indices@{m\_indices}}
+\index{m\_indices@{m\_indices}!CrowEngine::Buffer@{CrowEngine::Buffer}}
+\doxysubsubsection{\texorpdfstring{m\_indices}{m\_indices}}
+{\footnotesize\ttfamily \label{classCrowEngine_1_1Buffer_a44be33f958f0f2fb2ee46045433c510d} 
+std\+::vector$<$unsigned int$>$ Crow\+Engine\+::\+Buffer\+::m\+\_\+indices\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{Buffer_8hpp_source_l00047}{47}} of file \mbox{\hyperlink{Buffer_8hpp_source}{Buffer.\+hpp}}.
+
+\Hypertarget{classCrowEngine_1_1Buffer_a0fc1112703f9bee35731f19da222dbe1}\index{CrowEngine::Buffer@{CrowEngine::Buffer}!m\_VAO@{m\_VAO}}
+\index{m\_VAO@{m\_VAO}!CrowEngine::Buffer@{CrowEngine::Buffer}}
+\doxysubsubsection{\texorpdfstring{m\_VAO}{m\_VAO}}
+{\footnotesize\ttfamily \label{classCrowEngine_1_1Buffer_a0fc1112703f9bee35731f19da222dbe1} 
+unsigned int Crow\+Engine\+::\+Buffer\+::m\+\_\+\+VAO\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{Buffer_8hpp_source_l00042}{42}} of file \mbox{\hyperlink{Buffer_8hpp_source}{Buffer.\+hpp}}.
+
+\Hypertarget{classCrowEngine_1_1Buffer_a5b8c8789ec95c12d156168582d378e77}\index{CrowEngine::Buffer@{CrowEngine::Buffer}!m\_VBO@{m\_VBO}}
+\index{m\_VBO@{m\_VBO}!CrowEngine::Buffer@{CrowEngine::Buffer}}
+\doxysubsubsection{\texorpdfstring{m\_VBO}{m\_VBO}}
+{\footnotesize\ttfamily \label{classCrowEngine_1_1Buffer_a5b8c8789ec95c12d156168582d378e77} 
+unsigned int Crow\+Engine\+::\+Buffer\+::m\+\_\+\+VBO\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{Buffer_8hpp_source_l00043}{43}} of file \mbox{\hyperlink{Buffer_8hpp_source}{Buffer.\+hpp}}.
+
+\Hypertarget{classCrowEngine_1_1Buffer_a594dac043fc24daab1eba0aafbc4065b}\index{CrowEngine::Buffer@{CrowEngine::Buffer}!m\_vertices@{m\_vertices}}
+\index{m\_vertices@{m\_vertices}!CrowEngine::Buffer@{CrowEngine::Buffer}}
+\doxysubsubsection{\texorpdfstring{m\_vertices}{m\_vertices}}
+{\footnotesize\ttfamily \label{classCrowEngine_1_1Buffer_a594dac043fc24daab1eba0aafbc4065b} 
+std\+::vector$<$float$>$ Crow\+Engine\+::\+Buffer\+::m\+\_\+vertices\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{Buffer_8hpp_source_l00046}{46}} of file \mbox{\hyperlink{Buffer_8hpp_source}{Buffer.\+hpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+source/buffer/\mbox{\hyperlink{Buffer_8hpp}{Buffer.\+hpp}}\item 
+source/buffer/\mbox{\hyperlink{Buffer_8cpp}{Buffer.\+cpp}}\end{DoxyCompactItemize}

@@ -38,7 +38,9 @@ void Buffer::LoadBuffers(const std::string &verticesFilePath, const std::string 
 {
     auto bufferData = ModelLoader::LoadModel(verticesFilePath, indicesFilePath);
 
-    //idk if using std::move actaully optimizes the program here
+
+    //It doesn't move and 'const reference'.
+    //See https://stackoverflow.com/questions/28595117/why-can-we-use-stdmove-on-a-const-object
     m_vertices = std::move(bufferData.first);
     m_indices  = std::move(bufferData.second);
 }

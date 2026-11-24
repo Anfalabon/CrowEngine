@@ -1,0 +1,71 @@
+\doxysection{Filesystem.\+hpp}
+\hypertarget{Filesystem_8hpp_source}{}\label{Filesystem_8hpp_source}\index{core/Filesystem.hpp@{core/Filesystem.hpp}}
+\mbox{\hyperlink{Filesystem_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Filesystem_8hpp_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{Filesystem_8hpp_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{Filesystem_8hpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <ctime>}}
+\DoxyCodeLine{\Hypertarget{Filesystem_8hpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{\Hypertarget{Filesystem_8hpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{Filesystem_8hpp_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{Filesystem_8hpp_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{Filesystem_8hpp_source_l00008}00008\ \textcolor{preprocessor}{\#if\ defined(\_\_cplusplus)}}
+\DoxyCodeLine{\Hypertarget{Filesystem_8hpp_source_l00009}00009\ \textcolor{preprocessor}{\#include\ <filesystem>}}
+\DoxyCodeLine{\Hypertarget{Filesystem_8hpp_source_l00010}00010\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{Filesystem_8hpp_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{Filesystem_8hpp_source_l00012}00012\ \textcolor{preprocessor}{\#if\ defined(\_\_linux\_\_)\ ||\ defined(\_\_unix\_\_)}}
+\DoxyCodeLine{\Hypertarget{Filesystem_8hpp_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{Filesystem_8hpp_source_l00014}00014\ \textcolor{preprocessor}{\#if\ defined(\_\_cplusplus)}}
+\DoxyCodeLine{\Hypertarget{Filesystem_8hpp_source_l00015}00015\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{\Hypertarget{Filesystem_8hpp_source_l00016}00016\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{Filesystem_8hpp_source_l00017}00017\ \textcolor{preprocessor}{\#include\ <sys/stat.h>}}
+\DoxyCodeLine{\Hypertarget{Filesystem_8hpp_source_l00018}00018\ \textcolor{preprocessor}{\#include\ <sys/types.h>}}
+\DoxyCodeLine{\Hypertarget{Filesystem_8hpp_source_l00019}00019\ \textcolor{preprocessor}{\#if\ defined(\_\_cplusplus)}}
+\DoxyCodeLine{\Hypertarget{Filesystem_8hpp_source_l00020}00020\ \}}
+\DoxyCodeLine{\Hypertarget{Filesystem_8hpp_source_l00021}00021\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{Filesystem_8hpp_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{Filesystem_8hpp_source_l00023}00023\ \textcolor{preprocessor}{\#elif\ defined(\_\_WIN32\_\_)\ ||\ defined(MSVC)}}
+\DoxyCodeLine{\Hypertarget{Filesystem_8hpp_source_l00024}00024\ \textcolor{preprocessor}{\#include\ <sys/stat.h>}}
+\DoxyCodeLine{\Hypertarget{Filesystem_8hpp_source_l00025}00025\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{Filesystem_8hpp_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{Filesystem_8hpp_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{Filesystem_8hpp_source_l00028}00028\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceCrowEngine}{CrowEngine}}}
+\DoxyCodeLine{\Hypertarget{Filesystem_8hpp_source_l00029}00029\ \{}
+\DoxyCodeLine{\Hypertarget{Filesystem_8hpp_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{Filesystem_8hpp_source_l00031}00031\ \ \ \ \ \textcolor{keyword}{class\ }filewriter;}
+\DoxyCodeLine{\Hypertarget{Filesystem_8hpp_source_l00032}00032\ \ \ \ \ \textcolor{keyword}{class\ }FileReader;}
+\DoxyCodeLine{\Hypertarget{Filesystem_8hpp_source_l00033}00033\ \ \ \ \ \textcolor{keyword}{class\ }FileFormatConverter;}
+\DoxyCodeLine{\Hypertarget{Filesystem_8hpp_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{Filesystem_8hpp_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{Filesystem_8hpp_source_l00036}\mbox{\hyperlink{classCrowEngine_1_1Filesystem}{00036}}\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classCrowEngine_1_1Filesystem_a859b52f8f7ee869bdaea2e8bee26e2a1}{Filesystem}}}
+\DoxyCodeLine{\Hypertarget{Filesystem_8hpp_source_l00037}00037\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Filesystem_8hpp_source_l00038}00038\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{Filesystem_8hpp_source_l00039}\mbox{\hyperlink{classCrowEngine_1_1Filesystem_a45e5b88a465e944eaa02a2c915c0200e}{00039}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{classCrowEngine_1_1Filesystem_a45e5b88a465e944eaa02a2c915c0200e}{WRITE\_MODE}}}
+\DoxyCodeLine{\Hypertarget{Filesystem_8hpp_source_l00040}00040\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Filesystem_8hpp_source_l00041}\mbox{\hyperlink{classCrowEngine_1_1Filesystem_a45e5b88a465e944eaa02a2c915c0200ea1ac009c702bfdcbe8b8f0ac9cee2e9eb}{00041}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classCrowEngine_1_1Filesystem_a45e5b88a465e944eaa02a2c915c0200ea1ac009c702bfdcbe8b8f0ac9cee2e9eb}{WRITE\_AT\_END}},}
+\DoxyCodeLine{\Hypertarget{Filesystem_8hpp_source_l00042}\mbox{\hyperlink{classCrowEngine_1_1Filesystem_a45e5b88a465e944eaa02a2c915c0200ea12a196c28c7e98fa382dd47cae858887}{00042}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classCrowEngine_1_1Filesystem_a45e5b88a465e944eaa02a2c915c0200ea12a196c28c7e98fa382dd47cae858887}{WRITE\_AT\_BEGINNING}},}
+\DoxyCodeLine{\Hypertarget{Filesystem_8hpp_source_l00043}\mbox{\hyperlink{classCrowEngine_1_1Filesystem_a45e5b88a465e944eaa02a2c915c0200ea3b181bc631f9d4f1a64c07d7262c0b29}{00043}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classCrowEngine_1_1Filesystem_a45e5b88a465e944eaa02a2c915c0200ea3b181bc631f9d4f1a64c07d7262c0b29}{WRITE\_AT\_SPECIFIC\_POINT}}}
+\DoxyCodeLine{\Hypertarget{Filesystem_8hpp_source_l00044}00044\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{Filesystem_8hpp_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{Filesystem_8hpp_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{Filesystem_8hpp_source_l00047}\mbox{\hyperlink{classCrowEngine_1_1Filesystem_a859b52f8f7ee869bdaea2e8bee26e2a1}{00047}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classCrowEngine_1_1Filesystem_a859b52f8f7ee869bdaea2e8bee26e2a1}{Filesystem}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{Filesystem_8hpp_source_l00048}\mbox{\hyperlink{classCrowEngine_1_1Filesystem_ae6681fed631a3f2b5ebef649e99f224b}{00048}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classCrowEngine_1_1Filesystem_ae6681fed631a3f2b5ebef649e99f224b}{\string~Filesystem}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{Filesystem_8hpp_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{Filesystem_8hpp_source_l00050}00050\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classCrowEngine_1_1Filesystem_a448ced8d09de71da4768ebb45bffec72}{FoundFile}}(\textcolor{keyword}{const}\ std::string\&\ filePath);}
+\DoxyCodeLine{\Hypertarget{Filesystem_8hpp_source_l00051}00051\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ std::string\ \mbox{\hyperlink{classCrowEngine_1_1Filesystem_a204287599fcf67b7917b66b89e3caa8f}{ReadFileContent}}(\textcolor{keyword}{const}\ std::string\&\ filePath);}
+\DoxyCodeLine{\Hypertarget{Filesystem_8hpp_source_l00052}00052\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCrowEngine_1_1Filesystem_a7ffbf1d3c1a2ae5588409544326cb277}{WriteContentToFile}}(\textcolor{keyword}{const}\ std::string\&\ filePath,\ \textcolor{keyword}{const}\ std::string\&\ content,}
+\DoxyCodeLine{\Hypertarget{Filesystem_8hpp_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classCrowEngine_1_1Filesystem_a45e5b88a465e944eaa02a2c915c0200e}{WRITE\_MODE}}\ placeToWrite\ =\ \mbox{\hyperlink{classCrowEngine_1_1Filesystem_a45e5b88a465e944eaa02a2c915c0200ea1ac009c702bfdcbe8b8f0ac9cee2e9eb}{WRITE\_AT\_END}});}
+\DoxyCodeLine{\Hypertarget{Filesystem_8hpp_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{Filesystem_8hpp_source_l00055}00055\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ std::time\_t\ \mbox{\hyperlink{classCrowEngine_1_1Filesystem_a96b6c8ba3e9a5e92869794f0119412a9}{FileCreationTime}}(\textcolor{keyword}{const}\ std::string\&\ filePath);}
+\DoxyCodeLine{\Hypertarget{Filesystem_8hpp_source_l00056}00056\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ std::time\_t\ \mbox{\hyperlink{classCrowEngine_1_1Filesystem_a3ec6648267e46a03385a10f06d35378b}{FileLastModificationTime}}(\textcolor{keyword}{const}\ std::string\&\ filePath);}
+\DoxyCodeLine{\Hypertarget{Filesystem_8hpp_source_l00057}00057\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classCrowEngine_1_1Filesystem_a64032d4f2389a878e65ef1a79ac9c9f9}{WasFileModified}}(\textcolor{keyword}{const}\ std::string\&\ filePath);}
+\DoxyCodeLine{\Hypertarget{Filesystem_8hpp_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{Filesystem_8hpp_source_l00059}00059\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{Filesystem_8hpp_source_l00060}\mbox{\hyperlink{classCrowEngine_1_1Filesystem_ac526d5e0f6bf9cf479173fe9213644c2}{00060}}\ \ \ \ \ \ \ \ \ std::time\_t\ \mbox{\hyperlink{classCrowEngine_1_1Filesystem_ac526d5e0f6bf9cf479173fe9213644c2}{lastModificationTime}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{Filesystem_8hpp_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{Filesystem_8hpp_source_l00062}00062\ \ \ \ \ \};\ \textcolor{comment}{//\ namespace}}
+\DoxyCodeLine{\Hypertarget{Filesystem_8hpp_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{Filesystem_8hpp_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{Filesystem_8hpp_source_l00065}00065\ \}\ \textcolor{comment}{//\ namespace\ CrowEngine}}
+
+\end{DoxyCode}

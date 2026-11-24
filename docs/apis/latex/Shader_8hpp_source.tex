@@ -1,0 +1,52 @@
+\doxysection{Shader.\+hpp}
+\hypertarget{Shader_8hpp_source}{}\label{Shader_8hpp_source}\index{source/shader/Shader.hpp@{source/shader/Shader.hpp}}
+\mbox{\hyperlink{Shader_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Shader_8hpp_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{Shader_8hpp_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{Shader_8hpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <glm/glm.hpp>}}
+\DoxyCodeLine{\Hypertarget{Shader_8hpp_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{Shader_8hpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{Shader_8hpp_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{Shader_8hpp_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{Shader_8hpp_source_l00008}00008\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceCrowEngine}{CrowEngine}}}
+\DoxyCodeLine{\Hypertarget{Shader_8hpp_source_l00009}00009\ \{}
+\DoxyCodeLine{\Hypertarget{Shader_8hpp_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{Shader_8hpp_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{Shader_8hpp_source_l00012}\mbox{\hyperlink{classCrowEngine_1_1Shader}{00012}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classCrowEngine_1_1Shader_ab9296bb1492505cdd359ddd3149f04cf}{Shader}}}
+\DoxyCodeLine{\Hypertarget{Shader_8hpp_source_l00013}00013\ \{}
+\DoxyCodeLine{\Hypertarget{Shader_8hpp_source_l00014}00014\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{Shader_8hpp_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{Shader_8hpp_source_l00016}\mbox{\hyperlink{classCrowEngine_1_1Shader_ab9296bb1492505cdd359ddd3149f04cf}{00016}}\ \ \ \ \ \mbox{\hyperlink{classCrowEngine_1_1Shader_ab9296bb1492505cdd359ddd3149f04cf}{Shader}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{Shader_8hpp_source_l00017}\mbox{\hyperlink{classCrowEngine_1_1Shader_ac2f9828af296bf54c424bc9f88fb180a}{00017}}\ \ \ \ \ \mbox{\hyperlink{classCrowEngine_1_1Shader_ac2f9828af296bf54c424bc9f88fb180a}{\string~Shader}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{Shader_8hpp_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{Shader_8hpp_source_l00019}00019\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCrowEngine_1_1Shader_ae530dc9c96a779f105d411a001b3d50d}{SetShader}}(\textcolor{keyword}{const}\ std::string\ \&vertexShaderFilePath,\ \textcolor{keyword}{const}\ std::string\ \&fragmentShaderFilePath);}
+\DoxyCodeLine{\Hypertarget{Shader_8hpp_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{Shader_8hpp_source_l00021}\mbox{\hyperlink{classCrowEngine_1_1Shader_a5a2974fed131ae27bed97b4068a4432a}{00021}}\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classCrowEngine_1_1Shader_a5a2974fed131ae27bed97b4068a4432a}{GetShaderProgramID}}()\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classCrowEngine_1_1Shader_aa80157c476ab11f8a307d98ed2003a93}{m\_shaderProgramID}};\ \}}
+\DoxyCodeLine{\Hypertarget{Shader_8hpp_source_l00022}\mbox{\hyperlink{classCrowEngine_1_1Shader_a5e9d504b7c14ab86f3f068f2e66df007}{00022}}\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCrowEngine_1_1Shader_a5e9d504b7c14ab86f3f068f2e66df007}{UseProgram}}()\{\ glUseProgram(\mbox{\hyperlink{classCrowEngine_1_1Shader_aa80157c476ab11f8a307d98ed2003a93}{m\_shaderProgramID}});\ \}}
+\DoxyCodeLine{\Hypertarget{Shader_8hpp_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{Shader_8hpp_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{Shader_8hpp_source_l00025}00025\ \ \ \ \ \textcolor{comment}{//should\ these\ functions\ be\ static}}
+\DoxyCodeLine{\Hypertarget{Shader_8hpp_source_l00026}00026\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCrowEngine_1_1Shader_a7518b6ed708f32b89ef39695fe6c4063}{SendMatrix4ToGpu}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *uniformMatrix4Name,\ \textcolor{keyword}{const}\ glm::mat4\ \&matrix);}
+\DoxyCodeLine{\Hypertarget{Shader_8hpp_source_l00027}00027\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCrowEngine_1_1Shader_a99d0d363f21a4c42258bd767773652d6}{SendVec3ToGpu}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *uniformVec3Name,\ \textcolor{keyword}{const}\ glm::vec3\ \&vec);}
+\DoxyCodeLine{\Hypertarget{Shader_8hpp_source_l00028}00028\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCrowEngine_1_1Shader_a1eb324a812315d522c6deccad206eb77}{SendVec2ToGpu}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *uniformVec2Name,\ \textcolor{keyword}{const}\ glm::vec2\ \&vec);}
+\DoxyCodeLine{\Hypertarget{Shader_8hpp_source_l00029}00029\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCrowEngine_1_1Shader_a0160a9a17f680bb21080681ea3884e2a}{SendFloat1ToGpu}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *uniformVec2Name,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ floatingPointNumber);}
+\DoxyCodeLine{\Hypertarget{Shader_8hpp_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{Shader_8hpp_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{Shader_8hpp_source_l00032}00032\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{Shader_8hpp_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{Shader_8hpp_source_l00034}\mbox{\hyperlink{classCrowEngine_1_1Shader_a1c056cfd044b8a93fc39afacdfcf30c6}{00034}}\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classCrowEngine_1_1Shader_a1c056cfd044b8a93fc39afacdfcf30c6}{GetUniformLocation}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *uniformName)}
+\DoxyCodeLine{\Hypertarget{Shader_8hpp_source_l00035}00035\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Shader_8hpp_source_l00036}00036\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ glGetUniformLocation(\mbox{\hyperlink{classCrowEngine_1_1Shader_aa80157c476ab11f8a307d98ed2003a93}{m\_shaderProgramID}},\ uniformName);}
+\DoxyCodeLine{\Hypertarget{Shader_8hpp_source_l00037}00037\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Shader_8hpp_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{Shader_8hpp_source_l00039}\mbox{\hyperlink{classCrowEngine_1_1Shader_aa80157c476ab11f8a307d98ed2003a93}{00039}}\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classCrowEngine_1_1Shader_aa80157c476ab11f8a307d98ed2003a93}{m\_shaderProgramID}};}
+\DoxyCodeLine{\Hypertarget{Shader_8hpp_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{Shader_8hpp_source_l00041}00041\ \};}
+\DoxyCodeLine{\Hypertarget{Shader_8hpp_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{Shader_8hpp_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{Shader_8hpp_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{Shader_8hpp_source_l00045}00045\ \}}
+\DoxyCodeLine{\Hypertarget{Shader_8hpp_source_l00046}00046\ }
+
+\end{DoxyCode}

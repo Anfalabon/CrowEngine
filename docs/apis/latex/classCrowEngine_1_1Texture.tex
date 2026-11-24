@@ -1,0 +1,242 @@
+\doxysection{Crow\+Engine\+::Texture Class Reference}
+\hypertarget{classCrowEngine_1_1Texture}{}\label{classCrowEngine_1_1Texture}\index{CrowEngine::Texture@{CrowEngine::Texture}}
+
+
+{\ttfamily \#include $<$Texture.\+hpp$>$}
+
+
+
+Collaboration diagram for Crow\+Engine\+::Texture\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=188pt]{classCrowEngine_1_1Texture__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCrowEngine_1_1Texture_abdc251913f96dcc4785dd681377e2bed}{Texture}} ()=default
+\item 
+\mbox{\hyperlink{classCrowEngine_1_1Texture_a96ea402fdcdf2c76220049e9bc0ec9a6}{\texorpdfstring{$\sim$}{\string~}\+Texture}} ()
+\item 
+void \mbox{\hyperlink{classCrowEngine_1_1Texture_a8c06e1be6a746408bb3bfbe280dc3b12}{Load}} (const std\+::string \&file\+Path\+Str)
+\item 
+void \mbox{\hyperlink{classCrowEngine_1_1Texture_ac95d7fdc3fd2f53b3b9ff057935c1efb}{Set}} (const bool enable\+Options=true)
+\item 
+void \mbox{\hyperlink{classCrowEngine_1_1Texture_a4f7afaeab5413aa09dac2c111ea006b9}{Delete\+Texture}} ()
+\item 
+void \mbox{\hyperlink{classCrowEngine_1_1Texture_acb63cdcb25123ecda98eb9d1f7d36860}{Bind}} ()
+\item 
+unsigned int \mbox{\hyperlink{classCrowEngine_1_1Texture_a43043ca86f701e95a8ca88859c1226a0}{Get\+Texture\+ID}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \mbox{\hyperlink{classCrowEngine_1_1Texture_aaf2dd386f2fd263cb449ec963a9a213e}{m\+\_\+texture}}
+\item 
+std\+::string \mbox{\hyperlink{classCrowEngine_1_1Texture_afb4bcbdfc04b02a77441d3fb968343c7}{m\+\_\+file\+Path\+Str}}
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classCrowEngine_1_1Texture_a3bfe8e22518f310aa15cb7e95fd90ab6}{m\+\_\+file\+Path}}
+\item 
+int \mbox{\hyperlink{classCrowEngine_1_1Texture_a43098a6feadb1b488223aa8fb99df4b6}{m\+\_\+width}}
+\item 
+int \mbox{\hyperlink{classCrowEngine_1_1Texture_acf0d40183c93502d532bd617ba6c793b}{m\+\_\+height}}
+\item 
+int \mbox{\hyperlink{classCrowEngine_1_1Texture_a7455b566e8c894c0732150b2d60857cd}{m\+\_\+nr\+Channels}}
+\item 
+unsigned char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classCrowEngine_1_1Texture_ae2ffaf403f4d95457ae23604b05eec7c}{m\+\_\+data}}
+\item 
+std\+::byte \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classCrowEngine_1_1Texture_a8e3ced9b557372de49152fbf42d9998f}{m\+\_\+data\+Byte}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{Texture_8hpp_source_l00031}{31}} of file \mbox{\hyperlink{Texture_8hpp_source}{Texture.\+hpp}}.
+
+
+
+\label{doc-constructors}
+\Hypertarget{classCrowEngine_1_1Texture_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classCrowEngine_1_1Texture_abdc251913f96dcc4785dd681377e2bed}\index{CrowEngine::Texture@{CrowEngine::Texture}!Texture@{Texture}}
+\index{Texture@{Texture}!CrowEngine::Texture@{CrowEngine::Texture}}
+\doxysubsubsection{\texorpdfstring{Texture()}{Texture()}}
+{\footnotesize\ttfamily \label{classCrowEngine_1_1Texture_abdc251913f96dcc4785dd681377e2bed} 
+Crow\+Engine\+::\+Texture\+::\+Texture (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\Hypertarget{classCrowEngine_1_1Texture_a96ea402fdcdf2c76220049e9bc0ec9a6}\index{CrowEngine::Texture@{CrowEngine::Texture}!````~Texture@{\texorpdfstring{$\sim$}{\string~}Texture}}
+\index{````~Texture@{\texorpdfstring{$\sim$}{\string~}Texture}!CrowEngine::Texture@{CrowEngine::Texture}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Texture()}{\string~Texture()}}
+{\footnotesize\ttfamily \label{classCrowEngine_1_1Texture_a96ea402fdcdf2c76220049e9bc0ec9a6} 
+Crow\+Engine\+::\+Texture\+::\texorpdfstring{$\sim$}{\string~}\+Texture (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Texture_8hpp_source_l00047}{47}} of file \mbox{\hyperlink{Texture_8hpp_source}{Texture.\+hpp}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{classCrowEngine_1_1Texture_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classCrowEngine_1_1Texture_acb63cdcb25123ecda98eb9d1f7d36860}\index{CrowEngine::Texture@{CrowEngine::Texture}!Bind@{Bind}}
+\index{Bind@{Bind}!CrowEngine::Texture@{CrowEngine::Texture}}
+\doxysubsubsection{\texorpdfstring{Bind()}{Bind()}}
+{\footnotesize\ttfamily \label{classCrowEngine_1_1Texture_acb63cdcb25123ecda98eb9d1f7d36860} 
+void Crow\+Engine\+::\+Texture\+::\+Bind (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Texture_8hpp_source_l00058}{58}} of file \mbox{\hyperlink{Texture_8hpp_source}{Texture.\+hpp}}.
+
+\Hypertarget{classCrowEngine_1_1Texture_a4f7afaeab5413aa09dac2c111ea006b9}\index{CrowEngine::Texture@{CrowEngine::Texture}!DeleteTexture@{DeleteTexture}}
+\index{DeleteTexture@{DeleteTexture}!CrowEngine::Texture@{CrowEngine::Texture}}
+\doxysubsubsection{\texorpdfstring{DeleteTexture()}{DeleteTexture()}}
+{\footnotesize\ttfamily \label{classCrowEngine_1_1Texture_a4f7afaeab5413aa09dac2c111ea006b9} 
+void Crow\+Engine\+::\+Texture\+::\+Delete\+Texture (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Texture_8cpp_source_l00075}{75}} of file \mbox{\hyperlink{Texture_8cpp_source}{Texture.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classCrowEngine_1_1Texture_a4f7afaeab5413aa09dac2c111ea006b9_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classCrowEngine_1_1Texture_a43043ca86f701e95a8ca88859c1226a0}\index{CrowEngine::Texture@{CrowEngine::Texture}!GetTextureID@{GetTextureID}}
+\index{GetTextureID@{GetTextureID}!CrowEngine::Texture@{CrowEngine::Texture}}
+\doxysubsubsection{\texorpdfstring{GetTextureID()}{GetTextureID()}}
+{\footnotesize\ttfamily \label{classCrowEngine_1_1Texture_a43043ca86f701e95a8ca88859c1226a0} 
+unsigned int Crow\+Engine\+::\+Texture\+::\+Get\+Texture\+ID (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Texture_8hpp_source_l00059}{59}} of file \mbox{\hyperlink{Texture_8hpp_source}{Texture.\+hpp}}.
+
+\Hypertarget{classCrowEngine_1_1Texture_a8c06e1be6a746408bb3bfbe280dc3b12}\index{CrowEngine::Texture@{CrowEngine::Texture}!Load@{Load}}
+\index{Load@{Load}!CrowEngine::Texture@{CrowEngine::Texture}}
+\doxysubsubsection{\texorpdfstring{Load()}{Load()}}
+{\footnotesize\ttfamily \label{classCrowEngine_1_1Texture_a8c06e1be6a746408bb3bfbe280dc3b12} 
+void Crow\+Engine\+::\+Texture\+::\+Load (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+Path\+Str}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Texture_8cpp_source_l00014}{14}} of file \mbox{\hyperlink{Texture_8cpp_source}{Texture.\+cpp}}.
+
+\Hypertarget{classCrowEngine_1_1Texture_ac95d7fdc3fd2f53b3b9ff057935c1efb}\index{CrowEngine::Texture@{CrowEngine::Texture}!Set@{Set}}
+\index{Set@{Set}!CrowEngine::Texture@{CrowEngine::Texture}}
+\doxysubsubsection{\texorpdfstring{Set()}{Set()}}
+{\footnotesize\ttfamily \label{classCrowEngine_1_1Texture_ac95d7fdc3fd2f53b3b9ff057935c1efb} 
+void Crow\+Engine\+::\+Texture\+::\+Set (\begin{DoxyParamCaption}\item[{const bool}]{enable\+Options}{ = {\ttfamily true}}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Texture_8cpp_source_l00030}{30}} of file \mbox{\hyperlink{Texture_8cpp_source}{Texture.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classCrowEngine_1_1Texture_ac95d7fdc3fd2f53b3b9ff057935c1efb_cgraph}
+\end{center}
+\end{figure}
+
+
+\label{doc-variable-members}
+\Hypertarget{classCrowEngine_1_1Texture_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classCrowEngine_1_1Texture_ae2ffaf403f4d95457ae23604b05eec7c}\index{CrowEngine::Texture@{CrowEngine::Texture}!m\_data@{m\_data}}
+\index{m\_data@{m\_data}!CrowEngine::Texture@{CrowEngine::Texture}}
+\doxysubsubsection{\texorpdfstring{m\_data}{m\_data}}
+{\footnotesize\ttfamily \label{classCrowEngine_1_1Texture_ae2ffaf403f4d95457ae23604b05eec7c} 
+unsigned char\texorpdfstring{$\ast$}{*} Crow\+Engine\+::\+Texture\+::m\+\_\+data\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{Texture_8hpp_source_l00071}{71}} of file \mbox{\hyperlink{Texture_8hpp_source}{Texture.\+hpp}}.
+
+\Hypertarget{classCrowEngine_1_1Texture_a8e3ced9b557372de49152fbf42d9998f}\index{CrowEngine::Texture@{CrowEngine::Texture}!m\_dataByte@{m\_dataByte}}
+\index{m\_dataByte@{m\_dataByte}!CrowEngine::Texture@{CrowEngine::Texture}}
+\doxysubsubsection{\texorpdfstring{m\_dataByte}{m\_dataByte}}
+{\footnotesize\ttfamily \label{classCrowEngine_1_1Texture_a8e3ced9b557372de49152fbf42d9998f} 
+std\+::byte\texorpdfstring{$\ast$}{*} Crow\+Engine\+::\+Texture\+::m\+\_\+data\+Byte\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{Texture_8hpp_source_l00072}{72}} of file \mbox{\hyperlink{Texture_8hpp_source}{Texture.\+hpp}}.
+
+\Hypertarget{classCrowEngine_1_1Texture_a3bfe8e22518f310aa15cb7e95fd90ab6}\index{CrowEngine::Texture@{CrowEngine::Texture}!m\_filePath@{m\_filePath}}
+\index{m\_filePath@{m\_filePath}!CrowEngine::Texture@{CrowEngine::Texture}}
+\doxysubsubsection{\texorpdfstring{m\_filePath}{m\_filePath}}
+{\footnotesize\ttfamily \label{classCrowEngine_1_1Texture_a3bfe8e22518f310aa15cb7e95fd90ab6} 
+const char\texorpdfstring{$\ast$}{*} Crow\+Engine\+::\+Texture\+::m\+\_\+file\+Path\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{Texture_8hpp_source_l00066}{66}} of file \mbox{\hyperlink{Texture_8hpp_source}{Texture.\+hpp}}.
+
+\Hypertarget{classCrowEngine_1_1Texture_afb4bcbdfc04b02a77441d3fb968343c7}\index{CrowEngine::Texture@{CrowEngine::Texture}!m\_filePathStr@{m\_filePathStr}}
+\index{m\_filePathStr@{m\_filePathStr}!CrowEngine::Texture@{CrowEngine::Texture}}
+\doxysubsubsection{\texorpdfstring{m\_filePathStr}{m\_filePathStr}}
+{\footnotesize\ttfamily \label{classCrowEngine_1_1Texture_afb4bcbdfc04b02a77441d3fb968343c7} 
+std\+::string Crow\+Engine\+::\+Texture\+::m\+\_\+file\+Path\+Str\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{Texture_8hpp_source_l00065}{65}} of file \mbox{\hyperlink{Texture_8hpp_source}{Texture.\+hpp}}.
+
+\Hypertarget{classCrowEngine_1_1Texture_acf0d40183c93502d532bd617ba6c793b}\index{CrowEngine::Texture@{CrowEngine::Texture}!m\_height@{m\_height}}
+\index{m\_height@{m\_height}!CrowEngine::Texture@{CrowEngine::Texture}}
+\doxysubsubsection{\texorpdfstring{m\_height}{m\_height}}
+{\footnotesize\ttfamily \label{classCrowEngine_1_1Texture_acf0d40183c93502d532bd617ba6c793b} 
+int Crow\+Engine\+::\+Texture\+::m\+\_\+height\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{Texture_8hpp_source_l00069}{69}} of file \mbox{\hyperlink{Texture_8hpp_source}{Texture.\+hpp}}.
+
+\Hypertarget{classCrowEngine_1_1Texture_a7455b566e8c894c0732150b2d60857cd}\index{CrowEngine::Texture@{CrowEngine::Texture}!m\_nrChannels@{m\_nrChannels}}
+\index{m\_nrChannels@{m\_nrChannels}!CrowEngine::Texture@{CrowEngine::Texture}}
+\doxysubsubsection{\texorpdfstring{m\_nrChannels}{m\_nrChannels}}
+{\footnotesize\ttfamily \label{classCrowEngine_1_1Texture_a7455b566e8c894c0732150b2d60857cd} 
+int Crow\+Engine\+::\+Texture\+::m\+\_\+nr\+Channels\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{Texture_8hpp_source_l00070}{70}} of file \mbox{\hyperlink{Texture_8hpp_source}{Texture.\+hpp}}.
+
+\Hypertarget{classCrowEngine_1_1Texture_aaf2dd386f2fd263cb449ec963a9a213e}\index{CrowEngine::Texture@{CrowEngine::Texture}!m\_texture@{m\_texture}}
+\index{m\_texture@{m\_texture}!CrowEngine::Texture@{CrowEngine::Texture}}
+\doxysubsubsection{\texorpdfstring{m\_texture}{m\_texture}}
+{\footnotesize\ttfamily \label{classCrowEngine_1_1Texture_aaf2dd386f2fd263cb449ec963a9a213e} 
+unsigned int Crow\+Engine\+::\+Texture\+::m\+\_\+texture\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{Texture_8hpp_source_l00064}{64}} of file \mbox{\hyperlink{Texture_8hpp_source}{Texture.\+hpp}}.
+
+\Hypertarget{classCrowEngine_1_1Texture_a43098a6feadb1b488223aa8fb99df4b6}\index{CrowEngine::Texture@{CrowEngine::Texture}!m\_width@{m\_width}}
+\index{m\_width@{m\_width}!CrowEngine::Texture@{CrowEngine::Texture}}
+\doxysubsubsection{\texorpdfstring{m\_width}{m\_width}}
+{\footnotesize\ttfamily \label{classCrowEngine_1_1Texture_a43098a6feadb1b488223aa8fb99df4b6} 
+int Crow\+Engine\+::\+Texture\+::m\+\_\+width\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{Texture_8hpp_source_l00068}{68}} of file \mbox{\hyperlink{Texture_8hpp_source}{Texture.\+hpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+source/buffer/\mbox{\hyperlink{Texture_8hpp}{Texture.\+hpp}}\item 
+source/buffer/\mbox{\hyperlink{Texture_8cpp}{Texture.\+cpp}}\end{DoxyCompactItemize}

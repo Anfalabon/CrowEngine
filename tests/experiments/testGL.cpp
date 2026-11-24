@@ -51,15 +51,15 @@ const unsigned int SCR_HEIGHT = 1080;
 namespace //anonymous namespace instead of bunch of 'satics'
 {
 
-    float g_deltaTime = 0.0f;
-    float g_lastFrame = 0.0f;
+float g_deltaTime = 0.0f;
+float g_lastFrame = 0.0f;
 
-    void CalculateDeltaTime()
-    {
-        float currentFrame = static_cast<float>(glfwGetTime());
-        g_deltaTime = currentFrame - g_lastFrame;
-        g_lastFrame = currentFrame;
-    }
+void CalculateDeltaTime()
+{
+    float currentFrame = static_cast<float>(glfwGetTime());
+    g_deltaTime = currentFrame - g_lastFrame;
+    g_lastFrame = currentFrame;
+}
 
 }
 

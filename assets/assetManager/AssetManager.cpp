@@ -17,8 +17,8 @@ void AssetManager::SetAssets()
     // m_meshDataPath["classicCube"] = std::make_pair("../../assets/classicCube/cubeVertices.txt",
     // "../../assets/classicCube/cubeIndices.txt");
 
-    m_meshData["classicCube"] = ModelLoader::LoadModel("../../assets/classicCube/cubeVertices.txt",
-                                                       "../../assets/classicCube/cubeIndices.txt");
+    m_meshData["classicCube"] = ModelLoader::LoadModel("../../assets/resources/classicCube/cubeVertices.txt",
+                                                       "../../assets/resources/classicCube/cubeIndices.txt");
 }
 
 

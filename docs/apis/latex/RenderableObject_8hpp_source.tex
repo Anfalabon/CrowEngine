@@ -1,0 +1,61 @@
+\doxysection{Renderable\+Object.\+hpp}
+\hypertarget{RenderableObject_8hpp_source}{}\label{RenderableObject_8hpp_source}\index{source/scene/entity/RenderableObject.hpp@{source/scene/entity/RenderableObject.hpp}}
+\mbox{\hyperlink{RenderableObject_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{RenderableObject_8hpp_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{RenderableObject_8hpp_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{RenderableObject_8hpp_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{RenderableObject_8hpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <glad/glad.h>}}
+\DoxyCodeLine{\Hypertarget{RenderableObject_8hpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <glm/ext.hpp>}}
+\DoxyCodeLine{\Hypertarget{RenderableObject_8hpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <glm/glm.hpp>}}
+\DoxyCodeLine{\Hypertarget{RenderableObject_8hpp_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <glm/gtc/matrix\_transform.hpp>}}
+\DoxyCodeLine{\Hypertarget{RenderableObject_8hpp_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <glm/gtc/type\_ptr.hpp>}}
+\DoxyCodeLine{\Hypertarget{RenderableObject_8hpp_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{RenderableObject_8hpp_source_l00010}00010\ \textcolor{preprocessor}{\#include\ <filesystem>}}
+\DoxyCodeLine{\Hypertarget{RenderableObject_8hpp_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{RenderableObject_8hpp_source_l00012}00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Entity_8hpp}{Entity.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{RenderableObject_8hpp_source_l00013}00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Mesh_8hpp}{Mesh.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{RenderableObject_8hpp_source_l00014}00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Buffer_8hpp}{buffer/Buffer.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{RenderableObject_8hpp_source_l00015}00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Texture_8hpp}{buffer/Texture.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{RenderableObject_8hpp_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{RenderableObject_8hpp_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{RenderableObject_8hpp_source_l00018}00018\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceCrowEngine}{CrowEngine}}}
+\DoxyCodeLine{\Hypertarget{RenderableObject_8hpp_source_l00019}00019\ \{}
+\DoxyCodeLine{\Hypertarget{RenderableObject_8hpp_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{RenderableObject_8hpp_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{RenderableObject_8hpp_source_l00022}\mbox{\hyperlink{classCrowEngine_1_1RenderableObject}{00022}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classCrowEngine_1_1RenderableObject_a4a763f85eafc33dbb62884d20ad8b032}{RenderableObject}}\ \textcolor{comment}{//:\ public\ Entity}}
+\DoxyCodeLine{\Hypertarget{RenderableObject_8hpp_source_l00023}00023\ \{}
+\DoxyCodeLine{\Hypertarget{RenderableObject_8hpp_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{RenderableObject_8hpp_source_l00025}00025\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{RenderableObject_8hpp_source_l00026}\mbox{\hyperlink{classCrowEngine_1_1RenderableObject_a4a763f85eafc33dbb62884d20ad8b032}{00026}}\ \ \ \ \ \mbox{\hyperlink{classCrowEngine_1_1RenderableObject_a4a763f85eafc33dbb62884d20ad8b032}{RenderableObject}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{RenderableObject_8hpp_source_l00027}\mbox{\hyperlink{classCrowEngine_1_1RenderableObject_a3762f9253cb607ca72b93cf2c39bea08}{00027}}\ \ \ \ \ \mbox{\hyperlink{classCrowEngine_1_1RenderableObject_a3762f9253cb607ca72b93cf2c39bea08}{\string~RenderableObject}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{RenderableObject_8hpp_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{RenderableObject_8hpp_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{RenderableObject_8hpp_source_l00030}00030\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCrowEngine_1_1RenderableObject_a84268ec9b0e0f72c32b5e7d932debf2f}{Set}}();}
+\DoxyCodeLine{\Hypertarget{RenderableObject_8hpp_source_l00031}00031\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCrowEngine_1_1RenderableObject_a84395a5005ce2ecfd5f6d0178d912001}{Update}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ shaderProgramID);}
+\DoxyCodeLine{\Hypertarget{RenderableObject_8hpp_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{RenderableObject_8hpp_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{RenderableObject_8hpp_source_l00034}\mbox{\hyperlink{classCrowEngine_1_1RenderableObject_a3dd3590655e1e3c18bc6b60ba0a5c598}{00034}}\ \ \ \ \ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classCrowEngine_1_1Mesh}{Mesh}}\&\ \mbox{\hyperlink{classCrowEngine_1_1RenderableObject_a3dd3590655e1e3c18bc6b60ba0a5c598}{GetMesh}}()\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classCrowEngine_1_1RenderableObject_af915e8cc9aa956e1b218382251745907}{m\_mesh}};\ \}\ \textcolor{comment}{//\ Get\ a\ single\ Mesh(will\ implement\ for\ getting\ multiple\ meshes)}}
+\DoxyCodeLine{\Hypertarget{RenderableObject_8hpp_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{RenderableObject_8hpp_source_l00036}00036\ \ \ \ \ \textcolor{comment}{//\ lol}}
+\DoxyCodeLine{\Hypertarget{RenderableObject_8hpp_source_l00037}\mbox{\hyperlink{classCrowEngine_1_1RenderableObject_a04e498c4899dea56e746ec7e2d09b987}{00037}}\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classCrowEngine_1_1RenderableObject_a04e498c4899dea56e746ec7e2d09b987}{IsRenderable}}()\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classCrowEngine_1_1RenderableObject_a8680b691453bb9c38ddd591a99012818}{m\_isRenderable}};\ \}}
+\DoxyCodeLine{\Hypertarget{RenderableObject_8hpp_source_l00038}\mbox{\hyperlink{classCrowEngine_1_1RenderableObject_adbb81f3a059b3846ca9e96b5e175a1ac}{00038}}\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classCrowEngine_1_1RenderableObject_adbb81f3a059b3846ca9e96b5e175a1ac}{HasMesh}}()\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classCrowEngine_1_1RenderableObject_acdbb7145acdc1a7babf5c503a7f723f4}{m\_hasMesh}};\ \}}
+\DoxyCodeLine{\Hypertarget{RenderableObject_8hpp_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{RenderableObject_8hpp_source_l00040}00040\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{RenderableObject_8hpp_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{RenderableObject_8hpp_source_l00042}\mbox{\hyperlink{classCrowEngine_1_1RenderableObject_a8680b691453bb9c38ddd591a99012818}{00042}}\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classCrowEngine_1_1RenderableObject_a8680b691453bb9c38ddd591a99012818}{m\_isRenderable}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{RenderableObject_8hpp_source_l00043}\mbox{\hyperlink{classCrowEngine_1_1RenderableObject_acdbb7145acdc1a7babf5c503a7f723f4}{00043}}\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classCrowEngine_1_1RenderableObject_acdbb7145acdc1a7babf5c503a7f723f4}{m\_hasMesh}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{RenderableObject_8hpp_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{RenderableObject_8hpp_source_l00045}\mbox{\hyperlink{classCrowEngine_1_1RenderableObject_a11d32c8f8b58929027afb0d90e6d5984}{00045}}\ \ \ \ \ glm::mat4\ \mbox{\hyperlink{classCrowEngine_1_1RenderableObject_a11d32c8f8b58929027afb0d90e6d5984}{m\_model}}\ =\ glm::mat4(1.0f);\ \textcolor{comment}{//\ we\ should\ use\ 'Transform'\ instead}}
+\DoxyCodeLine{\Hypertarget{RenderableObject_8hpp_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{RenderableObject_8hpp_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{RenderableObject_8hpp_source_l00048}\mbox{\hyperlink{classCrowEngine_1_1RenderableObject_af915e8cc9aa956e1b218382251745907}{00048}}\ \ \ \ \ \mbox{\hyperlink{classCrowEngine_1_1Mesh}{Mesh}}\ \mbox{\hyperlink{classCrowEngine_1_1RenderableObject_af915e8cc9aa956e1b218382251745907}{m\_mesh}};\ \textcolor{comment}{//\ right\ now\ the\ Entity\ will\ have\ a\ single\ mesh}}
+\DoxyCodeLine{\Hypertarget{RenderableObject_8hpp_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{RenderableObject_8hpp_source_l00050}00050\ \ \ \ \ \textcolor{comment}{//\ we\ will\ be\ doing\ this}}
+\DoxyCodeLine{\Hypertarget{RenderableObject_8hpp_source_l00051}00051\ \ \ \ \ \textcolor{comment}{//\ std::vector<CrowEngine::Mesh>\ m\_meshes;}}
+\DoxyCodeLine{\Hypertarget{RenderableObject_8hpp_source_l00052}00052\ \};}
+\DoxyCodeLine{\Hypertarget{RenderableObject_8hpp_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{RenderableObject_8hpp_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{RenderableObject_8hpp_source_l00055}00055\ \}\ \textcolor{comment}{//\ namespace\ CrowEngine}}
+
+\end{DoxyCode}

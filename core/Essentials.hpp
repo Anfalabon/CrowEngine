@@ -1,5 +1,8 @@
 #pragma once
 
+#define GLM_ENABLE_EXPERIMENTAL
+#include <glm/gtx/string_cast.hpp>
+
 #include <iostream>
 #include <chrono>
 
@@ -28,6 +31,22 @@ public:
         std::clog << std::forward<T>(value);
     }
 };
+
+#define LOG_MATRIX(matrixName, matrix) std::clog << matrixName << ": " << glm::to_string(matrix) << '\n';
+
+
+static unsigned int function()
+{
+    return 100;
+}
+
+extern unsigned int GetUnsignedInt();
+extern const char *GetStr();
+extern void *GetMalloc();
+
+// unsigned int GetUnsignedInt();
+// const char *GetStr();
+// void *GetMalloc();
 
 
 #define Benchmark(CODE) auto start = std::chrono::high_resolution_clock::now(); \

@@ -38,6 +38,7 @@ public:
     inline bool HasMesh() { return m_hasMesh; }
 
 private:
+
     const bool m_isRenderable = true;
     const bool m_hasMesh = true;
 

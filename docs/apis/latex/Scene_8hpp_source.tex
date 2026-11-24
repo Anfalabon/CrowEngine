@@ -1,0 +1,76 @@
+\doxysection{Scene.\+hpp}
+\hypertarget{Scene_8hpp_source}{}\label{Scene_8hpp_source}\index{source/scene/Scene.hpp@{source/scene/Scene.hpp}}
+\mbox{\hyperlink{Scene_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Scene_8hpp_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{Scene_8hpp_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{Scene_8hpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{RenderableObject_8hpp}{entity/RenderableObject.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{Scene_8hpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Entity_8hpp}{entity/Entity.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{Scene_8hpp_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{Scene_8hpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{\Hypertarget{Scene_8hpp_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{Scene_8hpp_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{Scene_8hpp_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{Scene_8hpp_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{Scene_8hpp_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{Scene_8hpp_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{Scene_8hpp_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{Scene_8hpp_source_l00014}00014\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceCrowEngine}{CrowEngine}}}
+\DoxyCodeLine{\Hypertarget{Scene_8hpp_source_l00015}00015\ \{}
+\DoxyCodeLine{\Hypertarget{Scene_8hpp_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{Scene_8hpp_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{Scene_8hpp_source_l00018}\mbox{\hyperlink{classCrowEngine_1_1Scene}{00018}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classCrowEngine_1_1Scene_a2d508b21cda7c5dfca937cebd186c5c1}{Scene}}}
+\DoxyCodeLine{\Hypertarget{Scene_8hpp_source_l00019}00019\ \{}
+\DoxyCodeLine{\Hypertarget{Scene_8hpp_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{Scene_8hpp_source_l00021}00021\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{Scene_8hpp_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{Scene_8hpp_source_l00023}\mbox{\hyperlink{classCrowEngine_1_1Scene_a2d508b21cda7c5dfca937cebd186c5c1}{00023}}\ \ \ \ \ \mbox{\hyperlink{classCrowEngine_1_1Scene_a2d508b21cda7c5dfca937cebd186c5c1}{Scene}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{Scene_8hpp_source_l00024}\mbox{\hyperlink{classCrowEngine_1_1Scene_aaf09620f13f5dc8c90863a4e83e2fe48}{00024}}\ \ \ \ \ \mbox{\hyperlink{classCrowEngine_1_1Scene_aaf09620f13f5dc8c90863a4e83e2fe48}{\string~Scene}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{Scene_8hpp_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{Scene_8hpp_source_l00026}00026\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCrowEngine_1_1Scene_aa2d9d5cf46b9df3f0d4be585d2ed5fbb}{Load}}();}
+\DoxyCodeLine{\Hypertarget{Scene_8hpp_source_l00027}00027\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCrowEngine_1_1Scene_a4df7051d578706e52f166f7ae74d14bf}{Update}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ shaderProgramID);}
+\DoxyCodeLine{\Hypertarget{Scene_8hpp_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{Scene_8hpp_source_l00029}\mbox{\hyperlink{classCrowEngine_1_1Scene_ade1ad5707fdb1841cfd834ab0dec6e27}{00029}}\ \ \ \ \ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classCrowEngine_1_1RenderableObject}{RenderableObject}}\ \&\mbox{\hyperlink{classCrowEngine_1_1Scene_ade1ad5707fdb1841cfd834ab0dec6e27}{GetRenderableObject}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ index)}
+\DoxyCodeLine{\Hypertarget{Scene_8hpp_source_l00030}00030\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Scene_8hpp_source_l00031}00031\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (index\ <\ 0\ ||\ index\ >=\ \mbox{\hyperlink{classCrowEngine_1_1Scene_a359a4def7f4e506b4c3c19fe09fcf431}{m\_renderableObjects}}.size())}
+\DoxyCodeLine{\Hypertarget{Scene_8hpp_source_l00032}00032\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Scene_8hpp_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{Scene_8hpp_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//m\_renderableObjects.at()}}
+\DoxyCodeLine{\Hypertarget{Scene_8hpp_source_l00035}00035\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Scene_8hpp_source_l00036}00036\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classCrowEngine_1_1Scene_a359a4def7f4e506b4c3c19fe09fcf431}{m\_renderableObjects}}[index];}
+\DoxyCodeLine{\Hypertarget{Scene_8hpp_source_l00037}00037\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Scene_8hpp_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{Scene_8hpp_source_l00039}\mbox{\hyperlink{classCrowEngine_1_1Scene_af8b340e9d777f2dc2f461cfb75444303}{00039}}\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classCrowEngine_1_1Scene_af8b340e9d777f2dc2f461cfb75444303}{GetTotalRenderables}}()\{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\textcolor{keyword}{>}(\mbox{\hyperlink{classCrowEngine_1_1Scene_a359a4def7f4e506b4c3c19fe09fcf431}{m\_renderableObjects}}.size());\ \}}
+\DoxyCodeLine{\Hypertarget{Scene_8hpp_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{Scene_8hpp_source_l00041}00041\ \ \ \ \ \textcolor{comment}{//\ inline\ Entity\ *GetEntity(const\ unsigned\ int\ index)}}
+\DoxyCodeLine{\Hypertarget{Scene_8hpp_source_l00042}00042\ \ \ \ \ \textcolor{comment}{//\ \{}}
+\DoxyCodeLine{\Hypertarget{Scene_8hpp_source_l00043}00043\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ if\ (index\ <\ 0\ ||\ index\ >=\ m\_entities.size())}}
+\DoxyCodeLine{\Hypertarget{Scene_8hpp_source_l00044}00044\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{Scene_8hpp_source_l00045}00045\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{Scene_8hpp_source_l00046}00046\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{Scene_8hpp_source_l00047}00047\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ return\ m\_entities[index];}}
+\DoxyCodeLine{\Hypertarget{Scene_8hpp_source_l00048}00048\ \ \ \ \ \textcolor{comment}{//\ \}}}
+\DoxyCodeLine{\Hypertarget{Scene_8hpp_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{Scene_8hpp_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{Scene_8hpp_source_l00051}00051\ \ \ \ \ \textcolor{comment}{//inline\ unsigned\ int\ GetTotalEntities()\{\ return\ static\_cast<unsigned\ int>(m\_entities.size());\ \}}}
+\DoxyCodeLine{\Hypertarget{Scene_8hpp_source_l00052}00052\ \ \ \ \ \textcolor{comment}{//inline\ std::vector<Entity*>\ GetEntities()\{\ return\ m\_entities;\ \}}}
+\DoxyCodeLine{\Hypertarget{Scene_8hpp_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{Scene_8hpp_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{Scene_8hpp_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{Scene_8hpp_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{Scene_8hpp_source_l00057}00057\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{Scene_8hpp_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{Scene_8hpp_source_l00059}\mbox{\hyperlink{classCrowEngine_1_1Scene_a359a4def7f4e506b4c3c19fe09fcf431}{00059}}\ \ \ \ \ std::vector<RenderableObject>\ \mbox{\hyperlink{classCrowEngine_1_1Scene_a359a4def7f4e506b4c3c19fe09fcf431}{m\_renderableObjects}};}
+\DoxyCodeLine{\Hypertarget{Scene_8hpp_source_l00060}00060\ \ \ \ \ \textcolor{comment}{//std::vector<Entity*>\ m\_entities;}}
+\DoxyCodeLine{\Hypertarget{Scene_8hpp_source_l00061}00061\ \ \ \ \ \textcolor{comment}{//std::vector<std::unique\_ptr<Entity>>\ m\_uEntities;}}
+\DoxyCodeLine{\Hypertarget{Scene_8hpp_source_l00062}00062\ \ \ \ \ \textcolor{comment}{//std::vector<RenderableObject>\ m\_renderableObjects;}}
+\DoxyCodeLine{\Hypertarget{Scene_8hpp_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{Scene_8hpp_source_l00064}00064\ \};}
+\DoxyCodeLine{\Hypertarget{Scene_8hpp_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{Scene_8hpp_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{Scene_8hpp_source_l00067}00067\ \}}
+\DoxyCodeLine{\Hypertarget{Scene_8hpp_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{Scene_8hpp_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{Scene_8hpp_source_l00070}00070\ }
+
+\end{DoxyCode}

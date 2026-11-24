@@ -1,0 +1,9 @@
+<map id="source/scene/camera/Cursor.hpp" name="source/scene/camera/Cursor.hpp">
+<area shape="rect" id="Node000001" title=" " alt="" coords="98,5,257,50"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,98,99,126"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="146,53,86,92,83,87,143,48"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="122,98,232,126"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="180,50,180,82,175,82,175,50"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="256,98,360,126"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="213,48,276,87,273,92,211,53"/>
+</map>

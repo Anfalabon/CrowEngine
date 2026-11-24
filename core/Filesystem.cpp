@@ -14,9 +14,7 @@ namespace CrowEngine
 bool Filesystem::FoundFile(const std::string &filePath)
 {
     std::ifstream inputFileStream(filePath);
-
-
-
+            
     if(inputFileStream.fail())
     {
         std::cout << "didn't find file!" << '\n';
@@ -24,8 +22,6 @@ bool Filesystem::FoundFile(const std::string &filePath)
         //std::cin.get();    //this is definately bad for doing
         return false;
     }
-
-
 
     return true;
 }

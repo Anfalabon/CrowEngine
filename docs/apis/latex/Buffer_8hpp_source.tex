@@ -1,0 +1,82 @@
+\doxysection{Buffer.\+hpp}
+\hypertarget{Buffer_8hpp_source}{}\label{Buffer_8hpp_source}\index{source/buffer/Buffer.hpp@{source/buffer/Buffer.hpp}}
+\mbox{\hyperlink{Buffer_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Buffer_8hpp_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{Buffer_8hpp_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{Buffer_8hpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <glad/glad.h>}}
+\DoxyCodeLine{\Hypertarget{Buffer_8hpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <GLFW/glfw3.h>}}
+\DoxyCodeLine{\Hypertarget{Buffer_8hpp_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{Buffer_8hpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{Buffer_8hpp_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{\Hypertarget{Buffer_8hpp_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{Buffer_8hpp_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{Buffer_8hpp_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{Buffer_8hpp_source_l00011}00011\ \textcolor{comment}{//in\ CLion\ how\ do\ we\ select\ and\ then\ move\ the\ cursor\ to\ a\ specific\ line\ to\ select\ the\ whole\ portion?}}
+\DoxyCodeLine{\Hypertarget{Buffer_8hpp_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{Buffer_8hpp_source_l00013}00013\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceCrowEngine}{CrowEngine}}}
+\DoxyCodeLine{\Hypertarget{Buffer_8hpp_source_l00014}00014\ \{}
+\DoxyCodeLine{\Hypertarget{Buffer_8hpp_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{Buffer_8hpp_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{Buffer_8hpp_source_l00017}\mbox{\hyperlink{classCrowEngine_1_1Buffer}{00017}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classCrowEngine_1_1Buffer_ac660607de09602f89420d86c235bfa5f}{Buffer}}}
+\DoxyCodeLine{\Hypertarget{Buffer_8hpp_source_l00018}00018\ \{}
+\DoxyCodeLine{\Hypertarget{Buffer_8hpp_source_l00019}00019\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{Buffer_8hpp_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{Buffer_8hpp_source_l00021}\mbox{\hyperlink{classCrowEngine_1_1Buffer_ac660607de09602f89420d86c235bfa5f}{00021}}\ \ \ \ \ \mbox{\hyperlink{classCrowEngine_1_1Buffer_ac660607de09602f89420d86c235bfa5f}{Buffer}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{Buffer_8hpp_source_l00022}00022\ \ \ \ \ \textcolor{comment}{//Buffer(const\ std::string\ \&verticesFilePath,\ const\ std::string\ \&indicesFilePath);}}
+\DoxyCodeLine{\Hypertarget{Buffer_8hpp_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{Buffer_8hpp_source_l00024}\mbox{\hyperlink{classCrowEngine_1_1Buffer_a7f3e10e99bf3f692ec69bd1dc56822e6}{00024}}\ \ \ \ \ \mbox{\hyperlink{classCrowEngine_1_1Buffer_a7f3e10e99bf3f692ec69bd1dc56822e6}{\string~Buffer}}()}
+\DoxyCodeLine{\Hypertarget{Buffer_8hpp_source_l00025}00025\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Buffer_8hpp_source_l00026}00026\ \ \ \ \ \ \ \ \ \textcolor{comment}{//glDeleteVertexArrays(1,\ \&m\_VAO);}}
+\DoxyCodeLine{\Hypertarget{Buffer_8hpp_source_l00027}00027\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Buffer_8hpp_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{Buffer_8hpp_source_l00029}00029\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCrowEngine_1_1Buffer_a11f565d3d50802f0def0acb5a6728062}{LoadBuffers}}(\textcolor{keyword}{const}\ std::string\ \&verticesFilePath,\ \textcolor{keyword}{const}\ std::string\ \&indicesFilePath);}
+\DoxyCodeLine{\Hypertarget{Buffer_8hpp_source_l00030}00030\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCrowEngine_1_1Buffer_a11f565d3d50802f0def0acb5a6728062}{LoadBuffers}}(\textcolor{keyword}{const}\ std::pair<std::vector<float>,\ std::vector<unsigned\ int>>\ \&buffer);}
+\DoxyCodeLine{\Hypertarget{Buffer_8hpp_source_l00031}00031\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCrowEngine_1_1Buffer_ab69a1a888a4abf1ed503485772881aa7}{SetBuffers}}();}
+\DoxyCodeLine{\Hypertarget{Buffer_8hpp_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{Buffer_8hpp_source_l00033}\mbox{\hyperlink{classCrowEngine_1_1Buffer_a529a17741d806cbfa15e7ff53bbb9353}{00033}}\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classCrowEngine_1_1Buffer_a529a17741d806cbfa15e7ff53bbb9353}{GetVAO}}()\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classCrowEngine_1_1Buffer_a0fc1112703f9bee35731f19da222dbe1}{m\_VAO}};\ \}}
+\DoxyCodeLine{\Hypertarget{Buffer_8hpp_source_l00034}\mbox{\hyperlink{classCrowEngine_1_1Buffer_a0b36ed1ecc1ed3018c220e60e35ecc74}{00034}}\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCrowEngine_1_1Buffer_a0b36ed1ecc1ed3018c220e60e35ecc74}{Bind}}()\{\ glBindVertexArray(\mbox{\hyperlink{classCrowEngine_1_1Buffer_a0fc1112703f9bee35731f19da222dbe1}{m\_VAO}});\ \}}
+\DoxyCodeLine{\Hypertarget{Buffer_8hpp_source_l00035}\mbox{\hyperlink{classCrowEngine_1_1Buffer_a5b911521b5d5119e5f8fd5cf089c7fca}{00035}}\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCrowEngine_1_1Buffer_a5b911521b5d5119e5f8fd5cf089c7fca}{Unbind}}()\{\ glBindVertexArray(0);\ \}}
+\DoxyCodeLine{\Hypertarget{Buffer_8hpp_source_l00036}\mbox{\hyperlink{classCrowEngine_1_1Buffer_ad4534b6439292962fa3627d90d1c8f21}{00036}}\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classCrowEngine_1_1Buffer_ad4534b6439292962fa3627d90d1c8f21}{GetTotalIndices}}()\{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\textcolor{keyword}{>}(\mbox{\hyperlink{classCrowEngine_1_1Buffer_a44be33f958f0f2fb2ee46045433c510d}{m\_indices}}.size());\ \}}
+\DoxyCodeLine{\Hypertarget{Buffer_8hpp_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{Buffer_8hpp_source_l00038}00038\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCrowEngine_1_1Buffer_a64dc017f09ba3b87f2187f5658aa922b}{CheckBuffer}}(\ \textcolor{keyword}{const}\ std::vector<T>\ \&buffer\ );}
+\DoxyCodeLine{\Hypertarget{Buffer_8hpp_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{Buffer_8hpp_source_l00040}00040\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{Buffer_8hpp_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{Buffer_8hpp_source_l00042}\mbox{\hyperlink{classCrowEngine_1_1Buffer_a0fc1112703f9bee35731f19da222dbe1}{00042}}\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classCrowEngine_1_1Buffer_a0fc1112703f9bee35731f19da222dbe1}{m\_VAO}};}
+\DoxyCodeLine{\Hypertarget{Buffer_8hpp_source_l00043}\mbox{\hyperlink{classCrowEngine_1_1Buffer_a5b8c8789ec95c12d156168582d378e77}{00043}}\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classCrowEngine_1_1Buffer_a5b8c8789ec95c12d156168582d378e77}{m\_VBO}};}
+\DoxyCodeLine{\Hypertarget{Buffer_8hpp_source_l00044}\mbox{\hyperlink{classCrowEngine_1_1Buffer_a4b2c2c1b4d618cdb67d3bc223d1be825}{00044}}\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classCrowEngine_1_1Buffer_a4b2c2c1b4d618cdb67d3bc223d1be825}{m\_EBO}};}
+\DoxyCodeLine{\Hypertarget{Buffer_8hpp_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{Buffer_8hpp_source_l00046}\mbox{\hyperlink{classCrowEngine_1_1Buffer_a594dac043fc24daab1eba0aafbc4065b}{00046}}\ \ \ \ \ std::vector<float>\ \mbox{\hyperlink{classCrowEngine_1_1Buffer_a594dac043fc24daab1eba0aafbc4065b}{m\_vertices}};}
+\DoxyCodeLine{\Hypertarget{Buffer_8hpp_source_l00047}\mbox{\hyperlink{classCrowEngine_1_1Buffer_a44be33f958f0f2fb2ee46045433c510d}{00047}}\ \ \ \ \ std::vector<unsigned\ int>\ \mbox{\hyperlink{classCrowEngine_1_1Buffer_a44be33f958f0f2fb2ee46045433c510d}{m\_indices}};}
+\DoxyCodeLine{\Hypertarget{Buffer_8hpp_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{Buffer_8hpp_source_l00049}00049\ \};}
+\DoxyCodeLine{\Hypertarget{Buffer_8hpp_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{Buffer_8hpp_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{Buffer_8hpp_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{Buffer_8hpp_source_l00053}00053\ \textcolor{comment}{//put\ it\ in\ another\ File}}
+\DoxyCodeLine{\Hypertarget{Buffer_8hpp_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{Buffer_8hpp_source_l00055}\mbox{\hyperlink{classCrowEngine_1_1Buffer_a64dc017f09ba3b87f2187f5658aa922b}{00055}}\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCrowEngine_1_1Buffer_a64dc017f09ba3b87f2187f5658aa922b}{Buffer::CheckBuffer}}(\ \textcolor{keyword}{const}\ std::vector<T>\ \&buffer\ )}
+\DoxyCodeLine{\Hypertarget{Buffer_8hpp_source_l00056}00056\ \{}
+\DoxyCodeLine{\Hypertarget{Buffer_8hpp_source_l00057}00057\ \ \ \ \ \textcolor{keywordflow}{if}\ (buffer.empty())}
+\DoxyCodeLine{\Hypertarget{Buffer_8hpp_source_l00058}00058\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Buffer_8hpp_source_l00059}00059\ \ \ \ \ \ \ \ \ std::clog\ <<\ \textcolor{stringliteral}{"{}The\ buffer\ is\ empty!"{}}\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{\Hypertarget{Buffer_8hpp_source_l00060}00060\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{Buffer_8hpp_source_l00061}00061\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Buffer_8hpp_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{Buffer_8hpp_source_l00063}00063\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ element\ :\ buffer)}
+\DoxyCodeLine{\Hypertarget{Buffer_8hpp_source_l00064}00064\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Buffer_8hpp_source_l00065}00065\ \ \ \ \ \ \ \ \ std::cout\ <<\ element\ <<\ \textcolor{stringliteral}{"{}\ "{}};}
+\DoxyCodeLine{\Hypertarget{Buffer_8hpp_source_l00066}00066\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Buffer_8hpp_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{Buffer_8hpp_source_l00068}00068\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{Buffer_8hpp_source_l00069}00069\ \}}
+\DoxyCodeLine{\Hypertarget{Buffer_8hpp_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{Buffer_8hpp_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{Buffer_8hpp_source_l00072}00072\ }
+\DoxyCodeLine{\Hypertarget{Buffer_8hpp_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{Buffer_8hpp_source_l00074}00074\ \}}
+\DoxyCodeLine{\Hypertarget{Buffer_8hpp_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{Buffer_8hpp_source_l00076}00076\ }
+
+\end{DoxyCode}

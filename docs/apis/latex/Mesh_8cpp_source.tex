@@ -1,0 +1,35 @@
+\doxysection{Mesh.\+cpp}
+\hypertarget{Mesh_8cpp_source}{}\label{Mesh_8cpp_source}\index{source/scene/entity/Mesh.cpp@{source/scene/entity/Mesh.cpp}}
+\mbox{\hyperlink{Mesh_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Mesh_8cpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{Mesh_8cpp_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{Mesh_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Mesh_8hpp}{Mesh.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{Mesh_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}assets/assetManager/AssetManager.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{Mesh_8cpp_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{Mesh_8cpp_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{Mesh_8cpp_source_l00007}00007\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceCrowEngine}{CrowEngine}}}
+\DoxyCodeLine{\Hypertarget{Mesh_8cpp_source_l00008}00008\ \{}
+\DoxyCodeLine{\Hypertarget{Mesh_8cpp_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{Mesh_8cpp_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{Mesh_8cpp_source_l00011}\mbox{\hyperlink{classCrowEngine_1_1Mesh_a8708efd0390848ef96bcc7d75550c2cf}{00011}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCrowEngine_1_1Mesh_a8708efd0390848ef96bcc7d75550c2cf}{Mesh::Set}}()}
+\DoxyCodeLine{\Hypertarget{Mesh_8cpp_source_l00012}00012\ \{}
+\DoxyCodeLine{\Hypertarget{Mesh_8cpp_source_l00013}00013\ \ \ \ \ \textcolor{comment}{//m\_buffer.LoadBuffers("{}../../assets/classicCube/cubeVertices.txt"{},\ "{}../../assets/classicCube/cubeIndices.txt"{});}}
+\DoxyCodeLine{\Hypertarget{Mesh_8cpp_source_l00014}00014\ \ \ \ \ \textcolor{comment}{//m\_buffer.LoadBuffers(AssetManager::LoadMeshData("{}classicCube"{}));}}
+\DoxyCodeLine{\Hypertarget{Mesh_8cpp_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{Mesh_8cpp_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{Mesh_8cpp_source_l00017}00017\ \ \ \ \ \textcolor{comment}{//i\ really\ don't\ know\ if\ using\ Singleton\ here\ is\ good.\ BTW\ the\ Singleton\ name\ helps\ a\ lot\ :)}}
+\DoxyCodeLine{\Hypertarget{Mesh_8cpp_source_l00018}00018\ \ \ \ \ \mbox{\hyperlink{classCrowEngine_1_1Mesh_a5360ef9dc886791d8d816a2c24cc680b}{m\_meshData}}.m\_buffer.LoadBuffers(AssetManager::GetSingleton()-\/>GetMeshData(\textcolor{stringliteral}{"{}classicCube"{}}));}
+\DoxyCodeLine{\Hypertarget{Mesh_8cpp_source_l00019}00019\ \ \ \ \ \mbox{\hyperlink{classCrowEngine_1_1Mesh_a5360ef9dc886791d8d816a2c24cc680b}{m\_meshData}}.m\_buffer.SetBuffers();}
+\DoxyCodeLine{\Hypertarget{Mesh_8cpp_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{Mesh_8cpp_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{Mesh_8cpp_source_l00022}00022\ \ \ \ \ \textcolor{comment}{//the\ bug\ is\ here}}
+\DoxyCodeLine{\Hypertarget{Mesh_8cpp_source_l00023}00023\ \ \ \ \ \mbox{\hyperlink{classCrowEngine_1_1Mesh_a5360ef9dc886791d8d816a2c24cc680b}{m\_meshData}}.m\_texture.Load(\textcolor{stringliteral}{"{}../../assets/resources/images/grassTexture.jpg"{}});}
+\DoxyCodeLine{\Hypertarget{Mesh_8cpp_source_l00024}00024\ \ \ \ \ \mbox{\hyperlink{classCrowEngine_1_1Mesh_a5360ef9dc886791d8d816a2c24cc680b}{m\_meshData}}.m\_texture.Set(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{Mesh_8cpp_source_l00025}00025\ \}}
+\DoxyCodeLine{\Hypertarget{Mesh_8cpp_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{Mesh_8cpp_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{Mesh_8cpp_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{Mesh_8cpp_source_l00029}00029\ \}}
+
+\end{DoxyCode}

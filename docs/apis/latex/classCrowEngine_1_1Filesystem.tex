@@ -1,0 +1,206 @@
+\doxysection{Crow\+Engine\+::Filesystem Class Reference}
+\hypertarget{classCrowEngine_1_1Filesystem}{}\label{classCrowEngine_1_1Filesystem}\index{CrowEngine::Filesystem@{CrowEngine::Filesystem}}
+
+
+{\ttfamily \#include $<$Filesystem.\+hpp$>$}
+
+
+
+Collaboration diagram for Crow\+Engine\+::Filesystem\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=230pt]{classCrowEngine_1_1Filesystem__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classCrowEngine_1_1Filesystem_a45e5b88a465e944eaa02a2c915c0200e}{WRITE\+\_\+\+MODE}} \{ \mbox{\hyperlink{classCrowEngine_1_1Filesystem_a45e5b88a465e944eaa02a2c915c0200ea1ac009c702bfdcbe8b8f0ac9cee2e9eb}{WRITE\+\_\+\+AT\+\_\+\+END}}
+, \mbox{\hyperlink{classCrowEngine_1_1Filesystem_a45e5b88a465e944eaa02a2c915c0200ea12a196c28c7e98fa382dd47cae858887}{WRITE\+\_\+\+AT\+\_\+\+BEGINNING}}
+, \mbox{\hyperlink{classCrowEngine_1_1Filesystem_a45e5b88a465e944eaa02a2c915c0200ea3b181bc631f9d4f1a64c07d7262c0b29}{WRITE\+\_\+\+AT\+\_\+\+SPECIFIC\+\_\+\+POINT}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCrowEngine_1_1Filesystem_a859b52f8f7ee869bdaea2e8bee26e2a1}{Filesystem}} ()=default
+\item 
+\mbox{\hyperlink{classCrowEngine_1_1Filesystem_ae6681fed631a3f2b5ebef649e99f224b}{\texorpdfstring{$\sim$}{\string~}\+Filesystem}} ()=default
+\item 
+bool \mbox{\hyperlink{classCrowEngine_1_1Filesystem_a64032d4f2389a878e65ef1a79ac9c9f9}{Was\+File\+Modified}} (const std\+::string \&file\+Path)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{classCrowEngine_1_1Filesystem_a448ced8d09de71da4768ebb45bffec72}{Found\+File}} (const std\+::string \&file\+Path)
+\item 
+static std\+::string \mbox{\hyperlink{classCrowEngine_1_1Filesystem_a204287599fcf67b7917b66b89e3caa8f}{Read\+File\+Content}} (const std\+::string \&file\+Path)
+\item 
+static void \mbox{\hyperlink{classCrowEngine_1_1Filesystem_a7ffbf1d3c1a2ae5588409544326cb277}{Write\+Content\+To\+File}} (const std\+::string \&file\+Path, const std\+::string \&content, \mbox{\hyperlink{classCrowEngine_1_1Filesystem_a45e5b88a465e944eaa02a2c915c0200e}{WRITE\+\_\+\+MODE}} place\+To\+Write=\mbox{\hyperlink{classCrowEngine_1_1Filesystem_a45e5b88a465e944eaa02a2c915c0200ea1ac009c702bfdcbe8b8f0ac9cee2e9eb}{WRITE\+\_\+\+AT\+\_\+\+END}})
+\item 
+static std\+::time\+\_\+t \mbox{\hyperlink{classCrowEngine_1_1Filesystem_a96b6c8ba3e9a5e92869794f0119412a9}{File\+Creation\+Time}} (const std\+::string \&file\+Path)
+\item 
+static std\+::time\+\_\+t \mbox{\hyperlink{classCrowEngine_1_1Filesystem_a3ec6648267e46a03385a10f06d35378b}{File\+Last\+Modification\+Time}} (const std\+::string \&file\+Path)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::time\+\_\+t \mbox{\hyperlink{classCrowEngine_1_1Filesystem_ac526d5e0f6bf9cf479173fe9213644c2}{last\+Modification\+Time}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{Filesystem_8hpp_source_l00036}{36}} of file \mbox{\hyperlink{Filesystem_8hpp_source}{Filesystem.\+hpp}}.
+
+
+
+\label{doc-enum-members}
+\Hypertarget{classCrowEngine_1_1Filesystem_doc-enum-members}
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{classCrowEngine_1_1Filesystem_a45e5b88a465e944eaa02a2c915c0200e}\index{CrowEngine::Filesystem@{CrowEngine::Filesystem}!WRITE\_MODE@{WRITE\_MODE}}
+\index{WRITE\_MODE@{WRITE\_MODE}!CrowEngine::Filesystem@{CrowEngine::Filesystem}}
+\doxysubsubsection{\texorpdfstring{WRITE\_MODE}{WRITE\_MODE}}
+{\footnotesize\ttfamily \label{classCrowEngine_1_1Filesystem_a45e5b88a465e944eaa02a2c915c0200e} 
+enum \mbox{\hyperlink{classCrowEngine_1_1Filesystem_a45e5b88a465e944eaa02a2c915c0200e}{Crow\+Engine\+::\+Filesystem\+::\+WRITE\+\_\+\+MODE}}}
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WRITE\_AT\_END@{WRITE\_AT\_END}!CrowEngine::Filesystem@{CrowEngine::Filesystem}}\index{CrowEngine::Filesystem@{CrowEngine::Filesystem}!WRITE\_AT\_END@{WRITE\_AT\_END}}}\Hypertarget{classCrowEngine_1_1Filesystem_a45e5b88a465e944eaa02a2c915c0200ea1ac009c702bfdcbe8b8f0ac9cee2e9eb}\label{classCrowEngine_1_1Filesystem_a45e5b88a465e944eaa02a2c915c0200ea1ac009c702bfdcbe8b8f0ac9cee2e9eb} 
+WRITE\+\_\+\+AT\+\_\+\+END&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WRITE\_AT\_BEGINNING@{WRITE\_AT\_BEGINNING}!CrowEngine::Filesystem@{CrowEngine::Filesystem}}\index{CrowEngine::Filesystem@{CrowEngine::Filesystem}!WRITE\_AT\_BEGINNING@{WRITE\_AT\_BEGINNING}}}\Hypertarget{classCrowEngine_1_1Filesystem_a45e5b88a465e944eaa02a2c915c0200ea12a196c28c7e98fa382dd47cae858887}\label{classCrowEngine_1_1Filesystem_a45e5b88a465e944eaa02a2c915c0200ea12a196c28c7e98fa382dd47cae858887} 
+WRITE\+\_\+\+AT\+\_\+\+BEGINNING&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WRITE\_AT\_SPECIFIC\_POINT@{WRITE\_AT\_SPECIFIC\_POINT}!CrowEngine::Filesystem@{CrowEngine::Filesystem}}\index{CrowEngine::Filesystem@{CrowEngine::Filesystem}!WRITE\_AT\_SPECIFIC\_POINT@{WRITE\_AT\_SPECIFIC\_POINT}}}\Hypertarget{classCrowEngine_1_1Filesystem_a45e5b88a465e944eaa02a2c915c0200ea3b181bc631f9d4f1a64c07d7262c0b29}\label{classCrowEngine_1_1Filesystem_a45e5b88a465e944eaa02a2c915c0200ea3b181bc631f9d4f1a64c07d7262c0b29} 
+WRITE\+\_\+\+AT\+\_\+\+SPECIFIC\+\_\+\+POINT&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{Filesystem_8hpp_source_l00039}{39}} of file \mbox{\hyperlink{Filesystem_8hpp_source}{Filesystem.\+hpp}}.
+
+
+
+\label{doc-constructors}
+\Hypertarget{classCrowEngine_1_1Filesystem_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classCrowEngine_1_1Filesystem_a859b52f8f7ee869bdaea2e8bee26e2a1}\index{CrowEngine::Filesystem@{CrowEngine::Filesystem}!Filesystem@{Filesystem}}
+\index{Filesystem@{Filesystem}!CrowEngine::Filesystem@{CrowEngine::Filesystem}}
+\doxysubsubsection{\texorpdfstring{Filesystem()}{Filesystem()}}
+{\footnotesize\ttfamily \label{classCrowEngine_1_1Filesystem_a859b52f8f7ee869bdaea2e8bee26e2a1} 
+Crow\+Engine\+::\+Filesystem\+::\+Filesystem (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\Hypertarget{classCrowEngine_1_1Filesystem_ae6681fed631a3f2b5ebef649e99f224b}\index{CrowEngine::Filesystem@{CrowEngine::Filesystem}!````~Filesystem@{\texorpdfstring{$\sim$}{\string~}Filesystem}}
+\index{````~Filesystem@{\texorpdfstring{$\sim$}{\string~}Filesystem}!CrowEngine::Filesystem@{CrowEngine::Filesystem}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Filesystem()}{\string~Filesystem()}}
+{\footnotesize\ttfamily \label{classCrowEngine_1_1Filesystem_ae6681fed631a3f2b5ebef649e99f224b} 
+Crow\+Engine\+::\+Filesystem\+::\texorpdfstring{$\sim$}{\string~}\+Filesystem (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{classCrowEngine_1_1Filesystem_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classCrowEngine_1_1Filesystem_a96b6c8ba3e9a5e92869794f0119412a9}\index{CrowEngine::Filesystem@{CrowEngine::Filesystem}!FileCreationTime@{FileCreationTime}}
+\index{FileCreationTime@{FileCreationTime}!CrowEngine::Filesystem@{CrowEngine::Filesystem}}
+\doxysubsubsection{\texorpdfstring{FileCreationTime()}{FileCreationTime()}}
+{\footnotesize\ttfamily \label{classCrowEngine_1_1Filesystem_a96b6c8ba3e9a5e92869794f0119412a9} 
+std\+::time\+\_\+t Crow\+Engine\+::\+Filesystem\+::\+File\+Creation\+Time (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+Path}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{Filesystem_8cpp_source_l00058}{58}} of file \mbox{\hyperlink{Filesystem_8cpp_source}{Filesystem.\+cpp}}.
+
+\Hypertarget{classCrowEngine_1_1Filesystem_a3ec6648267e46a03385a10f06d35378b}\index{CrowEngine::Filesystem@{CrowEngine::Filesystem}!FileLastModificationTime@{FileLastModificationTime}}
+\index{FileLastModificationTime@{FileLastModificationTime}!CrowEngine::Filesystem@{CrowEngine::Filesystem}}
+\doxysubsubsection{\texorpdfstring{FileLastModificationTime()}{FileLastModificationTime()}}
+{\footnotesize\ttfamily \label{classCrowEngine_1_1Filesystem_a3ec6648267e46a03385a10f06d35378b} 
+std\+::time\+\_\+t Crow\+Engine\+::\+Filesystem\+::\+File\+Last\+Modification\+Time (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+Path}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{Filesystem_8cpp_source_l00061}{61}} of file \mbox{\hyperlink{Filesystem_8cpp_source}{Filesystem.\+cpp}}.
+
+\Hypertarget{classCrowEngine_1_1Filesystem_a448ced8d09de71da4768ebb45bffec72}\index{CrowEngine::Filesystem@{CrowEngine::Filesystem}!FoundFile@{FoundFile}}
+\index{FoundFile@{FoundFile}!CrowEngine::Filesystem@{CrowEngine::Filesystem}}
+\doxysubsubsection{\texorpdfstring{FoundFile()}{FoundFile()}}
+{\footnotesize\ttfamily \label{classCrowEngine_1_1Filesystem_a448ced8d09de71da4768ebb45bffec72} 
+bool Crow\+Engine\+::\+Filesystem\+::\+Found\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+Path}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{Filesystem_8cpp_source_l00014}{14}} of file \mbox{\hyperlink{Filesystem_8cpp_source}{Filesystem.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classCrowEngine_1_1Filesystem_a448ced8d09de71da4768ebb45bffec72_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classCrowEngine_1_1Filesystem_a204287599fcf67b7917b66b89e3caa8f}\index{CrowEngine::Filesystem@{CrowEngine::Filesystem}!ReadFileContent@{ReadFileContent}}
+\index{ReadFileContent@{ReadFileContent}!CrowEngine::Filesystem@{CrowEngine::Filesystem}}
+\doxysubsubsection{\texorpdfstring{ReadFileContent()}{ReadFileContent()}}
+{\footnotesize\ttfamily \label{classCrowEngine_1_1Filesystem_a204287599fcf67b7917b66b89e3caa8f} 
+std\+::string Crow\+Engine\+::\+Filesystem\+::\+Read\+File\+Content (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+Path}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{Filesystem_8cpp_source_l00032}{32}} of file \mbox{\hyperlink{Filesystem_8cpp_source}{Filesystem.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classCrowEngine_1_1Filesystem_a204287599fcf67b7917b66b89e3caa8f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classCrowEngine_1_1Filesystem_a64032d4f2389a878e65ef1a79ac9c9f9}\index{CrowEngine::Filesystem@{CrowEngine::Filesystem}!WasFileModified@{WasFileModified}}
+\index{WasFileModified@{WasFileModified}!CrowEngine::Filesystem@{CrowEngine::Filesystem}}
+\doxysubsubsection{\texorpdfstring{WasFileModified()}{WasFileModified()}}
+{\footnotesize\ttfamily \label{classCrowEngine_1_1Filesystem_a64032d4f2389a878e65ef1a79ac9c9f9} 
+bool Crow\+Engine\+::\+Filesystem\+::\+Was\+File\+Modified (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+Path}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Filesystem_8cpp_source_l00091}{91}} of file \mbox{\hyperlink{Filesystem_8cpp_source}{Filesystem.\+cpp}}.
+
+\Hypertarget{classCrowEngine_1_1Filesystem_a7ffbf1d3c1a2ae5588409544326cb277}\index{CrowEngine::Filesystem@{CrowEngine::Filesystem}!WriteContentToFile@{WriteContentToFile}}
+\index{WriteContentToFile@{WriteContentToFile}!CrowEngine::Filesystem@{CrowEngine::Filesystem}}
+\doxysubsubsection{\texorpdfstring{WriteContentToFile()}{WriteContentToFile()}}
+{\footnotesize\ttfamily \label{classCrowEngine_1_1Filesystem_a7ffbf1d3c1a2ae5588409544326cb277} 
+void Crow\+Engine\+::\+Filesystem\+::\+Write\+Content\+To\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+Path}{, }\item[{const std\+::string \&}]{content}{, }\item[{\mbox{\hyperlink{classCrowEngine_1_1Filesystem_a45e5b88a465e944eaa02a2c915c0200e}{WRITE\+\_\+\+MODE}}}]{place\+To\+Write}{ = {\ttfamily \mbox{\hyperlink{classCrowEngine_1_1Filesystem_a45e5b88a465e944eaa02a2c915c0200ea1ac009c702bfdcbe8b8f0ac9cee2e9eb}{WRITE\+\_\+\+AT\+\_\+\+END}}}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{Filesystem_8cpp_source_l00057}{57}} of file \mbox{\hyperlink{Filesystem_8cpp_source}{Filesystem.\+cpp}}.
+
+
+
+\label{doc-variable-members}
+\Hypertarget{classCrowEngine_1_1Filesystem_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classCrowEngine_1_1Filesystem_ac526d5e0f6bf9cf479173fe9213644c2}\index{CrowEngine::Filesystem@{CrowEngine::Filesystem}!lastModificationTime@{lastModificationTime}}
+\index{lastModificationTime@{lastModificationTime}!CrowEngine::Filesystem@{CrowEngine::Filesystem}}
+\doxysubsubsection{\texorpdfstring{lastModificationTime}{lastModificationTime}}
+{\footnotesize\ttfamily \label{classCrowEngine_1_1Filesystem_ac526d5e0f6bf9cf479173fe9213644c2} 
+std\+::time\+\_\+t Crow\+Engine\+::\+Filesystem\+::last\+Modification\+Time = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{Filesystem_8hpp_source_l00060}{60}} of file \mbox{\hyperlink{Filesystem_8hpp_source}{Filesystem.\+hpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+core/\mbox{\hyperlink{Filesystem_8hpp}{Filesystem.\+hpp}}\item 
+core/\mbox{\hyperlink{Filesystem_8cpp}{Filesystem.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,270 @@
+\doxysection{Crow\+Engine\+::Camera Class Reference}
+\hypertarget{classCrowEngine_1_1Camera}{}\label{classCrowEngine_1_1Camera}\index{CrowEngine::Camera@{CrowEngine::Camera}}
+
+
+{\ttfamily \#include $<$Camera.\+hpp$>$}
+
+
+
+Collaboration diagram for Crow\+Engine\+::Camera\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=190pt]{classCrowEngine_1_1Camera__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCrowEngine_1_1Camera_a8cdb32a86b75556aff6f5df3e29891a8}{Camera}} ()
+\item 
+\mbox{\hyperlink{classCrowEngine_1_1Camera_ae466491b358dac02a4d3dd3f965e160f}{\texorpdfstring{$\sim$}{\string~}\+Camera}} ()=default
+\item 
+void \mbox{\hyperlink{classCrowEngine_1_1Camera_a62c6d9bc6b1ac4ddccecdff6646711a8}{Process\+Input}} (GLFWwindow \texorpdfstring{$\ast$}{*}window\+ID)
+\item 
+void \mbox{\hyperlink{classCrowEngine_1_1Camera_ae3d6a9a116cb20180b93a649ba91168b}{Update\+Cursor}} (GLFWwindow \texorpdfstring{$\ast$}{*}window\+ID)
+\item 
+void \mbox{\hyperlink{classCrowEngine_1_1Camera_a012a98c59d30d6864b1415f46b495ffd}{Update}} (GLFWwindow \texorpdfstring{$\ast$}{*}window\+ID, const unsigned int shader\+Program\+ID)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+glm\+::vec3 \mbox{\hyperlink{classCrowEngine_1_1Camera_a39bfe669e95a7468e460415e42fbe0a5}{m\+\_\+position}}
+\item 
+glm\+::vec3 \mbox{\hyperlink{classCrowEngine_1_1Camera_a4671e3f114f5038bb5e099931d5525a2}{m\+\_\+right}}
+\item 
+glm\+::vec3 \mbox{\hyperlink{classCrowEngine_1_1Camera_a9f3f7954ed3a9509922bf57db34975db}{m\+\_\+up}}
+\item 
+glm\+::vec3 \mbox{\hyperlink{classCrowEngine_1_1Camera_ac7b9d8777c15ebdee271853a545346dd}{m\+\_\+front}}
+\item 
+glm\+::vec3 \mbox{\hyperlink{classCrowEngine_1_1Camera_a983f3f1c5348e0da684469489480f56c}{m\+\_\+target}}
+\item 
+const glm\+::vec3 \mbox{\hyperlink{classCrowEngine_1_1Camera_aaa94861ba8efb4d211825d64e2caa829}{m\+\_\+coordinate\+Up}} = glm\+::vec3(0.\+0f, 1.\+0f, 0.\+0f)
+\item 
+glm\+::mat4 \mbox{\hyperlink{classCrowEngine_1_1Camera_a85e0fca13c088a76d50b3592b27c8a8c}{m\+\_\+view}} = glm\+::mat4(1.\+0f)
+\item 
+glm\+::mat4 \mbox{\hyperlink{classCrowEngine_1_1Camera_a933e8a2a00bdc4499b353752598dac2b}{m\+\_\+projection}} = glm\+::mat4(1.\+0f)
+\item 
+float \mbox{\hyperlink{classCrowEngine_1_1Camera_a8c8d8fcf682a04574551b1b8ea5ca886}{m\+\_\+camera\+Speed}} = 0.\+05f
+\item 
+float \mbox{\hyperlink{classCrowEngine_1_1Camera_a3d10ea642ba401cbdf8d1e0a46a2cd78}{m\+\_\+screen\+Width}} = 1920.\+0f
+\item 
+float \mbox{\hyperlink{classCrowEngine_1_1Camera_a3127f1e089d7c498453f022b51ea19ba}{m\+\_\+screen\+Height}} = 1080.\+0f
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{Camera_8hpp_source_l00013}{13}} of file \mbox{\hyperlink{Camera_8hpp_source}{Camera.\+hpp}}.
+
+
+
+\label{doc-constructors}
+\Hypertarget{classCrowEngine_1_1Camera_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classCrowEngine_1_1Camera_a8cdb32a86b75556aff6f5df3e29891a8}\index{CrowEngine::Camera@{CrowEngine::Camera}!Camera@{Camera}}
+\index{Camera@{Camera}!CrowEngine::Camera@{CrowEngine::Camera}}
+\doxysubsubsection{\texorpdfstring{Camera()}{Camera()}}
+{\footnotesize\ttfamily \label{classCrowEngine_1_1Camera_a8cdb32a86b75556aff6f5df3e29891a8} 
+Crow\+Engine\+::\+Camera\+::\+Camera (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Camera_8hpp_source_l00018}{18}} of file \mbox{\hyperlink{Camera_8hpp_source}{Camera.\+hpp}}.
+
+\Hypertarget{classCrowEngine_1_1Camera_ae466491b358dac02a4d3dd3f965e160f}\index{CrowEngine::Camera@{CrowEngine::Camera}!````~Camera@{\texorpdfstring{$\sim$}{\string~}Camera}}
+\index{````~Camera@{\texorpdfstring{$\sim$}{\string~}Camera}!CrowEngine::Camera@{CrowEngine::Camera}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Camera()}{\string~Camera()}}
+{\footnotesize\ttfamily \label{classCrowEngine_1_1Camera_ae466491b358dac02a4d3dd3f965e160f} 
+Crow\+Engine\+::\+Camera\+::\texorpdfstring{$\sim$}{\string~}\+Camera (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{classCrowEngine_1_1Camera_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classCrowEngine_1_1Camera_a62c6d9bc6b1ac4ddccecdff6646711a8}\index{CrowEngine::Camera@{CrowEngine::Camera}!ProcessInput@{ProcessInput}}
+\index{ProcessInput@{ProcessInput}!CrowEngine::Camera@{CrowEngine::Camera}}
+\doxysubsubsection{\texorpdfstring{ProcessInput()}{ProcessInput()}}
+{\footnotesize\ttfamily \label{classCrowEngine_1_1Camera_a62c6d9bc6b1ac4ddccecdff6646711a8} 
+void Crow\+Engine\+::\+Camera\+::\+Process\+Input (\begin{DoxyParamCaption}\item[{GLFWwindow \texorpdfstring{$\ast$}{*}}]{window\+ID}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Camera_8cpp_source_l00021}{21}} of file \mbox{\hyperlink{Camera_8cpp_source}{Camera.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classCrowEngine_1_1Camera_a62c6d9bc6b1ac4ddccecdff6646711a8_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classCrowEngine_1_1Camera_a012a98c59d30d6864b1415f46b495ffd}\index{CrowEngine::Camera@{CrowEngine::Camera}!Update@{Update}}
+\index{Update@{Update}!CrowEngine::Camera@{CrowEngine::Camera}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily \label{classCrowEngine_1_1Camera_a012a98c59d30d6864b1415f46b495ffd} 
+void Crow\+Engine\+::\+Camera\+::\+Update (\begin{DoxyParamCaption}\item[{GLFWwindow \texorpdfstring{$\ast$}{*}}]{window\+ID}{, }\item[{const unsigned int}]{shader\+Program\+ID}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Camera_8cpp_source_l00042}{42}} of file \mbox{\hyperlink{Camera_8cpp_source}{Camera.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classCrowEngine_1_1Camera_a012a98c59d30d6864b1415f46b495ffd_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classCrowEngine_1_1Camera_ae3d6a9a116cb20180b93a649ba91168b}\index{CrowEngine::Camera@{CrowEngine::Camera}!UpdateCursor@{UpdateCursor}}
+\index{UpdateCursor@{UpdateCursor}!CrowEngine::Camera@{CrowEngine::Camera}}
+\doxysubsubsection{\texorpdfstring{UpdateCursor()}{UpdateCursor()}}
+{\footnotesize\ttfamily \label{classCrowEngine_1_1Camera_ae3d6a9a116cb20180b93a649ba91168b} 
+void Crow\+Engine\+::\+Camera\+::\+Update\+Cursor (\begin{DoxyParamCaption}\item[{GLFWwindow \texorpdfstring{$\ast$}{*}}]{window\+ID}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Camera_8cpp_source_l00034}{34}} of file \mbox{\hyperlink{Camera_8cpp_source}{Camera.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classCrowEngine_1_1Camera_ae3d6a9a116cb20180b93a649ba91168b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classCrowEngine_1_1Camera_ae3d6a9a116cb20180b93a649ba91168b_icgraph}
+\end{center}
+\end{figure}
+
+
+\label{doc-variable-members}
+\Hypertarget{classCrowEngine_1_1Camera_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classCrowEngine_1_1Camera_a8c8d8fcf682a04574551b1b8ea5ca886}\index{CrowEngine::Camera@{CrowEngine::Camera}!m\_cameraSpeed@{m\_cameraSpeed}}
+\index{m\_cameraSpeed@{m\_cameraSpeed}!CrowEngine::Camera@{CrowEngine::Camera}}
+\doxysubsubsection{\texorpdfstring{m\_cameraSpeed}{m\_cameraSpeed}}
+{\footnotesize\ttfamily \label{classCrowEngine_1_1Camera_a8c8d8fcf682a04574551b1b8ea5ca886} 
+float Crow\+Engine\+::\+Camera\+::m\+\_\+camera\+Speed = 0.\+05f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{Camera_8hpp_source_l00048}{48}} of file \mbox{\hyperlink{Camera_8hpp_source}{Camera.\+hpp}}.
+
+\Hypertarget{classCrowEngine_1_1Camera_aaa94861ba8efb4d211825d64e2caa829}\index{CrowEngine::Camera@{CrowEngine::Camera}!m\_coordinateUp@{m\_coordinateUp}}
+\index{m\_coordinateUp@{m\_coordinateUp}!CrowEngine::Camera@{CrowEngine::Camera}}
+\doxysubsubsection{\texorpdfstring{m\_coordinateUp}{m\_coordinateUp}}
+{\footnotesize\ttfamily \label{classCrowEngine_1_1Camera_aaa94861ba8efb4d211825d64e2caa829} 
+const glm\+::vec3 Crow\+Engine\+::\+Camera\+::m\+\_\+coordinate\+Up = glm\+::vec3(0.\+0f, 1.\+0f, 0.\+0f)\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{Camera_8hpp_source_l00042}{42}} of file \mbox{\hyperlink{Camera_8hpp_source}{Camera.\+hpp}}.
+
+\Hypertarget{classCrowEngine_1_1Camera_ac7b9d8777c15ebdee271853a545346dd}\index{CrowEngine::Camera@{CrowEngine::Camera}!m\_front@{m\_front}}
+\index{m\_front@{m\_front}!CrowEngine::Camera@{CrowEngine::Camera}}
+\doxysubsubsection{\texorpdfstring{m\_front}{m\_front}}
+{\footnotesize\ttfamily \label{classCrowEngine_1_1Camera_ac7b9d8777c15ebdee271853a545346dd} 
+glm\+::vec3 Crow\+Engine\+::\+Camera\+::m\+\_\+front\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{Camera_8hpp_source_l00039}{39}} of file \mbox{\hyperlink{Camera_8hpp_source}{Camera.\+hpp}}.
+
+\Hypertarget{classCrowEngine_1_1Camera_a39bfe669e95a7468e460415e42fbe0a5}\index{CrowEngine::Camera@{CrowEngine::Camera}!m\_position@{m\_position}}
+\index{m\_position@{m\_position}!CrowEngine::Camera@{CrowEngine::Camera}}
+\doxysubsubsection{\texorpdfstring{m\_position}{m\_position}}
+{\footnotesize\ttfamily \label{classCrowEngine_1_1Camera_a39bfe669e95a7468e460415e42fbe0a5} 
+glm\+::vec3 Crow\+Engine\+::\+Camera\+::m\+\_\+position\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{Camera_8hpp_source_l00036}{36}} of file \mbox{\hyperlink{Camera_8hpp_source}{Camera.\+hpp}}.
+
+\Hypertarget{classCrowEngine_1_1Camera_a933e8a2a00bdc4499b353752598dac2b}\index{CrowEngine::Camera@{CrowEngine::Camera}!m\_projection@{m\_projection}}
+\index{m\_projection@{m\_projection}!CrowEngine::Camera@{CrowEngine::Camera}}
+\doxysubsubsection{\texorpdfstring{m\_projection}{m\_projection}}
+{\footnotesize\ttfamily \label{classCrowEngine_1_1Camera_a933e8a2a00bdc4499b353752598dac2b} 
+glm\+::mat4 Crow\+Engine\+::\+Camera\+::m\+\_\+projection = glm\+::mat4(1.\+0f)\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{Camera_8hpp_source_l00046}{46}} of file \mbox{\hyperlink{Camera_8hpp_source}{Camera.\+hpp}}.
+
+\Hypertarget{classCrowEngine_1_1Camera_a4671e3f114f5038bb5e099931d5525a2}\index{CrowEngine::Camera@{CrowEngine::Camera}!m\_right@{m\_right}}
+\index{m\_right@{m\_right}!CrowEngine::Camera@{CrowEngine::Camera}}
+\doxysubsubsection{\texorpdfstring{m\_right}{m\_right}}
+{\footnotesize\ttfamily \label{classCrowEngine_1_1Camera_a4671e3f114f5038bb5e099931d5525a2} 
+glm\+::vec3 Crow\+Engine\+::\+Camera\+::m\+\_\+right\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{Camera_8hpp_source_l00037}{37}} of file \mbox{\hyperlink{Camera_8hpp_source}{Camera.\+hpp}}.
+
+\Hypertarget{classCrowEngine_1_1Camera_a3127f1e089d7c498453f022b51ea19ba}\index{CrowEngine::Camera@{CrowEngine::Camera}!m\_screenHeight@{m\_screenHeight}}
+\index{m\_screenHeight@{m\_screenHeight}!CrowEngine::Camera@{CrowEngine::Camera}}
+\doxysubsubsection{\texorpdfstring{m\_screenHeight}{m\_screenHeight}}
+{\footnotesize\ttfamily \label{classCrowEngine_1_1Camera_a3127f1e089d7c498453f022b51ea19ba} 
+float Crow\+Engine\+::\+Camera\+::m\+\_\+screen\+Height = 1080.\+0f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{Camera_8hpp_source_l00053}{53}} of file \mbox{\hyperlink{Camera_8hpp_source}{Camera.\+hpp}}.
+
+\Hypertarget{classCrowEngine_1_1Camera_a3d10ea642ba401cbdf8d1e0a46a2cd78}\index{CrowEngine::Camera@{CrowEngine::Camera}!m\_screenWidth@{m\_screenWidth}}
+\index{m\_screenWidth@{m\_screenWidth}!CrowEngine::Camera@{CrowEngine::Camera}}
+\doxysubsubsection{\texorpdfstring{m\_screenWidth}{m\_screenWidth}}
+{\footnotesize\ttfamily \label{classCrowEngine_1_1Camera_a3d10ea642ba401cbdf8d1e0a46a2cd78} 
+float Crow\+Engine\+::\+Camera\+::m\+\_\+screen\+Width = 1920.\+0f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{Camera_8hpp_source_l00052}{52}} of file \mbox{\hyperlink{Camera_8hpp_source}{Camera.\+hpp}}.
+
+\Hypertarget{classCrowEngine_1_1Camera_a983f3f1c5348e0da684469489480f56c}\index{CrowEngine::Camera@{CrowEngine::Camera}!m\_target@{m\_target}}
+\index{m\_target@{m\_target}!CrowEngine::Camera@{CrowEngine::Camera}}
+\doxysubsubsection{\texorpdfstring{m\_target}{m\_target}}
+{\footnotesize\ttfamily \label{classCrowEngine_1_1Camera_a983f3f1c5348e0da684469489480f56c} 
+glm\+::vec3 Crow\+Engine\+::\+Camera\+::m\+\_\+target\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{Camera_8hpp_source_l00040}{40}} of file \mbox{\hyperlink{Camera_8hpp_source}{Camera.\+hpp}}.
+
+\Hypertarget{classCrowEngine_1_1Camera_a9f3f7954ed3a9509922bf57db34975db}\index{CrowEngine::Camera@{CrowEngine::Camera}!m\_up@{m\_up}}
+\index{m\_up@{m\_up}!CrowEngine::Camera@{CrowEngine::Camera}}
+\doxysubsubsection{\texorpdfstring{m\_up}{m\_up}}
+{\footnotesize\ttfamily \label{classCrowEngine_1_1Camera_a9f3f7954ed3a9509922bf57db34975db} 
+glm\+::vec3 Crow\+Engine\+::\+Camera\+::m\+\_\+up\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{Camera_8hpp_source_l00038}{38}} of file \mbox{\hyperlink{Camera_8hpp_source}{Camera.\+hpp}}.
+
+\Hypertarget{classCrowEngine_1_1Camera_a85e0fca13c088a76d50b3592b27c8a8c}\index{CrowEngine::Camera@{CrowEngine::Camera}!m\_view@{m\_view}}
+\index{m\_view@{m\_view}!CrowEngine::Camera@{CrowEngine::Camera}}
+\doxysubsubsection{\texorpdfstring{m\_view}{m\_view}}
+{\footnotesize\ttfamily \label{classCrowEngine_1_1Camera_a85e0fca13c088a76d50b3592b27c8a8c} 
+glm\+::mat4 Crow\+Engine\+::\+Camera\+::m\+\_\+view = glm\+::mat4(1.\+0f)\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{Camera_8hpp_source_l00045}{45}} of file \mbox{\hyperlink{Camera_8hpp_source}{Camera.\+hpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+source/scene/camera/\mbox{\hyperlink{Camera_8hpp}{Camera.\+hpp}}\item 
+source/scene/camera/\mbox{\hyperlink{Camera_8cpp}{Camera.\+cpp}}\end{DoxyCompactItemize}

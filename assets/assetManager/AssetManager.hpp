@@ -27,8 +27,15 @@ public:
 
 
     inline std::string GetAsset(const std::string& assetName) { return std::string{}; } // for now it gives nothing
+
     std::pair<std::vector<float>, std::vector<unsigned int>> GetMeshData(const std::string& assetName)
     {
+        if (m_meshData.begin() == m_meshData.end())
+        {
+            std::clog << "Mesh Data is empty!" << '\n';
+            return std::pair<std::vector<float>, std::vector<unsigned int>>{};
+        }
+
         return m_meshData[assetName];
     }
 

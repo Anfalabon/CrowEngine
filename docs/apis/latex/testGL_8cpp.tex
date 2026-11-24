@@ -1,0 +1,382 @@
+\doxysection{tests/experiments/test\+GL.cpp File Reference}
+\hypertarget{testGL_8cpp}{}\label{testGL_8cpp}\index{tests/experiments/testGL.cpp@{tests/experiments/testGL.cpp}}
+{\ttfamily \#include $<$glad/glad.\+h$>$}\newline
+{\ttfamily \#include $<$GLFW/glfw3.\+h$>$}\newline
+{\ttfamily \#include $<$glm/glm.\+hpp$>$}\newline
+{\ttfamily \#include $<$glm/gtc/matrix\+\_\+transform.\+hpp$>$}\newline
+{\ttfamily \#include $<$glm/gtc/type\+\_\+ptr.\+hpp$>$}\newline
+{\ttfamily \#include $<$glm/ext.\+hpp$>$}\newline
+{\ttfamily \#include $<$stb\+\_\+image.\+h$>$}\newline
+{\ttfamily \#include $<$core/\+Filesystem.\+hpp$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$filesystem$>$}\newline
+Include dependency graph for test\+GL.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{testGL_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structVertex}{Vertex}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct Vertex \mbox{\hyperlink{testGL_8cpp_a2e1662af5233d0fe6a6f061445d2ff25}{Vertex}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{testGL_8cpp_a5180f7bf2b71421af837035824a8c8ac}{framebuffer\+\_\+size\+\_\+callback}} (GLFWwindow \texorpdfstring{$\ast$}{*}window, int width, int height)
+\item 
+void \mbox{\hyperlink{testGL_8cpp_a2d03c6f2666863543429a06ef642fe6a}{process\+Input}} (GLFWwindow \texorpdfstring{$\ast$}{*}window)
+\item 
+unsigned int \mbox{\hyperlink{testGL_8cpp_a5eb4afbb893ad51a4a655b776f4a6ff2}{Set\+Shader}} (const std\+::string \&vertex\+Shader\+File\+Path, const std\+::string \&fragment\+Shader\+File\+Path)
+\item 
+unsigned int \mbox{\hyperlink{testGL_8cpp_a1f267a06f93bd994e13b6f8fe76325d9}{Initialize\+Buffer\+Objects}} (const float \texorpdfstring{$\ast$}{*}vertices, const unsigned int \texorpdfstring{$\ast$}{*}indices)
+\item 
+unsigned int \mbox{\hyperlink{testGL_8cpp_a5f9eb49aeab39bc710c7f3f5c504398d}{Load\+Texture}} (const char \texorpdfstring{$\ast$}{*}file\+Path, bool enable\+Options)
+\item 
+unsigned int \mbox{\hyperlink{testGL_8cpp_a4687e0028d8d16e3d8ef83a095a0002f}{load\+Cubemap}} (std\+::vector$<$ std\+::string $>$ faces)
+\item 
+void \mbox{\hyperlink{testGL_8cpp_a0995f766c07d7dbcfe90b83d93613e0d}{process\+Input\+Camera\+Movement}} (GLFWwindow \texorpdfstring{$\ast$}{*}window, glm\+::vec3 \&camera\+Pos, const glm\+::vec3 \&\mbox{\hyperlink{testGL_8cpp_a8cfa8e18baf093b4aa4f589daf057024}{camera\+Front}}, const glm\+::vec3 \&camera\+Up)
+\item 
+void \mbox{\hyperlink{testGL_8cpp_af4ca2891044ac10a664b8d83ce590f1f}{mouse\+\_\+callback}} (GLFWwindow \texorpdfstring{$\ast$}{*}window, double xpos, double ypos)
+\item 
+void \mbox{\hyperlink{testGL_8cpp_aa3c17859a9d54f7b817f86bedb2e499c}{Load\+Skybox}} (unsigned int \&cubemap\+Shader\+Program, unsigned int \&cubemap\+Texture, unsigned int \&cubemap\+VAO)
+\item 
+void \mbox{\hyperlink{testGL_8cpp_a3bf8072251411d64ae5419bc7532596e}{Run\+Mouse\+Control}} (GLFWwindow \texorpdfstring{$\ast$}{*}window, glm\+::vec3 \&camera\+Pos, const glm\+::vec3 \&\mbox{\hyperlink{testGL_8cpp_a8cfa8e18baf093b4aa4f589daf057024}{camera\+Front}}, const glm\+::vec3 \&camera\+Up)
+\item 
+int \mbox{\hyperlink{testGL_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const unsigned int \mbox{\hyperlink{testGL_8cpp_a74ba59acbf346c2b19bc1ce5170f755d}{SCR\+\_\+\+WIDTH}} = 1920
+\item 
+const unsigned int \mbox{\hyperlink{testGL_8cpp_aca03a77ac5a7f2e26d08cd6de43f9a17}{SCR\+\_\+\+HEIGHT}} = 1080
+\item 
+double \mbox{\hyperlink{testGL_8cpp_a02e3a1b901858994db673826761a2b4e}{lastX}} = double(\mbox{\hyperlink{Cursor_8hpp_a19a4a25e02619414c10d16cefd7a456d}{SCR\+\_\+\+WIDTH}}) / 2.\+0f
+\item 
+double \mbox{\hyperlink{testGL_8cpp_a04eb776b2ebceace641072dabd564d08}{lastY}} = double(\mbox{\hyperlink{Cursor_8hpp_a556ec94dd66897274ff54ea367c3a073}{SCR\+\_\+\+HEIGHT}}) / 2.\+0f
+\item 
+bool \mbox{\hyperlink{testGL_8cpp_ac21731ba101e28334c34543121caa841}{first\+Mouse}} = true
+\item 
+double \mbox{\hyperlink{testGL_8cpp_a21cd490f6191f66678f55b4c242a10cf}{yaw}} = 0.\+0f
+\item 
+double \mbox{\hyperlink{testGL_8cpp_a34c057a0378030db67bd6a129f37d938}{pitch}} = 0.\+0f
+\item 
+glm\+::vec3 \mbox{\hyperlink{testGL_8cpp_a8cfa8e18baf093b4aa4f589daf057024}{camera\+Front}} = glm\+::vec3(0.\+0f, 0.\+0f, 1.\+0f)
+\end{DoxyCompactItemize}
+
+
+\label{doc-typedef-members}
+\Hypertarget{testGL_8cpp_doc-typedef-members}
+\doxysubsection{Typedef Documentation}
+\Hypertarget{testGL_8cpp_a2e1662af5233d0fe6a6f061445d2ff25}\index{testGL.cpp@{testGL.cpp}!Vertex@{Vertex}}
+\index{Vertex@{Vertex}!testGL.cpp@{testGL.cpp}}
+\doxysubsubsection{\texorpdfstring{Vertex}{Vertex}}
+{\footnotesize\ttfamily \label{testGL_8cpp_a2e1662af5233d0fe6a6f061445d2ff25} 
+typedef struct Vertex Vertex}
+
+
+
+\label{doc-func-members}
+\Hypertarget{testGL_8cpp_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{testGL_8cpp_a5180f7bf2b71421af837035824a8c8ac}\index{testGL.cpp@{testGL.cpp}!framebuffer\_size\_callback@{framebuffer\_size\_callback}}
+\index{framebuffer\_size\_callback@{framebuffer\_size\_callback}!testGL.cpp@{testGL.cpp}}
+\doxysubsubsection{\texorpdfstring{framebuffer\_size\_callback()}{framebuffer\_size\_callback()}}
+{\footnotesize\ttfamily \label{testGL_8cpp_a5180f7bf2b71421af837035824a8c8ac} 
+void framebuffer\+\_\+size\+\_\+callback (\begin{DoxyParamCaption}\item[{GLFWwindow \texorpdfstring{$\ast$}{*}}]{window}{, }\item[{int}]{width}{, }\item[{int}]{height}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{testGL_8cpp_source_l00740}{740}} of file \mbox{\hyperlink{testGL_8cpp_source}{test\+GL.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=301pt]{testGL_8cpp_a5180f7bf2b71421af837035824a8c8ac_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{testGL_8cpp_a1f267a06f93bd994e13b6f8fe76325d9}\index{testGL.cpp@{testGL.cpp}!InitializeBufferObjects@{InitializeBufferObjects}}
+\index{InitializeBufferObjects@{InitializeBufferObjects}!testGL.cpp@{testGL.cpp}}
+\doxysubsubsection{\texorpdfstring{InitializeBufferObjects()}{InitializeBufferObjects()}}
+{\footnotesize\ttfamily \label{testGL_8cpp_a1f267a06f93bd994e13b6f8fe76325d9} 
+unsigned int Initialize\+Buffer\+Objects (\begin{DoxyParamCaption}\item[{const float \texorpdfstring{$\ast$}{*}}]{vertices}{, }\item[{const unsigned int \texorpdfstring{$\ast$}{*}}]{indices}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{testGL_8cpp_source_l00124}{124}} of file \mbox{\hyperlink{testGL_8cpp_source}{test\+GL.\+cpp}}.
+
+\Hypertarget{testGL_8cpp_a4687e0028d8d16e3d8ef83a095a0002f}\index{testGL.cpp@{testGL.cpp}!loadCubemap@{loadCubemap}}
+\index{loadCubemap@{loadCubemap}!testGL.cpp@{testGL.cpp}}
+\doxysubsubsection{\texorpdfstring{loadCubemap()}{loadCubemap()}}
+{\footnotesize\ttfamily \label{testGL_8cpp_a4687e0028d8d16e3d8ef83a095a0002f} 
+unsigned int load\+Cubemap (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::string $>$}]{faces}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{testGL_8cpp_source_l00200}{200}} of file \mbox{\hyperlink{testGL_8cpp_source}{test\+GL.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{testGL_8cpp_a4687e0028d8d16e3d8ef83a095a0002f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{testGL_8cpp_aa3c17859a9d54f7b817f86bedb2e499c}\index{testGL.cpp@{testGL.cpp}!LoadSkybox@{LoadSkybox}}
+\index{LoadSkybox@{LoadSkybox}!testGL.cpp@{testGL.cpp}}
+\doxysubsubsection{\texorpdfstring{LoadSkybox()}{LoadSkybox()}}
+{\footnotesize\ttfamily \label{testGL_8cpp_aa3c17859a9d54f7b817f86bedb2e499c} 
+void Load\+Skybox (\begin{DoxyParamCaption}\item[{unsigned int \&}]{cubemap\+Shader\+Program}{, }\item[{unsigned int \&}]{cubemap\+Texture}{, }\item[{unsigned int \&}]{cubemap\+VAO}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{testGL_8cpp_source_l00311}{311}} of file \mbox{\hyperlink{testGL_8cpp_source}{test\+GL.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{testGL_8cpp_aa3c17859a9d54f7b817f86bedb2e499c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=231pt]{testGL_8cpp_aa3c17859a9d54f7b817f86bedb2e499c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{testGL_8cpp_a5f9eb49aeab39bc710c7f3f5c504398d}\index{testGL.cpp@{testGL.cpp}!LoadTexture@{LoadTexture}}
+\index{LoadTexture@{LoadTexture}!testGL.cpp@{testGL.cpp}}
+\doxysubsubsection{\texorpdfstring{LoadTexture()}{LoadTexture()}}
+{\footnotesize\ttfamily \label{testGL_8cpp_a5f9eb49aeab39bc710c7f3f5c504398d} 
+unsigned int Load\+Texture (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{file\+Path}{, }\item[{bool}]{enable\+Options}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{testGL_8cpp_source_l00162}{162}} of file \mbox{\hyperlink{testGL_8cpp_source}{test\+GL.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{testGL_8cpp_a5f9eb49aeab39bc710c7f3f5c504398d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{testGL_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\index{testGL.cpp@{testGL.cpp}!main@{main}}
+\index{main@{main}!testGL.cpp@{testGL.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily \label{testGL_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4} 
+int main (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{testGL_8cpp_source_l00397}{397}} of file \mbox{\hyperlink{testGL_8cpp_source}{test\+GL.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{testGL_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{testGL_8cpp_af4ca2891044ac10a664b8d83ce590f1f}\index{testGL.cpp@{testGL.cpp}!mouse\_callback@{mouse\_callback}}
+\index{mouse\_callback@{mouse\_callback}!testGL.cpp@{testGL.cpp}}
+\doxysubsubsection{\texorpdfstring{mouse\_callback()}{mouse\_callback()}}
+{\footnotesize\ttfamily \label{testGL_8cpp_af4ca2891044ac10a664b8d83ce590f1f} 
+void mouse\+\_\+callback (\begin{DoxyParamCaption}\item[{GLFWwindow \texorpdfstring{$\ast$}{*}}]{window}{, }\item[{double}]{xpos}{, }\item[{double}]{ypos}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{testGL_8cpp_source_l00258}{258}} of file \mbox{\hyperlink{testGL_8cpp_source}{test\+GL.\+cpp}}.
+
+\Hypertarget{testGL_8cpp_a2d03c6f2666863543429a06ef642fe6a}\index{testGL.cpp@{testGL.cpp}!processInput@{processInput}}
+\index{processInput@{processInput}!testGL.cpp@{testGL.cpp}}
+\doxysubsubsection{\texorpdfstring{processInput()}{processInput()}}
+{\footnotesize\ttfamily \label{testGL_8cpp_a2d03c6f2666863543429a06ef642fe6a} 
+void process\+Input (\begin{DoxyParamCaption}\item[{GLFWwindow \texorpdfstring{$\ast$}{*}}]{window}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{testGL_8cpp_source_l00732}{732}} of file \mbox{\hyperlink{testGL_8cpp_source}{test\+GL.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=235pt]{testGL_8cpp_a2d03c6f2666863543429a06ef642fe6a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{testGL_8cpp_a0995f766c07d7dbcfe90b83d93613e0d}\index{testGL.cpp@{testGL.cpp}!processInputCameraMovement@{processInputCameraMovement}}
+\index{processInputCameraMovement@{processInputCameraMovement}!testGL.cpp@{testGL.cpp}}
+\doxysubsubsection{\texorpdfstring{processInputCameraMovement()}{processInputCameraMovement()}}
+{\footnotesize\ttfamily \label{testGL_8cpp_a0995f766c07d7dbcfe90b83d93613e0d} 
+void process\+Input\+Camera\+Movement (\begin{DoxyParamCaption}\item[{GLFWwindow \texorpdfstring{$\ast$}{*}}]{window}{, }\item[{glm\+::vec3 \&}]{camera\+Pos}{, }\item[{const glm\+::vec3 \&}]{camera\+Front}{, }\item[{const glm\+::vec3 \&}]{camera\+Up}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{testGL_8cpp_source_l00235}{235}} of file \mbox{\hyperlink{testGL_8cpp_source}{test\+GL.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{testGL_8cpp_a0995f766c07d7dbcfe90b83d93613e0d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{testGL_8cpp_a3bf8072251411d64ae5419bc7532596e}\index{testGL.cpp@{testGL.cpp}!RunMouseControl@{RunMouseControl}}
+\index{RunMouseControl@{RunMouseControl}!testGL.cpp@{testGL.cpp}}
+\doxysubsubsection{\texorpdfstring{RunMouseControl()}{RunMouseControl()}}
+{\footnotesize\ttfamily \label{testGL_8cpp_a3bf8072251411d64ae5419bc7532596e} 
+void Run\+Mouse\+Control (\begin{DoxyParamCaption}\item[{GLFWwindow \texorpdfstring{$\ast$}{*}}]{window}{, }\item[{glm\+::vec3 \&}]{camera\+Pos}{, }\item[{const glm\+::vec3 \&}]{camera\+Front}{, }\item[{const glm\+::vec3 \&}]{camera\+Up}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{testGL_8cpp_source_l00723}{723}} of file \mbox{\hyperlink{testGL_8cpp_source}{test\+GL.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{testGL_8cpp_a3bf8072251411d64ae5419bc7532596e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=259pt]{testGL_8cpp_a3bf8072251411d64ae5419bc7532596e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{testGL_8cpp_a5eb4afbb893ad51a4a655b776f4a6ff2}\index{testGL.cpp@{testGL.cpp}!SetShader@{SetShader}}
+\index{SetShader@{SetShader}!testGL.cpp@{testGL.cpp}}
+\doxysubsubsection{\texorpdfstring{SetShader()}{SetShader()}}
+{\footnotesize\ttfamily \label{testGL_8cpp_a5eb4afbb893ad51a4a655b776f4a6ff2} 
+unsigned int Set\+Shader (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{vertex\+Shader\+File\+Path}{, }\item[{const std\+::string \&}]{fragment\+Shader\+File\+Path}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{testGL_8cpp_source_l00067}{67}} of file \mbox{\hyperlink{testGL_8cpp_source}{test\+GL.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=315pt]{testGL_8cpp_a5eb4afbb893ad51a4a655b776f4a6ff2_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=333pt]{testGL_8cpp_a5eb4afbb893ad51a4a655b776f4a6ff2_icgraph}
+\end{center}
+\end{figure}
+
+
+\label{doc-var-members}
+\Hypertarget{testGL_8cpp_doc-var-members}
+\doxysubsection{Variable Documentation}
+\Hypertarget{testGL_8cpp_a8cfa8e18baf093b4aa4f589daf057024}\index{testGL.cpp@{testGL.cpp}!cameraFront@{cameraFront}}
+\index{cameraFront@{cameraFront}!testGL.cpp@{testGL.cpp}}
+\doxysubsubsection{\texorpdfstring{cameraFront}{cameraFront}}
+{\footnotesize\ttfamily \label{testGL_8cpp_a8cfa8e18baf093b4aa4f589daf057024} 
+glm\+::vec3 camera\+Front = glm\+::vec3(0.\+0f, 0.\+0f, 1.\+0f)\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{testGL_8cpp_source_l00255}{255}} of file \mbox{\hyperlink{testGL_8cpp_source}{test\+GL.\+cpp}}.
+
+\Hypertarget{testGL_8cpp_ac21731ba101e28334c34543121caa841}\index{testGL.cpp@{testGL.cpp}!firstMouse@{firstMouse}}
+\index{firstMouse@{firstMouse}!testGL.cpp@{testGL.cpp}}
+\doxysubsubsection{\texorpdfstring{firstMouse}{firstMouse}}
+{\footnotesize\ttfamily \label{testGL_8cpp_ac21731ba101e28334c34543121caa841} 
+bool first\+Mouse = true\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{testGL_8cpp_source_l00252}{252}} of file \mbox{\hyperlink{testGL_8cpp_source}{test\+GL.\+cpp}}.
+
+\Hypertarget{testGL_8cpp_a02e3a1b901858994db673826761a2b4e}\index{testGL.cpp@{testGL.cpp}!lastX@{lastX}}
+\index{lastX@{lastX}!testGL.cpp@{testGL.cpp}}
+\doxysubsubsection{\texorpdfstring{lastX}{lastX}}
+{\footnotesize\ttfamily \label{testGL_8cpp_a02e3a1b901858994db673826761a2b4e} 
+double lastX = double(\mbox{\hyperlink{Cursor_8hpp_a19a4a25e02619414c10d16cefd7a456d}{SCR\+\_\+\+WIDTH}}) / 2.\+0f\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{testGL_8cpp_source_l00250}{250}} of file \mbox{\hyperlink{testGL_8cpp_source}{test\+GL.\+cpp}}.
+
+\Hypertarget{testGL_8cpp_a04eb776b2ebceace641072dabd564d08}\index{testGL.cpp@{testGL.cpp}!lastY@{lastY}}
+\index{lastY@{lastY}!testGL.cpp@{testGL.cpp}}
+\doxysubsubsection{\texorpdfstring{lastY}{lastY}}
+{\footnotesize\ttfamily \label{testGL_8cpp_a04eb776b2ebceace641072dabd564d08} 
+double lastY = double(\mbox{\hyperlink{Cursor_8hpp_a556ec94dd66897274ff54ea367c3a073}{SCR\+\_\+\+HEIGHT}}) / 2.\+0f\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{testGL_8cpp_source_l00251}{251}} of file \mbox{\hyperlink{testGL_8cpp_source}{test\+GL.\+cpp}}.
+
+\Hypertarget{testGL_8cpp_a34c057a0378030db67bd6a129f37d938}\index{testGL.cpp@{testGL.cpp}!pitch@{pitch}}
+\index{pitch@{pitch}!testGL.cpp@{testGL.cpp}}
+\doxysubsubsection{\texorpdfstring{pitch}{pitch}}
+{\footnotesize\ttfamily \label{testGL_8cpp_a34c057a0378030db67bd6a129f37d938} 
+double pitch = 0.\+0f\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{testGL_8cpp_source_l00254}{254}} of file \mbox{\hyperlink{testGL_8cpp_source}{test\+GL.\+cpp}}.
+
+\Hypertarget{testGL_8cpp_aca03a77ac5a7f2e26d08cd6de43f9a17}\index{testGL.cpp@{testGL.cpp}!SCR\_HEIGHT@{SCR\_HEIGHT}}
+\index{SCR\_HEIGHT@{SCR\_HEIGHT}!testGL.cpp@{testGL.cpp}}
+\doxysubsubsection{\texorpdfstring{SCR\_HEIGHT}{SCR\_HEIGHT}}
+{\footnotesize\ttfamily \label{testGL_8cpp_aca03a77ac5a7f2e26d08cd6de43f9a17} 
+const unsigned int SCR\+\_\+\+HEIGHT = 1080}
+
+
+
+Definition at line \mbox{\hyperlink{testGL_8cpp_source_l00048}{48}} of file \mbox{\hyperlink{testGL_8cpp_source}{test\+GL.\+cpp}}.
+
+\Hypertarget{testGL_8cpp_a74ba59acbf346c2b19bc1ce5170f755d}\index{testGL.cpp@{testGL.cpp}!SCR\_WIDTH@{SCR\_WIDTH}}
+\index{SCR\_WIDTH@{SCR\_WIDTH}!testGL.cpp@{testGL.cpp}}
+\doxysubsubsection{\texorpdfstring{SCR\_WIDTH}{SCR\_WIDTH}}
+{\footnotesize\ttfamily \label{testGL_8cpp_a74ba59acbf346c2b19bc1ce5170f755d} 
+const unsigned int SCR\+\_\+\+WIDTH = 1920}
+
+
+
+Definition at line \mbox{\hyperlink{testGL_8cpp_source_l00047}{47}} of file \mbox{\hyperlink{testGL_8cpp_source}{test\+GL.\+cpp}}.
+
+\Hypertarget{testGL_8cpp_a21cd490f6191f66678f55b4c242a10cf}\index{testGL.cpp@{testGL.cpp}!yaw@{yaw}}
+\index{yaw@{yaw}!testGL.cpp@{testGL.cpp}}
+\doxysubsubsection{\texorpdfstring{yaw}{yaw}}
+{\footnotesize\ttfamily \label{testGL_8cpp_a21cd490f6191f66678f55b4c242a10cf} 
+double yaw = 0.\+0f\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{testGL_8cpp_source_l00253}{253}} of file \mbox{\hyperlink{testGL_8cpp_source}{test\+GL.\+cpp}}.
+

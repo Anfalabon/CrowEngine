@@ -1,18 +1,36 @@
 
+add_subdirectory(dynamicArray)
+add_subdirectory(deque)
 
-if(CMAKE_BUILD_TYPE STREQUAL "Debug")
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fsanitize=address,undefined,leak -fno-omit-frame-pointer -g -O0")
-endif()
 
-enable_testing()
-
-add_executable(TestContainer TestContainer.cpp)
-target_include_directories(TestContainer PUBLIC ../../)
-
-target_link_libraries(TestContainer PRIVATE
-        CoreUtility
-        GTest::gtest_main
-)
-
-gtest_discover_tests(TestContainer)
-
+#if(CMAKE_BUILD_TYPE STREQUAL "Debug")
+#    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fsanitize=address,undefined,leak -fno-omit-frame-pointer -g -O0")
+#endif()
+#
+##enable_testing()
+#
+#
+#
+#add_executable(TestDynamicArray TestDynamicArray.cpp)
+#target_include_directories(TestDynamicArray PUBLIC ../../)
+#
+#add_executable(TestDeque TestDeque.cpp)
+#target_include_directories(TestDeque PUBLIC ../../)
+#
+#
+#target_link_libraries(TestDynamicArray PRIVATE
+#        CoreUtility
+#        GTest::gtest_main
+#        benchmark::benchmark_main
+#)
+#
+#target_link_libraries(TestDeque PRIVATE
+#        CoreUtility
+#        GTest::gtest_main
+#        benchmark::benchmark_main
+#)
+#
+#
+##gtest_discover_tests(TestDynamicArray)
+##gtest_discover_tests(TestDeque)
+#
